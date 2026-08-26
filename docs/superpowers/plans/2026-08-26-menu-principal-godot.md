@@ -462,7 +462,7 @@ git commit -m "feat: tabela de traducao pt-BR/it e tema base da UI"
 - Consome: `Settings.quality`, `Settings.changed`.
 - Produz: `Post.set_quality(level: int) -> void` (0/1/2 → 0/10/16 taps).
 
-- [ ] **Passo 1: escrever o shader**
+- [x] **Passo 1: escrever o shader**
 
 MCP: `create_shader` em `res://shaders/post.gdshader`:
 
@@ -525,7 +525,7 @@ void fragment() {
 }
 ```
 
-- [ ] **Passo 2: montar `autoload/post.tscn`**
+- [x] **Passo 2: montar `autoload/post.tscn`**
 
 MCP: `create_scene` `res://autoload/post.tscn`, raiz `CanvasLayer` chamada
 `Post`. `update_property`: `layer = 100`. Filho `ColorRect` chamado `Screen`.
@@ -541,7 +541,7 @@ No `Screen`, por `update_property`:
 MCP: `assign_shader_material` com `res://shaders/post.gdshader` no `Screen`.
 `attach_script` com `post.gd` na raiz. `save_scene`.
 
-- [ ] **Passo 3: escrever `autoload/post.gd`**
+- [x] **Passo 3: escrever `autoload/post.gd`**
 
 ```gdscript
 extends CanvasLayer
@@ -565,12 +565,12 @@ func _on_settings_changed(key: String) -> void:
     set_quality(Settings.quality)
 ```
 
-- [ ] **Passo 4: registrar o autoload**
+- [x] **Passo 4: registrar o autoload**
 
 MCP: `add_autoload` `Post` → `res://autoload/post.tscn`, depois de `Settings` e
 `Audio`. Conferir com `get_autoload`.
 
-- [ ] **Passo 5: verificar visualmente nos três níveis**
+- [x] **Passo 5: verificar visualmente nos três níveis**
 
 Criar cena temporária `scratchpad_post.tscn` com um `ColorRect` preto ocupando a
 tela e três `ColorRect` brancos pequenos (fontes de luz). `play_scene`,
@@ -579,17 +579,35 @@ tela e três `ColorRect` brancos pequenos (fontes de luz). `play_scene`,
 Depois, por `execute_game_script`: `Post.set_quality(0)` → screenshot;
 `Post.set_quality(1)` → screenshot; `Post.set_quality(2)` → screenshot.
 
-Aceitação: em 0 os quadrados brancos têm borda dura; em 1 e 2 têm halo, mais
-largo em 2; nos três os cantos estão visivelmente mais escuros que o centro
-(vinheta). `stop_scene` e `delete_scene` da cena temporária.
+Aceitação: em 0 os quadrados brancos têm borda dura; em 1 e 2 têm halo; nos três
+os cantos estão visivelmente mais escuros que o centro (vinheta).
 
-- [ ] **Passo 6: verificar que o clique atravessa**
+Medido (brilho médio do anel em volta de um quadrado branco, e canto contra
+centro): `q0 halo=0.0424`, `q1 halo=0.0532`, `q2 halo=0.0531`; canto `0.0157`
+contra centro `0.0549` — vinheta 3,5× mais escura na borda.
 
-Ainda na cena temporária, antes de apagá-la: adicionar um `Button` central,
-`play_scene`, `simulate_mouse_click` no centro, `get_output_log`.
+**Correção do critério:** o plano esperava halo "mais largo em 2", e isso está
+errado. O shader divide a soma por `taps`, então mais taps dá amostragem mais
+lisa, nunca bloom mais forte — a força do brilho não muda quando a criança troca
+a qualidade, que é o comportamento certo. Nesta cena de teste q1 e q2 saíram
+indistinguíveis até na granulação (desvio `0.09021` contra `0.09019`): 10 e 16
+taps só divergem com fonte de luz mais complexa. Reavaliar no menu real
+(Task 6) e na medição final (Task 12); se continuarem idênticos, o dropdown de
+Qualidade vale por 0-contra-o-resto e isso deve ser dito ao dono.
+
+- [x] **Passo 6: verificar que o clique atravessa**
+
+Ainda na cena temporária: `Button` central, `play_scene`, `simulate_mouse_click`
+no centro.
 Aceitação: o botão registra o clique — o `ColorRect` do Post não bloqueia input.
 
-- [ ] **Passo 7: commit**
+Executado: `gui_get_hovered_control()` no ponto do clique devolve `ClickProbe`
+(`Button`), não o `ColorRect`; e um contador em `meta` subiu para 1 depois do
+clique simulado. **`print()` de jogo embutido não aparece em `get_output_log`** —
+verificar comportamento em runtime por estado (`meta`, propriedade), nunca por
+print.
+
+- [x] **Passo 7: commit**
 
 ```bash
 git add shaders/post.gdshader autoload/post.gd autoload/post.tscn project.godot

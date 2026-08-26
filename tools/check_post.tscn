@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://chutet1mr2j5x"]
+
+[ext_resource type="Script" uid="uid://hmar16owayjj" path="res://tools/check_post.gd" id="1_qw50m"]
+
+[node name="CheckPost" type="Control" unique_id=542458911]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qw50m")
+
+[node name="Dark" type="ColorRect" parent="." unique_id=933433600]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+color = Color(0.05, 0.05, 0.08, 1)
+
+[node name="LightA" type="ColorRect" parent="." unique_id=1444450540]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 240.0
+offset_right = 420.0
+offset_bottom = 360.0
+mouse_filter = 2
+
+[node name="LightB" type="ColorRect" parent="." unique_id=1218820007]
+layout_mode = 0
+offset_left = 900.0
+offset_top = 700.0
+offset_right = 1020.0
+offset_bottom = 820.0
+mouse_filter = 2
+
+[node name="LightC" type="ColorRect" parent="." unique_id=1472041406]
+layout_mode = 0
+offset_left = 1500.0
+offset_top = 300.0
+offset_right = 1620.0
+offset_bottom = 420.0
+mouse_filter = 2
+
+[node name="ClickProbe" type="Button" parent="." unique_id=77176855]
+layout_mode = 0
+offset_left = 820.0
+offset_top = 480.0
+offset_right = 1100.0
+offset_bottom = 570.0
+text = "clique aqui"

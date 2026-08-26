@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bft20cv7c0ju0"]
+
+[ext_resource type="Script" uid="uid://cs0g2pvpc6n1f" path="res://autoload/post.gd" id="1_d3xhp"]
+[ext_resource type="Shader" uid="uid://dknxg4o5wkqpg" path="res://shaders/post.gdshader" id="2_evxvn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qif6n"]
+shader = ExtResource("2_evxvn")
+shader_parameter/taps = 16.0
+shader_parameter/bloom_intensity = 0.35
+shader_parameter/bloom_threshold = 0.9
+shader_parameter/bloom_knee = 0.5
+shader_parameter/bloom_radius = 0.035
+shader_parameter/vignette_intensity = 0.16
+shader_parameter/vignette_smoothness = 0.4
+shader_parameter/post_exposure_ev = 0.05
+shader_parameter/contrast_amount = 0.06
+shader_parameter/saturation_amount = 0.1
+
+[node name="Post" type="CanvasLayer" unique_id=1754987291]
+layer = 100
+script = ExtResource("1_d3xhp")
+
+[node name="Screen" type="ColorRect" parent="." unique_id=1177359484]
+material = SubResource("ShaderMaterial_qif6n")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2

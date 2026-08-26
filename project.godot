@@ -26,6 +26,7 @@ Audio="*res://autoload/audio.tscn"
 MCPScreenshot="*res://addons/godot_mcp/mcp_screenshot_service.gd"
 MCPInputService="*res://addons/godot_mcp/mcp_input_service.gd"
 MCPGameInspector="*res://addons/godot_mcp/mcp_game_inspector_service.gd"
+Post="*res://autoload/post.tscn"
 
 [display]
 

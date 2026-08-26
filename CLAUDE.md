@@ -217,8 +217,17 @@ Cada marco termina em algo rodando no aparelho. **Conforme um marco fecha, a se�
       pesada portada (`forest_puzzle`, 572 linhas no Flutter, corte em runtime — o pior caso).
       **Aceite:** 60 fps estáveis e memória de textura < 200 MB (Flutter hoje: ~586 MB). Não bateu,
       parar e reavaliar.
+      *Feito em 26/08/2026:* autoloads, shader de bloom, fundo animado sem vídeo. **Memória de
+      textura do menu: 127 MB** (era 237 MB antes de comprimir a placa) — dentro do alvo. **Fps
+      ainda não medido de verdade**: o jogo embutido é limitado a ~10 fps quando o editor está sem
+      foco, e a medição pelo terminal cai sempre nesse caso. Falta a fase pesada e o `LevelBase`.
 - [ ] **M1 — Casca do jogo** — splash, menu, mapa do mundo, 5 overlays, progressão, ajustes, i18n,
       áudio. Sai um jogo navegável com uma fase.
+      *Feito em 26/08/2026:* splash da produtora, menu principal completo, os 5 painéis
+      (seleção de mundo, ajustes, créditos, sair, portão parental), ajustes com persistência,
+      i18n pt-BR/it com troca em runtime, áudio com buses e música que não recomeça na troca de
+      cena. **Falta:** mapa do mundo de verdade (hoje é stub), progressão/estrelas, e o
+      `LevelBase` com os overlays de fase.
 - [ ] **M2 — Arquétipos** — as 9 cenas, extraídas conforme as fases forem portadas, **nunca antes**.
 - [ ] **M3 — Mundo 1 completo** — as 10 fases, paridade com o Flutter.
 - [ ] **M4 — Publicação** — export Android (keystore) e macOS (assinatura); atualizar `LINKS` no topo

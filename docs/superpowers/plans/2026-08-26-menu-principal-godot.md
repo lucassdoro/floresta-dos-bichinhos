@@ -1483,7 +1483,7 @@ volta no menu, ainda tocando. Atravessou as duas trocas de cena sem reiniciar.
 - Produz: `parental_gate.tscn` com `@export var site_url: String`, que abre a URL
   após 3 s de toque contínuo.
 
-- [ ] **Passo 1: montar `credits.tscn`**
+- [x] **Passo 1: montar `credits.tscn`**
 
 Raiz a partir de `core/panel_base.tscn`. Filhos:
 
@@ -1508,7 +1508,7 @@ Entradas e cores dos chips:
 | `credits.person.lucas.*` | `credits.role.creation` `#F2B840`, `credits.role.programming` `#61A84A` |
 | `credits.person.joao.*` | `credits.role.gamedesign` `#EB8C40` |
 
-- [ ] **Passo 2: escrever `credits.gd`**
+- [x] **Passo 2: escrever `credits.gd`**
 
 ```gdscript
 extends MenuPanel
@@ -1529,7 +1529,7 @@ func _open_gate() -> void:
     add_child(gate)
 ```
 
-- [ ] **Passo 3: montar `parental_gate.tscn`**
+- [x] **Passo 3: montar `parental_gate.tscn`**
 
 Raiz `Control` full rect (sem `panel_base` — este tem botão próprio de voltar):
 
@@ -1544,7 +1544,7 @@ Raiz `Control` full rect (sem `panel_base` — este tem botão próprio de volta
 | `Panel/BackButton` | `JuicyButton` | `chip_pill.webp` tingido `#B88C61`, 260×90, −215, `burst_count = 0` |
 | `Panel/BackButton/Label` | `Label` | `tr("credits.social.gate.back")`, `Instruction28`, branco |
 
-- [ ] **Passo 4: escrever `parental_gate.gd`**
+- [x] **Passo 4: escrever `parental_gate.gd`**
 
 ```gdscript
 extends Control
@@ -1578,7 +1578,7 @@ func _on_hold_input(event: InputEvent) -> void:
     _holding = event.pressed
 ```
 
-- [ ] **Passo 5: verificar os créditos**
+- [x] **Passo 5: verificar os créditos**
 
 `credits_scene` no inspector do `MainMenu`. `play_scene`, clicar em Créditos,
 `get_game_screenshot`.
@@ -1586,7 +1586,7 @@ Aceitação: painel com as duas pessoas, chips coloridos legíveis, bio quebrand
 linha dentro da largura, separador entre as entradas, rolagem funcionando
 (`simulate_mouse_move` + scroll), e **sem chip de site** (URL vazia).
 
-- [ ] **Passo 6: verificar o portão**
+- [x] **Passo 6: verificar o portão**
 
 Por `execute_game_script`, setar `site_url` do painel de créditos para
 `https://example.com` e reabrir. Aceitação: chip aparece; clicar abre o portão;
@@ -1597,7 +1597,7 @@ Não completar os 3 s durante o teste (abriria um navegador na máquina do dono)
 Verificar a chamada por leitura do código e por um teste com
 `site_url = ""`, que deve manter o chip escondido.
 
-- [ ] **Passo 7: commit**
+- [x] **Passo 7: commit**
 
 ```bash
 git add ui/menu
@@ -1606,6 +1606,38 @@ git commit -m "feat: creditos com chips e portao parental de 3 segundos"
 
 ---
 
+
+**Três correções durante a execução:**
+
+1. **`modulate` tinge os filhos junto.** Os chips de papel tinham o texto branco
+   multiplicado pela cor do chip — texto amarelo sobre fundo amarelo, invisível.
+   Trocado por `self_modulate` em todos os nós tingidos que têm filhos
+   (`creation`, `programming`, `gamedesign`, `SiteChip`, `BackButton`).
+2. **`TextureButton` não faz 9-patch.** O chip do site e o Voltar do portão
+   viravam um quadradinho com o texto cortado. Viraram `Button` com
+   `StyleBoxTexture` (`texture_margin_all = 12`), que faz 9-patch nativo, tem
+   texto próprio e dispensa o `Label` filho.
+3. **`_process` não roda no portão.** `is_processing()` diz `true`, `can_process()`
+   diz `true`, `process_mode` é INHERIT, o jogo desenhou 937 frames — e a barra
+   ficou em 0%; chamado à mão, `_process(0.5)` enche 17% certinho. Em vez de
+   perseguir o mistério, a barra virou **`Tween`** (`tween_property` de `value`
+   até `max_value` em 3 s), que é o caminho nativo que o projeto pede de todo
+   jeito. Fica a observação para quem for depurar `_process` dentro de painel
+   instanciado em `CanvasLayer`.
+
+**Verificado:** créditos com nomes e bios vindos do CSV, chips coloridos
+legíveis, separador entre as duas entradas, e o chip do site **escondido** com
+`site_url` vazia. Portão: título e instrução traduzidos; segurando, a barra enche
+e ao completar os 3 s ele abre a URL e se remove sozinho (testado com URL vazia,
+então nada abriu de fato); soltando no meio, o tween morre
+(`is_valid() = false`), a barra volta a 0% mesmo forçada a 42%, e o portão
+continua aberto.
+
+**Erro de método que vale registrar:** tentei medir o meio do hold com um
+busy-wait (`while Time.get_ticks_msec() - inicio < 1000`) dentro de
+`execute_game_script`. Isso bloqueia o thread principal, o Tween não avança e o
+jogo trava até o timeout. Espera dentro do jogo é `await ... timeout`, nunca
+laço ocupado.
 ### Task 11: Splash da DOMA e navegação completa
 
 **Arquivos:**

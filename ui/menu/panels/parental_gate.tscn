@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://cjn06y4q3w77u"]
+
+[ext_resource type="Theme" uid="uid://bbuvbjujai5uq" path="res://ui/theme.tres" id="1_hoa62"]
+[ext_resource type="Script" uid="uid://cku3r65wvca8t" path="res://ui/menu/panels/parental_gate.gd" id="2_h6l5g"]
+[ext_resource type="Texture2D" uid="uid://d1f5xlj5jqnk2" path="res://assets/art/UI/Buttons/modal_panel.webp" id="3_g86k0"]
+[ext_resource type="Texture2D" uid="uid://d15h0fuue1i5v" path="res://assets/art/UI/chip_pill.webp" id="4_egab0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s00hf"]
+texture = ExtResource("4_egab0")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+modulate_color = Color(0.72156864, 0.54901963, 0.38039216, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qeejx"]
+texture = ExtResource("4_egab0")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+modulate_color = Color(0.72156864, 0.54901963, 0.38039216, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hoa62"]
+texture = ExtResource("4_egab0")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+modulate_color = Color(0.72156864, 0.54901963, 0.38039216, 1)
+
+[node name="ParentalGate" type="Control" unique_id=2059909464]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_hoa62")
+script = ExtResource("2_h6l5g")
+
+[node name="Dim" type="ColorRect" parent="." unique_id=2052322975]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.55)
+
+[node name="Panel" type="NinePatchRect" parent="." unique_id=709151334]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -310.0
+offset_right = 450.0
+offset_bottom = 310.0
+texture = ExtResource("3_g86k0")
+patch_margin_left = 96
+patch_margin_top = 96
+patch_margin_right = 96
+patch_margin_bottom = 96
+
+[node name="Title" type="Label" parent="Panel" unique_id=1279017777]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 65.0
+offset_right = 840.0
+offset_bottom = 155.0
+theme_type_variation = &"SettingLabel44"
+theme_override_colors/font_color = Color(0.41960785, 0.2509804, 0.10980392, 1)
+text = "credits.social.gate.title"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Instruction" type="Label" parent="Panel" unique_id=671449512]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 155.0
+offset_right = 840.0
+offset_bottom = 285.0
+theme_type_variation = &"Instruction28"
+theme_override_colors/font_color = Color(0.54901963, 0.4, 0.2509804, 1)
+text = "credits.social.gate.instruction"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="HoldButton" type="TextureProgressBar" parent="Panel" unique_id=1641033136]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 315.0
+offset_right = 660.0
+offset_bottom = 425.0
+mouse_filter = 0
+nine_patch_stretch = true
+stretch_margin_left = 12
+stretch_margin_top = 12
+stretch_margin_right = 12
+stretch_margin_bottom = 12
+texture_under = ExtResource("4_egab0")
+texture_progress = ExtResource("4_egab0")
+tint_under = Color(0.7490196, 0.7490196, 0.7490196, 1)
+tint_progress = Color(0.38039216, 0.65882355, 0.2901961, 1)
+
+[node name="Label" type="Label" parent="Panel/HoldButton" unique_id=561875402]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_type_variation = &"Instruction28"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "credits.social.gate.hold"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="Panel" unique_id=1721342491]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 480.0
+offset_right = 580.0
+offset_bottom = 570.0
+theme_type_variation = &"Chip18"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_s00hf")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qeejx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hoa62")
+text = "credits.social.gate.back"

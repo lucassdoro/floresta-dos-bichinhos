@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dxyqekhx8f3lk" path="res://ui/menu/panels/quit_confirm.tscn" id="3_rm8yi"]
 [ext_resource type="Script" uid="uid://dh20ge7vqhkhy" path="res://backgrounds/menu_background.gd" id="4_fdmuo"]
 [ext_resource type="Texture2D" uid="uid://dp75ecia86d4o" path="res://assets/art/UI/MainMenu/logo.webp" id="5_fakly"]
+[ext_resource type="PackedScene" uid="uid://baf5c47mgtvib" path="res://ui/menu/panels/credits.tscn" id="5_tldux"]
 [ext_resource type="PackedScene" uid="uid://d3c2vm1sjp6l" path="res://core/juicy_button.tscn" id="6_tldux"]
 [ext_resource type="Texture2D" uid="uid://dmut2mk53lfmg" path="res://assets/art/UI/Buttons/button_story_mode.webp" id="7_mq8or"]
 [ext_resource type="Script" uid="uid://ugcjf40nt2nh" path="res://core/juicy_button.gd" id="8_r5uj6"]
@@ -342,6 +343,7 @@ theme = ExtResource("1_rjjod")
 script = ExtResource("2_rm8yi")
 world_select_scene = ExtResource("3_fakly")
 settings_panel_scene = ExtResource("3_fdmuo")
+credits_scene = ExtResource("5_tldux")
 quit_confirm_scene = ExtResource("3_rm8yi")
 
 [node name="Background" type="Node2D" parent="." unique_id=244872099 instance=ExtResource("3_bvgos")]

@@ -1,0 +1,231 @@
+[gd_scene format=3 uid="uid://baf5c47mgtvib"]
+
+[ext_resource type="Theme" uid="uid://bbuvbjujai5uq" path="res://ui/theme.tres" id="1_v8ae0"]
+[ext_resource type="Script" uid="uid://j4e8m6jrywxw" path="res://ui/menu/panels/credits.gd" id="2_3rco2"]
+[ext_resource type="PackedScene" uid="uid://d3c2vm1sjp6l" path="res://core/juicy_button.tscn" id="3_6gu8d"]
+[ext_resource type="Texture2D" uid="uid://b2ymt67xs1tbm" path="res://assets/art/UI/Buttons/button_back.webp" id="4_45v88"]
+[ext_resource type="Texture2D" uid="uid://d1f5xlj5jqnk2" path="res://assets/art/UI/Buttons/modal_panel.webp" id="5_ivt67"]
+[ext_resource type="Texture2D" uid="uid://d15h0fuue1i5v" path="res://assets/art/UI/chip_pill.webp" id="6_cyr21"]
+
+[sub_resource type="Animation" id="Animation_s5cw7"]
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.18),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.14, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.92, 0.92), Vector2(1.02, 1.02), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cd203"]
+_data = {
+&"pop_in": SubResource("Animation_s5cw7")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1tsdp"]
+texture = ExtResource("6_cyr21")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+modulate_color = Color(0.72156864, 0.54901963, 0.38039216, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v8ae0"]
+texture = ExtResource("6_cyr21")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+modulate_color = Color(0.72156864, 0.54901963, 0.38039216, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3rco2"]
+texture = ExtResource("6_cyr21")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+modulate_color = Color(0.72156864, 0.54901963, 0.38039216, 1)
+
+[node name="Credits" type="Control" unique_id=1234822742]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(960, 540)
+theme = ExtResource("1_v8ae0")
+script = ExtResource("2_3rco2")
+
+[node name="BackButton" parent="." unique_id=149491572 instance=ExtResource("3_6gu8d")]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 28.0
+offset_right = 170.0
+offset_bottom = 143.0
+texture_normal = ExtResource("4_45v88")
+burst_count = 0
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=1559132887]
+libraries/ = SubResource("AnimationLibrary_cd203")
+autoplay = &"pop_in"
+
+[node name="Panel" type="NinePatchRect" parent="." unique_id=533801171]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -490.0
+offset_top = -380.0
+offset_right = 490.0
+offset_bottom = 380.0
+texture = ExtResource("5_ivt67")
+patch_margin_left = 96
+patch_margin_top = 96
+patch_margin_right = 96
+patch_margin_bottom = 96
+
+[node name="Scroll" type="ScrollContainer" parent="Panel" unique_id=1379461935]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 60.0
+offset_right = 900.0
+offset_bottom = 620.0
+horizontal_scroll_mode = 0
+
+[node name="Entries" type="VBoxContainer" parent="Panel/Scroll" unique_id=1218973020]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 28
+
+[node name="Name_lucas" type="Label" parent="Panel/Scroll/Entries" unique_id=1733227976]
+layout_mode = 2
+theme_type_variation = &"Name36"
+text = "credits.person.lucas.name"
+
+[node name="Roles_lucas" type="HBoxContainer" parent="Panel/Scroll/Entries" unique_id=2113634954]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="creation" type="NinePatchRect" parent="Panel/Scroll/Entries/Roles_lucas" unique_id=1923075056]
+modulate = Color(0.9490196, 0.72156864, 0.2509804, 1)
+custom_minimum_size = Vector2(200, 36)
+layout_mode = 2
+texture = ExtResource("6_cyr21")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="Label" type="Label" parent="Panel/Scroll/Entries/Roles_lucas/creation" unique_id=330495578]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_type_variation = &"Chip18"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "credits.role.creation"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="programming" type="NinePatchRect" parent="Panel/Scroll/Entries/Roles_lucas" unique_id=1643749993]
+modulate = Color(0.38039216, 0.65882355, 0.2901961, 1)
+custom_minimum_size = Vector2(200, 36)
+layout_mode = 2
+texture = ExtResource("6_cyr21")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="Label" type="Label" parent="Panel/Scroll/Entries/Roles_lucas/programming" unique_id=1146659885]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_type_variation = &"Chip18"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "credits.role.programming"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bio_lucas" type="Label" parent="Panel/Scroll/Entries" unique_id=1940363763]
+custom_minimum_size = Vector2(780, 0)
+layout_mode = 2
+theme_type_variation = &"Bio26"
+theme_override_colors/font_color = Color(0.54901963, 0.4, 0.2509804, 1)
+text = "credits.person.lucas.bio"
+autowrap_mode = 3
+
+[node name="Divider" type="ColorRect" parent="Panel/Scroll/Entries" unique_id=270689349]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+color = Color(0.72, 0.55, 0.38, 0.5)
+
+[node name="Name_joao" type="Label" parent="Panel/Scroll/Entries" unique_id=94476998]
+layout_mode = 2
+theme_type_variation = &"Name36"
+text = "credits.person.joao.name"
+
+[node name="Roles_joao" type="HBoxContainer" parent="Panel/Scroll/Entries" unique_id=171240723]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="gamedesign" type="NinePatchRect" parent="Panel/Scroll/Entries/Roles_joao" unique_id=1869617624]
+modulate = Color(0.92156863, 0.54901963, 0.2509804, 1)
+custom_minimum_size = Vector2(200, 36)
+layout_mode = 2
+texture = ExtResource("6_cyr21")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="Label" type="Label" parent="Panel/Scroll/Entries/Roles_joao/gamedesign" unique_id=252433994]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_type_variation = &"Chip18"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "credits.role.gamedesign"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bio_joao" type="Label" parent="Panel/Scroll/Entries" unique_id=834667693]
+custom_minimum_size = Vector2(780, 0)
+layout_mode = 2
+theme_type_variation = &"Bio26"
+theme_override_colors/font_color = Color(0.54901963, 0.4, 0.2509804, 1)
+text = "credits.person.joao.bio"
+autowrap_mode = 3
+
+[node name="SiteChip" type="Button" parent="Panel" unique_id=355063130]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 640.0
+offset_right = 620.0
+offset_bottom = 700.0
+theme_type_variation = &"Chip18"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_1tsdp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_v8ae0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3rco2")
+text = "credits.site"

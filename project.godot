@@ -23,6 +23,9 @@ buses/default_bus_layout="uid://dwr7503lvsekc"
 
 Settings="*res://autoload/settings.gd"
 Audio="*res://autoload/audio.tscn"
+MCPScreenshot="*res://addons/godot_mcp/mcp_screenshot_service.gd"
+MCPInputService="*res://addons/godot_mcp/mcp_input_service.gd"
+MCPGameInspector="*res://addons/godot_mcp/mcp_game_inspector_service.gd"
 
 [display]
 
@@ -39,6 +42,10 @@ enabled=PackedStringArray("res://addons/godot_mcp/plugin.cfg")
 [godot_mcp_pro]
 
 require_connection_token=true
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://assets/i18n/ui.pt_BR.translation", "res://assets/i18n/ui.it.translation")
 
 [physics]
 

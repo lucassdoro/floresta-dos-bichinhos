@@ -361,7 +361,7 @@ git commit -m "feat: autoloads de ajustes e audio com buses Music/SFX/Voice"
   variações de tipo `Title80`, `ModalQuestion66`, `ModalButton54`,
   `SettingLabel44`, `Name36`, `Instruction28`, `Bio26`, `Chip18`.
 
-- [ ] **Passo 1: escrever o script de verificação (falha)**
+- [x] **Passo 1: escrever o script de verificação (falha)**
 
 `scratchpad/check_i18n.gd`:
 
@@ -377,12 +377,12 @@ func _init() -> void:
     quit()
 ```
 
-- [ ] **Passo 2: rodar e ver falhar**
+- [x] **Passo 2: rodar e ver falhar**
 
 MCP: `run_headless_script`.
 Esperado: as três linhas com `FALHOU` (a chave volta crua).
 
-- [ ] **Passo 3: escrever o CSV**
+- [x] **Passo 3: escrever o CSV**
 
 Criar `assets/i18n/ui.csv` com cabeçalho `keys,pt_BR,it` e **todas** as entradas
 de `../floresta-dos-bichinhos-old/lib/strings.dart` (~60 chaves), portadas
@@ -398,7 +398,7 @@ credits.person.joao.bio,"Imagina novas aventuras para os bichinhos: traz ideias 
 credits.site,Site do jogo,Sito del gioco
 ```
 
-- [ ] **Passo 4: importar e registrar**
+- [x] **Passo 4: importar e registrar**
 
 Reimportar **pelo editor** — dar foco na janela do Godot, que reimporta sozinho.
 Nunca por `godot --headless --import`: isso sobe um segundo editor, que regenera
@@ -406,12 +406,12 @@ Nunca por `godot --headless --import`: isso sobe um segundo editor, que regenera
 MCP: `set_project_setting` em `internationalization/locale/translations` com o
 array dos dois `.translation`.
 
-- [ ] **Passo 5: rodar e ver passar**
+- [x] **Passo 5: rodar e ver passar**
 
 MCP: `run_headless_script` com `check_i18n.gd`.
 Esperado: `pt: OK`, `it: OK`, `sem chave crua: OK`.
 
-- [ ] **Passo 6: criar o tema**
+- [x] **Passo 6: criar o tema**
 
 MCP: `create_theme` em `res://ui/theme.tres`, fonte padrão
 `res://assets/fonts/Baloo2-ExtraBold.ttf`. Depois, por
@@ -426,16 +426,23 @@ MCP: `create_theme` em `res://ui/theme.tres`, fonte padrão
 - `OptionButton`: `normal`/`hover`/`pressed` em `StyleBoxFlat` creme `#FFF5DE`,
   borda `#B88C61` com alpha 0.6 e 2 px, raio 10; `font_color` `#6B401C`.
 
-- [ ] **Passo 7: conferir o tema**
+- [x] **Passo 7: conferir o tema**
 
 Criar uma cena temporária com um `Label` (`theme_type_variation = Title80`), um
 `HSlider` e um `OptionButton`, aplicar o tema na raiz, `save_scene` e
 `get_editor_screenshot`.
 Aceitação: texto marrom em Baloo2 grande, slider com trilha verde e botão
-amarelo, dropdown creme com borda marrom. Apagar a cena temporária depois
-(`delete_scene`).
+amarelo, dropdown creme com borda marrom.
 
-- [ ] **Passo 8: commit**
+Executado: os tools `set_theme_*` fazem override **em nó**, não editam um
+`.tres`, então o tema foi montado por `execute_editor_script`
+(`allow_unsafe_editor_io=true` por causa do `ResourceSaver.save`). O grabber
+amarelo do slider é um **ícone**, não uma stylebox: virou uma `ImageTexture`
+desenhada por código e embutida no próprio `theme.tres` — sem PNG solto e sem
+depender de reimportação. A cena `res://tools/check_theme.tscn` fica de pé até a
+Task 12: serve para reconferir o tema a cada mudança.
+
+- [x] **Passo 8: commit**
 
 ```bash
 git add assets/i18n ui/theme.tres project.godot

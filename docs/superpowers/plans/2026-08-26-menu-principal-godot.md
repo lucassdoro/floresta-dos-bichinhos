@@ -1091,7 +1091,7 @@ guarda de cena nula segurou.
 - Produz: `quit_confirm.tscn`, que emite `closed` no "Não" e chama
   `get_tree().quit()` no "Sim".
 
-- [ ] **Passo 1: montar `core/panel_base.tscn`**
+- [x] **Passo 1: montar `core/panel_base.tscn`**
 
 MCP: `create_scene`, raiz `Control` chamada `MenuPanel`, full rect,
 `theme = res://ui/theme.tres`, `pivot_offset` no centro da tela (960, 540).
@@ -1104,7 +1104,7 @@ topo-esquerdo, `burst_count = 0`).
 `scale` `(0.92,0.92)` em 0 → `(1.02,1.02)` em 0,14 → `(1,1)` em 0,25.
 `autoplay = pop_in`.
 
-- [ ] **Passo 2: escrever `core/menu_panel.gd`**
+- [x] **Passo 2: escrever `core/menu_panel.gd`**
 
 ```gdscript
 class_name MenuPanel
@@ -1122,7 +1122,7 @@ func close() -> void:
 
 O clique já toca o som dentro do `JuicyButton`; o painel não repete.
 
-- [ ] **Passo 3: montar `quit_confirm.tscn`**
+- [x] **Passo 3: montar `quit_confirm.tscn`**
 
 Cena independente: **não** herda de `panel_base.tscn`, porque este modal não tem
 botão voltar e tem animação própria. Raiz `Control` full rect com script
@@ -1162,12 +1162,12 @@ Botões de modal não crescem nem encolhem — só recebem o tint de press, como
 Flutter. No inspector de `NoButton` e `YesButton`: `hover_scale = 1.0`,
 `pressed_scale = 1.0`, `burst_count = 0`.
 
-- [ ] **Passo 4: ligar no menu**
+- [x] **Passo 4: ligar no menu**
 
 No inspector do `MainMenu`, `quit_confirm_scene` =
 `res://ui/menu/panels/quit_confirm.tscn`. `save_scene`.
 
-- [ ] **Passo 5: verificar**
+- [x] **Passo 5: verificar**
 
 `play_scene` com `main_menu.tscn`; `simulate_mouse_click` no botão Sair;
 `get_game_screenshot`.
@@ -1181,7 +1181,7 @@ Não testar o "Sim" com o jogo rodando pelo MCP (ele fecha a sessão de play);
 verificar apenas que `YesButton.pressed` está conectado a `quit`, por
 `find_signal_connections`.
 
-- [ ] **Passo 6: commit**
+- [x] **Passo 6: commit**
 
 ```bash
 git add core/menu_panel.gd core/panel_base.tscn ui/menu
@@ -1190,6 +1190,13 @@ git commit -m "feat: base dos paineis e modal de confirmacao de saida"
 
 ---
 
+
+**Verificado em execução:** clique no Sair abre o modal — tela escurecida,
+painel com pop, `tr("quitmodal.question")` em pt-BR, botões verde e vermelho, e o
+**menu continua visível atrás**. Clique no "Não": `paineis abertos: 0`, menu e
+placa visíveis, botão Sair ainda clicável. O "Sim" foi conferido sem ser clicado
+— `pressed.get_connections()` mostra `SceneTree.quit` ligado (mais o
+`_on_pressed` do próprio botão, que toca o som).
 ### Task 8: Painel de ajustes
 
 **Arquivos:**

@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://ekqn5b0c1x5h"]
+
+[ext_resource type="Theme" uid="uid://bbuvbjujai5uq" path="res://ui/theme.tres" id="1_qvi83"]
+[ext_resource type="Script" uid="uid://c86b21xc37gig" path="res://core/menu_panel.gd" id="2_s0dmy"]
+[ext_resource type="PackedScene" uid="uid://d3c2vm1sjp6l" path="res://core/juicy_button.tscn" id="3_exoyv"]
+[ext_resource type="Texture2D" uid="uid://b2ymt67xs1tbm" path="res://assets/art/UI/Buttons/button_back.webp" id="4_ccqvs"]
+[ext_resource type="Script" uid="uid://ugcjf40nt2nh" path="res://core/juicy_button.gd" id="5_j73we"]
+
+[sub_resource type="Animation" id="Animation_s5cw7"]
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.18),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.14, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.92, 0.92), Vector2(1.02, 1.02), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cd203"]
+_data = {
+&"pop_in": SubResource("Animation_s5cw7")
+}
+
+[node name="MenuPanel" type="Control" unique_id=1234822742]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+pivot_offset = Vector2(960, 540)
+theme = ExtResource("1_qvi83")
+script = ExtResource("2_s0dmy")
+
+[node name="BackButton" type="TextureButton" parent="." unique_id=149491572 instance=ExtResource("3_exoyv")]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 28.0
+offset_right = 170.0
+offset_bottom = 143.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_ccqvs")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("5_j73we")
+burst_count = 0
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=1559132887]
+libraries/ = SubResource("AnimationLibrary_cd203")
+autoplay = &"pop_in"

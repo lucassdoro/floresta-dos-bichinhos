@@ -94,6 +94,48 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="Image" id="Image_jf26r"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0),
+"format": "RGBA8",
+"height": 1,
+"mipmaps": false,
+"width": 1
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_6lx7k"]
+image = SubResource("Image_jf26r")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtqkv"]
+bg_color = Color(0.38039216, 0.65882355, 0.2901961, 0.22)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_47c11"]
+bg_color = Color(0.38039216, 0.65882355, 0.2901961, 0.35)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2j8s8"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 0.9607843, 0.87058824, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.72156864, 0.54901963, 0.38039216, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
 [resource]
 default_font = ExtResource("1_rqugq")
 default_font_size = 36
@@ -124,6 +166,17 @@ OptionButton/styles/focus = SubResource("StyleBoxFlat_iqtc0")
 OptionButton/styles/hover = SubResource("StyleBoxFlat_7any1")
 OptionButton/styles/normal = SubResource("StyleBoxFlat_3fgq6")
 OptionButton/styles/pressed = SubResource("StyleBoxFlat_y5ki2")
+PopupMenu/colors/font_color = Color(0.41960785, 0.2509804, 0.10980392, 1)
+PopupMenu/colors/font_hover_color = Color(0.41960785, 0.2509804, 0.10980392, 1)
+PopupMenu/constants/h_separation = 16
+PopupMenu/constants/icon_max_width = 56
+PopupMenu/constants/v_separation = 10
+PopupMenu/font_sizes/font_size = 36
+PopupMenu/icons/radio_checked = SubResource("ImageTexture_6lx7k")
+PopupMenu/icons/radio_unchecked = SubResource("ImageTexture_6lx7k")
+PopupMenu/styles/checked = SubResource("StyleBoxFlat_rtqkv")
+PopupMenu/styles/hover = SubResource("StyleBoxFlat_47c11")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_2j8s8")
 SettingLabel44/base_type = &"Label"
 SettingLabel44/font_sizes/font_size = 44
 Title80/base_type = &"Label"

@@ -3,15 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ikw6qhnfmtak"
-path="res://.godot/imported/Level15Background.png-ac29230f0ed495aac5fe47c5eb4eed85.ctex"
+path.s3tc="res://.godot/imported/Level15Background.png-ac29230f0ed495aac5fe47c5eb4eed85.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/art/Backgrounds/Level15Background.png"
-dest_files=["res://.godot/imported/Level15Background.png-ac29230f0ed495aac5fe47c5eb4eed85.ctex"]
+dest_files=["res://.godot/imported/Level15Background.png-ac29230f0ed495aac5fe47c5eb4eed85.s3tc.ctex"]
 
 [params]
 

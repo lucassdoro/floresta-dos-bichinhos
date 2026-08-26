@@ -3,15 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1j0kw5nl6wg5"
-path="res://.godot/imported/Level18Background.png-a74d6fdaa18457b5821d928eea96b416.ctex"
+path.s3tc="res://.godot/imported/Level18Background.png-a74d6fdaa18457b5821d928eea96b416.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/art/Backgrounds/Level18Background.png"
-dest_files=["res://.godot/imported/Level18Background.png-a74d6fdaa18457b5821d928eea96b416.ctex"]
+dest_files=["res://.godot/imported/Level18Background.png-a74d6fdaa18457b5821d928eea96b416.s3tc.ctex"]
 
 [params]
 

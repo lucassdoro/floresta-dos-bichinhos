@@ -33,6 +33,10 @@ window/handheld/orientation=1
 
 enabled=PackedStringArray("res://addons/godot_mcp/plugin.cfg")
 
+[godot_mcp_pro]
+
+require_connection_token=true
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

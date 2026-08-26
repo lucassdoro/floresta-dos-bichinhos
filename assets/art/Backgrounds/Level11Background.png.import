@@ -3,15 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://nhhg807o2ywq"
-path="res://.godot/imported/Level11Background.png-3fbac0d9aebfb18182c6e2e7c6d27d77.ctex"
+path.s3tc="res://.godot/imported/Level11Background.png-3fbac0d9aebfb18182c6e2e7c6d27d77.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/art/Backgrounds/Level11Background.png"
-dest_files=["res://.godot/imported/Level11Background.png-3fbac0d9aebfb18182c6e2e7c6d27d77.ctex"]
+dest_files=["res://.godot/imported/Level11Background.png-3fbac0d9aebfb18182c6e2e7c6d27d77.s3tc.ctex"]
 
 [params]
 

@@ -24,32 +24,31 @@ Migração vinda da versão Flutter/Flame. Plano completo: `~/Games/2026-08-26-m
 6. **Gráfico bonito, sem serrilhado.** Filtro de textura já é *Linear Mipmap* no projeto e MSAA 2D
    está em 4×; arte que entra precisa de mipmap ligado no `.import` e escala perto de 1,0–1,5×.
 
-### Dirigindo o Godot
+### Dirigindo o Godot — sempre pelos tools MCP
 
-Duas vias, mesmo servidor:
+**Usar os tools MCP, nunca o `cli.js`.** O CLI do addon v1.16.0 não implementa o handshake de
+autenticação (`grep -c auth cli.js` = 0) e este projeto exige token — em CLI, 100% dos comandos
+falham com `-32001`. Só o servidor stdio (`build/index.js`) autentica.
 
-```bash
-node /Users/lucasdoro/Games/.godot-mcp-pro/server/build/cli.js --help
+**Token de conexão** — `godot_mcp_pro/require_connection_token=true` no `project.godot`. O `.mcp.json`
+aponta pro arquivo (o token é regenerado a cada início do editor, nunca fixar o valor):
+
+```
+~/Library/Application Support/Godot/app_userdata/Floresta dos Bichinhos Perdidos/mcp_auth_token
 ```
 
-- **Tools MCP** (`.mcp.json` na raiz) — via preferida, aparece após reiniciar a sessão do Claude Code.
-- **CLI** — mesma capacidade, funciona sem reiniciar sessão e gasta menos contexto. Grupos:
-  `project, scene, node, script, editor, input, runtime`. Sempre `--help` antes de chutar flag.
+**Por que o token existe:** o addon varre as portas 6505–6514 e *todo* editor Godot aberto na máquina
+se conecta ao mesmo servidor MCP; quem conecta por último ganha. Sem token, um comando podia ser
+executado dentro de outro projeto sem aviso — medido em 26/08/2026: **4 de 6 comandos caíam no
+`pop-it`**. Com token, o projeto errado **recusa** em vez de executar.
 
-```bash
-CLI=/Users/lucasdoro/Games/.godot-mcp-pro/server/build/cli.js
-node $CLI project info            # confere em QUAL projeto está conectado
-node $CLI scene tree
-node $CLI editor errors
-node $CLI editor editor-screenshot
-node $CLI scene play              # runtime tools só funcionam depois disto
-node $CLI editor screenshot
-```
+⚠️ **Token protege, mas não dá concorrência.** Com dois editores Godot abertos, os dois continuam
+disputando a conexão e o autenticado é derrubado (`connected / connected / disconnected` no log do
+servidor). Para trabalhar: **um editor Godot aberto por vez**. O `pop-it` também está com token
+ligado e documentado no `CLAUDE.md` dele.
 
-⚠️ **Sempre rodar `project info` primeiro** e confirmar `project_name = "Floresta dos Bichinhos
-Perdidos"`. O addon varre as portas 6505–6514 e **todo editor Godot aberto na máquina** se conecta ao
-mesmo servidor — quem conecta por último ganha. Se houver outro projeto aberto (ex.: `pop-it`),
-fechar antes, senão o comando pode cair no projeto errado.
+Fluxo padrão: `get_project_info` → `get_scene_tree` → construir → `save_scene` →
+`get_editor_screenshot` → `play_scene` + `get_game_screenshot` para validar em execução.
 
 ### Armadilhas do MCP
 

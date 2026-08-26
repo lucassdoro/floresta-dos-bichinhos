@@ -884,7 +884,7 @@ git commit -m "feat: botao juicy e explosao de brilhos reutilizaveis"
   `open_panel(scene: PackedScene, hide_sign: bool) -> void` e
   `close_panel() -> void` em `main_menu.gd`.
 
-- [ ] **Passo 1: montar o esqueleto**
+- [x] **Passo 1: montar o esqueleto**
 
 MCP: `create_scene` `res://ui/menu/main_menu.tscn`, raiz `Control` chamada
 `MainMenu` com `set_anchor_preset` full rect e `mouse_filter = 2` (IGNORE, pra
@@ -895,14 +895,18 @@ Filhos, nesta ordem (a ordem é a profundidade):
 1. `Background` — instância de `backgrounds/menu_background.tscn`
    (`add_scene_instance`).
 2. `Leaves` — `GPUParticles2D`.
-3. `WelcomeSign` — `AnimatedSprite2D`.
+3. `WelcomeSign` — **`Control` ancorado à direita** com um `AnimatedSprite2D`
+   chamado `Frames` dentro. Corrigido durante a execução: `AnimatedSprite2D` é
+   `Node2D` e não tem âncora, então posição absoluta quebraria fora de 16:9. Vale
+   o mesmo para `Leaves`, que virou `Control` (top-wide) com o
+   `GPUParticles2D` `Falling` dentro.
 4. `MenuUI` — `Control` full rect, `mouse_filter = 2`.
 5. `Effects` — `Node2D`, no grupo `effects` (`set_node_groups`).
 6. `Overlays` — `CanvasLayer`.
 
 `save_scene` e `get_editor_screenshot` para confirmar a árvore.
 
-- [ ] **Passo 2: logo com intro e idle**
+- [x] **Passo 2: logo com intro e idle**
 
 Dentro de `MenuUI`, `TextureRect` chamado `Logo`:
 `texture = res://assets/art/UI/MainMenu/logo.webp`, `expand_mode = 1`,
@@ -919,7 +923,7 @@ tamanho na proporção 919×427, `pivot_offset` no centro,
 
 `autoplay = intro`; no script, `animation_finished` de `intro` toca `idle`.
 
-- [ ] **Passo 3: placa de boas-vindas**
+- [x] **Passo 3: placa de boas-vindas**
 
 No `AnimatedSprite2D` `WelcomeSign`: `SpriteFrames` com os 53 frames de
 `assets/art/UI/WelcomeSign/` em ordem (`welcome_sign_0001` … `welcome_sign_0105`,
@@ -931,7 +935,7 @@ que anima `frame` de 0 a 52, `loop_mode = pingpong`, e os keyframes com curva de
 ease (mais denso no meio, esparso nas pontas) — é isso que zera a velocidade nas
 viradas, sem tranco. `autoplay = sway`.
 
-- [ ] **Passo 4: folhas caindo**
+- [x] **Passo 4: folhas caindo**
 
 No `GPUParticles2D` `Leaves`, ancorado no topo e largo como a tela:
 
@@ -951,7 +955,7 @@ No `GPUParticles2D` `Leaves`, ancorado no topo e largo como a tela:
 `turbulence_noise_scale ≈ 2`, e `alpha_curve` subindo de 0 a 1 nos primeiros 4%
 da vida (~0,5 s).
 
-- [ ] **Passo 5: coluna de botões**
+- [x] **Passo 5: coluna de botões**
 
 Dentro de `MenuUI`, `VBoxContainer` chamado `Buttons`, centrado
 horizontalmente, com o centro do grupo ~184 px abaixo do centro da tela,
@@ -968,7 +972,7 @@ Cinco instâncias de `core/juicy_button.tscn`, nesta ordem, cada uma com
 | `CreditsButton` | `button_credits.webp` | 300×101 | `#FFE073` | 30 | 120 |
 | `QuitButton` | `button_quit.webp` | 260×88 | `#FFA68C` | 12 | 60 |
 
-- [ ] **Passo 6: escrever `ui/menu/main_menu.gd`**
+- [x] **Passo 6: escrever `ui/menu/main_menu.gd`**
 
 ```gdscript
 extends Control
@@ -1024,7 +1028,7 @@ Ligar os `@export` de cena no inspector fica para as tarefas 7–10, conforme ca
 painel existir. Até lá, botão com cena vazia não faz nada — e é isso que o
 `FreeMode` faz para sempre.
 
-- [ ] **Passo 7: verificar a tela**
+- [x] **Passo 7: verificar a tela**
 
 `play_scene` com `main_menu.tscn`, `get_game_screenshot`.
 Aceitação, comparando com
@@ -1036,13 +1040,13 @@ tocando; sem sobreposição de botão com botão.
 `capture_frames` por ~2 s no início: aceitação — o logo entra crescendo com fade,
 depois respira; nenhum elemento aparece por teleporte.
 
-- [ ] **Passo 8: verificar 4:3**
+- [x] **Passo 8: verificar 4:3**
 
 Rodar a 1440×1080 e tirar screenshot.
 Aceitação: nenhum botão sai da tela; logo continua colado no topo; a placa não
 cobre mais que a borda direita da coluna de botões.
 
-- [ ] **Passo 9: commit**
+- [x] **Passo 9: commit**
 
 ```bash
 git add ui/menu
@@ -1051,6 +1055,29 @@ git commit -m "feat: tela do menu com logo, placa, folhas e botoes"
 
 ---
 
+
+**Correções feitas durante a execução:**
+
+- `set_anchors_preset()` muda o significado de `position`, que passa a ser
+  relativa à âncora: o logo com `PRESET_CENTER_TOP` e `position.x = 500` foi
+  parar em x=1460. Posicionar por `anchor_*` + `offset_*`, nunca por `position`,
+  em nó ancorado.
+- Nós `Node2D` (placa, folhas) não têm âncora e por isso ganharam um `Control`
+  ancorado como pai — a alternativa seria reposicionar por script a cada resize.
+- Sobre `stretch aspect = expand` com base 1920×1080: em 4:3 a escala é
+  `min(largura/1920, altura/1080)`, então **sobra altura** (1920×1440 lógicos),
+  não largura. Âncoras horizontais estão seguras; as verticais é que precisam de
+  atenção na Task 12.
+
+**Medições:** logo em `offset -459.5 .. 459.5` colado no topo; placa em
+`(983.5, 326.8)` tamanho `886.5×788` (borda direita em 1870, como no Flutter);
+coluna de botões de y=400 a y=1048 — o mesmo intervalo que sai dos
+`anchoredPosition` do Flutter (+67 no primeiro, −464 no último). Animações
+conferidas em execução por duas leituras seguidas: logo passou de `intro` para
+`idle` e a escala foi de `1.020` para `1.005` (respirando); placa em `sway` foi
+do frame 8 ao 52; folhas emitindo. Clique no Modo História com o painel ainda
+inexistente: brilho nasceu, menu continuou visível, nenhum painel abriu — a
+guarda de cena nula segurou.
 ### Task 7: Base dos painéis e modal de sair
 
 **Arquivos:**

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bdkm4khst21nt"]
+
+[ext_resource type="Script" uid="uid://p004kk8qxa0y" path="res://autoload/audio.gd" id="1_uw2yb"]
+[ext_resource type="AudioStream" uid="uid://csnuuvd57cncq" path="res://assets/audio/Music/menu_music.mp3" id="2_0rit4"]
+[ext_resource type="AudioStream" uid="uid://kuhbf8ybn041" path="res://assets/audio/UI/ui_click.wav" id="3_yacee"]
+[ext_resource type="AudioStream" uid="uid://bq5kx8r3cligx" path="res://assets/audio/UI/ui_locked.wav" id="4_d3qhs"]
+
+[node name="Audio" type="Node" unique_id=1479958995]
+script = ExtResource("1_uw2yb")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1492501654]
+stream = ExtResource("2_0rit4")
+bus = &"Music"
+
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=1504161497]
+stream = ExtResource("3_yacee")
+bus = &"SFX"
+
+[node name="Locked" type="AudioStreamPlayer" parent="." unique_id=596218019]
+stream = ExtResource("4_d3qhs")
+volume_db = -0.9
+bus = &"SFX"

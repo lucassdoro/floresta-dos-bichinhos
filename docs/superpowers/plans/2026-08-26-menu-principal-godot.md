@@ -48,10 +48,22 @@ dirigir o editor.
 Não há framework de teste instalado e não vamos instalar um. Cada tarefa fecha
 com uma verificação executável:
 
-- **Lógica pura** (Settings, Audio, i18n): script GDScript rodado pelo tool MCP
-  `run_headless_script`, que imprime `OK` ou `FALHOU` com o valor obtido. Esses
-  passos seguem TDD de verdade: rodar o script **antes** da implementação e ver
-  falhar.
+- **Lógica pura** (Settings, Audio, i18n): script GDScript em `res://tools/` que
+  imprime `OK` ou `FALHOU` com o valor obtido, rodado em headless. Esses passos
+  seguem TDD de verdade: rodar **antes** da implementação e ver falhar.
+  - Script que **não** toca autoload pode ser `extends SceneTree`, rodado com
+    `--script`.
+  - Script que toca autoload (`Settings`, `Audio`, `Post`) tem que ser uma
+    **cena** — `extends Node` com `_ready` e `get_tree().quit()` no fim, rodada
+    com `godot --headless --path . res://tools/<nome>.tscn`. Medido em
+    26/08/2026: com `--script` o Godot não instancia autoload nenhum
+    (`root.get_children()` volta vazio) e o compilador nem reconhece o
+    identificador `Settings`.
+  - Rodar pelo terminal, não pelo tool `run_headless_script`: o tool estourava o
+    timeout do próprio comando enquanto o mesmo binário, com os mesmos
+    argumentos, respondia em menos de um segundo.
+  - Os scripts de verificação vivem em `res://tools/` (não no scratchpad) porque
+    o Godot só executa caminhos `res://`. A Task 12 apaga a pasta.
 - **Cena visual**: `save_scene` → `get_editor_screenshot` (montagem) e
   `play_scene` → `get_game_screenshot` (execução), com um critério de aceitação
   escrito no passo — o que precisa aparecer, onde. Screenshot sem critério não
@@ -101,7 +113,7 @@ com **este** projeto.
 - Produz: `Audio.play_click() -> void`, `Audio.play_locked() -> void`,
   `Audio.start_music_fade() -> void`, `Audio.apply_volumes() -> void`.
 
-- [ ] **Passo 1: escrever o script de verificação que falha**
+- [x] **Passo 1: escrever o script de verificação que falha**
 
 Salvar em `scratchpad/check_settings.gd` (fora do projeto Godot, executado por
 `run_headless_script`):
@@ -132,12 +144,12 @@ func _init() -> void:
     quit()
 ```
 
-- [ ] **Passo 2: rodar e ver falhar**
+- [x] **Passo 2: rodar e ver falhar**
 
 MCP: `run_headless_script` com o arquivo acima.
 Esperado: erro de carregamento — `res://autoload/settings.gd` não existe.
 
-- [ ] **Passo 3: criar `autoload/settings.gd`**
+- [x] **Passo 3: criar `autoload/settings.gd`**
 
 MCP: `create_script` em `res://autoload/settings.gd`:
 
@@ -175,19 +187,19 @@ func set_value(key: String, value: Variant) -> void:
     changed.emit(key)
 ```
 
-- [ ] **Passo 4: rodar e ver passar**
+- [x] **Passo 4: rodar e ver passar**
 
 MCP: `run_headless_script` com `check_settings.gd`.
 Esperado: `padroes: OK`, `sinal: OK`, `persistencia: OK`.
 
-- [ ] **Passo 5: criar os buses de áudio**
+- [x] **Passo 5: criar os buses de áudio**
 
 MCP: `add_audio_bus` três vezes — `Music`, `SFX`, `Voice`, todos com
 `send = "Master"`. Depois `get_audio_bus_layout` para confirmar que o layout tem
 os quatro buses e foi salvo em `res://default_bus_layout.tres`.
 Esperado: layout com `Master, Music, SFX, Voice`.
 
-- [ ] **Passo 6: escrever o script de verificação do Audio (falha)**
+- [x] **Passo 6: escrever o script de verificação do Audio (falha)**
 
 `scratchpad/check_audio.gd`:
 
@@ -218,12 +230,12 @@ func _init() -> void:
     quit()
 ```
 
-- [ ] **Passo 7: rodar e ver falhar**
+- [x] **Passo 7: rodar e ver falhar**
 
 MCP: `run_headless_script`.
 Esperado: `buses: OK` e falha ao carregar `audio.tscn`.
 
-- [ ] **Passo 8: criar `autoload/audio.gd`**
+- [x] **Passo 8: criar `autoload/audio.gd`**
 
 MCP: `create_script` em `res://autoload/audio.gd`:
 
@@ -288,7 +300,7 @@ func _set_bus_linear(bus_name: String, linear: float) -> void:
     AudioServer.set_bus_volume_db(bus, linear_to_db(maxf(linear, 0.001)))
 ```
 
-- [ ] **Passo 9: montar `autoload/audio.tscn`**
+- [x] **Passo 9: montar `autoload/audio.tscn`**
 
 MCP: `create_scene` `res://autoload/audio.tscn` com raiz `Node` chamada `Audio`,
 `attach_script` com `audio.gd`, depois `batch_add_nodes` com três
@@ -309,14 +321,14 @@ MCP: `create_scene` `res://autoload/audio.tscn` com raiz `Node` chamada `Audio`,
 No `Music`, marcar o loop no recurso importado do mp3 (`loop = true` no
 `.import`, reimportando pelo editor). `save_scene`.
 
-- [ ] **Passo 10: registrar os autoloads**
+- [x] **Passo 10: registrar os autoloads**
 
 MCP: `add_autoload` `Settings` → `res://autoload/settings.gd`; `Audio` →
 `res://autoload/audio.tscn`. `Settings` precisa vir **antes** de `Audio` na
 ordem (o `_ready` do Audio lê `Settings`).
 Conferir com `get_autoload`.
 
-- [ ] **Passo 11: rodar a verificação do Audio**
+- [x] **Passo 11: rodar a verificação do Audio**
 
 MCP: `run_headless_script` com `check_audio.gd`.
 Esperado: `buses: OK`, `mudo em zero: OK`, `volume cheio: OK`,
@@ -325,7 +337,7 @@ Esperado: `buses: OK`, `mudo em zero: OK`, `volume cheio: OK`,
 O passo 6 esperava `volume cheio` em −12,04 dB, não em 0 — o volume base da
 música é 0,25 linear, como no Flutter.
 
-- [ ] **Passo 12: commit**
+- [x] **Passo 12: commit**
 
 ```bash
 git add autoload project.godot default_bus_layout.tres

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bgcrdiri02dq3"]
+
+[ext_resource type="Script" uid="uid://d0vifpl65f8xw" path="res://tools/check_audio.gd" id="1_jl11p"]
+
+[node name="CheckAudio" type="Node" unique_id=1898806127]
+script = ExtResource("1_jl11p")

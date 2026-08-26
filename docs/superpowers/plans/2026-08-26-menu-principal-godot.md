@@ -1349,7 +1349,7 @@ persistem e o Post já sobe com `taps=0`. Os padrões foram restaurados no fim
 - Produz: `world_map.tscn` com botão que volta para `res://ui/menu/main_menu.tscn`.
 - Consome: `MenuPanel`, `Audio.play_locked`.
 
-- [ ] **Passo 1: montar o stub do mapa**
+- [x] **Passo 1: montar o stub do mapa**
 
 `create_scene` `res://ui/world_map/world_map.tscn`, raiz `Control` full rect,
 `theme` do projeto. Filhos: `Background` (instância de
@@ -1371,7 +1371,7 @@ func _go_back() -> void:
     get_tree().change_scene_to_file("res://ui/menu/main_menu.tscn")
 ```
 
-- [ ] **Passo 2: montar `world_select.tscn`**
+- [x] **Passo 2: montar `world_select.tscn`**
 
 Raiz a partir de `core/panel_base.tscn`. Filhos:
 
@@ -1399,7 +1399,7 @@ Nas cartas travadas, `AnimationPlayer` chamado `Shake` com a animação `shake` 
 
 `pivot_offset` no centro de cada carta, senão a rotação gira pelo canto.
 
-- [ ] **Passo 3: escrever o script**
+- [x] **Passo 3: escrever o script**
 
 ```gdscript
 extends MenuPanel
@@ -1424,7 +1424,7 @@ func _on_card_input(event: InputEvent, card: TextureRect) -> void:
     card.get_node("Shake").play("shake")
 ```
 
-- [ ] **Passo 4: ligar e verificar**
+- [x] **Passo 4: ligar e verificar**
 
 `world_select_scene` no inspector do `MainMenu`. `play_scene`,
 `simulate_mouse_click` em Modo História, `get_game_screenshot`.
@@ -1437,14 +1437,14 @@ por ~0,4 s e volta ao lugar exato; som de travado no log.
 `simulate_mouse_click` na carta 1 → screenshot: mapa stub na tela.
 Clicar em voltar no mapa → screenshot: menu de volta.
 
-- [ ] **Passo 5: verificar que a música não recomeça**
+- [x] **Passo 5: verificar que a música não recomeça**
 
 Antes de sair do menu, anotar `Audio._music.get_playback_position()` por
 `execute_game_script`. Ir ao mapa, voltar, e ler de novo.
 Aceitação: o segundo valor é **maior** que o primeiro — a música seguiu tocando,
 não reiniciou.
 
-- [ ] **Passo 6: commit**
+- [x] **Passo 6: commit**
 
 ```bash
 git add ui/menu ui/world_map
@@ -1453,6 +1453,23 @@ git commit -m "feat: selecao de mundo com cartas travadas e stub do mapa"
 
 ---
 
+
+**Bug de animação dentro de container:** a tremida animava `.:position:x` da
+própria carta, e o valor de um track é **absoluto**, não relativo — a carta em
+x=490 saltava para x=−14 e ainda brigava com o `HBoxContainer` no layout
+seguinte. Corrigido com um nó a mais: a carta travada virou um `Control` (o slot,
+que o container posiciona) contendo um `TextureRect` chamado `Art`, e a animação
+passou a mexer em `Art:position:x` / `Art:rotation`. Medido depois:
+`slot x=490 (fixo) | arte x=-14.0 rotacao=3.00 graus`.
+
+**Armadilha de medição:** ler `get_global_rect()` no mesmo frame do `add_child`
+devolve as três cartas empilhadas na mesma posição e com escala 0.92 — containers
+só organizam no fim do frame, e o pop-in ainda estava correndo. Na leitura
+seguinte: cartas em 300 / 760 / 1220, todas 400×600, centros em 500 / 960 / 1420
+— exatamente os `−460, 0, +460` do Flutter.
+
+**Música contínua, medido:** 83,28 s ao sair do menu para o mapa; 138,78 s de
+volta no menu, ainda tocando. Atravessou as duas trocas de cena sem reiniciar.
 ### Task 10: Créditos e portão parental
 
 **Arquivos:**

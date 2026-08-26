@@ -1,0 +1,202 @@
+[gd_scene format=3 uid="uid://bo0el05xoxbs"]
+
+[ext_resource type="Theme" uid="uid://bbuvbjujai5uq" path="res://ui/theme.tres" id="1_dxx1e"]
+[ext_resource type="Script" uid="uid://cnkig6jxp4f4a" path="res://ui/menu/panels/world_select.gd" id="2_doc52"]
+[ext_resource type="PackedScene" uid="uid://d3c2vm1sjp6l" path="res://core/juicy_button.tscn" id="3_bmeum"]
+[ext_resource type="Texture2D" uid="uid://b2ymt67xs1tbm" path="res://assets/art/UI/Buttons/button_back.webp" id="4_p0u7d"]
+[ext_resource type="Texture2D" uid="uid://d3o1bu0pciyqv" path="res://assets/art/UI/WorldCards/world_card_1.webp" id="5_ttswr"]
+[ext_resource type="Script" uid="uid://ugcjf40nt2nh" path="res://core/juicy_button.gd" id="6_67p3j"]
+[ext_resource type="Texture2D" uid="uid://orwp0oa8afe4" path="res://assets/art/UI/WorldCards/world_card_2.webp" id="7_0f0rl"]
+[ext_resource type="Texture2D" uid="uid://1ueef4toc5g1" path="res://assets/art/UI/WorldCards/world_card_3.webp" id="8_q1uoa"]
+
+[sub_resource type="Animation" id="Animation_s5cw7"]
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.18),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.14, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.92, 0.92), Vector2(1.02, 1.02), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cd203"]
+_data = {
+&"pop_in": SubResource("Animation_s5cw7")
+}
+
+[sub_resource type="Animation" id="Animation_dxx1e"]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Art:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.11, 0.17, 0.23, 0.29, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -14.0, 12.0, -9.0, 6.0, -3.0, 1.5, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Art:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.11, 0.17, 0.23, 0.29, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.05235987755982989, -0.04363323129985824, 0.03490658503988659, -0.020943951023931952, 0.010471975511965976, -0.005235987755982988, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_doc52"]
+_data = {
+&"shake": SubResource("Animation_dxx1e")
+}
+
+[sub_resource type="Animation" id="Animation_bmeum"]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Art:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.11, 0.17, 0.23, 0.29, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -14.0, 12.0, -9.0, 6.0, -3.0, 1.5, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Art:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.11, 0.17, 0.23, 0.29, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.05235987755982989, -0.04363323129985824, 0.03490658503988659, -0.020943951023931952, 0.010471975511965976, -0.005235987755982988, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p0u7d"]
+_data = {
+&"shake": SubResource("Animation_bmeum")
+}
+
+[node name="WorldSelect" type="Control" unique_id=1234822742]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(960, 540)
+theme = ExtResource("1_dxx1e")
+script = ExtResource("2_doc52")
+
+[node name="BackButton" parent="." unique_id=149491572 instance=ExtResource("3_bmeum")]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 28.0
+offset_right = 170.0
+offset_bottom = 143.0
+texture_normal = ExtResource("4_p0u7d")
+burst_count = 0
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=1559132887]
+libraries/ = SubResource("AnimationLibrary_cd203")
+autoplay = &"pop_in"
+
+[node name="Title" type="Label" parent="." unique_id=1215031577]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -600.0
+offset_top = 90.0
+offset_right = 600.0
+offset_bottom = 220.0
+theme_type_variation = &"Title80"
+text = "worldselect.title"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cards" type="HBoxContainer" parent="." unique_id=515493498]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -690.0
+offset_top = -240.0
+offset_right = 690.0
+offset_bottom = 360.0
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="World1" type="TextureButton" parent="Cards" unique_id=610646491 instance=ExtResource("3_bmeum")]
+custom_minimum_size = Vector2(400, 600)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_ttswr")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("6_67p3j")
+burst_count = 0
+hover_scale = 1.05
+pressed_scale = 0.97
+
+[node name="World2" type="Control" parent="Cards" unique_id=910599620]
+custom_minimum_size = Vector2(400, 600)
+layout_mode = 2
+
+[node name="Art" type="TextureRect" parent="Cards/World2" unique_id=1013405973]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+pivot_offset = Vector2(200, 300)
+mouse_filter = 2
+texture = ExtResource("7_0f0rl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Shake" type="AnimationPlayer" parent="Cards/World2" unique_id=593466852]
+libraries/ = SubResource("AnimationLibrary_doc52")
+
+[node name="World3" type="Control" parent="Cards" unique_id=150809206]
+custom_minimum_size = Vector2(400, 600)
+layout_mode = 2
+
+[node name="Art" type="TextureRect" parent="Cards/World3" unique_id=683667450]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+pivot_offset = Vector2(200, 300)
+mouse_filter = 2
+texture = ExtResource("8_q1uoa")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Shake" type="AnimationPlayer" parent="Cards/World3" unique_id=2008966285]
+libraries/ = SubResource("AnimationLibrary_p0u7d")

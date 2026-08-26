@@ -1,0 +1,70 @@
+keys,pt_BR,it
+worldselect.title,Escolha o mundo,Scegli il mondo
+worldmap.world1.title,Mundo 1,Mondo 1
+worldmap.world1.name,Floresta Encantada,Foresta Incantata
+level11.phase,FASE 1,FASE 1
+level11.title,O Café da Manhã da Didi,La Colazione di Didi
+level12.phase,FASE 2,FASE 2
+level12.title,Recife das Cores,Barriera dei Colori
+level12.intro,O recife perdeu as cores... vamos pintar juntos?,La barriera ha perso i colori... coloriamo insieme?
+level12.ask,Pinte o coral de {0}!,Colora il corallo di {0}!
+level12.nudge,Vamos lá! Passe o pincel no coral!,Forza! Passa il pennello sul corallo!
+level13.phase,FASE 3,FASE 3
+level13.title,Trilha dos Números,Il Sentiero dei Numeri
+level13.intro,Eu perdi o caminho! Toque nos números na ordem certa para eu voar até o meu ninho!,Ho perso la strada! Tocca i numeri in ordine per farmi volare fino al mio nido!
+level14.phase,FASE 4,FASE 4
+level14.title,Quebra-cabeça da Sophy,Il Puzzle di Sophy
+level14.intro,Vamos montar esse quebra-cabeça juntos?,Montiamo insieme questo puzzle?
+level14.pieces,PEÇAS,PEZZI
+level15.phase,FASE 5,LIVELLO 5
+level15.title,Jogo da Memória da Didia,Il Memory di Didia
+level15.intro,Vamos brincar! Encontre todos os pares de bichinhos!,Giochiamo! Trova tutte le coppie di animaletti!
+level15.instruction,Encontre todos os pares para ajudar a Didia!,Trova tutte le coppie per aiutare Didia!
+level16.phase,FASE 6,LIVELLO 6
+level16.title,Labirinto do Alpiste,Il Labirinto dei Semini
+level16.intro,Estou com fome! Puxe o caminho e me leve até o alpiste!,Ho fame! Traccia il sentiero e portami dai semini!
+level16.hint,Vamos! Me leva até o alpiste!,Dai! Portami dai semini!
+level16.oops,Ops! Por aqui não dá!,Ops! Di qua non si passa!
+level17.phase,FASE 7,LIVELLO 7
+level17.title,Salada da Sophy,Insalata di Sophy
+level17.intro,"Vamos cortar os alimentos juntos? Passa o dedinho pra fatiar! Mas cuidado: não corte as bombinhas!","Tagliamo il cibo insieme? Passa il ditino per affettare! Ma attenzione: non tagliare le bombe!"
+level18.phase,FASE 8,LIVELLO 8
+level18.title,Jardim Colorido,Giardino Colorato
+level18.intro,Vamos guardar cada flor na cesta da cor dela?,Mettiamo ogni fiore nel cesto del suo colore?
+level18.flowers,FLORES,FIORI
+level19.phase,FASE 9,LIVELLO 9
+level19.title,Bolhas das Letras,Le Bolle delle Lettere
+level19.intro,Toca na bolha com a letra que eu falar!,Tocca la bolla con la lettera che dico io!
+level19.ask,Cadê a letra {0}?,Dov'è la lettera {0}?
+color.red,Vermelho,Rosso
+color.green,Verde,Verde
+color.yellow,Amarelo,Giallo
+color.blue,azul,blu
+color.orange,laranja,arancione
+color.purple,roxo,viola
+praise.great,Muito bem!,Molto bene!
+praise.congrats,Parabéns!,Perfetto!
+praise.excellent,Excelente!,Ottimo!
+praise.yes,Isso!,Esatto!
+quitmodal.question,Quer mesmo sair?,Vuoi davvero uscire?
+quitmodal.yes,Sim,Sì
+quitmodal.no,Não,No
+settings.music,Música,Musica
+settings.sfx,Efeitos,Effetti
+settings.quality,Qualidade,Qualità
+settings.quality.low,Baixa,Bassa
+settings.quality.medium,Média,Media
+settings.quality.high,Alta,Alta
+settings.language,Idioma,Lingua
+credits.role.creation,Criação,Creazione
+credits.role.programming,Programação,Programmazione
+credits.role.gamedesign,Game Design,Game design
+credits.social.gate.title,Peça ajuda a um adulto,Chiedi aiuto a un adulto
+credits.social.gate.instruction,Segure o botão por 3 segundos para abrir o link,Tieni premuto il pulsante per 3 secondi per aprire il link
+credits.social.gate.hold,Segurar,Tieni premuto
+credits.social.gate.back,Voltar,Indietro
+credits.site,Site do jogo,Sito del gioco
+credits.person.lucas.name,Lucas Dóro,Lucas Dóro
+credits.person.lucas.bio,"Idealizou e desenvolveu a Floresta dos Bichinhos Perdidos, cuidando de cada detalhe da floresta.","Ha ideato e sviluppato la Foresta degli Animaletti Perduti, curando ogni dettaglio della foresta."
+credits.person.joao.name,João Henrique Maricato,João Henrique Maricato
+credits.person.joao.bio,"Imagina novas aventuras para os bichinhos: traz ideias de fases e ajuda a deixar as que existem ainda mais divertidas.","Immagina nuove avventure per gli animaletti: propone idee per i livelli e aiuta a rendere ancora più divertenti quelli esistenti."

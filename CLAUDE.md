@@ -54,6 +54,23 @@ Fluxo padrão: `get_project_info` → `get_scene_tree` → construir → `save_s
 
 ### Armadilhas do MCP
 
+- **NUNCA rodar o Godot em modo editor com o editor aberto** — `--import`, `-e`, ou
+  qualquer coisa que carregue o plugin num segundo processo. O
+  `_prepare_auth_token()` do addon (`websocket_server.gd:249`) **apaga e regrava**
+  `user://mcp_auth_token` toda vez que um servidor inicia. O editor aberto continua
+  esperando o token que ele gerou no start, o servidor MCP lê o arquivo novo, e
+  **100% das chamadas passam a voltar `-32001`** — sem conserto a não ser reiniciar o
+  editor. Medido em 26/08/2026: editor iniciado 05:48, um `--headless --import`
+  às 07:05 derrubou a sessão inteira. Reimportar é pelo editor (foco na janela ou
+  `reload_project`). Rodar **cena ou script headless** (modo jogo) é seguro: os
+  autoloads `MCP*` não tocam no token.
+- **Recusa `-32001` intermitente é disputa; recusa 100% é token estragado.** Antes de
+  repetir sem fim, conferir o mtime do `mcp_auth_token` contra o horário de início do
+  editor (`ps -p <pid> -o lstart=`). Token mais novo que o editor = reiniciar o editor.
+- **Editor em background derruba o cliente MCP** no macOS: o que responde é o editor
+  em foco. Conferir com
+  `lsof -nP -a -p <pid> -iTCP | grep 650` — sem socket, o editor está dormindo.
+
 - **Nunca editar `project.godot` direto** com o editor aberto — usar `project set-setting`. O Godot
   reescreve o arquivo ao sair.
 - `execute_game_script` roda em nó temporário: sem `func` aninhado, usar `.get("prop")`.

@@ -400,7 +400,9 @@ credits.site,Site do jogo,Sito del gioco
 
 - [ ] **Passo 4: importar e registrar**
 
-Reimportar pelo editor (o Godot gera `ui.pt_BR.translation` e `ui.it.translation`).
+Reimportar **pelo editor** — dar foco na janela do Godot, que reimporta sozinho.
+Nunca por `godot --headless --import`: isso sobe um segundo editor, que regenera
+`user://mcp_auth_token` e derruba a conexão MCP do editor aberto de vez.
 MCP: `set_project_setting` em `internationalization/locale/translations` com o
 array dos dois `.translation`.
 

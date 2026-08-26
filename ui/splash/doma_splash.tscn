@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://v42f1118qo18"]
+
+[ext_resource type="Theme" uid="uid://bbuvbjujai5uq" path="res://ui/theme.tres" id="1_eghkp"]
+[ext_resource type="Script" uid="uid://bproyadefcqib" path="res://ui/splash/doma_splash.gd" id="2_7rgh1"]
+[ext_resource type="Script" uid="uid://38f4s03n1gao" path="res://ui/splash/neon_logo.gd" id="3_g1bxe"]
+[ext_resource type="AudioStream" uid="uid://bojjc2ecii24h" path="res://assets/audio/Splash/hum.wav" id="4_v5hlr"]
+[ext_resource type="AudioStream" uid="uid://b4tgl6grsgsuq" path="res://assets/audio/Splash/zap.wav" id="5_6pw5k"]
+[ext_resource type="AudioStream" uid="uid://cyxqomubhfp3g" path="res://assets/audio/Splash/thump.wav" id="6_hbhjo"]
+
+[sub_resource type="Animation" id="Animation_fkku2"]
+length = 3.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Word:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.05, 2.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Flash:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3, 3.05, 3.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.9, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3.3, 3.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.15, 0.7, 1.3, 1.6, 2.05, 3.05),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"play_zap"
+}, {
+"args": [],
+"method": &"play_zap"
+}, {
+"args": [],
+"method": &"play_zap"
+}, {
+"args": [],
+"method": &"play_zap"
+}, {
+"args": [],
+"method": &"play_zap"
+}, {
+"args": [],
+"method": &"play_thump"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hvta5"]
+_data = {
+&"splash": SubResource("Animation_fkku2")
+}
+
+[node name="DomaSplash" type="Control" unique_id=431577599]
+layout_mode = 3
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource("1_eghkp")
+script = ExtResource("2_7rgh1")
+
+[node name="Backdrop" type="ColorRect" parent="." unique_id=425436551]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.04, 0.03, 0.07, 1)
+
+[node name="Logo" type="Node2D" parent="." unique_id=778721511]
+position = Vector2(960, 470)
+script = ExtResource("3_g1bxe")
+
+[node name="Word" type="Label" parent="." unique_id=1809607557]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = 250.0
+offset_right = 500.0
+offset_bottom = 370.0
+theme_type_variation = &"Title80"
+theme_override_colors/font_color = Color(0.9647059, 0.9647059, 0.972549, 1)
+text = "Doma Studio"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Flash" type="ColorRect" parent="." unique_id=297264349]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Hum" type="AudioStreamPlayer" parent="." unique_id=1965216345]
+stream = ExtResource("4_v5hlr")
+bus = &"SFX"
+
+[node name="Zap" type="AudioStreamPlayer" parent="." unique_id=1677281611]
+stream = ExtResource("5_6pw5k")
+bus = &"SFX"
+
+[node name="Thump" type="AudioStreamPlayer" parent="." unique_id=1745174327]
+stream = ExtResource("6_hbhjo")
+bus = &"SFX"
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=1270181842]
+libraries/ = SubResource("AnimationLibrary_hvta5")
+autoplay = &"splash"

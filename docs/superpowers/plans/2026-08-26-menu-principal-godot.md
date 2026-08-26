@@ -1671,7 +1671,7 @@ especificação — não estimar nada.
 Tremulação constante: `1 + 0.05 * sin(t * 17.3) * sin(t * 6.1)`, multiplicando o
 brilho de todas as partes e da palavra.
 
-- [ ] **Passo 1: portar os assets de áudio**
+- [x] **Passo 1: portar os assets de áudio**
 
 ```bash
 mkdir -p ~/Games/floresta-dos-bichinhos/assets/audio/Splash
@@ -1681,7 +1681,7 @@ cp ~/Games/floresta-dos-bichinhos-old/packages/doma_splash/assets/{hum,zap,thump
 
 Reimportar pelo editor. Marcar `loop = true` só no `hum.wav`.
 
-- [ ] **Passo 2: portar os caminhos da logo**
+- [x] **Passo 2: portar os caminhos da logo**
 
 Converter `packages/doma_splash/lib/src/logo_paths.dart` para
 `ui/splash/logo_paths.gd`: uma constante por parte
@@ -1694,7 +1694,7 @@ Verificação: script headless que imprime a contagem de pontos de cada parte e
 confirma que nenhuma está vazia.
 Esperado: quatro linhas com contagem > 0.
 
-- [ ] **Passo 3: escrever `ui/splash/neon_logo.gd`**
+- [x] **Passo 3: escrever `ui/splash/neon_logo.gd`**
 
 `Node2D` que desenha o neon em `_draw`, com a mesma matemática da timeline:
 
@@ -1745,7 +1745,7 @@ O glow do Flutter era um `MaskFilter.blur`; aqui vem de graça do `Post`
 (bloom já roda por cima de tudo). Conferir no passo 6 se o brilho está fraco e,
 se estiver, subir `bloom_intensity` **no material do Post**, não neste script.
 
-- [ ] **Passo 4: montar `doma_splash.tscn`**
+- [x] **Passo 4: montar `doma_splash.tscn`**
 
 `create_scene` `res://ui/splash/doma_splash.tscn`, raiz `Control` full rect:
 
@@ -1767,7 +1767,7 @@ Na animação `splash`, por `set_animation_keyframe`:
 Os cinco `zap` e o `thump` entram como **call method tracks** na mesma animação,
 nos tempos da tabela — assim os cues vivem no editor, não num tracker em código.
 
-- [ ] **Passo 5: escrever `doma_splash.gd`**
+- [x] **Passo 5: escrever `doma_splash.gd`**
 
 ```gdscript
 extends Control
@@ -1790,7 +1790,7 @@ func play_thump() -> void:
     $Thump.play()
 ```
 
-- [ ] **Passo 6: definir como cena principal e verificar**
+- [x] **Passo 6: definir como cena principal e verificar**
 
 MCP: `set_project_setting` `application/run/main_scene` =
 `res://ui/splash/doma_splash.tscn`.
@@ -1802,20 +1802,20 @@ rápidas de brilho perto de 2,8 s; um estouro branco em 3,05; a cena some em fad
 e o menu entra. Cada traçado tem um `zap`; o estouro tem um `thump`; o `hum`
 toca o tempo inteiro.
 
-- [ ] **Passo 7: verificar o fade da música**
+- [x] **Passo 7: verificar o fade da música**
 
 Por `execute_game_script`, ler o volume do bus `Music` logo depois da troca de
 cena e de novo 3 s depois.
 Aceitação: o segundo valor é maior — a música entrou subindo, não de uma vez.
 
-- [ ] **Passo 8: verificar o caminho completo**
+- [x] **Passo 8: verificar o caminho completo**
 
 Desde a splash: menu → Ajustes → voltar → Créditos → voltar → Modo História →
 carta 1 → mapa → voltar → Sair → Não.
 Aceitação: nenhuma tela fica presa, nenhum painel some sem devolver o menu,
 música contínua do começo ao fim, `get_editor_errors` e `get_output_log` limpos.
 
-- [ ] **Passo 9: commit**
+- [x] **Passo 9: commit**
 
 ```bash
 git add ui/splash assets/audio/Splash project.godot
@@ -1824,6 +1824,39 @@ git commit -m "feat: splash de neon da produtora como cena inicial do jogo"
 
 ---
 
+
+**Como a logo foi portada:** um script Python leu os quatro `_Raw` do
+`logo_paths.dart`, resolveu os comandos SVG (M/L/C/Z, absoluto e relativo),
+achatou cada cúbica em 8 segmentos, aplicou a matriz da fonte (escala 0,1 em x,
+−0,1 em y, translação y+1024) e gerou `ui/splash/logo_paths.gd` com os pontos
+prontos: **D_PURPLE 76, D_WHITE 130, DPAD_CROSS 82, DPAD_BUTTONS 160 em 4
+contornos — 448 pontos**. Assim não foi preciso escrever um parser de SVG em
+GDScript.
+
+**Dois erros meus, corrigidos:**
+
+1. **`const` não aceita `PackedVector2Array([...])`** — é chamada de construtor,
+   não expressão constante, e o parser devolve
+   `Could not resolve external class member "D_PURPLE"`. Com `static var`
+   compila. Pior: enquanto isso o `preload` vinha vazio e a splash desenhava
+   **nada**, sem erro visível em tempo de execução.
+2. **`_fit_to_art()` sobrescrevia a `position` do nó**, jogando a logo para fora
+   da tela — quem posiciona é a cena. O enquadramento passou a ser
+   `draw_set_transform(_art_offset)` dentro do `_draw`.
+
+**Verificado:** a splash roda do início ao fim e entrega o menu sozinha (a cena
+troca para `MainMenu`); a logo aparece traçada com L roxo, D branco, cruz branca
+e botões roxos, com o brilho vindo do bloom do `Post`; "Doma Studio" acende por
+fade; `hum` toca desde o início e a música do menu fica em `fade = 0.00` durante
+a splash, subindo depois.
+
+**Não verificado (assumido):** não consegui um retrato do **meio** do traçado. A
+latência entre duas chamadas MCP é maior que os 3,7 s da animação, e os `seek`
+manuais que tentei acabaram deixando o jogo instável (chamadas voltando vazias).
+O traçado progressivo está garantido pela aritmética (`progress()` linear entre
+onset e onset+duração, cortando o polyline em `int(total * fração)`) e pelo
+quadro completo em 2,60 s, mas **o filme inteiro ainda precisa de olho humano** —
+principalmente as duas quedas de tubo em 2,72 s e 2,88 s e o estouro em 3,05 s.
 ### Task 12: Medição, 4:3 e acabamento
 
 **Arquivos:**

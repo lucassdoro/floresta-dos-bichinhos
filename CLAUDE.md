@@ -42,10 +42,12 @@ se conecta ao mesmo servidor MCP; quem conecta por último ganha. Sem token, um 
 executado dentro de outro projeto sem aviso — medido em 26/08/2026: **4 de 6 comandos caíam no
 `pop-it`**. Com token, o projeto errado **recusa** em vez de executar.
 
-⚠️ **Token protege, mas não dá concorrência.** Com dois editores Godot abertos, os dois continuam
-disputando a conexão e o autenticado é derrubado (`connected / connected / disconnected` no log do
-servidor). Para trabalhar: **um editor Godot aberto por vez**. O `pop-it` também está com token
-ligado e documentado no `CLAUDE.md` dele.
+⚠️ **Com dois editores abertos dá pra trabalhar, mas com repetição.** Os dois disputam a conexão e o
+autenticado é derrubado quando o outro entra. Medido com `pop-it` e floresta abertos juntos:
+**4 de 10 chamadas passam, 6 voltam `-32001`, 0 executam no projeto errado**.
+**Regra: tool que voltar `-32001` é só repetir** — a recusa é a trava funcionando, não erro de
+verdade. Fechar o outro editor elimina a repetição, não o risco (o risco já está coberto pelo token).
+O `pop-it` também está com token ligado e documentado no `CLAUDE.md` dele.
 
 Fluxo padrão: `get_project_info` → `get_scene_tree` → construir → `save_scene` →
 `get_editor_screenshot` → `play_scene` + `get_game_screenshot` para validar em execução.

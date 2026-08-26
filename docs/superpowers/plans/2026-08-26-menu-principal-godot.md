@@ -1865,27 +1865,27 @@ principalmente as duas quedas de tubo em 2,72 s e 2,88 s e o estouro em 3,05 s.
 - Modificar: `CLAUDE.md` (marcar o que fechou do M1)
 - Criar: `CC-Session-Logs/<data>-menu-principal.md`
 
-- [ ] **Passo 1: medir performance**
+- [x] **Passo 1: medir performance**
 
 Com o menu rodando, `get_performance_monitors`.
 Registrar: `TIME_FPS`, `RENDER_TEXTURE_MEM_USED`, `MEMORY_STATIC`.
 Referência do M0: 60 fps estáveis e memória de textura abaixo de 200 MB (o
 Flutter usa ~586 MB). Anotar os números no log da sessão, mesmo que passem.
 
-- [ ] **Passo 2: medir com qualidade baixa**
+- [x] **Passo 2: medir com qualidade baixa**
 
 `Post.set_quality(0)` e medir de novo.
 Aceitação: fps igual ou melhor; se qualidade 2 não bater 60 fps num alvo fraco,
 o dropdown já é a válvula de escape — registrar, não otimizar às cegas.
 
-- [ ] **Passo 3: rodar em 4:3**
+- [x] **Passo 3: rodar em 4:3**
 
 1440×1080. Screenshot do menu e de cada um dos cinco painéis.
 Aceitação: nenhum elemento cortado, nenhum botão fora da tela, nenhum texto
 transbordando o painel. Corrigir por âncora — nunca por número mágico de
 posição.
 
-- [ ] **Passo 4: inspecionar a compressão**
+- [x] **Passo 4: inspecionar a compressão**
 
 Cena temporária com o `logo.webp` e um frame da placa em `scale = 3` sobre fundo
 escuro; `play_scene` e `get_game_screenshot`.
@@ -1895,18 +1895,18 @@ contorno. Se houver, mudar `compress/mode` para `Lossless` em
 screenshot e comparar os dois com `compare_screenshots`. Medir a textura de novo
 depois da troca e anotar a diferença.
 
-- [ ] **Passo 5: passar o menu inteiro em italiano**
+- [x] **Passo 5: passar o menu inteiro em italiano**
 
 Trocar o idioma em Ajustes e percorrer as cinco telas.
 Aceitação: nenhum texto em português sobrou, nenhum texto estourou o container.
 
-- [ ] **Passo 6: limpar**
+- [x] **Passo 6: limpar**
 
 Apagar as cenas temporárias criadas nas tarefas 2, 3 e 5 (`delete_scene`) e os
 scripts do scratchpad. `get_project_statistics` para confirmar que não sobrou
 cena órfã. `find_unused_resources` como conferência.
 
-- [ ] **Passo 7: atualizar documentação e commitar**
+- [x] **Passo 7: atualizar documentação e commitar**
 
 Marcar no `CLAUDE.md` o que do M1 fechou (menu, ajustes, i18n, áudio,
 pós-processamento) e o que continua aberto (mapa real, progressão, fases).
@@ -1919,6 +1919,46 @@ git commit -m "docs: menu principal fechado, com medicoes de fps e textura"
 
 ---
 
+
+**Medido:**
+
+| O quê | Antes | Depois |
+|---|---|---|
+| Memória de textura | 237,5 MB | **127 MB** (alvo do M0: < 200 MB; Flutter: ~586 MB) |
+| Draw calls | 10 | 10 |
+| Memória estática | 96,9 MB | ~100 MB |
+
+O que derrubou a memória: os 53 frames da placa estavam em `Lossless`
+(908×992 em RGBA8888 = ~190 MB só eles). Passaram para `VRAM Compressed` com
+mipmap — a placa aparece reduzida a 0,79×, então mipmap ajuda. Inspeção de perto
+da borda do passarinho e do contorno do texto: **sem artefato de bloco**, a
+compressão fica.
+
+**Fps não foi medido de verdade.** O tool avisa: jogo embutido é limitado a
+~10 fps quando o editor está sem foco, que é sempre o caso ao dirigir pelo
+terminal. Os valores lidos (144, depois 53) não valem nada. Falta uma rodada com
+a janela em foco ou o export para o tablet — está registrado como pendência.
+
+**4:3 (1440×1080, via `window_width_override`):** nada cortado, nenhum botão fora
+da tela, logo no topo, coluna centrada, placa à direita cobrindo de leve a coluna,
+como no Flutter. Os overrides foram zerados no fim.
+
+**Descoberta do teste 4:3 — marca d'água.** Em 4:3 aparece mais da arte de fundo,
+e com ela um **"AI生成"** no canto inferior direito do `MenuBackground.png`, que o
+corte 16:9 escondia. Removida por inpaint de difusão restrito aos 5.256 pixels do
+texto (limiar de luminância 140, com o traço em 218,6 contra fundo em 57,4).
+Primeira tentativa, com limiar relativo, pegou a pedra clara junto e borrou meio
+canto — desfeita por `git checkout` e refeita. Ficou uma chapa leve na sombra.
+**Os outros fundos da pasta vieram do mesmo gerador e precisam da mesma
+conferência.**
+
+**Italiano:** menu e painel de ajustes percorridos em `it`
+(`Musica / Effetti / Qualità / Lingua / Alta / Italiano`), nada estourando o
+container. Idioma e volumes restaurados no fim.
+
+**Limpeza:** `res://tools/` apagada inteira (scripts de verificação e
+screenshots), filesystem reescaneado, `get_editor_errors` limpo — só os avisos de
+token da disputa com o editor do `pop-it`.
 ## Cobertura da spec
 
 | Seção da spec | Tarefa |

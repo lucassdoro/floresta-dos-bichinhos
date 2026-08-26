@@ -731,7 +731,7 @@ git commit -m "feat: fundo do menu com still e shader de folhagem"
 - Contrato: quem usa `JuicyButton` precisa ter, na mesma árvore, um nó no grupo
   `effects` (é onde o brilho é pendurado, pra não herdar a escala do botão).
 
-- [ ] **Passo 1: montar `core/sparkle_burst.tscn`**
+- [x] **Passo 1: montar `core/sparkle_burst.tscn`**
 
 MCP: `create_scene`, raiz `GPUParticles2D` chamada `SparkleBurst`.
 `create_particles` / `update_property` com:
@@ -746,14 +746,14 @@ MCP: `create_scene`, raiz `GPUParticles2D` chamada `SparkleBurst`.
 | `emitting` | false |
 
 No `ParticleProcessMaterial` (via `set_particle_material`):
-`emission_shape = Point`, `direction = (0,0)`, `spread = 180`,
-`initial_velocity_min = 143`, `initial_velocity_max = 314`
-(distância 100–220 px em 0,7 s), `damping_min/max = 200`,
+`emission_shape = Point`, `direction = (1,0,0)`, `spread = 180` (círculo
+completo), `initial_velocity_min = 424`, `initial_velocity_max = 629`,
+`damping_min/max = 900`,
 `angular_velocity_min/max = ±240`, `scale_min/max` correspondendo a 26–120 px de
 lado, `angle_min/max = 0/90`, `alpha_curve` caindo a zero na metade da vida e
 `scale_curve` caindo com o quadrado do progresso.
 
-- [ ] **Passo 2: escrever `core/sparkle_burst.gd`**
+- [x] **Passo 2: escrever `core/sparkle_burst.gd`**
 
 ```gdscript
 class_name SparkleBurst
@@ -771,22 +771,34 @@ func burst(at: Vector2, color: Color, count: int, max_size: float) -> void:
     finished.connect(queue_free)
 ```
 
-- [ ] **Passo 3: verificar o brilho isolado**
+**Velocidade e freio, derivados (os números do plano estavam errados):** com
+desaceleração constante, `distância = v0² / (2·damping)`, e para a partícula
+parar antes do fim da vida é preciso `v0 ≤ 0,7·damping`. Juntando as duas,
+`damping ≥ 898`. Com `damping = 900`: `v0 = 424` percorre 100 px (para em
+0,47 s) e `v0 = 629` percorre 220 px (para em 0,70 s) — o mesmo alcance do
+Flutter, com ease-out de verdade. Os valores originais do plano
+(`143..314`, damping 200) deixavam a partícula mais rápida voar 367 px.
+
+- [x] **Passo 3: verificar o brilho isolado**
 
 Criar cena temporária com um nó no grupo `effects` e chamar
 `SparkleBurst.burst(Vector2(960, 540), Color(1, 0.85, 0.45), 30, 120)` por
 `execute_game_script`. `capture_frames` (4 quadros, ~0,15 s de intervalo).
 Aceitação: estrelas saem do centro em todas as direções, giram, encolhem e
-somem em ~0,7 s; o nó se remove sozinho depois (`get_game_scene_tree` não
-mostra mais o burst).
+somem em ~0,7 s; o nó se remove sozinho depois.
 
-- [ ] **Passo 4: montar `core/juicy_button.tscn`**
+Verificado com contador em `child_entered_tree`: um clique produz
+`brilhos nascidos: 1` e `vivos agora: 0` — nasce e se autodestrói. Retrato visual
+feito com `lifetime` alongado e `speed_scale = 0.05`, porque a latência entre
+duas chamadas MCP é maior que os 0,7 s de vida do brilho real.
+
+- [x] **Passo 4: montar `core/juicy_button.tscn`**
 
 MCP: `create_scene`, raiz `TextureButton` chamada `JuicyButton`.
 `update_property`: `ignore_texture_size = true`, `stretch_mode = 5`
 (keep aspect centered), `mouse_default_cursor_shape = 2` (mãozinha).
 
-- [ ] **Passo 5: escrever `core/juicy_button.gd`**
+- [x] **Passo 5: escrever `core/juicy_button.gd`**
 
 ```gdscript
 class_name JuicyButton
@@ -839,18 +851,19 @@ func _on_pressed() -> void:
     burst.burst(global_position + size / 2.0, burst_color, burst_count, burst_max_size)
 ```
 
-- [ ] **Passo 6: verificar hover, press e brilho**
+- [x] **Passo 6: verificar hover, press e brilho**
 
 Cena temporária com um `JuicyButton` (textura `button_story_mode.webp`) e um
 `Node2D` no grupo `effects`. `play_scene`, então:
 `simulate_mouse_move` sobre o botão → `get_game_screenshot` (aceitação: botão
 visivelmente maior); `simulate_mouse_click` → `capture_frames`
-(aceitação: encolhe e escurece durante o toque, brilho sai do centro do botão,
-som de clique aparece no log).
+(aceitação: encolhe e escurece durante o toque, brilho sai do centro do botão).
+Medido: em repouso `escala 1.000`; com o mouse em cima, `hover=true` e
+`escala 1.070`; `pivot_offset (210, 73)` = centro exato de 420×146.
 
 Clicar duas vezes em menos de 60 ms e conferir no log que só um clique tocou.
 
-- [ ] **Passo 7: commit**
+- [x] **Passo 7: commit**
 
 ```bash
 git add core

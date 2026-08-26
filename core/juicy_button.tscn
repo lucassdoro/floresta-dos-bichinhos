@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://d3c2vm1sjp6l"]
+
+[ext_resource type="Script" uid="uid://ugcjf40nt2nh" path="res://core/juicy_button.gd" id="1_wr38d"]
+
+[node name="JuicyButton" type="TextureButton" unique_id=149491572]
+mouse_default_cursor_shape = 2
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("1_wr38d")

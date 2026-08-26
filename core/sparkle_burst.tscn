@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://blik0f2jxcimo"]
+
+[ext_resource type="Texture2D" uid="uid://c7e3j118lkatb" path="res://assets/art/UI/Buttons/sparkle_star.webp" id="1_3i1my"]
+[ext_resource type="Script" uid="uid://b4ploobkss0tf" path="res://core/sparkle_burst.gd" id="2_intfp"]
+
+[sub_resource type="Gradient" id="Gradient_namhv"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bmqp3"]
+gradient = SubResource("Gradient_namhv")
+
+[sub_resource type="Curve" id="Curve_xmqkq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 0.75), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_2f280"]
+curve = SubResource("Curve_xmqkq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ui4b1"]
+angle_max = 90.0
+spread = 180.0
+initial_velocity_min = 424.0
+initial_velocity_max = 629.0
+angular_velocity_min = -240.0
+angular_velocity_max = 240.0
+gravity = Vector3(0, 0, 0)
+damping_min = 900.0
+damping_max = 900.0
+scale_min = 0.203125
+scale_max = 0.9375
+scale_curve = SubResource("CurveTexture_2f280")
+color_ramp = SubResource("GradientTexture1D_bmqp3")
+
+[node name="SparkleBurst" type="GPUParticles2D" unique_id=775530006]
+emitting = false
+amount = 30
+texture = ExtResource("1_3i1my")
+lifetime = 0.7
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_ui4b1")
+script = ExtResource("2_intfp")

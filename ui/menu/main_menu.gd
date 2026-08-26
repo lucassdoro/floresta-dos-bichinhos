@@ -11,6 +11,9 @@ extends Control
 @onready var _logo_animation: AnimationPlayer = $MenuUI/Logo/LogoAnimation
 
 func _ready() -> void:
+	# idempotente: se a splash ja' comecou o fade, isto nao faz nada. Sem esta
+	# linha, entrar direto no menu (sem splash) deixa a musica muda pra sempre.
+	Audio.start_music_fade()
 	_logo_animation.animation_finished.connect(_on_logo_intro_finished)
 	$MenuUI/Buttons/StoryMode.pressed.connect(open_panel.bind(world_select_scene, true))
 	$MenuUI/Buttons/SettingsButton.pressed.connect(open_panel.bind(settings_panel_scene, false))

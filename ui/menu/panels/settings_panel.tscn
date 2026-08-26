@@ -1,0 +1,171 @@
+[gd_scene format=3 uid="uid://cplqtu4famxgl"]
+
+[ext_resource type="Theme" uid="uid://bbuvbjujai5uq" path="res://ui/theme.tres" id="1_befyk"]
+[ext_resource type="Script" uid="uid://dvgkc8jffrjks" path="res://ui/menu/panels/settings_panel.gd" id="2_qyhhi"]
+[ext_resource type="PackedScene" uid="uid://d3c2vm1sjp6l" path="res://core/juicy_button.tscn" id="3_27aef"]
+[ext_resource type="Texture2D" uid="uid://b2ymt67xs1tbm" path="res://assets/art/UI/Buttons/button_back.webp" id="4_rs3rb"]
+[ext_resource type="Texture2D" uid="uid://d1f5xlj5jqnk2" path="res://assets/art/UI/Buttons/modal_panel.webp" id="5_nh1eq"]
+
+[sub_resource type="Animation" id="Animation_s5cw7"]
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.18),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.14, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.92, 0.92), Vector2(1.02, 1.02), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cd203"]
+_data = {
+&"pop_in": SubResource("Animation_s5cw7")
+}
+
+[node name="SettingsPanel" type="Control" unique_id=1234822742]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(960, 540)
+theme = ExtResource("1_befyk")
+script = ExtResource("2_qyhhi")
+
+[node name="BackButton" parent="." unique_id=149491572 instance=ExtResource("3_27aef")]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 28.0
+offset_right = 170.0
+offset_bottom = 143.0
+texture_normal = ExtResource("4_rs3rb")
+burst_count = 0
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=1559132887]
+libraries/ = SubResource("AnimationLibrary_cd203")
+autoplay = &"pop_in"
+
+[node name="Panel" type="NinePatchRect" parent="." unique_id=1912512645]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -490.0
+offset_top = -380.0
+offset_right = 490.0
+offset_bottom = 380.0
+texture = ExtResource("5_nh1eq")
+patch_margin_left = 96
+patch_margin_top = 96
+patch_margin_right = 96
+patch_margin_bottom = 96
+
+[node name="Rows" type="VBoxContainer" parent="Panel" unique_id=1113823821]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 60.0
+offset_right = 900.0
+offset_bottom = 700.0
+theme_override_constants/separation = 12
+
+[node name="MusicRow" type="HBoxContainer" parent="Panel/Rows" unique_id=742072265]
+custom_minimum_size = Vector2(820, 100)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/Rows/MusicRow" unique_id=461097989]
+custom_minimum_size = Vector2(344, 100)
+layout_mode = 2
+theme_type_variation = &"SettingLabel44"
+text = "settings.music"
+vertical_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="Panel/Rows/MusicRow" unique_id=1399043183]
+custom_minimum_size = Vector2(431, 76)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="SfxRow" type="HBoxContainer" parent="Panel/Rows" unique_id=406606171]
+custom_minimum_size = Vector2(820, 100)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/Rows/SfxRow" unique_id=821045087]
+custom_minimum_size = Vector2(344, 100)
+layout_mode = 2
+theme_type_variation = &"SettingLabel44"
+text = "settings.sfx"
+vertical_alignment = 1
+
+[node name="SfxSlider" type="HSlider" parent="Panel/Rows/SfxRow" unique_id=489335840]
+custom_minimum_size = Vector2(431, 76)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="QualityRow" type="HBoxContainer" parent="Panel/Rows" unique_id=1313359732]
+custom_minimum_size = Vector2(820, 100)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/Rows/QualityRow" unique_id=1105150267]
+custom_minimum_size = Vector2(344, 100)
+layout_mode = 2
+theme_type_variation = &"SettingLabel44"
+text = "settings.quality"
+vertical_alignment = 1
+
+[node name="QualityOption" type="OptionButton" parent="Panel/Rows/QualityRow" unique_id=2028112147]
+custom_minimum_size = Vector2(431, 76)
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+text_overrun_behavior = 3
+expand_icon = true
+fit_to_longest_item = false
+
+[node name="LanguageRow" type="HBoxContainer" parent="Panel/Rows" unique_id=1952339293]
+custom_minimum_size = Vector2(820, 100)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/Rows/LanguageRow" unique_id=1157700149]
+custom_minimum_size = Vector2(344, 100)
+layout_mode = 2
+theme_type_variation = &"SettingLabel44"
+text = "settings.language"
+vertical_alignment = 1
+
+[node name="LanguageOption" type="OptionButton" parent="Panel/Rows/LanguageRow" unique_id=554880629]
+custom_minimum_size = Vector2(431, 76)
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+text_overrun_behavior = 3
+expand_icon = true
+fit_to_longest_item = false

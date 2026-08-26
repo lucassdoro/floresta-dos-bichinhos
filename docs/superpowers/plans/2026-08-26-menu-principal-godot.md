@@ -1207,7 +1207,7 @@ placa visíveis, botão Sair ainda clicável. O "Sim" foi conferido sem ser clic
 - Consome: `MenuPanel`, `Settings.set_value`, `Post.set_quality` (via
   `Settings.changed`), `ui/theme.tres`.
 
-- [ ] **Passo 1: montar o painel**
+- [x] **Passo 1: montar o painel**
 
 Instanciar `core/panel_base.tscn` como raiz da cena nova
 (`add_scene_instance` + "editable children" para poder acrescentar filhos).
@@ -1228,7 +1228,7 @@ ocupando o resto:
 | `QualityRow` | `settings.quality` | `OptionButton` `QualityOption` |
 | `LanguageRow` | `settings.language` | `OptionButton` `LanguageOption` |
 
-- [ ] **Passo 2: escrever o script**
+- [x] **Passo 2: escrever o script**
 
 ```gdscript
 extends MenuPanel
@@ -1278,7 +1278,7 @@ func _on_language_selected(index: int) -> void:
     _fill_language()
 ```
 
-- [ ] **Passo 3: ligar no menu e abrir**
+- [x] **Passo 3: ligar no menu e abrir**
 
 `settings_panel_scene` no inspector do `MainMenu`. `play_scene`,
 `simulate_mouse_click` no botão Ajustes, `get_game_screenshot`.
@@ -1286,7 +1286,7 @@ Aceitação: painel com pop, quatro linhas alinhadas, rótulos em pt-BR, sliders
 cheios (volume 1) e dropdowns mostrando "Alta" e "Português (Brasil)" com
 bandeira.
 
-- [ ] **Passo 4: verificar que cada controle age**
+- [x] **Passo 4: verificar que cada controle age**
 
 Por `execute_game_script` e cliques:
 
@@ -1299,7 +1299,7 @@ Por `execute_game_script` e cliques:
 4. Fechar e reabrir o painel → os valores voltam como foram deixados.
 5. Reiniciar a cena (`stop_scene` + `play_scene`) → os valores persistem.
 
-- [ ] **Passo 5: commit**
+- [x] **Passo 5: commit**
 
 ```bash
 git add ui/menu
@@ -1308,6 +1308,36 @@ git commit -m "feat: painel de ajustes com volume, qualidade e idioma"
 
 ---
 
+
+**Bug de verdade achado aqui:** `Audio.apply_volumes()` multiplica por `_fade`,
+que só sai de zero quando a splash chama `start_music_fade()`. Consequência: abrir
+o menu direto (sem splash) deixava a música **muda para sempre** — o volume dizia
+1.0 e o bus estava mudo. O Flutter tinha a mesma fragilidade. Corrigido com uma
+linha no `_ready` do menu chamando `Audio.start_music_fade()`, que é idempotente:
+se a splash já começou o fade, não faz nada. Depois: `musica tocando=true`,
+`muda=false`, `-12.04 dB` (= 0,25 linear, o volume base).
+
+**Dois acertos de layout, medidos:**
+
+- A bandeira do dropdown de idioma entrava em tamanho cheio e puxava a largura
+  mínima de **todas** as linhas de 820 para 934 px, além de esticar a própria
+  linha para 176 px de altura e desalinhar o rótulo. `expand_icon = true`
+  resolve.
+- Mesmo assim o `OptionButton` se dimensiona pelo item mais longo:
+  `fit_to_longest_item = false` + `OVERRUN_TRIM_ELLIPSIS`. E o nome do idioma
+  virou "Português" em vez de "Português (Brasil)", que não cabe na caixa.
+
+**Decisão de layout registrada:** o Flutter punha este painel em (−230, −120) do
+centro. Aqui ele fica **centralizado**: aquele deslocamento vinha do canvas da
+Unity, não tem função (o menu está escondido enquanto o painel está aberto) e
+centralizado se comporta melhor em qualquer proporção de tela. É o que a regra
+"a amarra do 1:1 com a Unity fica pra trás" permite.
+
+**Verificado em execução:** música a 0 deixa o bus mudo e grava `Settings`;
+qualidade Baixa põe `taps=0` no shader do Post; italiano troca `locale` e
+`tr("settings.music")` vira "Musica". Reiniciando a cena, os três valores
+persistem e o Post já sobe com `taps=0`. Os padrões foram restaurados no fim
+(volume 1, qualidade 2, pt_BR) para não deixar o jogo do dono mudo e em italiano.
 ### Task 9: Seleção de mundo e stub do mapa
 
 **Arquivos:**

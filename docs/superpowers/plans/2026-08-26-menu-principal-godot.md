@@ -626,7 +626,7 @@ git commit -m "feat: pos-processamento global com bloom, vinheta e grading"
 - Produz: cena `menu_background.tscn` (raiz `Node2D` chamada `MenuBackground`)
   que se escala sozinha para cobrir o viewport.
 
-- [ ] **Passo 1: escrever o shader de folhagem**
+- [x] **Passo 1: escrever o shader de folhagem**
 
 MCP: `create_shader` em `res://shaders/foliage.gdshader`:
 
@@ -646,7 +646,7 @@ void fragment() {
 }
 ```
 
-- [ ] **Passo 2: montar a cena**
+- [x] **Passo 2: montar a cena**
 
 MCP: `create_scene` `res://backgrounds/menu_background.tscn`, raiz `Node2D`
 chamada `MenuBackground`, filho `Sprite2D` chamado `Still`.
@@ -655,7 +655,7 @@ chamada `MenuBackground`, filho `Sprite2D` chamado `Still`.
 `res://assets/art/Backgrounds/MenuBackground.png`, `centered = true`.
 `assign_shader_material` com `foliage.gdshader`. `save_scene`.
 
-- [ ] **Passo 3: escrever o script de cover**
+- [x] **Passo 3: escrever o script de cover**
 
 MCP: `create_script` `res://backgrounds/menu_background.gd`, anexado à raiz:
 
@@ -678,22 +678,34 @@ func _fit() -> void:
     _still.position = viewport_size / 2.0
 ```
 
-- [ ] **Passo 4: verificar em execução**
+- [x] **Passo 4: verificar em execução**
 
 `play_scene` com `menu_background.tscn`, `get_game_screenshot`.
 Aceitação: a arte cobre a tela inteira sem barra preta e sem distorção de
 proporção; a copa das árvores oscila devagar; o chão não oscila.
-Repetir com o viewport em 1440×1080 (`set_project_setting` temporário ou
-redimensionando a janela do jogo) e conferir que continua coberto.
 
-- [ ] **Passo 5: ajustar o balanço no inspector**
+Medido em dois instantes do mesmo play, comparando faixa a faixa: topo
+(folhagem) `diferença média 1.377/255, máxima 82`; base (chão)
+`0.000/255, máxima 0`. A copa se move, o chão fica imóvel — a máscara de altura
+faz o que promete. Cobertura conferida em 1920×1080, sem barra nem distorção.
+
+**Pendência assumida:** o teste em 4:3 não deu para fazer aqui — o jogo roda
+embutido no editor e ignora `get_window().size = Vector2i(1440, 1080)`, que volta
+1920×1080. Fica para a Task 12, que já prevê 4:3 com o menu inteiro montado, que
+é o caso que importa de verdade.
+
+- [x] **Passo 5: ajustar o balanço no inspector**
 
 Se o movimento estiver forte ou rápido demais, ajustar `amplitude`, `speed` e
 `mask_bottom` pelo inspector do material — não no shader.
 Aceitação escrita: o movimento tem que ser perceptível olhando 3 s, e invisível
 olhando de relance.
 
-- [ ] **Passo 6: commit**
+Os padrões (`amplitude 0.004`, `speed 0.6`, `mask_bottom 0.55`) ficaram dentro
+disso: deslocamento de poucos pixels no topo, nenhum no chão. Julgamento final
+com o menu montado por cima, na Task 6.
+
+- [x] **Passo 6: commit**
 
 ```bash
 git add shaders/foliage.gdshader backgrounds

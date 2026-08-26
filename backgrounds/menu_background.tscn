@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d4blwh5uag6sj"]
+
+[ext_resource type="Script" uid="uid://dh20ge7vqhkhy" path="res://backgrounds/menu_background.gd" id="1_ffaou"]
+[ext_resource type="Shader" uid="uid://p4q8kvrrlduc" path="res://shaders/foliage.gdshader" id="2_uowbq"]
+[ext_resource type="Texture2D" uid="uid://cxbkcwpw2ao7f" path="res://assets/art/Backgrounds/MenuBackground.png" id="3_cjkal"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ysitu"]
+shader = ExtResource("2_uowbq")
+shader_parameter/amplitude = 0.004
+shader_parameter/speed = 0.6
+shader_parameter/wave_density = 8.0
+shader_parameter/mask_bottom = 0.55
+
+[node name="MenuBackground" type="Node2D" unique_id=244872099]
+script = ExtResource("1_ffaou")
+
+[node name="Still" type="Sprite2D" parent="." unique_id=1001852293]
+material = SubResource("ShaderMaterial_ysitu")
+texture = ExtResource("3_cjkal")

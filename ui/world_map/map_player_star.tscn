@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ctbehprgvfbtm"]
+
+[ext_resource type="Script" uid="uid://bvcylbg4b4im3" path="res://ui/world_map/map_player_star.gd" id="1_7ageg"]
+[ext_resource type="Texture2D" uid="uid://dkht4w85qguue" path="res://assets/art/UI/WorldMap/star_player.webp" id="2_l16xh"]
+
+[node name="MapPlayerStar" type="Node2D" unique_id=155702276]
+script = ExtResource("1_7ageg")
+
+[node name="Visual" type="Sprite2D" parent="." unique_id=101391508]
+scale = Vector2(0.6785714, 0.6785714)
+texture = ExtResource("2_l16xh")

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b0s5i3212bhtg"]
+
+[ext_resource type="Script" uid="uid://dh20ge7vqhkhy" path="res://backgrounds/menu_background.gd" id="1_5eaaq"]
+[ext_resource type="Shader" uid="uid://p4q8kvrrlduc" path="res://shaders/foliage.gdshader" id="2_hwy6q"]
+[ext_resource type="Texture2D" uid="uid://dtvfj7sgh0hp3" path="res://assets/art/Backgrounds/WorldMapBackground.png" id="3_pgm3f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xsxeb"]
+shader = ExtResource("2_hwy6q")
+shader_parameter/amplitude = 0.004
+shader_parameter/speed = 0.6
+shader_parameter/wave_density = 8.0
+shader_parameter/mask_bottom = 0.55
+
+[node name="WorldMapBackground" type="Node2D" unique_id=2005962093]
+script = ExtResource("1_5eaaq")
+
+[node name="Still" type="Sprite2D" parent="." unique_id=21065238]
+material = SubResource("ShaderMaterial_xsxeb")
+texture = ExtResource("3_pgm3f")

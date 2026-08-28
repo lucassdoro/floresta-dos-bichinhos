@@ -16,6 +16,8 @@ const SLOTS: Array[Vector2] = [
 @export var reject_marker: RejectMarker
 ## Item que a cesta aceita; a fase decide a regra lendo este id.
 @export var accept_id := ""
+## Escala de repouso; o pulso multiplica este valor.
+@export var base_scale := 1.0
 
 var _stored_count := 0
 var _pulse_tween: Tween
@@ -24,10 +26,18 @@ var _pulse_tween: Tween
 
 func _ready() -> void:
 	pivot_offset = size / 2.0
+	scale = Vector2.ONE * base_scale
+
+## Flor da cor que a cesta aceita, colada na borda frontal.
+func set_badge(texture: Texture2D) -> void:
+	var badge: TextureRect = get_node("Badge")
+	badge.texture = texture
+	badge.visible = true
 
 ## A cesta e' oval: vale a elipse do rect, nao os cantos.
 func contains_global_point(global_point: Vector2) -> bool:
-	var center := global_position + size * scale / 2.0
+	# pivo central: o centro visual nao se move com a escala
+	var center := global_position + size / 2.0
 	var half := size * scale / 2.0
 	var normalized := (global_point - center) / half
 	return normalized.length_squared() <= 1.0
@@ -35,11 +45,11 @@ func contains_global_point(global_point: Vector2) -> bool:
 func pulse() -> void:
 	if _pulse_tween and _pulse_tween.is_running():
 		_pulse_tween.kill()
-	scale = Vector2.ONE
+	scale = Vector2.ONE * base_scale
 	_pulse_tween = create_tween()
-	_pulse_tween.tween_property(self, "scale", Vector2.ONE * PULSE_SCALE, PULSE_DURATION / 2.0) \
+	_pulse_tween.tween_property(self, "scale", Vector2.ONE * base_scale * PULSE_SCALE, PULSE_DURATION / 2.0) \
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-	_pulse_tween.tween_property(self, "scale", Vector2.ONE, PULSE_DURATION / 2.0) \
+	_pulse_tween.tween_property(self, "scale", Vector2.ONE * base_scale, PULSE_DURATION / 2.0) \
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 
 ## Slot do proximo item (relativo ao centro, y pra cima), com o X puxado pra

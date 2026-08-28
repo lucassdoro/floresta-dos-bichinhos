@@ -49,6 +49,7 @@ var _fall_slot := Vector2.ZERO
 var _fall_velocity := Vector2.ZERO
 var _fall_start_scale := 1.0
 var _rest_tilt := 0.0
+var _stored_scale := 1.0
 var _sway_time := randf() * 10.0
 var _grab_offset := Vector2.ZERO
 var _pointer := Vector2.ZERO
@@ -134,8 +135,9 @@ func _start_settle(basket: SortingBasket) -> void:
 	_rest_tilt = randf_range(-18.0, 18.0)
 	var tilt_radians := deg_to_rad(_rest_tilt)
 	var effective_half_width := (absf(cos(tilt_radians)) * size.x + absf(sin(tilt_radians)) * size.y) * 0.5 * STORED_ITEM_SCALE
-	var slot := basket.reserve_storage_slot(effective_half_width)
-	var slot_global := basket.stored_root.global_position + Vector2(slot.x, -slot.y) - size / 2.0
+	_stored_scale = basket.stored_root.get_global_transform().get_scale().x
+	var slot := basket.reserve_storage_slot(effective_half_width / _stored_scale)
+	var slot_global := basket.stored_root.global_position + Vector2(slot.x, -slot.y) * _stored_scale - size / 2.0
 	_fall_slot = get_parent().get_global_transform().affine_inverse() * slot_global
 
 	_fall_start = position
@@ -192,11 +194,11 @@ func _update_fall(delta: float) -> void:
 	var flight := minf(_t, FALL_DURATION)
 	position = _fall_start + _fall_velocity * flight + Vector2(0, FALL_GRAVITY) * (0.5 * flight * flight)
 	var progress := flight / FALL_DURATION
-	scale = Vector2.ONE * lerpf(_fall_start_scale, STORED_ITEM_SCALE, progress)
+	scale = Vector2.ONE * lerpf(_fall_start_scale, _stored_scale, progress)
 	rotation_degrees = -_rest_tilt * progress
 	if _t < FALL_DURATION:
 		return
-	scale = Vector2(STORED_ITEM_SCALE * 1.15, STORED_ITEM_SCALE * 0.8)
+	scale = Vector2(_stored_scale * 1.15, _stored_scale * 0.8)
 	rotation_degrees = -_rest_tilt
 	_phase = Phase.SQUASH
 	_t = 0.0
@@ -205,7 +207,7 @@ func _update_squash(delta: float) -> void:
 	_t += delta
 	if _t < SQUASH_HOLD:
 		return
-	scale = Vector2.ONE * STORED_ITEM_SCALE
+	scale = Vector2.ONE * _stored_scale
 	_phase = Phase.BOUNCE
 	_t = 0.0
 

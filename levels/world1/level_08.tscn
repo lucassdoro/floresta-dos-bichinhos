@@ -1,0 +1,158 @@
+[gd_scene format=3 uid="uid://kw62byl4e3uw"]
+
+[ext_resource type="Script" uid="uid://ch7vflyhf1wcl" path="res://levels/world1/level_08.gd" id="1_ugym8"]
+[ext_resource type="PackedScene" uid="uid://de278057571nl" path="res://backgrounds/level18_background.tscn" id="2_po11f"]
+[ext_resource type="Script" uid="uid://dh20ge7vqhkhy" path="res://backgrounds/menu_background.gd" id="3_mpoj5"]
+[ext_resource type="PackedScene" uid="uid://b2cnycnt0eawo" path="res://core/level_header.tscn" id="4_lsor0"]
+[ext_resource type="Script" uid="uid://g6ckkly8peoi" path="res://core/level_header.gd" id="5_7g3i0"]
+[ext_resource type="PackedScene" uid="uid://dpg76em1yj8ib" path="res://core/sorting_basket.tscn" id="6_3j2ad"]
+[ext_resource type="Script" uid="uid://7cjsi3po68y" path="res://core/sorting_basket.gd" id="7_dkk3t"]
+[ext_resource type="PackedScene" uid="uid://c5v05eoqcunak" path="res://characters/didia.tscn" id="8_1ael8"]
+[ext_resource type="SpriteFrames" uid="uid://ci4eyybtk54mn" path="res://characters/didia_frames.tres" id="9_n0jgi"]
+[ext_resource type="PackedScene" uid="uid://jpl6k8gbnfjk" path="res://core/counter_pill.tscn" id="10_lctmx"]
+[ext_resource type="Script" uid="uid://bcqhf5xdd7xlc" path="res://core/counter_pill.gd" id="11_j18fi"]
+[ext_resource type="Texture2D" uid="uid://c7e82lb1ssnlx" path="res://assets/art/MiniGames/FlowerGarden/badge_pink.webp" id="12_ctp0f"]
+[ext_resource type="PackedScene" uid="uid://t0oxlnehvkv7" path="res://core/speech_bubble.tscn" id="13_m2ayw"]
+[ext_resource type="Script" uid="uid://d38fo0nax8eso" path="res://core/speech_bubble.gd" id="14_i81uo"]
+[ext_resource type="Texture2D" uid="uid://b2ymt67xs1tbm" path="res://assets/art/UI/Buttons/button_back.webp" id="15_s1y1r"]
+[ext_resource type="Script" uid="uid://ugcjf40nt2nh" path="res://core/juicy_button.gd" id="16_k81yn"]
+[ext_resource type="PackedScene" uid="uid://doaybwbjov1jr" path="res://core/reject_marker.tscn" id="17_wqoyk"]
+[ext_resource type="Texture2D" uid="uid://clk7a4jr73eh8" path="res://assets/art/MiniGames/FruitBreakfast/wrong_x.webp" id="18_pw5t5"]
+[ext_resource type="Script" uid="uid://ct3rgroyg1xlu" path="res://core/reject_marker.gd" id="19_0v5hq"]
+[ext_resource type="PackedScene" uid="uid://cg4spmvcta6rd" path="res://core/victory_modal.tscn" id="20_druey"]
+[ext_resource type="Script" uid="uid://crb4yqpnwctr5" path="res://core/victory_modal.gd" id="21_axafo"]
+
+[node name="Level08" type="Control" unique_id=1869516607]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_ugym8")
+level_number = 8
+mistakes_per_star = 2
+
+[node name="Background" type="Node2D" parent="." unique_id=1759491833 instance=ExtResource("2_po11f")]
+script = ExtResource("3_mpoj5")
+
+[node name="Header" type="Control" parent="." unique_id=1294603571 instance=ExtResource("4_lsor0")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(620, 244)
+anchors_preset = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -310.0
+offset_top = 16.0
+offset_right = 310.0
+offset_bottom = 260.0
+script = ExtResource("5_7g3i0")
+phase_key = "level18.phase"
+title_key = "level18.title"
+
+[node name="GameRoot" type="Control" parent="." unique_id=917903025]
+unique_name_in_owner = true
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Basket1" type="Control" parent="GameRoot" unique_id=261120346 node_paths=PackedStringArray("reject_marker") instance=ExtResource("6_3j2ad")]
+anchors_preset = 0
+offset_left = 485.0
+offset_top = 774.21
+offset_right = 915.0
+offset_bottom = 1085.79
+mouse_filter = 2
+script = ExtResource("7_dkk3t")
+reject_marker = NodePath("../../RejectMarker")
+base_scale = 0.75
+
+[node name="Basket2" type="Control" parent="GameRoot" unique_id=32143748 node_paths=PackedStringArray("reject_marker") instance=ExtResource("6_3j2ad")]
+anchors_preset = 0
+offset_left = 865.0
+offset_top = 774.21
+offset_right = 1295.0
+offset_bottom = 1085.79
+mouse_filter = 2
+script = ExtResource("7_dkk3t")
+reject_marker = NodePath("../../RejectMarker")
+base_scale = 0.75
+
+[node name="Basket3" type="Control" parent="GameRoot" unique_id=2096325208 node_paths=PackedStringArray("reject_marker") instance=ExtResource("6_3j2ad")]
+anchors_preset = 0
+offset_left = 1245.0
+offset_top = 774.21
+offset_right = 1675.0
+offset_bottom = 1085.79
+mouse_filter = 2
+script = ExtResource("7_dkk3t")
+reject_marker = NodePath("../../RejectMarker")
+base_scale = 0.75
+
+[node name="Didia" type="AnimatedSprite2D" parent="." unique_id=1121520515 instance=ExtResource("8_1ael8")]
+unique_name_in_owner = true
+position = Vector2(260, 860)
+scale = Vector2(0.7368, 0.7368)
+sprite_frames = ExtResource("9_n0jgi")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Counter" type="Control" parent="." unique_id=1367283034 instance=ExtResource("10_lctmx")]
+unique_name_in_owner = true
+anchors_preset = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -330.0
+offset_top = 40.0
+offset_right = -50.0
+offset_bottom = 150.0
+mouse_filter = 2
+script = ExtResource("11_j18fi")
+target = 9
+icon = ExtResource("12_ctp0f")
+
+[node name="Bubble" type="Control" parent="." unique_id=19909346 instance=ExtResource("13_m2ayw")]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 359.968
+offset_top = 701.956
+offset_right = 879.968
+offset_bottom = 897.956
+mouse_filter = 2
+script = ExtResource("14_i81uo")
+
+[node name="BackButton" type="TextureButton" parent="." unique_id=488774342]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 50.0
+offset_top = 42.4
+offset_right = 170.0
+offset_bottom = 157.6
+texture_normal = ExtResource("15_s1y1r")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("16_k81yn")
+
+[node name="RejectMarker" type="TextureRect" parent="." unique_id=1635654017 instance=ExtResource("17_wqoyk")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 900.0
+offset_top = 400.0
+offset_right = 1050.0
+offset_bottom = 550.0
+mouse_filter = 2
+texture = ExtResource("18_pw5t5")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("19_0v5hq")
+
+[node name="Effects" type="Node2D" parent="." unique_id=1149818783 groups=["effects"]]
+
+[node name="VictoryModal" type="Control" parent="." unique_id=1728551931 instance=ExtResource("20_druey")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("21_axafo")

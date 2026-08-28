@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://we3hwubavhr7"]
+
+[ext_resource type="Script" uid="uid://bffsljrvi7kcb" path="res://levels/world1/level_06.gd" id="1_vsirp"]
+[ext_resource type="Script" uid="uid://dh20ge7vqhkhy" path="res://backgrounds/menu_background.gd" id="2_byge8"]
+[ext_resource type="Texture2D" uid="uid://cjrbgn6a67vkd" path="res://assets/art/MiniGames/SeedMaze/maze_background.webp" id="3_lcd7h"]
+[ext_resource type="PackedScene" uid="uid://b2cnycnt0eawo" path="res://core/level_header.tscn" id="4_7lso2"]
+[ext_resource type="Script" uid="uid://g6ckkly8peoi" path="res://core/level_header.gd" id="5_vj1at"]
+[ext_resource type="Script" uid="uid://yr6e20dycgcl" path="res://levels/world1/maze_view.gd" id="6_7gk41"]
+[ext_resource type="Script" uid="uid://dewbwa4pvjmja" path="res://levels/world1/trail_painter.gd" id="7_22ojw"]
+[ext_resource type="Texture2D" uid="uid://d0br6n0dnm8st" path="res://assets/art/MiniGames/SeedMaze/trail_arrow.webp" id="8_8q2yl"]
+[ext_resource type="Texture2D" uid="uid://cuh48q4h57mwl" path="res://assets/art/MiniGames/SeedMaze/clearing.webp" id="9_tcqch"]
+[ext_resource type="PackedScene" uid="uid://5qepfy66iliu" path="res://characters/lolo.tscn" id="10_c5xgb"]
+[ext_resource type="SpriteFrames" uid="uid://d1ll2ro1i47yo" path="res://characters/lolo_frames.tres" id="11_rnwff"]
+[ext_resource type="Script" uid="uid://dct3ki46pulek" path="res://characters/lolo_character.gd" id="12_2ymxd"]
+[ext_resource type="PackedScene" uid="uid://t0oxlnehvkv7" path="res://core/speech_bubble.tscn" id="13_w4vhh"]
+[ext_resource type="Script" uid="uid://d38fo0nax8eso" path="res://core/speech_bubble.gd" id="14_y8f2v"]
+[ext_resource type="Texture2D" uid="uid://b2ymt67xs1tbm" path="res://assets/art/UI/Buttons/button_back.webp" id="15_884vj"]
+[ext_resource type="Script" uid="uid://ugcjf40nt2nh" path="res://core/juicy_button.gd" id="16_p3twu"]
+[ext_resource type="PackedScene" uid="uid://cg4spmvcta6rd" path="res://core/victory_modal.tscn" id="17_epbcj"]
+[ext_resource type="Script" uid="uid://crb4yqpnwctr5" path="res://core/victory_modal.gd" id="18_6oqa1"]
+
+[sub_resource type="Gradient" id="Gradient_jmg30"]
+offsets = PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1)
+colors = PackedColorArray(1, 0.35, 0.35, 1, 1, 0.8, 0.3, 1, 0.5, 0.9, 0.4, 1, 0.4, 0.7, 1, 1, 0.8, 0.5, 1, 1, 1, 0.5, 0.8, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_svgqn"]
+gradient = SubResource("Gradient_jmg30")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0mu7u"]
+emission_shape = 3
+emission_box_extents = Vector3(960, 10, 1)
+angle_max = 360.0
+direction = Vector3(0, 1, 0)
+spread = 20.0
+initial_velocity_min = 150.0
+initial_velocity_max = 380.0
+angular_velocity_min = -240.0
+angular_velocity_max = 240.0
+gravity = Vector3(0, 420, 0)
+scale_min = 6.0
+scale_max = 13.0
+color_initial_ramp = SubResource("GradientTexture1D_svgqn")
+
+[node name="Level06" type="Control" unique_id=1374380715]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_vsirp")
+level_number = 6
+
+[node name="Background" type="Node2D" parent="." unique_id=741383823]
+script = ExtResource("2_byge8")
+
+[node name="Still" type="Sprite2D" parent="Background" unique_id=1581321358]
+texture = ExtResource("3_lcd7h")
+
+[node name="Header" type="Control" parent="." unique_id=1294603571 instance=ExtResource("4_7lso2")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(620, 244)
+anchors_preset = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -310.0
+offset_top = 16.0
+offset_right = 310.0
+offset_bottom = 260.0
+script = ExtResource("5_vj1at")
+phase_key = "level16.phase"
+title_key = "level16.title"
+
+[node name="MazeView" type="Node2D" parent="." unique_id=1696370390]
+unique_name_in_owner = true
+position = Vector2(221.56, 280)
+script = ExtResource("6_7gk41")
+
+[node name="TrailPainter" type="Node2D" parent="MazeView" unique_id=577338491]
+unique_name_in_owner = true
+z_index = 1
+script = ExtResource("7_22ojw")
+
+[node name="Arrow" type="Sprite2D" parent="MazeView" unique_id=930403687]
+unique_name_in_owner = true
+z_index = 3
+scale = Vector2(0.31111112, 0.31111112)
+texture = ExtResource("8_8q2yl")
+
+[node name="Clearing" type="Sprite2D" parent="." unique_id=1224234342]
+unique_name_in_owner = true
+z_index = 11
+scale = Vector2(0.6666667, 0.6666667)
+texture = ExtResource("9_tcqch")
+
+[node name="Lolo" type="AnimatedSprite2D" parent="." unique_id=769880747 instance=ExtResource("10_c5xgb")]
+unique_name_in_owner = true
+z_index = 12
+sprite_frames = ExtResource("11_rnwff")
+animation = &"idle"
+autoplay = "idle"
+script = ExtResource("12_2ymxd")
+base_scale = 0.367
+
+[node name="Bubble" type="Control" parent="." unique_id=19909346 instance=ExtResource("13_w4vhh")]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 500.0
+offset_top = 640.0
+offset_right = 1020.0
+offset_bottom = 836.0
+mouse_filter = 2
+script = ExtResource("14_y8f2v")
+
+[node name="Confetti" type="GPUParticles2D" parent="." unique_id=495921733]
+position = Vector2(960, -40)
+emitting = false
+amount = 140
+lifetime = 3.0
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_0mu7u")
+
+[node name="BackButton" type="TextureButton" parent="." unique_id=1039348668]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 50.0
+offset_top = 42.4
+offset_right = 170.0
+offset_bottom = 157.6
+texture_normal = ExtResource("15_884vj")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("16_p3twu")
+
+[node name="Effects" type="Node2D" parent="." unique_id=1756038287 groups=["effects"]]
+
+[node name="VictoryModal" type="Control" parent="." unique_id=1728551931 instance=ExtResource("17_epbcj")]
+unique_name_in_owner = true
+z_index = 50
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("18_6oqa1")

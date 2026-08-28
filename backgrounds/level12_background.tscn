@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://4sh8os0hw4bf"]
+
+[ext_resource type="Script" uid="uid://dh20ge7vqhkhy" path="res://backgrounds/menu_background.gd" id="1_5qnnm"]
+[ext_resource type="Shader" uid="uid://rtfxb1bvl1jx" path="res://shaders/water.gdshader" id="2_eih0u"]
+[ext_resource type="Texture2D" uid="uid://8ham1mkyhkes" path="res://assets/art/Backgrounds/Level12Background.png" id="3_nc3a5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xb8be"]
+shader = ExtResource("2_eih0u")
+
+[node name="Level12Background" type="Node2D" unique_id=1857881824]
+script = ExtResource("1_5qnnm")
+
+[node name="Still" type="Sprite2D" parent="." unique_id=1193525784]
+material = SubResource("ShaderMaterial_xb8be")
+texture = ExtResource("3_nc3a5")

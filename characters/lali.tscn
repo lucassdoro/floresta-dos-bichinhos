@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b7t1c3doicuki"]
+
+[ext_resource type="SpriteFrames" uid="uid://dvp4yjl813r4c" path="res://characters/lali_frames.tres" id="1_d4gbd"]
+[ext_resource type="Script" uid="uid://24balxdqqg1g" path="res://characters/lali_character.gd" id="2_vbnat"]
+
+[node name="Lali" type="AnimatedSprite2D" unique_id=394831140]
+sprite_frames = ExtResource("1_d4gbd")
+animation = &"idle"
+autoplay = "idle"
+script = ExtResource("2_vbnat")

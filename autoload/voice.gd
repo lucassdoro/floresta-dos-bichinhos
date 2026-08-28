@@ -17,17 +17,18 @@ func _ready() -> void:
 func locale_folder() -> String:
 	return Settings.locale.replace("_", "-")
 
-func play(character: String, file_name: String) -> void:
+func play(character: String, file_name: String) -> bool:
 	var path := "res://assets/audio/Voice/%s/%s/%s.wav" % [character, locale_folder(), file_name]
-	play_path(path)
+	return play_path(path)
 
-func play_path(path: String) -> void:
+func play_path(path: String) -> bool:
 	if not ResourceLoader.exists(path):
 		push_warning("Voz nao encontrada: " + path)
-		return
+		return false
 	_player.stop()
 	_player.stream = load(path)
 	_player.play()
+	return true
 
 func stop() -> void:
 	_player.stop()

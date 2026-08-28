@@ -1,0 +1,260 @@
+[gd_scene format=3 uid="uid://le2omjvnbw4h"]
+
+[ext_resource type="Script" uid="uid://6itkuyl1kdyl" path="res://levels/world1/level_02.gd" id="1_xclw4"]
+[ext_resource type="PackedScene" uid="uid://4sh8os0hw4bf" path="res://backgrounds/level12_background.tscn" id="2_ij7bp"]
+[ext_resource type="PackedScene" uid="uid://b2cnycnt0eawo" path="res://core/level_header.tscn" id="4_fdmji"]
+[ext_resource type="Script" uid="uid://cygmjot4gsh1c" path="res://levels/world1/coral_paint_area.gd" id="6_utlxg"]
+[ext_resource type="Texture2D" uid="uid://yu5325jrw5lf" path="res://assets/art/MiniGames/ColorReef/coral_rock.webp" id="7_6bdlr"]
+[ext_resource type="Texture2D" uid="uid://cpljhtf5c1jha" path="res://assets/art/MiniGames/ColorReef/coral_branches.webp" id="8_q51fs"]
+[ext_resource type="Shader" uid="uid://ckh4qtrs7ruh3" path="res://shaders/paint_mask.gdshader" id="9_trt3t"]
+[ext_resource type="Texture2D" uid="uid://brlya135ehtht" path="res://assets/art/MiniGames/ColorReef/coral_shading.webp" id="10_2ep7j"]
+[ext_resource type="Script" uid="uid://bl6pl85d0c8o3" path="res://levels/world1/brush_cursor.gd" id="11_3xbrw"]
+[ext_resource type="Texture2D" uid="uid://dgjo5olaggfeh" path="res://assets/art/MiniGames/ColorReef/brush_handle.webp" id="12_0ht3o"]
+[ext_resource type="Texture2D" uid="uid://iydnwb5mhy6q" path="res://assets/art/MiniGames/ColorReef/brush_tip.webp" id="13_ruh73"]
+[ext_resource type="Script" uid="uid://y3ayrkb7mcgg" path="res://levels/world1/colors_panel.gd" id="14_5xos1"]
+[ext_resource type="Texture2D" uid="uid://c5x1feb7m271q" path="res://assets/art/MiniGames/ColorReef/star_red.webp" id="15_24mt5"]
+[ext_resource type="Script" uid="uid://ugcjf40nt2nh" path="res://core/juicy_button.gd" id="16_qyk03"]
+[ext_resource type="Texture2D" uid="uid://mkuuxufaatcx" path="res://assets/art/MiniGames/ColorReef/star_green.webp" id="17_hv42d"]
+[ext_resource type="Texture2D" uid="uid://bxqwctl80i6rn" path="res://assets/art/MiniGames/ColorReef/star_yellow.webp" id="18_uibws"]
+[ext_resource type="PackedScene" uid="uid://b7t1c3doicuki" path="res://characters/lali.tscn" id="19_cwncc"]
+[ext_resource type="PackedScene" uid="uid://t0oxlnehvkv7" path="res://core/speech_bubble.tscn" id="22_xyhb2"]
+[ext_resource type="Texture2D" uid="uid://b2ymt67xs1tbm" path="res://assets/art/UI/Buttons/button_back.webp" id="24_ceski"]
+[ext_resource type="PackedScene" uid="uid://doaybwbjov1jr" path="res://core/reject_marker.tscn" id="25_3h8wj"]
+[ext_resource type="PackedScene" uid="uid://cg4spmvcta6rd" path="res://core/victory_modal.tscn" id="28_sbdli"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lqen8"]
+shader = ExtResource("9_trt3t")
+shader_parameter/group_alpha = 1.0
+
+[node name="Level02" type="Control" unique_id=1000305394]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xclw4")
+level_number = 2
+mistakes_per_star = 2
+
+[node name="Background" parent="." unique_id=1857881824 instance=ExtResource("2_ij7bp")]
+
+[node name="Header" parent="." unique_id=1294603571 instance=ExtResource("4_fdmji")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -310.0
+offset_top = 16.0
+offset_right = 310.0
+offset_bottom = 260.0
+phase_key = "level12.phase"
+title_key = "level12.title"
+
+[node name="GameRoot" type="Control" parent="." unique_id=1742696448]
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Coral" type="Control" parent="GameRoot" unique_id=515440920]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 780.0
+offset_top = 449.5
+offset_right = 1140.0
+offset_bottom = 734.5
+script = ExtResource("6_utlxg")
+
+[node name="Rock" type="TextureRect" parent="GameRoot/Coral" unique_id=1361632479]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource("7_6bdlr")
+expand_mode = 1
+
+[node name="Branches" type="TextureRect" parent="GameRoot/Coral" unique_id=1787806980]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource("8_q51fs")
+expand_mode = 1
+
+[node name="PaintDisplay" type="TextureRect" parent="GameRoot/Coral" unique_id=1335560034]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_lqen8")
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource("8_q51fs")
+expand_mode = 1
+
+[node name="Shading" type="TextureRect" parent="GameRoot/Coral" unique_id=2118176983]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource("10_2ep7j")
+expand_mode = 1
+
+[node name="PaintViewport" type="SubViewport" parent="GameRoot/Coral" unique_id=817501713]
+unique_name_in_owner = true
+disable_3d = true
+transparent_bg = true
+size = Vector2i(360, 285)
+
+[node name="Brush" type="Node2D" parent="." unique_id=748458815]
+unique_name_in_owner = true
+script = ExtResource("11_3xbrw")
+
+[node name="Handle" type="Sprite2D" parent="Brush" unique_id=1493170830]
+position = Vector2(0, -119)
+scale = Vector2(0.6875, 0.6875)
+texture = ExtResource("12_0ht3o")
+
+[node name="Tip" type="Sprite2D" parent="Brush" unique_id=1044915985]
+position = Vector2(0, -119)
+scale = Vector2(0.6875, 0.6875)
+texture = ExtResource("13_ruh73")
+
+[node name="ColorsPanel" type="Control" parent="." unique_id=141474001]
+unique_name_in_owner = true
+anchors_preset = 0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -450.0
+offset_top = -248.51001
+offset_right = 450.0
+offset_bottom = -38.51001
+scale = Vector2(1.1856, 1.1856)
+pivot_offset = Vector2(450, 210)
+script = ExtResource("14_5xos1")
+
+[node name="ColorButton1" type="TextureButton" parent="ColorsPanel" unique_id=44699260]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 66.0
+offset_top = 18.5
+offset_right = 234.0
+offset_bottom = 191.5
+texture_normal = ExtResource("15_24mt5")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("16_qyk03")
+
+[node name="ColorLabel1" type="Label" parent="ColorsPanel/ColorButton1" unique_id=2040688388]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 110.0
+offset_right = 168.0
+offset_bottom = 152.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.33, 0.19, 0.08, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 24
+text = "color.red"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorButton2" type="TextureButton" parent="ColorsPanel" unique_id=1029861571]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 366.0
+offset_top = 18.5
+offset_right = 534.0
+offset_bottom = 191.5
+texture_normal = ExtResource("17_hv42d")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("16_qyk03")
+
+[node name="ColorLabel2" type="Label" parent="ColorsPanel/ColorButton2" unique_id=1681549900]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 110.0
+offset_right = 168.0
+offset_bottom = 152.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.33, 0.19, 0.08, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 24
+text = "color.green"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorButton3" type="TextureButton" parent="ColorsPanel" unique_id=1837493052]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 666.0
+offset_top = 18.5
+offset_right = 834.0
+offset_bottom = 191.5
+texture_normal = ExtResource("18_uibws")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("16_qyk03")
+
+[node name="ColorLabel3" type="Label" parent="ColorsPanel/ColorButton3" unique_id=1043244553]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 110.0
+offset_right = 168.0
+offset_bottom = 152.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.33, 0.19, 0.08, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 24
+text = "color.yellow"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Lali" parent="." unique_id=394831140 instance=ExtResource("19_cwncc")]
+unique_name_in_owner = true
+position = Vector2(200, 736)
+
+[node name="Bubble" parent="." unique_id=19909346 instance=ExtResource("22_xyhb2")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 310.0
+offset_top = 632.0
+offset_right = 830.0
+offset_bottom = 828.0
+
+[node name="BackButton" type="TextureButton" parent="." unique_id=1239692311]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 50.0
+offset_top = 42.4
+offset_right = 170.0
+offset_bottom = 157.6
+texture_normal = ExtResource("24_ceski")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("16_qyk03")
+
+[node name="RejectMarker" parent="." unique_id=1635654017 instance=ExtResource("25_3h8wj")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 900.0
+offset_top = 800.0
+offset_right = 1020.0
+offset_bottom = 920.0
+
+[node name="Effects" type="Node2D" parent="." unique_id=2002324914 groups=["effects"]]
+
+[node name="VictoryModal" parent="." unique_id=1728551931 instance=ExtResource("28_sbdli")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2

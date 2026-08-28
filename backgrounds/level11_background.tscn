@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cu7jxahiskgls"]
+
+[ext_resource type="Script" uid="uid://dh20ge7vqhkhy" path="res://backgrounds/menu_background.gd" id="1_u3lwk"]
+[ext_resource type="Shader" uid="uid://p4q8kvrrlduc" path="res://shaders/foliage.gdshader" id="2_wl2qk"]
+[ext_resource type="Texture2D" uid="uid://nhhg807o2ywq" path="res://assets/art/Backgrounds/Level11Background.png" id="3_qwuwa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3i08b"]
+shader = ExtResource("2_wl2qk")
+shader_parameter/amplitude = 0.004
+shader_parameter/speed = 0.6
+shader_parameter/wave_density = 8.0
+shader_parameter/mask_bottom = 0.55
+
+[node name="Level11Background" type="Node2D" unique_id=2091969273]
+script = ExtResource("1_u3lwk")
+
+[node name="Still" type="Sprite2D" parent="." unique_id=1477392011]
+material = SubResource("ShaderMaterial_3i08b")
+texture = ExtResource("3_qwuwa")

@@ -47,6 +47,15 @@ func play_click() -> void:
 func play_locked() -> void:
 	_locked.play()
 
+## SFX curto com sobreposicao livre: player descartavel no bus SFX.
+func play_sfx(stream: AudioStream) -> void:
+	var player := AudioStreamPlayer.new()
+	player.stream = stream
+	player.bus = "SFX"
+	add_child(player)
+	player.finished.connect(player.queue_free)
+	player.play()
+
 func _on_settings_changed(key: String) -> void:
 	if key not in ["music_volume", "sfx_volume"]:
 		return

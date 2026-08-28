@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://cg4spmvcta6rd"]
+
+[ext_resource type="Script" uid="uid://crb4yqpnwctr5" path="res://core/victory_modal.gd" id="1_7yn2l"]
+[ext_resource type="Texture2D" uid="uid://d1f5xlj5jqnk2" path="res://assets/art/UI/Buttons/modal_panel.webp" id="2_wtgge"]
+[ext_resource type="Texture2D" uid="uid://cjr05i0wedo75" path="res://assets/art/UI/Buttons/button_advance.webp" id="3_7yqde"]
+[ext_resource type="Script" uid="uid://ugcjf40nt2nh" path="res://core/juicy_button.gd" id="4_05cop"]
+[ext_resource type="Texture2D" uid="uid://b7p31xfdo4kn1" path="res://assets/art/UI/Buttons/arrow_advance.webp" id="5_6dhbs"]
+[ext_resource type="Texture2D" uid="uid://p2pktkgrie8w" path="res://assets/art/UI/WorldMap/star_off.webp" id="6_32ckh"]
+
+[sub_resource type="Gradient" id="Gradient_yfmws"]
+offsets = PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1)
+colors = PackedColorArray(1, 0.35, 0.35, 1, 1, 0.8, 0.3, 1, 0.5, 0.9, 0.4, 1, 0.4, 0.7, 1, 1, 0.8, 0.5, 1, 1, 1, 0.5, 0.8, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5qrld"]
+gradient = SubResource("Gradient_yfmws")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e0fkm"]
+emission_shape = 3
+emission_box_extents = Vector3(960, 10, 1)
+angle_max = 360.0
+direction = Vector3(0, 1, 0)
+spread = 20.0
+initial_velocity_min = 150.0
+initial_velocity_max = 380.0
+angular_velocity_min = -240.0
+angular_velocity_max = 240.0
+gravity = Vector3(0, 420, 0)
+scale_min = 6.0
+scale_max = 13.0
+color_initial_ramp = SubResource("GradientTexture1D_5qrld")
+
+[node name="VictoryModal" type="Control" unique_id=1728551931]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1080.0
+script = ExtResource("1_7yn2l")
+
+[node name="Dim" type="ColorRect" parent="." unique_id=1664071114]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.55)
+
+[node name="Confetti" type="GPUParticles2D" parent="." unique_id=1638696155]
+unique_name_in_owner = true
+position = Vector2(960, -40)
+emitting = false
+amount = 140
+lifetime = 3.0
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_e0fkm")
+
+[node name="PanelBox" type="NinePatchRect" parent="." unique_id=1972305854]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -410.0
+offset_top = -320.0
+offset_right = 410.0
+offset_bottom = 320.0
+texture = ExtResource("2_wtgge")
+patch_margin_left = 96
+patch_margin_top = 96
+patch_margin_right = 96
+patch_margin_bottom = 96
+
+[node name="AdvanceRoot" type="Control" parent="PanelBox" unique_id=1483782119]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 190.0
+offset_top = 454.0
+offset_right = 630.0
+offset_bottom = 586.0
+
+[node name="AdvanceButton" type="TextureButton" parent="PanelBox/AdvanceRoot" unique_id=1505335822]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 440.0
+offset_bottom = 132.0
+texture_normal = ExtResource("3_7yqde")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("4_05cop")
+
+[node name="AdvanceLabel" type="Label" parent="PanelBox/AdvanceRoot/AdvanceButton" unique_id=896030025]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 7.0
+offset_right = 340.0
+offset_bottom = 117.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.22, 0.12, 0.04, 0.6)
+theme_override_constants/shadow_offset_y = 4
+theme_override_font_sizes/font_size = 54
+text = "AVANÇAR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Arrow" type="TextureRect" parent="PanelBox/AdvanceRoot/AdvanceButton" unique_id=1099856498]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 28.0
+offset_right = 398.0
+offset_bottom = 100.0
+texture = ExtResource("5_6dhbs")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="PanelBox" unique_id=873766057]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 60.0
+offset_top = 45.0
+offset_right = 760.0
+offset_bottom = 175.0
+theme_override_colors/font_color = Color(0.36, 0.23, 0.12, 1)
+theme_override_font_sizes/font_size = 92
+text = "Muito bem!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ModalStar1" type="TextureRect" parent="PanelBox" unique_id=1671003473]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 155.0
+offset_top = 185.0
+offset_right = 305.0
+offset_bottom = 335.0
+texture = ExtResource("6_32ckh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ModalStar2" type="TextureRect" parent="PanelBox" unique_id=935048954]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 335.0
+offset_top = 150.0
+offset_right = 485.0
+offset_bottom = 300.0
+texture = ExtResource("6_32ckh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ModalStar3" type="TextureRect" parent="PanelBox" unique_id=402921021]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 515.0
+offset_top = 185.0
+offset_right = 665.0
+offset_bottom = 335.0
+texture = ExtResource("6_32ckh")
+expand_mode = 1
+stretch_mode = 5

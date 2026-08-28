@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://jpl6k8gbnfjk"]
+
+[ext_resource type="Script" uid="uid://bcqhf5xdd7xlc" path="res://core/counter_pill.gd" id="1_lx0or"]
+[ext_resource type="Texture2D" uid="uid://cwetth18icuv2" path="res://assets/art/UI/counter_pill.webp" id="2_sv036"]
+[ext_resource type="Texture2D" uid="uid://dn5aq3in7f6ke" path="res://assets/art/MiniGames/FruitBreakfast/fruit_apple.webp" id="3_sl3lp"]
+
+[node name="CounterPill" type="Control" unique_id=1367283034]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 280.0
+offset_bottom = 110.0
+mouse_filter = 2
+script = ExtResource("1_lx0or")
+
+[node name="Pill" type="TextureRect" parent="." unique_id=2123545062]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource("2_sv036")
+expand_mode = 1
+
+[node name="Icon" type="TextureRect" parent="." unique_id=721576394]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 29.0
+offset_top = 13.0
+offset_right = 95.0
+offset_bottom = 85.0
+mouse_filter = 2
+texture = ExtResource("3_sl3lp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CountLabel" type="Label" parent="." unique_id=2061405366]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 95.0
+offset_top = 7.0
+offset_right = 245.0
+offset_bottom = 103.0
+theme_override_colors/font_color = Color(0.36, 0.23, 0.12, 1)
+theme_override_font_sizes/font_size = 56
+text = "0/10"
+horizontal_alignment = 1
+vertical_alignment = 1

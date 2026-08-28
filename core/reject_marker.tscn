@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://doaybwbjov1jr"]
+
+[ext_resource type="Texture2D" uid="uid://clk7a4jr73eh8" path="res://assets/art/MiniGames/FruitBreakfast/wrong_x.webp" id="1_7hq3t"]
+[ext_resource type="Script" uid="uid://ct3rgroyg1xlu" path="res://core/reject_marker.gd" id="2_p4x85"]
+
+[node name="RejectMarker" type="TextureRect" unique_id=1635654017]
+offset_right = 150.0
+offset_bottom = 150.0
+mouse_filter = 2
+texture = ExtResource("1_7hq3t")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_p4x85")

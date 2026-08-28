@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://b2cnycnt0eawo"]
+
+[ext_resource type="Script" uid="uid://g6ckkly8peoi" path="res://core/level_header.gd" id="1_5cg2h"]
+[ext_resource type="Texture2D" uid="uid://dnw1bsmjfmf8w" path="res://assets/art/MiniGames/ColorReef/victory_panel.webp" id="2_sv7c6"]
+[ext_resource type="Texture2D" uid="uid://bgoerajnydn8t" path="res://assets/art/UI/WorldMap/star_on.webp" id="3_5g8ea"]
+
+[node name="LevelHeader" type="Control" unique_id=1294603571]
+custom_minimum_size = Vector2(620, 244)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 620.0
+offset_bottom = 244.0
+script = ExtResource("1_5cg2h")
+
+[node name="Panel" type="TextureRect" parent="." unique_id=788039173]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("2_sv7c6")
+expand_mode = 1
+
+[node name="PhaseLabel" type="Label" parent="." unique_id=1667296372]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 192.0
+offset_top = 10.0
+offset_right = 442.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.22, 0.12, 0.04, 0.8)
+theme_override_colors/font_outline_color = Color(0.33, 0.19, 0.08, 1)
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 30
+text = "level11.phase"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TitleLabel" type="Label" parent="." unique_id=1621155896]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 50.5
+offset_top = 70.0
+offset_right = 569.5
+offset_bottom = 150.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.22, 0.12, 0.04, 0.8)
+theme_override_colors/font_outline_color = Color(0.33, 0.19, 0.08, 1)
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "level11.title"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Star1" type="TextureRect" parent="." unique_id=1465972021]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 180.7
+offset_top = 152.4
+offset_right = 254.7
+offset_bottom = 226.4
+texture = ExtResource("3_5g8ea")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Star2" type="TextureRect" parent="." unique_id=410242910]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 277.5
+offset_top = 152.4
+offset_right = 351.5
+offset_bottom = 226.4
+texture = ExtResource("3_5g8ea")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Star3" type="TextureRect" parent="." unique_id=1725135264]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 371.6
+offset_top = 152.4
+offset_right = 445.6
+offset_bottom = 226.4
+texture = ExtResource("3_5g8ea")
+expand_mode = 1
+stretch_mode = 5

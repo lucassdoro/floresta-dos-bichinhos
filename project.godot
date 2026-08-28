@@ -24,10 +24,12 @@ buses/default_bus_layout="uid://dwr7503lvsekc"
 
 Settings="*res://autoload/settings.gd"
 Audio="*res://autoload/audio.tscn"
+Post="*res://autoload/post.tscn"
 MCPScreenshot="*res://addons/godot_mcp/mcp_screenshot_service.gd"
 MCPInputService="*res://addons/godot_mcp/mcp_input_service.gd"
 MCPGameInspector="*res://addons/godot_mcp/mcp_game_inspector_service.gd"
-Post="*res://autoload/post.tscn"
+Progression="*res://autoload/progression.gd"
+Voice="*res://autoload/voice.gd"
 
 [display]
 

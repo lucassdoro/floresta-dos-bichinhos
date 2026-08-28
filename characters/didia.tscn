@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c5v05eoqcunak"]
+
+[ext_resource type="SpriteFrames" uid="uid://ci4eyybtk54mn" path="res://characters/didia_frames.tres" id="1_i08p1"]
+
+[node name="Didia" type="AnimatedSprite2D" unique_id=1121520515]
+sprite_frames = ExtResource("1_i08p1")
+animation = &"idle"
+autoplay = "idle"

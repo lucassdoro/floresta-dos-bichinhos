@@ -7,6 +7,9 @@ extends Control
 
 signal typing_finished
 
+## Espelha o balao horizontalmente (rabinho pro outro lado).
+@export var mirrored := false
+
 const TEXT_COLOR := Color(0.29, 0.18, 0.07)
 const CHARS_PER_SECOND := 28.0
 const APPEAR_DURATION := 0.35
@@ -19,6 +22,8 @@ var _total := 0
 @onready var _label: RichTextLabel = %BubbleText
 
 func _ready() -> void:
+	if mirrored:
+		$BubbleImage.flip_h = true
 	modulate.a = 0.0
 	pivot_offset = size / 2.0
 	scale = Vector2.ONE * 0.9

@@ -1,0 +1,849 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bfkybx01jf2mo"]
+
+[ext_resource type="Texture2D" uid="uid://m12njrr6p0tx" path="res://assets/art/MiniGames/LostAnimals/anim/croc_00.webp" id="1_1hk73"]
+[ext_resource type="Texture2D" uid="uid://c6gr8akmbnddm" path="res://assets/art/MiniGames/LostAnimals/anim/croc_01.webp" id="2_7saov"]
+[ext_resource type="Texture2D" uid="uid://onqgqnya56tf" path="res://assets/art/MiniGames/LostAnimals/anim/croc_02.webp" id="3_24dcn"]
+[ext_resource type="Texture2D" uid="uid://s85hswr2t28k" path="res://assets/art/MiniGames/LostAnimals/anim/croc_03.webp" id="4_n6ud2"]
+[ext_resource type="Texture2D" uid="uid://sn7qv16277ak" path="res://assets/art/MiniGames/LostAnimals/anim/croc_04.webp" id="5_iawji"]
+[ext_resource type="Texture2D" uid="uid://cjlo2fnm72ni3" path="res://assets/art/MiniGames/LostAnimals/anim/croc_05.webp" id="6_g7ekd"]
+[ext_resource type="Texture2D" uid="uid://3y0dpxa7a0" path="res://assets/art/MiniGames/LostAnimals/anim/croc_06.webp" id="7_x2aks"]
+[ext_resource type="Texture2D" uid="uid://b8t8t846yy8yx" path="res://assets/art/MiniGames/LostAnimals/anim/croc_07.webp" id="8_em8g3"]
+[ext_resource type="Texture2D" uid="uid://bkqvr4hccy6yu" path="res://assets/art/MiniGames/LostAnimals/anim/croc_08.webp" id="9_pjn0v"]
+[ext_resource type="Texture2D" uid="uid://t1nau2wqluyu" path="res://assets/art/MiniGames/LostAnimals/anim/croc_09.webp" id="10_2seqn"]
+[ext_resource type="Texture2D" uid="uid://rvhls124w4ph" path="res://assets/art/MiniGames/LostAnimals/anim/croc_10.webp" id="11_vw6gt"]
+[ext_resource type="Texture2D" uid="uid://bcumbvarq38ug" path="res://assets/art/MiniGames/LostAnimals/anim/croc_11.webp" id="12_can5d"]
+[ext_resource type="Texture2D" uid="uid://dbs138pnjm5mv" path="res://assets/art/MiniGames/LostAnimals/anim/croc_12.webp" id="13_xih00"]
+[ext_resource type="Texture2D" uid="uid://buvhqccy383x2" path="res://assets/art/MiniGames/LostAnimals/anim/croc_13.webp" id="14_lu36x"]
+[ext_resource type="Texture2D" uid="uid://dbri7mch8j1se" path="res://assets/art/MiniGames/LostAnimals/anim/croc_14.webp" id="15_xb5jd"]
+[ext_resource type="Texture2D" uid="uid://bvfqqpktlge0u" path="res://assets/art/MiniGames/LostAnimals/anim/croc_15.webp" id="16_0shda"]
+[ext_resource type="Texture2D" uid="uid://b7348niri2es8" path="res://assets/art/MiniGames/LostAnimals/anim/croc_16.webp" id="17_saqbg"]
+[ext_resource type="Texture2D" uid="uid://bvwi811whrxuh" path="res://assets/art/MiniGames/LostAnimals/anim/croc_17.webp" id="18_8e2i4"]
+[ext_resource type="Texture2D" uid="uid://bskfksu2d1nph" path="res://assets/art/MiniGames/LostAnimals/anim/didia_00.webp" id="19_pa1nj"]
+[ext_resource type="Texture2D" uid="uid://bdrxwodyueuvp" path="res://assets/art/MiniGames/LostAnimals/anim/didia_01.webp" id="20_0y7lx"]
+[ext_resource type="Texture2D" uid="uid://dksya30nig222" path="res://assets/art/MiniGames/LostAnimals/anim/didia_02.webp" id="21_xl5cr"]
+[ext_resource type="Texture2D" uid="uid://dn8a3kqy6s843" path="res://assets/art/MiniGames/LostAnimals/anim/didia_03.webp" id="22_o7kk8"]
+[ext_resource type="Texture2D" uid="uid://c3fiiwr8pom60" path="res://assets/art/MiniGames/LostAnimals/anim/didia_04.webp" id="23_h0jwn"]
+[ext_resource type="Texture2D" uid="uid://dn01np118uxqa" path="res://assets/art/MiniGames/LostAnimals/anim/didia_05.webp" id="24_8vcak"]
+[ext_resource type="Texture2D" uid="uid://ky7umwm7j3c0" path="res://assets/art/MiniGames/LostAnimals/anim/didia_06.webp" id="25_wnwda"]
+[ext_resource type="Texture2D" uid="uid://ciy3c4ipubycx" path="res://assets/art/MiniGames/LostAnimals/anim/didia_07.webp" id="26_6mm1v"]
+[ext_resource type="Texture2D" uid="uid://84mmux76k6av" path="res://assets/art/MiniGames/LostAnimals/anim/didia_08.webp" id="27_qhkd5"]
+[ext_resource type="Texture2D" uid="uid://dtk0lhajx7pdn" path="res://assets/art/MiniGames/LostAnimals/anim/didia_09.webp" id="28_5n3l4"]
+[ext_resource type="Texture2D" uid="uid://w5t0ud0oxp2s" path="res://assets/art/MiniGames/LostAnimals/anim/didia_10.webp" id="29_1di8l"]
+[ext_resource type="Texture2D" uid="uid://dlgg8ossp57og" path="res://assets/art/MiniGames/LostAnimals/anim/didia_11.webp" id="30_b2bx7"]
+[ext_resource type="Texture2D" uid="uid://c3eg256k2xbqp" path="res://assets/art/MiniGames/LostAnimals/anim/didia_12.webp" id="31_l6mnb"]
+[ext_resource type="Texture2D" uid="uid://4p7qadpex5k7" path="res://assets/art/MiniGames/LostAnimals/anim/didia_13.webp" id="32_ey03y"]
+[ext_resource type="Texture2D" uid="uid://cqw3laobv1k6b" path="res://assets/art/MiniGames/LostAnimals/anim/didia_14.webp" id="33_lv1k7"]
+[ext_resource type="Texture2D" uid="uid://bc2r0w7mqgjr7" path="res://assets/art/MiniGames/LostAnimals/anim/didia_15.webp" id="34_w4vw6"]
+[ext_resource type="Texture2D" uid="uid://dtfy03halwjin" path="res://assets/art/MiniGames/LostAnimals/anim/didia_16.webp" id="35_0bhqi"]
+[ext_resource type="Texture2D" uid="uid://pbvusgl84k1b" path="res://assets/art/MiniGames/LostAnimals/anim/didia_17.webp" id="36_qshg8"]
+[ext_resource type="Texture2D" uid="uid://c1ibfpxauxock" path="res://assets/art/MiniGames/LostAnimals/anim/didia_18.webp" id="37_qr518"]
+[ext_resource type="Texture2D" uid="uid://ca3u87lovtjhh" path="res://assets/art/MiniGames/LostAnimals/anim/didia_19.webp" id="38_s7k8n"]
+[ext_resource type="Texture2D" uid="uid://8ukxv1dxwj6y" path="res://assets/art/MiniGames/LostAnimals/anim/didia_20.webp" id="39_1mggy"]
+[ext_resource type="Texture2D" uid="uid://b4fnk5r8s2sp1" path="res://assets/art/MiniGames/LostAnimals/anim/didia_21.webp" id="40_j62i7"]
+[ext_resource type="Texture2D" uid="uid://s4irgfe5672b" path="res://assets/art/MiniGames/LostAnimals/anim/didia_22.webp" id="41_0a527"]
+[ext_resource type="Texture2D" uid="uid://42ckx5f4jcr8" path="res://assets/art/MiniGames/LostAnimals/anim/didia_23.webp" id="42_o50jt"]
+[ext_resource type="Texture2D" uid="uid://dfcqug633j7e0" path="res://assets/art/MiniGames/LostAnimals/anim/didia_24.webp" id="43_suhqn"]
+[ext_resource type="Texture2D" uid="uid://d1b1avydbdyrd" path="res://assets/art/MiniGames/LostAnimals/anim/didia_25.webp" id="44_7w8k3"]
+[ext_resource type="Texture2D" uid="uid://58kxu52h5yqd" path="res://assets/art/MiniGames/LostAnimals/anim/didia_26.webp" id="45_wchhf"]
+[ext_resource type="Texture2D" uid="uid://do4mp468imybo" path="res://assets/art/MiniGames/LostAnimals/anim/didia_27.webp" id="46_3p1pp"]
+[ext_resource type="Texture2D" uid="uid://c1xlt13rhxxls" path="res://assets/art/MiniGames/LostAnimals/anim/didia_28.webp" id="47_hwdn4"]
+[ext_resource type="Texture2D" uid="uid://dmkcq1mrupvpr" path="res://assets/art/MiniGames/LostAnimals/anim/elephant_00.webp" id="48_06feo"]
+[ext_resource type="Texture2D" uid="uid://ce1ip3xoa16a6" path="res://assets/art/MiniGames/LostAnimals/anim/elephant_01.webp" id="49_dea1h"]
+[ext_resource type="Texture2D" uid="uid://byekyunxrby2l" path="res://assets/art/MiniGames/LostAnimals/anim/elephant_02.webp" id="50_aawng"]
+[ext_resource type="Texture2D" uid="uid://d2wlp0kfpdgo0" path="res://assets/art/MiniGames/LostAnimals/anim/elephant_03.webp" id="51_xpviw"]
+[ext_resource type="Texture2D" uid="uid://cv8cjq0v7s3vm" path="res://assets/art/MiniGames/LostAnimals/anim/elephant_04.webp" id="52_qdo0s"]
+[ext_resource type="Texture2D" uid="uid://ceb8ukywb6qwh" path="res://assets/art/MiniGames/LostAnimals/anim/elephant_05.webp" id="53_ag1nm"]
+[ext_resource type="Texture2D" uid="uid://b77wpe1y6dkvv" path="res://assets/art/MiniGames/LostAnimals/anim/elephant_06.webp" id="54_bb2ou"]
+[ext_resource type="Texture2D" uid="uid://hxns5lkc0hji" path="res://assets/art/MiniGames/LostAnimals/anim/elephant_07.webp" id="55_c0or6"]
+[ext_resource type="Texture2D" uid="uid://upxt2r7iic62" path="res://assets/art/MiniGames/LostAnimals/anim/elephant_08.webp" id="56_xdolo"]
+[ext_resource type="Texture2D" uid="uid://dw7u3v1utms3v" path="res://assets/art/MiniGames/LostAnimals/anim/elephant_09.webp" id="57_0uy0e"]
+[ext_resource type="Texture2D" uid="uid://ctw717nt8ri01" path="res://assets/art/MiniGames/LostAnimals/anim/elephant_10.webp" id="58_3e864"]
+[ext_resource type="Texture2D" uid="uid://d012r65nx2sm7" path="res://assets/art/MiniGames/LostAnimals/anim/elephant_11.webp" id="59_5aogp"]
+[ext_resource type="Texture2D" uid="uid://dbybvyshkkb76" path="res://assets/art/MiniGames/LostAnimals/anim/elephant_12.webp" id="60_fo738"]
+[ext_resource type="Texture2D" uid="uid://6ax61bjm1rix" path="res://assets/art/MiniGames/LostAnimals/anim/elephant_13.webp" id="61_dgfd1"]
+[ext_resource type="Texture2D" uid="uid://wsua7d4wro4h" path="res://assets/art/MiniGames/LostAnimals/anim/elephant_14.webp" id="62_v715x"]
+[ext_resource type="Texture2D" uid="uid://ct2y6qxjmuww7" path="res://assets/art/MiniGames/LostAnimals/anim/elephant_15.webp" id="63_d350n"]
+[ext_resource type="Texture2D" uid="uid://ci8tqqs88yy7r" path="res://assets/art/MiniGames/LostAnimals/anim/elephant_16.webp" id="64_odnc2"]
+[ext_resource type="Texture2D" uid="uid://dxlu1xudvgmif" path="res://assets/art/MiniGames/LostAnimals/anim/elephant_17.webp" id="65_02t8k"]
+[ext_resource type="Texture2D" uid="uid://uqjcjr38qut8" path="res://assets/art/MiniGames/LostAnimals/anim/elephant_18.webp" id="66_p1cyp"]
+[ext_resource type="Texture2D" uid="uid://ftoslcfd3s42" path="res://assets/art/MiniGames/LostAnimals/anim/elephant_19.webp" id="67_gstgj"]
+[ext_resource type="Texture2D" uid="uid://83lc72nct5jf" path="res://assets/art/MiniGames/LostAnimals/anim/elephant_20.webp" id="68_b0xut"]
+[ext_resource type="Texture2D" uid="uid://bohtcgyw66lk" path="res://assets/art/MiniGames/LostAnimals/anim/elephant_21.webp" id="69_h4sir"]
+[ext_resource type="Texture2D" uid="uid://67pqenmuk743" path="res://assets/art/MiniGames/LostAnimals/anim/elephant_22.webp" id="70_pli70"]
+[ext_resource type="Texture2D" uid="uid://dqphwka1yb0ep" path="res://assets/art/MiniGames/LostAnimals/anim/lion_00.webp" id="71_ixtlx"]
+[ext_resource type="Texture2D" uid="uid://vrqsjifrn0gd" path="res://assets/art/MiniGames/LostAnimals/anim/lion_01.webp" id="72_3fm3l"]
+[ext_resource type="Texture2D" uid="uid://dmqvomxvx3vgk" path="res://assets/art/MiniGames/LostAnimals/anim/lion_02.webp" id="73_cg5r7"]
+[ext_resource type="Texture2D" uid="uid://c8a8cf37uvah1" path="res://assets/art/MiniGames/LostAnimals/anim/lion_03.webp" id="74_rqfd1"]
+[ext_resource type="Texture2D" uid="uid://bonj6jtxi8g5t" path="res://assets/art/MiniGames/LostAnimals/anim/lion_04.webp" id="75_qdde5"]
+[ext_resource type="Texture2D" uid="uid://ccp4m45v0mbon" path="res://assets/art/MiniGames/LostAnimals/anim/lion_05.webp" id="76_mqp3l"]
+[ext_resource type="Texture2D" uid="uid://comyv5fmv6igi" path="res://assets/art/MiniGames/LostAnimals/anim/lion_06.webp" id="77_g626t"]
+[ext_resource type="Texture2D" uid="uid://bvfaxp1a6tnak" path="res://assets/art/MiniGames/LostAnimals/anim/lion_07.webp" id="78_5bc6l"]
+[ext_resource type="Texture2D" uid="uid://caxlds386ud88" path="res://assets/art/MiniGames/LostAnimals/anim/lion_08.webp" id="79_ddhyc"]
+[ext_resource type="Texture2D" uid="uid://phdxkod6t3wg" path="res://assets/art/MiniGames/LostAnimals/anim/lion_09.webp" id="80_8uvoa"]
+[ext_resource type="Texture2D" uid="uid://cucjr3gmltl3d" path="res://assets/art/MiniGames/LostAnimals/anim/lion_10.webp" id="81_28gfg"]
+[ext_resource type="Texture2D" uid="uid://cltwkmggg8tkm" path="res://assets/art/MiniGames/LostAnimals/anim/lion_11.webp" id="82_jw4mt"]
+[ext_resource type="Texture2D" uid="uid://dbjwpkcf5ujn" path="res://assets/art/MiniGames/LostAnimals/anim/lion_12.webp" id="83_nlkiu"]
+[ext_resource type="Texture2D" uid="uid://0idijuxf3g35" path="res://assets/art/MiniGames/LostAnimals/anim/lion_13.webp" id="84_ulc1g"]
+[ext_resource type="Texture2D" uid="uid://bxyq5mcjc3220" path="res://assets/art/MiniGames/LostAnimals/anim/lion_14.webp" id="85_mk74k"]
+[ext_resource type="Texture2D" uid="uid://d0ka60m44docb" path="res://assets/art/MiniGames/LostAnimals/anim/lion_15.webp" id="86_agot3"]
+[ext_resource type="Texture2D" uid="uid://hiqifqfvs62w" path="res://assets/art/MiniGames/LostAnimals/anim/lion_16.webp" id="87_yjad4"]
+[ext_resource type="Texture2D" uid="uid://yxtycckcuums" path="res://assets/art/MiniGames/LostAnimals/anim/lion_17.webp" id="88_gm2ap"]
+[ext_resource type="Texture2D" uid="uid://dsavjvjmgo426" path="res://assets/art/MiniGames/LostAnimals/anim/lion_18.webp" id="89_dpa1p"]
+[ext_resource type="Texture2D" uid="uid://c3s53d338ksjs" path="res://assets/art/MiniGames/LostAnimals/anim/lion_19.webp" id="90_oiykb"]
+[ext_resource type="Texture2D" uid="uid://ppo0k14skjkf" path="res://assets/art/MiniGames/LostAnimals/anim/lion_20.webp" id="91_8gvao"]
+[ext_resource type="Texture2D" uid="uid://tlwo23uitb6l" path="res://assets/art/MiniGames/LostAnimals/anim/lion_21.webp" id="92_0rp2g"]
+[ext_resource type="Texture2D" uid="uid://b58rf66xnb14w" path="res://assets/art/MiniGames/LostAnimals/anim/lion_22.webp" id="93_xmhr1"]
+[ext_resource type="Texture2D" uid="uid://bt88g6s32v8u0" path="res://assets/art/MiniGames/LostAnimals/anim/lion_23.webp" id="94_ox8k0"]
+[ext_resource type="Texture2D" uid="uid://bqd2tucm5vxat" path="res://assets/art/MiniGames/LostAnimals/anim/lion_24.webp" id="95_dlxlc"]
+[ext_resource type="Texture2D" uid="uid://kl203jtba1m6" path="res://assets/art/MiniGames/LostAnimals/anim/lion_25.webp" id="96_d8el7"]
+[ext_resource type="Texture2D" uid="uid://dg8ao2ytfmcsc" path="res://assets/art/MiniGames/LostAnimals/anim/lion_26.webp" id="97_u4ca7"]
+[ext_resource type="Texture2D" uid="uid://2mkd0lieug60" path="res://assets/art/MiniGames/LostAnimals/anim/lion_27.webp" id="98_j3jxv"]
+[ext_resource type="Texture2D" uid="uid://crds26iyuc4w0" path="res://assets/art/MiniGames/LostAnimals/anim/lion_28.webp" id="99_sag8v"]
+[ext_resource type="Texture2D" uid="uid://8roy7a4g7mrp" path="res://assets/art/MiniGames/LostAnimals/anim/lion_29.webp" id="100_qdegh"]
+[ext_resource type="Texture2D" uid="uid://dacl3wqifmdnr" path="res://assets/art/MiniGames/LostAnimals/anim/lion_30.webp" id="101_byn52"]
+[ext_resource type="Texture2D" uid="uid://bia3twhnifryg" path="res://assets/art/MiniGames/LostAnimals/anim/lion_31.webp" id="102_272py"]
+[ext_resource type="Texture2D" uid="uid://cm0dju3hi3kwy" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_00.webp" id="103_ikcls"]
+[ext_resource type="Texture2D" uid="uid://dgm5rbgtfjo17" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_01.webp" id="104_cmrq1"]
+[ext_resource type="Texture2D" uid="uid://dvystbpgj2fne" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_02.webp" id="105_38mxv"]
+[ext_resource type="Texture2D" uid="uid://c8ay4mymr4367" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_03.webp" id="106_0b403"]
+[ext_resource type="Texture2D" uid="uid://kk8rgbh474al" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_04.webp" id="107_v0hkm"]
+[ext_resource type="Texture2D" uid="uid://bailaiiw6ipyn" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_05.webp" id="108_q1d0n"]
+[ext_resource type="Texture2D" uid="uid://cb1kmb6ujgrkh" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_06.webp" id="109_s4wlr"]
+[ext_resource type="Texture2D" uid="uid://dg7u87624qdlr" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_07.webp" id="110_p111e"]
+[ext_resource type="Texture2D" uid="uid://cb8xhkix1wud1" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_08.webp" id="111_rnhg1"]
+[ext_resource type="Texture2D" uid="uid://caqmckxfc5g0r" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_09.webp" id="112_u2y7i"]
+[ext_resource type="Texture2D" uid="uid://5idyiknm1lh2" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_10.webp" id="113_us213"]
+[ext_resource type="Texture2D" uid="uid://ugkxkb5vxhsw" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_11.webp" id="114_6lwxh"]
+[ext_resource type="Texture2D" uid="uid://ffh7qfxw8t62" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_12.webp" id="115_tusnh"]
+[ext_resource type="Texture2D" uid="uid://785i8fabv2rl" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_13.webp" id="116_7tpp7"]
+[ext_resource type="Texture2D" uid="uid://xkeyxll6iavn" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_14.webp" id="117_pngsg"]
+[ext_resource type="Texture2D" uid="uid://b1pppyo48tgbj" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_15.webp" id="118_flj7q"]
+[ext_resource type="Texture2D" uid="uid://kulvfvgely2e" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_16.webp" id="119_uhjgq"]
+[ext_resource type="Texture2D" uid="uid://bfl8pn4s42beo" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_17.webp" id="120_gij10"]
+[ext_resource type="Texture2D" uid="uid://ca4xu3ojxy3l3" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_18.webp" id="121_t0ijy"]
+[ext_resource type="Texture2D" uid="uid://ns4ocuhc424m" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_19.webp" id="122_cn0yx"]
+[ext_resource type="Texture2D" uid="uid://bls67ceacypya" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_20.webp" id="123_o53pk"]
+[ext_resource type="Texture2D" uid="uid://crg4hypvd3riv" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_21.webp" id="124_k3j6y"]
+[ext_resource type="Texture2D" uid="uid://1xdi1hgdoyhr" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_22.webp" id="125_r17k1"]
+[ext_resource type="Texture2D" uid="uid://bid7ombbayunv" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_23.webp" id="126_8vnho"]
+[ext_resource type="Texture2D" uid="uid://bjp8f6fbg4rc4" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_24.webp" id="127_3g6py"]
+[ext_resource type="Texture2D" uid="uid://4o4jvvopoal" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_25.webp" id="128_2txo3"]
+[ext_resource type="Texture2D" uid="uid://drlrrvdf7u742" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_26.webp" id="129_pgf0g"]
+[ext_resource type="Texture2D" uid="uid://bumkaqialeipn" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_27.webp" id="130_snfjf"]
+[ext_resource type="Texture2D" uid="uid://ccdysytwefk82" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_28.webp" id="131_c4gah"]
+[ext_resource type="Texture2D" uid="uid://8ota4wjkelxa" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_29.webp" id="132_4ohbq"]
+[ext_resource type="Texture2D" uid="uid://dnuj1fgya1fo2" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_30.webp" id="133_mbywx"]
+[ext_resource type="Texture2D" uid="uid://brya0hlyakdd6" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_31.webp" id="134_4d07k"]
+[ext_resource type="Texture2D" uid="uid://e1231l3fl3t" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_00.webp" id="135_gijmy"]
+[ext_resource type="Texture2D" uid="uid://b364cm2i5qgb7" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_01.webp" id="136_fcvc7"]
+[ext_resource type="Texture2D" uid="uid://xhdhg1an4ek3" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_02.webp" id="137_o242m"]
+[ext_resource type="Texture2D" uid="uid://0jcqe10wp53y" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_03.webp" id="138_u58ht"]
+[ext_resource type="Texture2D" uid="uid://bsex0i133gqnb" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_04.webp" id="139_fq043"]
+[ext_resource type="Texture2D" uid="uid://d166hmyjggnmx" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_05.webp" id="140_i7t1f"]
+[ext_resource type="Texture2D" uid="uid://du2v5nlsob6jv" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_06.webp" id="141_g5wv2"]
+[ext_resource type="Texture2D" uid="uid://c4exv2ypxidp5" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_07.webp" id="142_2mji4"]
+[ext_resource type="Texture2D" uid="uid://bqsap5b0xivig" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_08.webp" id="143_nfgn4"]
+[ext_resource type="Texture2D" uid="uid://bcbue0ewm3pxs" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_09.webp" id="144_fey53"]
+[ext_resource type="Texture2D" uid="uid://0snqmi0pocmq" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_10.webp" id="145_4crfe"]
+[ext_resource type="Texture2D" uid="uid://cvx8gobt8vwg1" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_11.webp" id="146_3lnx8"]
+[ext_resource type="Texture2D" uid="uid://dfrylmbhcafdc" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_12.webp" id="147_fdosl"]
+[ext_resource type="Texture2D" uid="uid://cfa1hfefoe11f" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_13.webp" id="148_08sij"]
+[ext_resource type="Texture2D" uid="uid://bvvtovruho430" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_14.webp" id="149_e63je"]
+[ext_resource type="Texture2D" uid="uid://bdou52cx4b8m6" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_15.webp" id="150_hfjuh"]
+[ext_resource type="Texture2D" uid="uid://cw8ch0nn3l3eq" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_16.webp" id="151_on7po"]
+[ext_resource type="Texture2D" uid="uid://bb3367nmrfcd" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_17.webp" id="152_kgblr"]
+[ext_resource type="Texture2D" uid="uid://65egen8g748x" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_18.webp" id="153_xn827"]
+[ext_resource type="Texture2D" uid="uid://bxrtmiqa0buo1" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_19.webp" id="154_nwyel"]
+[ext_resource type="Texture2D" uid="uid://bmf0e0y54rdym" path="res://assets/art/MiniGames/LostAnimals/anim/tiger_00.webp" id="155_xyxwk"]
+[ext_resource type="Texture2D" uid="uid://bracv8h3qgver" path="res://assets/art/MiniGames/LostAnimals/anim/tiger_01.webp" id="156_1ujyp"]
+[ext_resource type="Texture2D" uid="uid://b6y62hjad76b" path="res://assets/art/MiniGames/LostAnimals/anim/tiger_02.webp" id="157_tdymd"]
+[ext_resource type="Texture2D" uid="uid://c7l7xdysjx61j" path="res://assets/art/MiniGames/LostAnimals/anim/tiger_03.webp" id="158_kfsxp"]
+[ext_resource type="Texture2D" uid="uid://bmykrvvobx2wc" path="res://assets/art/MiniGames/LostAnimals/anim/tiger_04.webp" id="159_pqwlo"]
+[ext_resource type="Texture2D" uid="uid://de3h83j6wgo2i" path="res://assets/art/MiniGames/LostAnimals/anim/tiger_05.webp" id="160_4ayt5"]
+[ext_resource type="Texture2D" uid="uid://dt1yspqutp26h" path="res://assets/art/MiniGames/LostAnimals/anim/tiger_06.webp" id="161_6nq4n"]
+[ext_resource type="Texture2D" uid="uid://b15sf11ksrvkv" path="res://assets/art/MiniGames/LostAnimals/anim/tiger_07.webp" id="162_1w75q"]
+[ext_resource type="Texture2D" uid="uid://ep2aq85pgls2" path="res://assets/art/MiniGames/LostAnimals/anim/tiger_08.webp" id="163_dwpih"]
+[ext_resource type="Texture2D" uid="uid://dt12j1ihwltaj" path="res://assets/art/MiniGames/LostAnimals/anim/tiger_09.webp" id="164_bcq1j"]
+[ext_resource type="Texture2D" uid="uid://1pfwmljkavka" path="res://assets/art/MiniGames/LostAnimals/anim/tiger_10.webp" id="165_eexcy"]
+[ext_resource type="Texture2D" uid="uid://chxkv8sldp045" path="res://assets/art/MiniGames/LostAnimals/anim/tiger_11.webp" id="166_yie1s"]
+[ext_resource type="Texture2D" uid="uid://cybt7b1o2cs7p" path="res://assets/art/MiniGames/LostAnimals/anim/tiger_12.webp" id="167_mpbtp"]
+[ext_resource type="Texture2D" uid="uid://68kyi7b8siet" path="res://assets/art/MiniGames/LostAnimals/anim/tiger_13.webp" id="168_rxnrg"]
+[ext_resource type="Texture2D" uid="uid://dvouo2uiaxjos" path="res://assets/art/MiniGames/LostAnimals/anim/tiger_14.webp" id="169_f6um6"]
+[ext_resource type="Texture2D" uid="uid://siotvr1u1ea4" path="res://assets/art/MiniGames/LostAnimals/anim/tiger_15.webp" id="170_oiual"]
+[ext_resource type="Texture2D" uid="uid://pdpxbxrf34kf" path="res://assets/art/MiniGames/LostAnimals/anim/tiger_16.webp" id="171_r5y2q"]
+[ext_resource type="Texture2D" uid="uid://cofxmpxbgcp1m" path="res://assets/art/MiniGames/LostAnimals/anim/tiger_17.webp" id="172_c4i6c"]
+[ext_resource type="Texture2D" uid="uid://b8lp70bjui5a" path="res://assets/art/MiniGames/LostAnimals/anim/tiger_18.webp" id="173_plunu"]
+[ext_resource type="Texture2D" uid="uid://c12fsr1pjpsn5" path="res://assets/art/MiniGames/LostAnimals/anim/tiger_19.webp" id="174_xq0rr"]
+[ext_resource type="Texture2D" uid="uid://cxhmsbolmdjb0" path="res://assets/art/MiniGames/LostAnimals/anim/tiger_20.webp" id="175_ayee5"]
+[ext_resource type="Texture2D" uid="uid://b56a5mxl4261b" path="res://assets/art/MiniGames/LostAnimals/anim/tiger_21.webp" id="176_g783b"]
+[ext_resource type="Texture2D" uid="uid://dttexlppf53vb" path="res://assets/art/MiniGames/LostAnimals/anim/tiger_22.webp" id="177_7yi2g"]
+[ext_resource type="Texture2D" uid="uid://gqkpkio2j6ja" path="res://assets/art/MiniGames/LostAnimals/anim/turtle_00.webp" id="178_nc3yb"]
+[ext_resource type="Texture2D" uid="uid://kl0db86fa8hy" path="res://assets/art/MiniGames/LostAnimals/anim/turtle_01.webp" id="179_5k23d"]
+[ext_resource type="Texture2D" uid="uid://1r005bfmjmwy" path="res://assets/art/MiniGames/LostAnimals/anim/turtle_02.webp" id="180_5brp3"]
+[ext_resource type="Texture2D" uid="uid://d3wkbtshgcgfg" path="res://assets/art/MiniGames/LostAnimals/anim/turtle_03.webp" id="181_ohc2t"]
+[ext_resource type="Texture2D" uid="uid://jiyfoolnj8o1" path="res://assets/art/MiniGames/LostAnimals/anim/turtle_04.webp" id="182_e1ahj"]
+[ext_resource type="Texture2D" uid="uid://bweikm2w3ckau" path="res://assets/art/MiniGames/LostAnimals/anim/turtle_05.webp" id="183_mfast"]
+[ext_resource type="Texture2D" uid="uid://r1glkmendsvg" path="res://assets/art/MiniGames/LostAnimals/anim/turtle_06.webp" id="184_e15m3"]
+[ext_resource type="Texture2D" uid="uid://cailghor71waj" path="res://assets/art/MiniGames/LostAnimals/anim/turtle_07.webp" id="185_jebdv"]
+[ext_resource type="Texture2D" uid="uid://c43dq0wj0gfhb" path="res://assets/art/MiniGames/LostAnimals/anim/turtle_08.webp" id="186_3kuq1"]
+[ext_resource type="Texture2D" uid="uid://cvx02evlceuu3" path="res://assets/art/MiniGames/LostAnimals/anim/turtle_09.webp" id="187_rrt5h"]
+[ext_resource type="Texture2D" uid="uid://c3pqbxwism1n" path="res://assets/art/MiniGames/LostAnimals/anim/turtle_10.webp" id="188_j2r6c"]
+[ext_resource type="Texture2D" uid="uid://vnqvjv2jx685" path="res://assets/art/MiniGames/LostAnimals/anim/turtle_11.webp" id="189_oydll"]
+[ext_resource type="Texture2D" uid="uid://d32m7wgdl3vst" path="res://assets/art/MiniGames/LostAnimals/anim/turtle_12.webp" id="190_q37b7"]
+[ext_resource type="Texture2D" uid="uid://j26qxakv78p0" path="res://assets/art/MiniGames/LostAnimals/anim/turtle_13.webp" id="191_emih1"]
+[ext_resource type="Texture2D" uid="uid://cmd370l4yfl20" path="res://assets/art/MiniGames/LostAnimals/anim/turtle_14.webp" id="192_n3u1o"]
+[ext_resource type="Texture2D" uid="uid://dhuq7hyl34tmh" path="res://assets/art/MiniGames/LostAnimals/anim/turtle_15.webp" id="193_ktmcj"]
+[ext_resource type="Texture2D" uid="uid://e0qru4papted" path="res://assets/art/MiniGames/LostAnimals/anim/turtle_16.webp" id="194_k8gh3"]
+[ext_resource type="Texture2D" uid="uid://dfq7m3p3haxv4" path="res://assets/art/MiniGames/LostAnimals/anim/turtle_17.webp" id="195_yytg2"]
+[ext_resource type="Texture2D" uid="uid://dpynj55pq8yfq" path="res://assets/art/MiniGames/LostAnimals/anim/turtle_18.webp" id="196_iosan"]
+[ext_resource type="Texture2D" uid="uid://c1moa7aevwclt" path="res://assets/art/MiniGames/LostAnimals/anim/turtle_19.webp" id="197_kvvs6"]
+[ext_resource type="Texture2D" uid="uid://cq6ty4nsuy38b" path="res://assets/art/MiniGames/LostAnimals/anim/turtle_20.webp" id="198_vnt65"]
+[ext_resource type="Texture2D" uid="uid://dkawcdcu8dnvp" path="res://assets/art/MiniGames/LostAnimals/anim/turtle_21.webp" id="199_ieakh"]
+[ext_resource type="Texture2D" uid="uid://ct2vvpmwq4lan" path="res://assets/art/MiniGames/LostAnimals/anim/turtle_22.webp" id="200_q02iv"]
+[ext_resource type="Texture2D" uid="uid://cgckh5hoyuae4" path="res://assets/art/MiniGames/LostAnimals/anim/turtle_23.webp" id="201_wffyy"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1hk73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7saov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_24dcn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_n6ud2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_iawji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_g7ekd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_x2aks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_em8g3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pjn0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2seqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_vw6gt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_can5d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_xih00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_lu36x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_xb5jd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_0shda")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_saqbg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_8e2i4")
+}],
+"loop": 1,
+"name": &"croc",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_pa1nj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_0y7lx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_xl5cr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_o7kk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_h0jwn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_8vcak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_wnwda")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_6mm1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_qhkd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_5n3l4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_1di8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_b2bx7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_l6mnb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_ey03y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_lv1k7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_w4vw6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_0bhqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_qshg8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_qr518")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_s7k8n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_1mggy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_j62i7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_0a527")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_o50jt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_suhqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_7w8k3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_wchhf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_3p1pp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_hwdn4")
+}],
+"loop": 1,
+"name": &"didia",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("48_06feo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_dea1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_aawng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_xpviw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_qdo0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_ag1nm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_bb2ou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_c0or6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_xdolo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_0uy0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_3e864")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_5aogp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_fo738")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_dgfd1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_v715x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_d350n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_odnc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_02t8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_p1cyp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_gstgj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_b0xut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_h4sir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_pli70")
+}],
+"loop": 1,
+"name": &"elephant",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("71_ixtlx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_3fm3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_cg5r7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_rqfd1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_qdde5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_mqp3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_g626t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_5bc6l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_ddhyc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_8uvoa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_28gfg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_jw4mt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_nlkiu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_ulc1g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_mk74k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_agot3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_yjad4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_gm2ap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_dpa1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_oiykb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_8gvao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_0rp2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_xmhr1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_ox8k0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_dlxlc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_d8el7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_u4ca7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_j3jxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_sag8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_qdegh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_byn52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_272py")
+}],
+"loop": 1,
+"name": &"lion",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("103_ikcls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_cmrq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_38mxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_0b403")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_v0hkm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_q1d0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_s4wlr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_p111e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_rnhg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_u2y7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_us213")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_6lwxh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_tusnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_7tpp7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_pngsg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_flj7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_uhjgq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_gij10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_t0ijy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_cn0yx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_o53pk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_k3j6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_r17k1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_8vnho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127_3g6py")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128_2txo3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_pgf0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_snfjf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_c4gah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("132_4ohbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_mbywx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_4d07k")
+}],
+"loop": 1,
+"name": &"monkey",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("135_gijmy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_fcvc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_o242m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138_u58ht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_fq043")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_i7t1f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_g5wv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142_2mji4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_nfgn4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144_fey53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145_4crfe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("146_3lnx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("147_fdosl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("148_08sij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("149_e63je")
+}, {
+"duration": 1.0,
+"texture": ExtResource("150_hfjuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("151_on7po")
+}, {
+"duration": 1.0,
+"texture": ExtResource("152_kgblr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("153_xn827")
+}, {
+"duration": 1.0,
+"texture": ExtResource("154_nwyel")
+}],
+"loop": 1,
+"name": &"sophy",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("155_xyxwk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("156_1ujyp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("157_tdymd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158_kfsxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_pqwlo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_4ayt5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_6nq4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_1w75q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_dwpih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_bcq1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_eexcy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_yie1s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167_mpbtp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("168_rxnrg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_f6um6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170_oiual")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_r5y2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("172_c4i6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("173_plunu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("174_xq0rr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_ayee5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_g783b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177_7yi2g")
+}],
+"loop": 1,
+"name": &"tiger",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("178_nc3yb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("179_5k23d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("180_5brp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("181_ohc2t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("182_e1ahj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("183_mfast")
+}, {
+"duration": 1.0,
+"texture": ExtResource("184_e15m3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("185_jebdv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("186_3kuq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("187_rrt5h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("188_j2r6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("189_oydll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("190_q37b7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("191_emih1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("192_n3u1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("193_ktmcj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("194_k8gh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("195_yytg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("196_iosan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("197_kvvs6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("198_vnt65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("199_ieakh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("200_q02iv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("201_wffyy")
+}],
+"loop": 1,
+"name": &"turtle",
+"speed": 12.0
+}]

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b7m38sdhww7gr"]
+
+[ext_resource type="Script" uid="uid://cidoym1b8e7q2" path="res://levels/world1/letter_bubble.gd" id="1_qhdh5"]
+[ext_resource type="Texture2D" uid="uid://cvambyl6lpf0p" path="res://assets/art/MiniGames/ColorReef/bubble_a.webp" id="2_es8d8"]
+
+[node name="LetterBubble" type="Control" unique_id=1313469343]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 280.0
+offset_bottom = 280.0
+script = ExtResource("1_qhdh5")
+
+[node name="Visual" type="TextureRect" parent="." unique_id=1486493922]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource("2_es8d8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Letter" type="Label" parent="Visual" unique_id=469553098]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_colors/font_color = Color(1, 0.96, 0.87, 1)
+theme_override_colors/font_outline_color = Color(0.33, 0.19, 0.08, 1)
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 150
+horizontal_alignment = 1
+vertical_alignment = 1

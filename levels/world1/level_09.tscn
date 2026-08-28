@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://cq50y4036dkag"]
+
+[ext_resource type="Script" uid="uid://di73jsdt3xrel" path="res://levels/world1/level_09.gd" id="1_4le3o"]
+[ext_resource type="PackedScene" uid="uid://4sh8os0hw4bf" path="res://backgrounds/level12_background.tscn" id="2_r32c8"]
+[ext_resource type="Script" uid="uid://dh20ge7vqhkhy" path="res://backgrounds/menu_background.gd" id="3_mbdeu"]
+[ext_resource type="Script" uid="uid://cgjdnqb7v8vrn" path="res://levels/world1/ambient_bubbles.gd" id="4_df71a"]
+[ext_resource type="PackedScene" uid="uid://b2cnycnt0eawo" path="res://core/level_header.tscn" id="5_eeiej"]
+[ext_resource type="Script" uid="uid://g6ckkly8peoi" path="res://core/level_header.gd" id="6_afeoy"]
+[ext_resource type="Script" uid="uid://bah1hkkw3ppsw" path="res://levels/world1/pearl_necklace.gd" id="7_o6b2u"]
+[ext_resource type="PackedScene" uid="uid://jpl6k8gbnfjk" path="res://core/counter_pill.tscn" id="8_a0q7u"]
+[ext_resource type="Script" uid="uid://bcqhf5xdd7xlc" path="res://core/counter_pill.gd" id="9_tgg5w"]
+[ext_resource type="Texture2D" uid="uid://cvambyl6lpf0p" path="res://assets/art/MiniGames/ColorReef/bubble_a.webp" id="10_rnqec"]
+[ext_resource type="PackedScene" uid="uid://b7t1c3doicuki" path="res://characters/lali.tscn" id="11_gvkio"]
+[ext_resource type="SpriteFrames" uid="uid://dvp4yjl813r4c" path="res://characters/lali_frames.tres" id="12_vdltm"]
+[ext_resource type="Script" uid="uid://24balxdqqg1g" path="res://characters/lali_character.gd" id="13_vo0vc"]
+[ext_resource type="PackedScene" uid="uid://t0oxlnehvkv7" path="res://core/speech_bubble.tscn" id="14_2r0q8"]
+[ext_resource type="Script" uid="uid://d38fo0nax8eso" path="res://core/speech_bubble.gd" id="15_o8xlo"]
+[ext_resource type="Texture2D" uid="uid://b2ymt67xs1tbm" path="res://assets/art/UI/Buttons/button_back.webp" id="16_tv60m"]
+[ext_resource type="Script" uid="uid://ugcjf40nt2nh" path="res://core/juicy_button.gd" id="17_wkm5a"]
+[ext_resource type="PackedScene" uid="uid://doaybwbjov1jr" path="res://core/reject_marker.tscn" id="18_nnb2f"]
+[ext_resource type="Texture2D" uid="uid://clk7a4jr73eh8" path="res://assets/art/MiniGames/FruitBreakfast/wrong_x.webp" id="19_0lu0j"]
+[ext_resource type="Script" uid="uid://ct3rgroyg1xlu" path="res://core/reject_marker.gd" id="20_15ioh"]
+[ext_resource type="PackedScene" uid="uid://cg4spmvcta6rd" path="res://core/victory_modal.tscn" id="21_74nf6"]
+[ext_resource type="Script" uid="uid://crb4yqpnwctr5" path="res://core/victory_modal.gd" id="22_gfwjg"]
+
+[node name="Level09" type="Control" unique_id=78004130]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_4le3o")
+level_number = 9
+mistakes_per_star = 2
+
+[node name="Background" type="Node2D" parent="." unique_id=1857881824 instance=ExtResource("2_r32c8")]
+script = ExtResource("3_mbdeu")
+
+[node name="Ambient" type="Node2D" parent="." unique_id=1864500733]
+unique_name_in_owner = true
+script = ExtResource("4_df71a")
+
+[node name="Header" type="Control" parent="." unique_id=1294603571 instance=ExtResource("5_eeiej")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(620, 244)
+anchors_preset = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -310.0
+offset_top = 16.0
+offset_right = 310.0
+offset_bottom = 260.0
+script = ExtResource("6_afeoy")
+phase_key = "level19.phase"
+title_key = "level19.title"
+
+[node name="GameRoot" type="Control" parent="." unique_id=1435295155]
+unique_name_in_owner = true
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Necklace" type="Node2D" parent="." unique_id=1890337236]
+unique_name_in_owner = true
+position = Vector2(1100.16, 1000.08)
+script = ExtResource("7_o6b2u")
+
+[node name="Counter" type="Control" parent="." unique_id=1367283034 instance=ExtResource("8_a0q7u")]
+unique_name_in_owner = true
+anchors_preset = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -330.0
+offset_top = 40.0
+offset_right = -50.0
+offset_bottom = 150.0
+mouse_filter = 2
+script = ExtResource("9_tgg5w")
+target = 6
+icon = ExtResource("10_rnqec")
+
+[node name="Lali" type="AnimatedSprite2D" parent="." unique_id=394831140 instance=ExtResource("11_gvkio")]
+unique_name_in_owner = true
+position = Vector2(270, 850)
+sprite_frames = ExtResource("12_vdltm")
+animation = &"idle"
+autoplay = "idle"
+script = ExtResource("13_vo0vc")
+base_scale = 1.25
+
+[node name="Bubble" type="Control" parent="." unique_id=19909346 instance=ExtResource("14_2r0q8")]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 399.904
+offset_top = 627.004
+offset_right = 919.904
+offset_bottom = 823.004
+mouse_filter = 2
+script = ExtResource("15_o8xlo")
+
+[node name="BackButton" type="TextureButton" parent="." unique_id=1468451719]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 50.0
+offset_top = 42.4
+offset_right = 170.0
+offset_bottom = 157.6
+texture_normal = ExtResource("16_tv60m")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("17_wkm5a")
+
+[node name="RejectMarker" type="TextureRect" parent="." unique_id=1635654017 instance=ExtResource("18_nnb2f")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 900.0
+offset_top = 400.0
+offset_right = 1050.0
+offset_bottom = 550.0
+mouse_filter = 2
+texture = ExtResource("19_0lu0j")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("20_15ioh")
+
+[node name="Effects" type="Node2D" parent="." unique_id=974861223 groups=["effects"]]
+
+[node name="VictoryModal" type="Control" parent="." unique_id=1728551931 instance=ExtResource("21_74nf6")]
+unique_name_in_owner = true
+z_index = 50
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("22_gfwjg")

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://5qepfy66iliu"]
+
+[ext_resource type="SpriteFrames" uid="uid://d1ll2ro1i47yo" path="res://characters/lolo_frames.tres" id="1_f11xw"]
+[ext_resource type="Script" uid="uid://dct3ki46pulek" path="res://characters/lolo_character.gd" id="2_o6hht"]
+
+[node name="Lolo" type="AnimatedSprite2D" unique_id=769880747]
+sprite_frames = ExtResource("1_f11xw")
+animation = &"idle"
+autoplay = "idle"
+script = ExtResource("2_o6hht")

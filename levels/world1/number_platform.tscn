@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://d35a2vsggp76"]
+
+[ext_resource type="Script" uid="uid://dvafr7vxchgop" path="res://levels/world1/number_platform.gd" id="1_7k3j6"]
+[ext_resource type="Texture2D" uid="uid://bvisgjjgn6png" path="res://assets/art/MiniGames/NumberTrail/platform.webp" id="2_wwy0x"]
+[ext_resource type="Texture2D" uid="uid://b24kkwykru5bh" path="res://assets/art/MiniGames/NumberTrail/number_badge.webp" id="3_n5d38"]
+
+[node name="NumberPlatform" type="Control" unique_id=1359405821]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 270.0
+offset_bottom = 185.32
+script = ExtResource("1_7k3j6")
+
+[node name="Stone" type="TextureRect" parent="." unique_id=1074667474]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource("2_wwy0x")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Badge" type="TextureRect" parent="." unique_id=1359770856]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 92.0
+offset_top = -53.0
+offset_right = 178.0
+offset_bottom = 33.0
+mouse_filter = 2
+texture = ExtResource("3_n5d38")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NumberLabel" type="Label" parent="Badge" unique_id=480762419]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 78.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(0.1686, 0.4235, 0.6902, 1)
+theme_override_font_sizes/font_size = 44
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1

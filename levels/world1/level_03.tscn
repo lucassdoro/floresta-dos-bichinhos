@@ -1,0 +1,171 @@
+[gd_scene format=3 uid="uid://bgdrbp2lml0lk"]
+
+[ext_resource type="Script" uid="uid://bydkkqlb0q6k4" path="res://levels/world1/level_03.gd" id="1_dci2q"]
+[ext_resource type="PackedScene" uid="uid://dmbexg3bmccje" path="res://backgrounds/level13_background.tscn" id="2_ri643"]
+[ext_resource type="Script" uid="uid://dh20ge7vqhkhy" path="res://backgrounds/menu_background.gd" id="3_1kwa0"]
+[ext_resource type="PackedScene" uid="uid://b2cnycnt0eawo" path="res://core/level_header.tscn" id="4_f5aos"]
+[ext_resource type="Script" uid="uid://g6ckkly8peoi" path="res://core/level_header.gd" id="5_nwrn3"]
+[ext_resource type="PackedScene" uid="uid://d35a2vsggp76" path="res://levels/world1/number_platform.tscn" id="6_l1cya"]
+[ext_resource type="Script" uid="uid://dvafr7vxchgop" path="res://levels/world1/number_platform.gd" id="7_3ypvv"]
+[ext_resource type="PackedScene" uid="uid://5qepfy66iliu" path="res://characters/lolo.tscn" id="8_j7bbl"]
+[ext_resource type="SpriteFrames" uid="uid://d1ll2ro1i47yo" path="res://characters/lolo_frames.tres" id="9_kdmqj"]
+[ext_resource type="Script" uid="uid://dct3ki46pulek" path="res://characters/lolo_character.gd" id="10_usa8a"]
+[ext_resource type="PackedScene" uid="uid://t0oxlnehvkv7" path="res://core/speech_bubble.tscn" id="11_cfxjn"]
+[ext_resource type="Script" uid="uid://d38fo0nax8eso" path="res://core/speech_bubble.gd" id="12_7f5rs"]
+[ext_resource type="Texture2D" uid="uid://b2ymt67xs1tbm" path="res://assets/art/UI/Buttons/button_back.webp" id="13_qyluw"]
+[ext_resource type="Script" uid="uid://ugcjf40nt2nh" path="res://core/juicy_button.gd" id="14_s5h7h"]
+[ext_resource type="PackedScene" uid="uid://doaybwbjov1jr" path="res://core/reject_marker.tscn" id="15_3b2vq"]
+[ext_resource type="Texture2D" uid="uid://clk7a4jr73eh8" path="res://assets/art/MiniGames/FruitBreakfast/wrong_x.webp" id="16_8mgsv"]
+[ext_resource type="Script" uid="uid://ct3rgroyg1xlu" path="res://core/reject_marker.gd" id="17_0yt13"]
+[ext_resource type="PackedScene" uid="uid://cg4spmvcta6rd" path="res://core/victory_modal.tscn" id="18_uv0ok"]
+[ext_resource type="Script" uid="uid://crb4yqpnwctr5" path="res://core/victory_modal.gd" id="19_j0nt8"]
+
+[node name="Level03" type="Control" unique_id=812960978]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_dci2q")
+level_number = 3
+mistakes_per_star = 2
+
+[node name="Background" type="Node2D" parent="." unique_id=995321457 instance=ExtResource("2_ri643")]
+script = ExtResource("3_1kwa0")
+
+[node name="Header" type="Control" parent="." unique_id=1294603571 instance=ExtResource("4_f5aos")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(620, 244)
+anchors_preset = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -310.0
+offset_top = 16.0
+offset_right = 310.0
+offset_bottom = 260.0
+script = ExtResource("5_nwrn3")
+phase_key = "level13.phase"
+title_key = "level13.title"
+
+[node name="GameRoot" type="Control" parent="." unique_id=1187066963]
+unique_name_in_owner = true
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Platform1" type="Control" parent="GameRoot" unique_id=1359405821 instance=ExtResource("6_l1cya")]
+anchors_preset = 0
+offset_left = 441.0
+offset_top = 666.0742
+offset_right = 711.0
+offset_bottom = 851.3942
+script = ExtResource("7_3ypvv")
+
+[node name="Platform2" type="Control" parent="GameRoot" unique_id=350355633 instance=ExtResource("6_l1cya")]
+anchors_preset = 0
+offset_left = 594.6
+offset_top = 425.46658
+offset_right = 864.6
+offset_bottom = 610.7866
+script = ExtResource("7_3ypvv")
+number = 2
+
+[node name="Platform3" type="Control" parent="GameRoot" unique_id=1756955177 instance=ExtResource("6_l1cya")]
+anchors_preset = 0
+offset_left = 748.2
+offset_top = 731.69446
+offset_right = 1018.2
+offset_bottom = 917.01447
+script = ExtResource("7_3ypvv")
+number = 3
+
+[node name="Platform4" type="Control" parent="GameRoot" unique_id=807463603 instance=ExtResource("6_l1cya")]
+anchors_preset = 0
+offset_left = 901.80005
+offset_top = 491.08682
+offset_right = 1171.8
+offset_bottom = 676.40686
+script = ExtResource("7_3ypvv")
+number = 4
+
+[node name="Platform5" type="Control" parent="GameRoot" unique_id=1591083670 instance=ExtResource("6_l1cya")]
+anchors_preset = 0
+offset_left = 1055.4
+offset_top = 753.5679
+offset_right = 1325.4
+offset_bottom = 938.8879
+script = ExtResource("7_3ypvv")
+number = 5
+
+[node name="Platform6" type="Control" parent="GameRoot" unique_id=1996287187 instance=ExtResource("6_l1cya")]
+anchors_preset = 0
+offset_left = 1228.2
+offset_top = 600.45386
+offset_right = 1498.2
+offset_bottom = 785.77386
+script = ExtResource("7_3ypvv")
+number = 6
+
+[node name="Platform7" type="Control" parent="GameRoot" unique_id=720152146 instance=ExtResource("6_l1cya")]
+anchors_preset = 0
+offset_left = 1324.2
+offset_top = 414.52988
+offset_right = 1594.2
+offset_bottom = 599.84985
+script = ExtResource("7_3ypvv")
+number = 7
+
+[node name="Lolo" type="AnimatedSprite2D" parent="." unique_id=769880747 instance=ExtResource("8_j7bbl")]
+unique_name_in_owner = true
+position = Vector2(355.2, 547.4937)
+sprite_frames = ExtResource("9_kdmqj")
+animation = &"idle"
+autoplay = "idle"
+script = ExtResource("10_usa8a")
+
+[node name="Bubble" type="Control" parent="." unique_id=19909346 instance=ExtResource("11_cfxjn")]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 500.0
+offset_top = 400.0
+offset_right = 1020.0
+offset_bottom = 596.0
+mouse_filter = 2
+script = ExtResource("12_7f5rs")
+
+[node name="BackButton" type="TextureButton" parent="." unique_id=215587391]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 50.0
+offset_top = 42.4
+offset_right = 170.0
+offset_bottom = 157.6
+texture_normal = ExtResource("13_qyluw")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("14_s5h7h")
+
+[node name="RejectMarker" type="TextureRect" parent="." unique_id=1635654017 instance=ExtResource("15_3b2vq")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 900.0
+offset_top = 500.0
+offset_right = 1020.0
+offset_bottom = 620.0
+mouse_filter = 2
+texture = ExtResource("16_8mgsv")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("17_0yt13")
+
+[node name="Effects" type="Node2D" parent="." unique_id=1918249506 groups=["effects"]]
+
+[node name="VictoryModal" type="Control" parent="." unique_id=1728551931 instance=ExtResource("18_uv0ok")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("19_j0nt8")

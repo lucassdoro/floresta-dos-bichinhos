@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dssgvlb1psnwi"]
+
+[ext_resource type="Texture2D" uid="uid://bt26p0k0jr5b1" path="res://assets/art/MiniGames/MemoryMeadow/card_back.webp" id="1_16bmr"]
+[ext_resource type="Script" uid="uid://dti6lr15mn1da" path="res://levels/world1/memory_card.gd" id="2_r1o3j"]
+
+[node name="MemoryCard" type="TextureRect" unique_id=401281289]
+offset_right = 215.0
+offset_bottom = 215.0
+texture = ExtResource("1_16bmr")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_r1o3j")

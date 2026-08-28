@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://3cc8rt7enphu"]
+
+[ext_resource type="Shader" uid="uid://bbrd08ved6a4g" path="res://shaders/puzzle_piece.gdshader" id="1_6gvnb"]
+[ext_resource type="Texture2D" uid="uid://4grnl76xirvb" path="res://assets/puzzle/PuzzleMasks/mask_r0c0.webp" id="2_yegb8"]
+[ext_resource type="Script" uid="uid://bk84f43h2fyat" path="res://levels/world1/puzzle_piece.gd" id="3_bauds"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3pxxl"]
+shader = ExtResource("1_6gvnb")
+shader_parameter/region_origin = Vector2(0, 0)
+shader_parameter/region_size = Vector2(1, 1)
+shader_parameter/revealed = 0.0
+
+[node name="PuzzlePiece" type="TextureRect" unique_id=406575048]
+material = SubResource("ShaderMaterial_3pxxl")
+offset_right = 189.0
+offset_bottom = 189.0
+texture = ExtResource("2_yegb8")
+expand_mode = 1
+script = ExtResource("3_bauds")

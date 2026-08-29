@@ -11,7 +11,7 @@ const INTRO_HOLD := 1.0
 const LOLO_CENTER_RISE := 125.5
 const BACKGROUND_SIZE := Vector2(1264, 720)
 const LOLO_START_ANCHOR := Vector2(0.185, 0.49314812)
-const BUBBLE_ANCHOR := Vector2(0.34922728, 0.52141964)
+const BUBBLE_ANCHOR := Vector2(0.4245, 0.64)
 const NEST_ANCHOR := Vector2(0.855, 0.72)
 const PLATFORM_ANCHORS: Array[Vector2] = [
 	Vector2(0.30, 0.30), Vector2(0.38, 0.52), Vector2(0.46, 0.24),

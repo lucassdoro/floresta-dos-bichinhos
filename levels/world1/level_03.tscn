@@ -126,10 +126,10 @@ script = ExtResource("10_usa8a")
 [node name="Bubble" type="Control" parent="." unique_id=19909346 instance=ExtResource("11_cfxjn")]
 unique_name_in_owner = true
 anchors_preset = 0
-offset_left = 545.0
-offset_top = 330.0
-offset_right = 1145.0
-offset_bottom = 556.0
+offset_left = 515.0
+offset_top = 274.0
+offset_right = 1115.0
+offset_bottom = 500.0
 mouse_filter = 2
 script = ExtResource("12_7f5rs")
 

@@ -212,24 +212,22 @@ simples resolve, punição rara. Isso é **valor padrão do `.tres`**, não lemb
 
 Cada marco termina em algo rodando no aparelho. **Conforme um marco fecha, a seção dele sai daqui.**
 
-- [ ] **M0 — Esqueleto e prova de perf** *(decide se a migração continua)*
-      Projeto, autoloads, `LevelBase`, shader de bloom, um fundo animado sem vídeo, e **uma** fase
-      pesada portada (`forest_puzzle`, 572 linhas no Flutter, corte em runtime — o pior caso).
-      **Aceite:** 60 fps estáveis e memória de textura < 200 MB (Flutter hoje: ~586 MB). Não bateu,
-      parar e reavaliar.
-      *Feito em 26/08/2026:* autoloads, shader de bloom, fundo animado sem vídeo. **Memória de
-      textura do menu: 127 MB** (era 237 MB antes de comprimir a placa) — dentro do alvo. **Fps
-      ainda não medido de verdade**: o jogo embutido é limitado a ~10 fps quando o editor está sem
-      foco, e a medição pelo terminal cai sempre nesse caso. Falta a fase pesada e o `LevelBase`.
-- [ ] **M1 — Casca do jogo** — splash, menu, mapa do mundo, 5 overlays, progressão, ajustes, i18n,
-      áudio. Sai um jogo navegável com uma fase.
-      *Feito em 26/08/2026:* splash da produtora, menu principal completo, os 5 painéis
-      (seleção de mundo, ajustes, créditos, sair, portão parental), ajustes com persistência,
-      i18n pt-BR/it com troca em runtime, áudio com buses e música que não recomeça na troca de
-      cena. **Falta:** mapa do mundo de verdade (hoje é stub), progressão/estrelas, e o
-      `LevelBase` com os overlays de fase.
-- [ ] **M2 — Arquétipos** — as 9 cenas, extraídas conforme as fases forem portadas, **nunca antes**.
-- [ ] **M3 — Mundo 1 completo** — as 10 fases, paridade com o Flutter.
+- [x] **M0 — Esqueleto e prova de perf** — *fechado em 28/08/2026.* Autoloads, `LevelBase`, bloom,
+      fundos sem vídeo, e a fase pesada (`forest_puzzle`) portada — o "corte em runtime" virou
+      **shader por peça** (máscara jigsaw + região da foto em UV), custo ~zero. Memória de textura
+      do menu: 127 MB. **Fps em aparelho ainda não medido** (limitação do jogo embutido sem foco);
+      medir no tablet antes do M4.
+- [x] **M1 — Casca do jogo** — *fechado em 28/08/2026.* Splash, menu, os 5 painéis, ajustes,
+      i18n pt-BR/it, áudio, **mapa do mundo de verdade** (marcadores com estrelas/trava, estrela
+      do jogador, revelação animada de desbloqueio) e progressão em `user://progress.json`.
+- [ ] **M2 — Arquétipos** — as 9 cenas, extraídas conforme os mundos 2+ forem montados, **nunca
+      antes**. As mecânicas já vivem em cenas/scripts compartilháveis (`core/` + `levels/world1/`).
+- [x] **M3 — Mundo 1 completo** — *fechado em 28/08/2026.* As 10 fases portadas e validadas em
+      play por script (fluxo completo: jogar → vitória → estrelas → progressão → mapa). Fase 10
+      trazida da branch `feature/phase-10-plan-3b246a` do projeto Flutter (código, assets, vozes,
+      strings `level110` no `ui.csv`). **Falta QA humano** (tuning de toque real, 4:3, tablet) e
+      as pendências visuais pequenas: contorno curvado da fita do mapa, pérola como ícone do
+      contador da fase 9 (hoje usa a bolha), showcase da fase 4 conferido a olho.
 - [ ] **M4 — Publicação** — export Android (keystore) e macOS (assinatura); atualizar `LINKS` no topo
       de `../floresta-dos-bichinhos-old/site/floresta-de-bichinhos/app.js`.
 - [ ] **M5+ — Mundos 2, 3 e 4** — um por vez, cada fase medida contra a regra do arquétipo.

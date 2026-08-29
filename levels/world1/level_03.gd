@@ -11,7 +11,7 @@ const INTRO_HOLD := 1.0
 const LOLO_CENTER_RISE := 125.5
 const BACKGROUND_SIZE := Vector2(1264, 720)
 const LOLO_START_ANCHOR := Vector2(0.185, 0.49314812)
-const BUBBLE_ANCHOR := Vector2(0.4245, 0.64)
+const BUBBLE_OFFSET := Vector2(160, -273)  # centro do Lolo -> canto sup-esq do balao
 const NEST_ANCHOR := Vector2(0.855, 0.72)
 const PLATFORM_ANCHORS: Array[Vector2] = [
 	Vector2(0.30, 0.30), Vector2(0.38, 0.52), Vector2(0.46, 0.24),
@@ -160,7 +160,7 @@ func _relayout() -> void:
 	_map_top_left = (size - _map_size) / 2.0
 	for index in _platforms.size():
 		_platforms[index].base_position = _from_cover(PLATFORM_ANCHORS[index])
-	_bubble.position = _from_cover(BUBBLE_ANCHOR) - _bubble.size / 2.0
+	_bubble.position = _from_cover(LOLO_START_ANCHOR) + BUBBLE_OFFSET
 	if _lolo_at_start:
 		_lolo.position = _from_cover(LOLO_START_ANCHOR)
 

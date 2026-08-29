@@ -56,8 +56,8 @@ stretch_mode = 5
 [node name="Title" type="Label" parent="WorldHeader" unique_id=374312242]
 layout_mode = 0
 anchor_right = 1.0
-offset_top = 38.0
-offset_bottom = 148.0
+offset_top = 24.0
+offset_bottom = 134.0
 grow_horizontal = 2
 theme_type_variation = &"Title80"
 text = "worldmap.world1.title"

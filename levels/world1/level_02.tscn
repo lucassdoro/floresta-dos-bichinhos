@@ -49,6 +49,7 @@ offset_left = -310.0
 offset_top = 16.0
 offset_right = 310.0
 offset_bottom = 260.0
+grow_horizontal = 2
 phase_key = "level12.phase"
 title_key = "level12.title"
 
@@ -154,9 +155,9 @@ script = ExtResource("16_qyk03")
 [node name="ColorLabel1" type="Label" parent="ColorsPanel/ColorButton1" unique_id=2040688388]
 unique_name_in_owner = true
 layout_mode = 0
-offset_top = 110.0
+offset_top = 126.0
 offset_right = 168.0
-offset_bottom = 152.0
+offset_bottom = 168.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.33, 0.19, 0.08, 1)
 theme_override_constants/outline_size = 7
@@ -180,9 +181,9 @@ script = ExtResource("16_qyk03")
 [node name="ColorLabel2" type="Label" parent="ColorsPanel/ColorButton2" unique_id=1681549900]
 unique_name_in_owner = true
 layout_mode = 0
-offset_top = 110.0
+offset_top = 126.0
 offset_right = 168.0
-offset_bottom = 152.0
+offset_bottom = 168.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.33, 0.19, 0.08, 1)
 theme_override_constants/outline_size = 7
@@ -206,9 +207,9 @@ script = ExtResource("16_qyk03")
 [node name="ColorLabel3" type="Label" parent="ColorsPanel/ColorButton3" unique_id=1043244553]
 unique_name_in_owner = true
 layout_mode = 0
-offset_top = 110.0
+offset_top = 126.0
 offset_right = 168.0
-offset_bottom = 152.0
+offset_bottom = 168.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.33, 0.19, 0.08, 1)
 theme_override_constants/outline_size = 7

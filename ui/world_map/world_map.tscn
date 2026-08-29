@@ -3,11 +3,10 @@
 [ext_resource type="Theme" uid="uid://bbuvbjujai5uq" path="res://ui/theme.tres" id="1_ynqv7"]
 [ext_resource type="Script" uid="uid://dp3gckvsou0mq" path="res://ui/world_map/world_map.gd" id="2_ulpoo"]
 [ext_resource type="PackedScene" uid="uid://b0s5i3212bhtg" path="res://backgrounds/worldmap_background.tscn" id="3_thelu"]
-[ext_resource type="Script" uid="uid://dh20ge7vqhkhy" path="res://backgrounds/menu_background.gd" id="4_crvsx"]
 [ext_resource type="PackedScene" uid="uid://ctbehprgvfbtm" path="res://ui/world_map/map_player_star.tscn" id="5_crvsx"]
 [ext_resource type="PackedScene" uid="uid://d3c2vm1sjp6l" path="res://core/juicy_button.tscn" id="5_jaccc"]
 [ext_resource type="Texture2D" uid="uid://b2ymt67xs1tbm" path="res://assets/art/UI/Buttons/button_back.webp" id="6_1i068"]
-[ext_resource type="Script" uid="uid://bvcylbg4b4im3" path="res://ui/world_map/map_player_star.gd" id="6_jaccc"]
+[ext_resource type="Script" uid="uid://dxpinr82oat4q" path="res://core/curved_label.gd" id="6_ulpoo"]
 [ext_resource type="Texture2D" uid="uid://0evyub73unkw" path="res://assets/art/UI/WorldMap/world_header_plaque.webp" id="7_1i068"]
 
 [node name="WorldMap" type="Control" unique_id=1201876959]
@@ -15,11 +14,12 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("1_ynqv7")
 script = ExtResource("2_ulpoo")
 
-[node name="Background" type="Node2D" parent="." unique_id=2005962093 instance=ExtResource("3_thelu")]
-script = ExtResource("4_crvsx")
+[node name="Background" parent="." unique_id=2005962093 instance=ExtResource("3_thelu")]
 
 [node name="MapRoot" type="Control" parent="." unique_id=1447227399]
 unique_name_in_owner = true
@@ -30,9 +30,8 @@ offset_right = -1920.0
 offset_bottom = -1080.0
 mouse_filter = 2
 
-[node name="PlayerStar" type="Node2D" parent="MapRoot" unique_id=155702276 instance=ExtResource("5_crvsx")]
+[node name="PlayerStar" parent="MapRoot" unique_id=155702276 instance=ExtResource("5_crvsx")]
 unique_name_in_owner = true
-script = ExtResource("6_jaccc")
 
 [node name="WorldHeader" type="Control" parent="." unique_id=235981198]
 unique_name_in_owner = true
@@ -56,25 +55,26 @@ stretch_mode = 5
 
 [node name="Title" type="Label" parent="WorldHeader" unique_id=374312242]
 layout_mode = 0
-offset_left = 95.0
+anchor_right = 1.0
 offset_top = 38.0
-offset_right = 897.0
-offset_bottom = 167.0
+offset_bottom = 148.0
+grow_horizontal = 2
 theme_type_variation = &"Title80"
 text = "worldmap.world1.title"
 horizontal_alignment = 1
 
-[node name="Subtitle" type="Label" parent="WorldHeader" unique_id=89722417]
-layout_mode = 0
+[node name="Subtitle" type="Control" parent="WorldHeader" unique_id=333243876]
+anchors_preset = 0
 offset_left = 145.0
 offset_top = 148.0
 offset_right = 605.0
 offset_bottom = 208.0
-theme_type_variation = &"Name36"
-theme_override_colors/font_color = Color(0.15, 0.38, 0.1, 1)
-text = "worldmap.world1.name"
-horizontal_alignment = 1
-uppercase = true
+mouse_filter = 2
+script = ExtResource("6_ulpoo")
+key = "worldmap.world1.name"
+color = Color(0.15, 0.38, 0.1, 1)
+outline_color = Color(0.55, 0.7, 0.25, 0.9)
+outline_size = 6
 
 [node name="BackButton" parent="." unique_id=149491572 instance=ExtResource("5_jaccc")]
 layout_mode = 0

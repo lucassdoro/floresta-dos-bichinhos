@@ -21,7 +21,8 @@ Fora disso (Médio ou Alto) o fundo toca vídeo.
 | Quem toca vídeo | `quality` 1 e 2. `quality` 0 usa still + shader |
 | Benchmark | Roda uma vez, no splash do primeiro boot. Reprovou: `quality = 0`. Nunca repete |
 | Fase 9 | Ganha `level19_background.tscn` próprio (vídeo `Level19Background`), deixa de reusar o da fase 2 |
-| Fases 6 e 10 | Seguem com `menu_background`; véus de noite da fase 10 ficam por cima, inalterados |
+| Fase 10 | Ganha `level110_background.tscn` próprio: still `level110_video_still.webp` + vídeo `Level110Background.mp4` da branch `feature/phase-10-plan-3b246a` do Flutter. Véus de noite ficam por cima, inalterados |
+| Fase 6 | Não tem vídeo na referência. Fica só com o still `maze_background.webp` (sem shader, como hoje), com o script compartilhado |
 | Loop | Simples (`loop = true`). Os vídeos já fecham o loop na origem (boomerang) |
 
 ## Restrições de engine
@@ -38,8 +39,8 @@ Fora disso (Médio ou Alto) o fundo toca vídeo.
 
 ### 1. Cena de fundo (`backgrounds/*.tscn`)
 
-Estrutura de cada cena (10 cenas: `menu`, `worldmap`, `level11`..`level15`, `level17`, `level18`,
-`level19`):
+Estrutura de cada cena (11 cenas: `menu`, `worldmap`, `level11`..`level15`, `level17`, `level18`,
+`level19`, `level110`):
 
 ```
 <Nome>Background (Node2D, script background.gd)
@@ -50,13 +51,15 @@ Estrutura de cada cena (10 cenas: `menu`, `worldmap`, `level11`..`level15`, `lev
 Propriedades do `Video`, setadas no inspector: `stream` (o `.ogv` da tela), `expand = true`,
 `loop = true`, `autoplay = false`, `volume_db = -80`, `bus = "Music"`, `mouse_filter = IGNORE`.
 
-`menu_background.gd` é renomeado para `backgrounds/background.gd` e compartilhado pelas 10 cenas.
+`menu_background.gd` dá lugar a `backgrounds/background.gd` (`class_name SceneBackground`),
+compartilhado pelas 11 cenas e pelo fundo inline da fase 6 (que não tem `Video`: o script tolera a
+ausência do nó e fica só no still). Hoje 7 fases (1, 3, 4, 5, 7, 8, 9) carregam um override
+redundante de `script` na instância do fundo; a troca de script limpa esse override.
 Responsabilidades:
 
 - **Cobrir o viewport** nos dois nós. Reusa a conta atual (`cover = max(vw/tw, vh/th)`): o `Still`
-  via `scale`/`position`; o `Video` via `size`/`position` com o tamanho do stream. O tamanho do vídeo
-  vem de `Video.get_video_texture().get_size()` depois do primeiro frame; antes disso o `Video`
-  fica invisível, então não importa.
+  via `scale`/`position`; o `Video` via `size`/`position`. O `Video` usa o tamanho da textura do
+  still (mesmo enquadramento do vídeo, só a resolução muda), então não depende de frame decodificado.
 - **Escolher o modo** por `Settings.quality` no `_ready()` e em `Settings.changed("quality")`:
   - `quality >= 1`: `Video.play()`, `Still` continua visível por baixo até o vídeo entregar o
     primeiro frame (`Video.stream_position > 0` ou textura com tamanho não nulo, conferido em
@@ -70,16 +73,19 @@ Responsabilidades:
 
 ### 2. Assets (`assets/video/`)
 
-Os 10 MP4 de `../floresta-dos-bichinhos-old/assets/Video/` reencodados com ffmpeg para Theora:
+Os 10 MP4 de `../floresta-dos-bichinhos-old/assets/Video/` mais o `Level110Background.mp4` da
+branch `feature/phase-10-plan-3b246a` (só existe lá), reencodados para Theora. O ffmpeg do Homebrew
+vem **sem** encoder Theora; o encoder é o `ffmpeg2theora` (fórmula do Homebrew, deprecada mas
+disponível até 2027):
 
 ```bash
-ffmpeg -i <in>.mp4 -an -vf "scale='min(1280,iw)':-2" -r 24 -c:v libtheora -q:v 7 <out>.ogv
+ffmpeg2theora --noaudio -v 7 -F 24 -o assets/video/level11.ogv <in>.mp4
 ```
 
-- Sem trilha de áudio (`-an`).
-- Maior lado ≤ 1280 (menu e mapa são maiores na origem e descem para 1280).
-- 24 fps, qualidade 7 (escala 0–10). Alvo: ≤ 35 MB no total. Se passar, baixar para `-q:v 6`.
-- Nomes: `menu.ogv`, `worldmap.ogv`, `level11.ogv` … `level19.ogv` (mesma chave do still).
+- Sem trilha de áudio (`--noaudio`).
+- Maior lado ≤ 1280. Só o menu (1744×1168) precisa descer: `-x 1280 -y 858`. Os outros já cabem.
+- 24 fps, qualidade 7 (escala 0–10). Alvo: ≤ 35 MB no total. Se passar, baixar para `-v 6`.
+- Nomes: `menu.ogv`, `worldmap.ogv`, `level11.ogv` … `level19.ogv`, `level110.ogv` (mesma chave do still).
 - O still PNG de cada tela continua sendo o frame 0; nada muda nos `.import` de textura.
 
 Conferir cada `.ogv` a olho no editor (Godot toca no inspector) antes de ligar na cena: borda
@@ -111,15 +117,20 @@ quando ele ainda não acabou.
 Depois do primeiro boot, o ajuste de qualidade no painel é a única fonte de verdade; o benchmark
 não roda de novo. Apagar `user://settings.cfg` reinicia tudo (útil no QA).
 
-### 4. Fase 9
+### 4. Fases 9 e 10
 
 Nova `backgrounds/level19_background.tscn`, cópia da `level12_background` com o still
 `Level19Background.png` (já importado) e `level19.ogv`. `levels/world1/level_09.tscn` passa a
 instanciar essa cena no lugar da `level12_background`.
 
+Nova `backgrounds/level110_background.tscn`: still `level110_video_still.webp` (já importado, sem
+shader) + `level110.ogv`. `levels/world1/level_10.tscn` troca o `Background` inline por uma instância
+dessa cena, mantendo o nome `Background` e a posição de primeiro filho (os véus `Veil`/`Glow`
+desenham por cima).
+
 ## O que NÃO entra
 
-- Nenhum vídeo novo para fases 6 e 10 (não existem na referência).
+- Nenhum vídeo novo para a fase 6 (não existe na referência).
 - Nenhum controle de "reexecutar benchmark" na UI.
 - Nenhuma mudança nos shaders `water`/`foliage`, nem no post.
 - Nenhum atlas, sprite sheet ou parallax como alternativa: vídeo ou still, só isso.
@@ -142,7 +153,7 @@ Tudo em play pelo MCP, com screenshot:
    `Video` está parado e invisível e o `Still` tem material; em 1/2 o `Video` está visível e
    `stream_position` avança, `Still.material == null`.
 2. Troca ao vivo pelo painel de ajustes no menu: fade, sem pulo, sem frame preto.
-3. Uma fase de cada fundo (1, 2, 3, 4, 5, 7, 8, 9, 6 e 10 com o do menu) em `quality = 2`:
+3. Todas as fases (1 a 5, 7 a 10 com vídeo; 6 só still) em `quality = 2`:
    vídeo cobre o viewport em 16:9 e em 4:3 (janela redimensionada).
 4. Benchmark forçado a reprovar (limiar temporariamente em 1000 fps) com `settings.cfg` apagado:
    ao chegar no menu, `Settings.quality == 0` e `benchmarked == true` gravados no arquivo.

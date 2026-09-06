@@ -2,85 +2,37 @@
 
 [ext_resource type="Script" uid="uid://de7i183bci600" path="res://levels/world1/level_01.gd" id="1_p0pdt"]
 [ext_resource type="PackedScene" uid="uid://cu7jxahiskgls" path="res://backgrounds/level11_background.tscn" id="2_t6qdd"]
-[ext_resource type="Script" uid="uid://dh20ge7vqhkhy" path="res://backgrounds/menu_background.gd" id="3_gchja"]
-[ext_resource type="Shader" uid="uid://p4q8kvrrlduc" path="res://shaders/foliage.gdshader" id="4_5d2j6"]
-[ext_resource type="Texture2D" uid="uid://nhhg807o2ywq" path="res://assets/art/Backgrounds/Level11Background.png" id="5_4lo1v"]
 [ext_resource type="PackedScene" uid="uid://b2cnycnt0eawo" path="res://core/level_header.tscn" id="6_f310q"]
-[ext_resource type="Script" uid="uid://g6ckkly8peoi" path="res://core/level_header.gd" id="7_5qymj"]
-[ext_resource type="Texture2D" uid="uid://dnw1bsmjfmf8w" path="res://assets/art/MiniGames/ColorReef/victory_panel.webp" id="8_lpgqe"]
-[ext_resource type="Texture2D" uid="uid://bgoerajnydn8t" path="res://assets/art/UI/WorldMap/star_on.webp" id="9_i3s10"]
 [ext_resource type="PackedScene" uid="uid://dpg76em1yj8ib" path="res://core/sorting_basket.tscn" id="10_ol0ef"]
-[ext_resource type="Script" uid="uid://7cjsi3po68y" path="res://core/sorting_basket.gd" id="11_fq3bi"]
-[ext_resource type="Texture2D" uid="uid://bca7soik6qalu" path="res://assets/art/MiniGames/FruitBreakfast/basket_empty.webp" id="12_l5al0"]
-[ext_resource type="Texture2D" uid="uid://bf0oca2fiqa75" path="res://assets/art/MiniGames/FruitBreakfast/basket_front.webp" id="13_s58du"]
 [ext_resource type="PackedScene" uid="uid://c5v05eoqcunak" path="res://characters/didia.tscn" id="14_73wfj"]
-[ext_resource type="SpriteFrames" uid="uid://ci4eyybtk54mn" path="res://characters/didia_frames.tres" id="15_ojnjt"]
 [ext_resource type="Texture2D" uid="uid://b2ymt67xs1tbm" path="res://assets/art/UI/Buttons/button_back.webp" id="16_bgw4p"]
 [ext_resource type="Script" uid="uid://ugcjf40nt2nh" path="res://core/juicy_button.gd" id="17_p556j"]
 [ext_resource type="PackedScene" uid="uid://jpl6k8gbnfjk" path="res://core/counter_pill.tscn" id="18_xpd7n"]
-[ext_resource type="Script" uid="uid://bcqhf5xdd7xlc" path="res://core/counter_pill.gd" id="19_ws303"]
-[ext_resource type="Texture2D" uid="uid://cwetth18icuv2" path="res://assets/art/UI/counter_pill.webp" id="20_vfy6k"]
-[ext_resource type="Texture2D" uid="uid://dn5aq3in7f6ke" path="res://assets/art/MiniGames/FruitBreakfast/fruit_apple.webp" id="21_870qa"]
 [ext_resource type="PackedScene" uid="uid://doaybwbjov1jr" path="res://core/reject_marker.tscn" id="22_qte3c"]
-[ext_resource type="Texture2D" uid="uid://clk7a4jr73eh8" path="res://assets/art/MiniGames/FruitBreakfast/wrong_x.webp" id="23_rklej"]
-[ext_resource type="Script" uid="uid://ct3rgroyg1xlu" path="res://core/reject_marker.gd" id="24_766t0"]
 [ext_resource type="PackedScene" uid="uid://cg4spmvcta6rd" path="res://core/victory_modal.tscn" id="25_yj2ut"]
-[ext_resource type="Script" uid="uid://crb4yqpnwctr5" path="res://core/victory_modal.gd" id="26_to6ht"]
-[ext_resource type="Texture2D" uid="uid://d1f5xlj5jqnk2" path="res://assets/art/UI/Buttons/modal_panel.webp" id="27_c4s7l"]
-[ext_resource type="Texture2D" uid="uid://cjr05i0wedo75" path="res://assets/art/UI/Buttons/button_advance.webp" id="28_44n24"]
-[ext_resource type="Texture2D" uid="uid://b7p31xfdo4kn1" path="res://assets/art/UI/Buttons/arrow_advance.webp" id="29_8jngn"]
-[ext_resource type="Texture2D" uid="uid://p2pktkgrie8w" path="res://assets/art/UI/WorldMap/star_off.webp" id="30_vjwiu"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3i08b"]
-shader = ExtResource("4_5d2j6")
-shader_parameter/amplitude = 0.004
-shader_parameter/speed = 0.6
-shader_parameter/wave_density = 8.0
-shader_parameter/mask_bottom = 0.55
-
-[sub_resource type="Gradient" id="Gradient_yfmws"]
-offsets = PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1)
-colors = PackedColorArray(1, 0.35, 0.35, 1, 1, 0.8, 0.3, 1, 0.5, 0.9, 0.4, 1, 0.4, 0.7, 1, 1, 0.8, 0.5, 1, 1, 1, 0.5, 0.8, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_5qrld"]
-gradient = SubResource("Gradient_yfmws")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e0fkm"]
-emission_shape = 3
-emission_box_extents = Vector3(960, 10, 1)
-angle_max = 360.0
-direction = Vector3(0, 1, 0)
-spread = 20.0
-initial_velocity_min = 150.0
-initial_velocity_max = 380.0
-angular_velocity_min = -240.0
-angular_velocity_max = 240.0
-gravity = Vector3(0, 420, 0)
-scale_min = 6.0
-scale_max = 13.0
-color_initial_ramp = SubResource("GradientTexture1D_5qrld")
 
 [node name="Level01" type="Control" unique_id=914501310]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_p0pdt")
 
-[node name="Background" type="Node2D" parent="." unique_id=2091969273 instance=ExtResource("2_t6qdd")]
-script = ExtResource("3_gchja")
+[node name="Background" parent="." unique_id=2091969273 instance=ExtResource("2_t6qdd")]
 
-[node name="Header" type="Control" parent="." unique_id=1294603571 instance=ExtResource("6_f310q")]
+[node name="Header" parent="." unique_id=1294603571 instance=ExtResource("6_f310q")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(620, 244)
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -310.0
 offset_top = 16.0
 offset_right = 310.0
 offset_bottom = 260.0
-script = ExtResource("7_5qymj")
+grow_horizontal = 2
 
 [node name="GameRoot" type="Control" parent="." unique_id=1264509520]
 unique_name_in_owner = true
@@ -89,23 +41,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
-[node name="Basket" type="Control" parent="GameRoot" unique_id=261120346 node_paths=PackedStringArray("reject_marker") instance=ExtResource("10_ol0ef")]
+[node name="Basket" parent="GameRoot" unique_id=261120346 node_paths=PackedStringArray("reject_marker") instance=ExtResource("10_ol0ef")]
 unique_name_in_owner = true
-anchors_preset = 0
+layout_mode = 0
 offset_left = 1345.0
 offset_top = 714.21
 offset_right = 1775.0
 offset_bottom = 1025.79
-mouse_filter = 2
-script = ExtResource("11_fq3bi")
 reject_marker = NodePath("../../RejectMarker")
 
-[node name="Didia" type="AnimatedSprite2D" parent="." unique_id=1121520515 instance=ExtResource("14_73wfj")]
+[node name="Didia" parent="." unique_id=1121520515 instance=ExtResource("14_73wfj")]
 position = Vector2(260, 860)
 scale = Vector2(0.7368, 0.7368)
-sprite_frames = ExtResource("15_ojnjt")
-animation = &"idle"
-autoplay = "idle"
 
 [node name="BackButton" type="TextureButton" parent="." unique_id=290570535]
 unique_name_in_owner = true
@@ -119,38 +66,31 @@ ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("17_p556j")
 
-[node name="Counter" type="Control" parent="." unique_id=1367283034 instance=ExtResource("18_xpd7n")]
+[node name="Counter" parent="." unique_id=1367283034 instance=ExtResource("18_xpd7n")]
 unique_name_in_owner = true
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -330.0
 offset_top = 40.0
 offset_right = -50.0
 offset_bottom = 150.0
-mouse_filter = 2
-script = ExtResource("19_ws303")
+grow_horizontal = 0
 
-[node name="RejectMarker" type="TextureRect" parent="." unique_id=1635654017 instance=ExtResource("22_qte3c")]
+[node name="RejectMarker" parent="." unique_id=1635654017 instance=ExtResource("22_qte3c")]
 layout_mode = 0
 offset_left = 1485.0
 offset_top = 335.0
 offset_right = 1635.0
 offset_bottom = 485.0
-mouse_filter = 2
-texture = ExtResource("23_rklej")
-expand_mode = 1
-stretch_mode = 5
-script = ExtResource("24_766t0")
 
 [node name="Effects" type="Node2D" parent="." unique_id=352201984 groups=["effects"]]
 
-[node name="VictoryModal" type="Control" parent="." unique_id=1728551931 instance=ExtResource("25_yj2ut")]
+[node name="VictoryModal" parent="." unique_id=1728551931 instance=ExtResource("25_yj2ut")]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("26_to6ht")

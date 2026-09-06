@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d4blwh5uag6sj"]
 
-[ext_resource type="Script" uid="uid://dh20ge7vqhkhy" path="res://backgrounds/menu_background.gd" id="1_ffaou"]
+[ext_resource type="Script" uid="uid://byk7hxafv1uso" path="res://backgrounds/background.gd" id="1_ffaou"]
 [ext_resource type="Shader" uid="uid://p4q8kvrrlduc" path="res://shaders/foliage.gdshader" id="2_uowbq"]
 [ext_resource type="Texture2D" uid="uid://cxbkcwpw2ao7f" path="res://assets/art/Backgrounds/MenuBackground.png" id="3_cjkal"]
 
@@ -17,3 +17,10 @@ script = ExtResource("1_ffaou")
 [node name="Still" type="Sprite2D" parent="." unique_id=1001852293]
 material = SubResource("ShaderMaterial_ysitu")
 texture = ExtResource("3_cjkal")
+
+[node name="Video" type="VideoStreamPlayer" parent="." unique_id=1479369010]
+mouse_filter = 2
+volume_db = -80.0
+expand = true
+loop = true
+bus = &"Music"

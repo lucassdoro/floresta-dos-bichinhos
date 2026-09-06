@@ -6,12 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://bo0el05xoxbs" path="res://ui/menu/panels/world_select.tscn" id="3_fakly"]
 [ext_resource type="PackedScene" uid="uid://cplqtu4famxgl" path="res://ui/menu/panels/settings_panel.tscn" id="3_fdmuo"]
 [ext_resource type="PackedScene" uid="uid://dxyqekhx8f3lk" path="res://ui/menu/panels/quit_confirm.tscn" id="3_rm8yi"]
-[ext_resource type="Script" uid="uid://dh20ge7vqhkhy" path="res://backgrounds/menu_background.gd" id="4_fdmuo"]
 [ext_resource type="Texture2D" uid="uid://dp75ecia86d4o" path="res://assets/art/UI/MainMenu/logo.webp" id="5_fakly"]
 [ext_resource type="PackedScene" uid="uid://baf5c47mgtvib" path="res://ui/menu/panels/credits.tscn" id="5_tldux"]
 [ext_resource type="PackedScene" uid="uid://d3c2vm1sjp6l" path="res://core/juicy_button.tscn" id="6_tldux"]
 [ext_resource type="Texture2D" uid="uid://dmut2mk53lfmg" path="res://assets/art/UI/Buttons/button_story_mode.webp" id="7_mq8or"]
-[ext_resource type="Script" uid="uid://ugcjf40nt2nh" path="res://core/juicy_button.gd" id="8_r5uj6"]
 [ext_resource type="Texture2D" uid="uid://bvd78y55lymt1" path="res://assets/art/UI/Buttons/button_free_mode.webp" id="9_klush"]
 [ext_resource type="Texture2D" uid="uid://ckp4tg0k3x4lc" path="res://assets/art/UI/Buttons/button_settings.webp" id="10_jrgmv"]
 [ext_resource type="Texture2D" uid="uid://dp3dv35pf43wi" path="res://assets/art/UI/Buttons/button_credits.webp" id="11_gopmy"]
@@ -338,6 +336,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("1_rjjod")
 script = ExtResource("2_rm8yi")
@@ -346,8 +346,7 @@ settings_panel_scene = ExtResource("3_fdmuo")
 credits_scene = ExtResource("5_tldux")
 quit_confirm_scene = ExtResource("3_rm8yi")
 
-[node name="Background" type="Node2D" parent="." unique_id=244872099 instance=ExtResource("3_bvgos")]
-script = ExtResource("4_fdmuo")
+[node name="Background" parent="." unique_id=244872099 instance=ExtResource("3_bvgos")]
 
 [node name="MenuUI" type="Control" parent="." unique_id=184648948]
 anchors_preset = 0
@@ -386,64 +385,44 @@ offset_bottom = 508.0
 mouse_filter = 2
 theme_override_constants/separation = 16
 
-[node name="StoryMode" type="TextureButton" parent="MenuUI/Buttons" unique_id=149491572 instance=ExtResource("6_tldux")]
+[node name="StoryMode" parent="MenuUI/Buttons" unique_id=149491572 instance=ExtResource("6_tldux")]
 custom_minimum_size = Vector2(420, 146)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-mouse_default_cursor_shape = 2
 texture_normal = ExtResource("7_mq8or")
-ignore_texture_size = true
-stretch_mode = 5
-script = ExtResource("8_r5uj6")
 burst_color = Color(1, 0.8509804, 0.4509804, 1)
 
-[node name="FreeMode" type="TextureButton" parent="MenuUI/Buttons" unique_id=1359696969 instance=ExtResource("6_tldux")]
+[node name="FreeMode" parent="MenuUI/Buttons" unique_id=1359696969 instance=ExtResource("6_tldux")]
 custom_minimum_size = Vector2(420, 148)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-mouse_default_cursor_shape = 2
 texture_normal = ExtResource("9_klush")
-ignore_texture_size = true
-stretch_mode = 5
-script = ExtResource("8_r5uj6")
 burst_color = Color(0.92156863, 1, 0.61960787, 1)
 
-[node name="SettingsButton" type="TextureButton" parent="MenuUI/Buttons" unique_id=1785846842 instance=ExtResource("6_tldux")]
+[node name="SettingsButton" parent="MenuUI/Buttons" unique_id=1785846842 instance=ExtResource("6_tldux")]
 custom_minimum_size = Vector2(300, 101)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-mouse_default_cursor_shape = 2
 texture_normal = ExtResource("10_jrgmv")
-ignore_texture_size = true
-stretch_mode = 5
-script = ExtResource("8_r5uj6")
 burst_color = Color(0.92156863, 0.78039217, 1, 1)
 
-[node name="CreditsButton" type="TextureButton" parent="MenuUI/Buttons" unique_id=2047893962 instance=ExtResource("6_tldux")]
+[node name="CreditsButton" parent="MenuUI/Buttons" unique_id=2047893962 instance=ExtResource("6_tldux")]
 custom_minimum_size = Vector2(300, 101)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-mouse_default_cursor_shape = 2
 texture_normal = ExtResource("11_gopmy")
-ignore_texture_size = true
-stretch_mode = 5
-script = ExtResource("8_r5uj6")
 burst_color = Color(1, 0.8784314, 0.4509804, 1)
 
-[node name="QuitButton" type="TextureButton" parent="MenuUI/Buttons" unique_id=1498337812 instance=ExtResource("6_tldux")]
+[node name="QuitButton" parent="MenuUI/Buttons" unique_id=1498337812 instance=ExtResource("6_tldux")]
 custom_minimum_size = Vector2(260, 88)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-mouse_default_cursor_shape = 2
 texture_normal = ExtResource("12_fl80h")
-ignore_texture_size = true
-stretch_mode = 5
-script = ExtResource("8_r5uj6")
 burst_color = Color(1, 0.6509804, 0.54901963, 1)
 burst_count = 12
 burst_max_size = 60.0

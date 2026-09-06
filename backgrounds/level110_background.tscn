@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bo0lx5hjtltcf"]
+
+[ext_resource type="Script" uid="uid://byk7hxafv1uso" path="res://backgrounds/background.gd" id="1_mvkjm"]
+[ext_resource type="Texture2D" uid="uid://kkcaydi11f0v" path="res://assets/art/MiniGames/LostAnimals/level110_video_still.webp" id="2_tq14u"]
+
+[node name="Level110Background" type="Node2D" unique_id=481438745]
+script = ExtResource("1_mvkjm")
+
+[node name="Still" type="Sprite2D" parent="." unique_id=1026132688]
+texture = ExtResource("2_tq14u")
+
+[node name="Video" type="VideoStreamPlayer" parent="." unique_id=287666670]
+mouse_filter = 2
+volume_db = -80.0
+expand = true
+loop = true
+bus = &"Music"

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dge5iuy4gxmqa"]
+
+[ext_resource type="Script" uid="uid://byk7hxafv1uso" path="res://backgrounds/background.gd" id="1_efm2u"]
+[ext_resource type="Shader" uid="uid://rtfxb1bvl1jx" path="res://shaders/water.gdshader" id="2_x1xgk"]
+[ext_resource type="Texture2D" uid="uid://dhahxwyvg06ob" path="res://assets/art/Backgrounds/Level19Background.png" id="3_efm2u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xb8be"]
+shader = ExtResource("2_x1xgk")
+shader_parameter/amplitude = 0.005
+shader_parameter/speed = 0.8
+shader_parameter/wave_density = 12.0
+shader_parameter/shimmer_strength = 0.06
+
+[node name="Level19Background" type="Node2D" unique_id=1857881824]
+script = ExtResource("1_efm2u")
+
+[node name="Still" type="Sprite2D" parent="." unique_id=1193525784]
+material = SubResource("ShaderMaterial_xb8be")
+texture = ExtResource("3_efm2u")
+
+[node name="Video" type="VideoStreamPlayer" parent="." unique_id=1065813460]
+mouse_filter = 2
+volume_db = -80.0
+expand = true
+loop = true
+bus = &"Music"

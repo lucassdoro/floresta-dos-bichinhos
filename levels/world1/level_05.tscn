@@ -2,48 +2,40 @@
 
 [ext_resource type="Script" uid="uid://bblsd56rp541k" path="res://levels/world1/level_05.gd" id="1_7gu4b"]
 [ext_resource type="PackedScene" uid="uid://df4acmeacwcnr" path="res://backgrounds/level15_background.tscn" id="2_hhcc2"]
-[ext_resource type="Script" uid="uid://dh20ge7vqhkhy" path="res://backgrounds/menu_background.gd" id="3_u66j7"]
 [ext_resource type="PackedScene" uid="uid://b2cnycnt0eawo" path="res://core/level_header.tscn" id="4_r3kbw"]
-[ext_resource type="Script" uid="uid://g6ckkly8peoi" path="res://core/level_header.gd" id="5_8d7hf"]
 [ext_resource type="PackedScene" uid="uid://dssgvlb1psnwi" path="res://levels/world1/memory_card.tscn" id="6_gar82"]
-[ext_resource type="Texture2D" uid="uid://bt26p0k0jr5b1" path="res://assets/art/MiniGames/MemoryMeadow/card_back.webp" id="7_3eykp"]
-[ext_resource type="Script" uid="uid://dti6lr15mn1da" path="res://levels/world1/memory_card.gd" id="8_p5ah6"]
 [ext_resource type="PackedScene" uid="uid://c5v05eoqcunak" path="res://characters/didia.tscn" id="9_rd701"]
-[ext_resource type="SpriteFrames" uid="uid://ci4eyybtk54mn" path="res://characters/didia_frames.tres" id="10_8kk4i"]
 [ext_resource type="Script" uid="uid://bxy558pk5xbnx" path="res://characters/didia_memory.gd" id="11_4munm"]
 [ext_resource type="PackedScene" uid="uid://t0oxlnehvkv7" path="res://core/speech_bubble.tscn" id="12_jyxdy"]
-[ext_resource type="Script" uid="uid://d38fo0nax8eso" path="res://core/speech_bubble.gd" id="13_q3cwt"]
 [ext_resource type="Texture2D" uid="uid://b2ymt67xs1tbm" path="res://assets/art/UI/Buttons/button_back.webp" id="14_pa0al"]
 [ext_resource type="Script" uid="uid://ugcjf40nt2nh" path="res://core/juicy_button.gd" id="15_yuewe"]
 [ext_resource type="PackedScene" uid="uid://doaybwbjov1jr" path="res://core/reject_marker.tscn" id="16_btaja"]
-[ext_resource type="Texture2D" uid="uid://clk7a4jr73eh8" path="res://assets/art/MiniGames/FruitBreakfast/wrong_x.webp" id="17_5cddt"]
-[ext_resource type="Script" uid="uid://ct3rgroyg1xlu" path="res://core/reject_marker.gd" id="18_n54bi"]
 [ext_resource type="PackedScene" uid="uid://cg4spmvcta6rd" path="res://core/victory_modal.tscn" id="19_3w6yv"]
-[ext_resource type="Script" uid="uid://crb4yqpnwctr5" path="res://core/victory_modal.gd" id="20_fh7mm"]
 
 [node name="Level05" type="Control" unique_id=2015231514]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_7gu4b")
 level_number = 5
 mistakes_per_star = 5
 
-[node name="Background" type="Node2D" parent="." unique_id=235640476 instance=ExtResource("2_hhcc2")]
-script = ExtResource("3_u66j7")
+[node name="Background" parent="." unique_id=235640476 instance=ExtResource("2_hhcc2")]
 
-[node name="Header" type="Control" parent="." unique_id=1294603571 instance=ExtResource("4_r3kbw")]
+[node name="Header" parent="." unique_id=1294603571 instance=ExtResource("4_r3kbw")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(620, 244)
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -310.0
 offset_top = 16.0
 offset_right = 310.0
 offset_bottom = 260.0
-script = ExtResource("5_8d7hf")
+grow_horizontal = 2
 phase_key = "level15.phase"
 title_key = "level15.title"
 
@@ -54,156 +46,103 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
-[node name="Card1" type="TextureRect" parent="GameRoot" unique_id=401281289 instance=ExtResource("6_gar82")]
+[node name="Card1" parent="GameRoot" unique_id=401281289 instance=ExtResource("6_gar82")]
 layout_mode = 0
 offset_left = 515.0
 offset_top = 344.20886
 offset_right = 730.0
 offset_bottom = 559.20886
-texture = ExtResource("7_3eykp")
-expand_mode = 1
-stretch_mode = 5
-script = ExtResource("8_p5ah6")
 
-[node name="Card2" type="TextureRect" parent="GameRoot" unique_id=1295168385 instance=ExtResource("6_gar82")]
+[node name="Card2" parent="GameRoot" unique_id=1295168385 instance=ExtResource("6_gar82")]
 layout_mode = 0
 offset_left = 740.0
 offset_top = 344.20886
 offset_right = 955.0
 offset_bottom = 559.20886
-texture = ExtResource("7_3eykp")
-expand_mode = 1
-stretch_mode = 5
-script = ExtResource("8_p5ah6")
 
-[node name="Card3" type="TextureRect" parent="GameRoot" unique_id=1929571586 instance=ExtResource("6_gar82")]
+[node name="Card3" parent="GameRoot" unique_id=1929571586 instance=ExtResource("6_gar82")]
 layout_mode = 0
 offset_left = 965.0
 offset_top = 344.20886
 offset_right = 1180.0
 offset_bottom = 559.20886
-texture = ExtResource("7_3eykp")
-expand_mode = 1
-stretch_mode = 5
-script = ExtResource("8_p5ah6")
 
-[node name="Card4" type="TextureRect" parent="GameRoot" unique_id=1818218859 instance=ExtResource("6_gar82")]
+[node name="Card4" parent="GameRoot" unique_id=1818218859 instance=ExtResource("6_gar82")]
 layout_mode = 0
 offset_left = 1190.0
 offset_top = 344.20886
 offset_right = 1405.0
 offset_bottom = 559.20886
-texture = ExtResource("7_3eykp")
-expand_mode = 1
-stretch_mode = 5
-script = ExtResource("8_p5ah6")
 
-[node name="Card5" type="TextureRect" parent="GameRoot" unique_id=1729296887 instance=ExtResource("6_gar82")]
+[node name="Card5" parent="GameRoot" unique_id=1729296887 instance=ExtResource("6_gar82")]
 layout_mode = 0
 offset_left = 515.0
 offset_top = 569.20886
 offset_right = 730.0
 offset_bottom = 784.20886
-texture = ExtResource("7_3eykp")
-expand_mode = 1
-stretch_mode = 5
-script = ExtResource("8_p5ah6")
 
-[node name="Card6" type="TextureRect" parent="GameRoot" unique_id=1582190692 instance=ExtResource("6_gar82")]
+[node name="Card6" parent="GameRoot" unique_id=1582190692 instance=ExtResource("6_gar82")]
 layout_mode = 0
 offset_left = 740.0
 offset_top = 569.20886
 offset_right = 955.0
 offset_bottom = 784.20886
-texture = ExtResource("7_3eykp")
-expand_mode = 1
-stretch_mode = 5
-script = ExtResource("8_p5ah6")
 
-[node name="Card7" type="TextureRect" parent="GameRoot" unique_id=493916738 instance=ExtResource("6_gar82")]
+[node name="Card7" parent="GameRoot" unique_id=493916738 instance=ExtResource("6_gar82")]
 layout_mode = 0
 offset_left = 965.0
 offset_top = 569.20886
 offset_right = 1180.0
 offset_bottom = 784.20886
-texture = ExtResource("7_3eykp")
-expand_mode = 1
-stretch_mode = 5
-script = ExtResource("8_p5ah6")
 
-[node name="Card8" type="TextureRect" parent="GameRoot" unique_id=1312859547 instance=ExtResource("6_gar82")]
+[node name="Card8" parent="GameRoot" unique_id=1312859547 instance=ExtResource("6_gar82")]
 layout_mode = 0
 offset_left = 1190.0
 offset_top = 569.20886
 offset_right = 1405.0
 offset_bottom = 784.20886
-texture = ExtResource("7_3eykp")
-expand_mode = 1
-stretch_mode = 5
-script = ExtResource("8_p5ah6")
 
-[node name="Card9" type="TextureRect" parent="GameRoot" unique_id=1520815135 instance=ExtResource("6_gar82")]
+[node name="Card9" parent="GameRoot" unique_id=1520815135 instance=ExtResource("6_gar82")]
 layout_mode = 0
 offset_left = 515.0
 offset_top = 794.20886
 offset_right = 730.0
 offset_bottom = 1009.20886
-texture = ExtResource("7_3eykp")
-expand_mode = 1
-stretch_mode = 5
-script = ExtResource("8_p5ah6")
 
-[node name="Card10" type="TextureRect" parent="GameRoot" unique_id=1117890082 instance=ExtResource("6_gar82")]
+[node name="Card10" parent="GameRoot" unique_id=1117890082 instance=ExtResource("6_gar82")]
 layout_mode = 0
 offset_left = 740.0
 offset_top = 794.20886
 offset_right = 955.0
 offset_bottom = 1009.20886
-texture = ExtResource("7_3eykp")
-expand_mode = 1
-stretch_mode = 5
-script = ExtResource("8_p5ah6")
 
-[node name="Card11" type="TextureRect" parent="GameRoot" unique_id=1907113707 instance=ExtResource("6_gar82")]
+[node name="Card11" parent="GameRoot" unique_id=1907113707 instance=ExtResource("6_gar82")]
 layout_mode = 0
 offset_left = 965.0
 offset_top = 794.20886
 offset_right = 1180.0
 offset_bottom = 1009.20886
-texture = ExtResource("7_3eykp")
-expand_mode = 1
-stretch_mode = 5
-script = ExtResource("8_p5ah6")
 
-[node name="Card12" type="TextureRect" parent="GameRoot" unique_id=967602985 instance=ExtResource("6_gar82")]
+[node name="Card12" parent="GameRoot" unique_id=967602985 instance=ExtResource("6_gar82")]
 layout_mode = 0
 offset_left = 1190.0
 offset_top = 794.20886
 offset_right = 1405.0
 offset_bottom = 1009.20886
-texture = ExtResource("7_3eykp")
-expand_mode = 1
-stretch_mode = 5
-script = ExtResource("8_p5ah6")
 
-[node name="Didia" type="AnimatedSprite2D" parent="." unique_id=1121520515 instance=ExtResource("9_rd701")]
+[node name="Didia" parent="." unique_id=1121520515 instance=ExtResource("9_rd701")]
 unique_name_in_owner = true
 position = Vector2(249.39494, 773.47125)
 scale = Vector2(0.667, 0.667)
-sprite_frames = ExtResource("10_8kk4i")
-animation = &"idle"
-autoplay = "idle"
 script = ExtResource("11_4munm")
 
-[node name="Bubble" type="Control" parent="." unique_id=19909346 instance=ExtResource("12_jyxdy")]
+[node name="Bubble" parent="." unique_id=19909346 instance=ExtResource("12_jyxdy")]
 unique_name_in_owner = true
-anchors_preset = 0
+layout_mode = 0
 offset_left = 339.832
 offset_top = 648.90344
 offset_right = 859.83203
 offset_bottom = 844.90344
-mouse_filter = 2
-script = ExtResource("13_q3cwt")
 
 [node name="BackButton" type="TextureButton" parent="." unique_id=1401204306]
 unique_name_in_owner = true
@@ -217,40 +156,28 @@ ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("15_yuewe")
 
-[node name="RejectA" type="TextureRect" parent="." unique_id=1635654017 instance=ExtResource("16_btaja")]
+[node name="RejectA" parent="." unique_id=1635654017 instance=ExtResource("16_btaja")]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 900.0
 offset_top = 500.0
 offset_right = 1020.0
 offset_bottom = 620.0
-mouse_filter = 2
-texture = ExtResource("17_5cddt")
-expand_mode = 1
-stretch_mode = 5
-script = ExtResource("18_n54bi")
 
-[node name="RejectB" type="TextureRect" parent="." unique_id=1759119408 instance=ExtResource("16_btaja")]
+[node name="RejectB" parent="." unique_id=1759119408 instance=ExtResource("16_btaja")]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 900.0
 offset_top = 500.0
 offset_right = 1020.0
 offset_bottom = 620.0
-mouse_filter = 2
-texture = ExtResource("17_5cddt")
-expand_mode = 1
-stretch_mode = 5
-script = ExtResource("18_n54bi")
 
 [node name="Effects" type="Node2D" parent="." unique_id=1089092273 groups=["effects"]]
 
-[node name="VictoryModal" type="Control" parent="." unique_id=1728551931 instance=ExtResource("19_3w6yv")]
+[node name="VictoryModal" parent="." unique_id=1728551931 instance=ExtResource("19_3w6yv")]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("20_fh7mm")

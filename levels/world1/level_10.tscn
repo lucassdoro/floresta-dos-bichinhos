@@ -1,29 +1,23 @@
 [gd_scene format=3 uid="uid://c7wyv651belgi"]
 
 [ext_resource type="Script" uid="uid://chpad83arp6f6" path="res://levels/world1/level_10.gd" id="1_yidor"]
-[ext_resource type="Script" uid="uid://dh20ge7vqhkhy" path="res://backgrounds/menu_background.gd" id="2_b4w38"]
-[ext_resource type="Texture2D" uid="uid://kkcaydi11f0v" path="res://assets/art/MiniGames/LostAnimals/level110_video_still.webp" id="3_t51n1"]
+[ext_resource type="PackedScene" uid="uid://bo0lx5hjtltcf" path="res://backgrounds/level110_background.tscn" id="2_47bh5"]
+[ext_resource type="Script" uid="uid://byk7hxafv1uso" path="res://backgrounds/background.gd" id="3_gbd0t"]
 [ext_resource type="Shader" uid="uid://bhk8grljyxer8" path="res://shaders/night_veil.gdshader" id="4_qsryo"]
 [ext_resource type="Shader" uid="uid://ovs2vdncvohb" path="res://shaders/night_glow.gdshader" id="5_ni8sn"]
 [ext_resource type="Script" uid="uid://drw1j3e8b841i" path="res://levels/world1/night_ambient.gd" id="6_ovh5e"]
 [ext_resource type="SpriteFrames" uid="uid://bfkybx01jf2mo" path="res://characters/lost_animals_frames.tres" id="7_mydik"]
 [ext_resource type="PackedScene" uid="uid://5qepfy66iliu" path="res://characters/lolo.tscn" id="8_l7af8"]
-[ext_resource type="SpriteFrames" uid="uid://d1ll2ro1i47yo" path="res://characters/lolo_frames.tres" id="9_q2jyi"]
-[ext_resource type="Script" uid="uid://dct3ki46pulek" path="res://characters/lolo_character.gd" id="10_u3xnl"]
 [ext_resource type="Texture2D" uid="uid://7kxl7saeb8d6" path="res://assets/art/MiniGames/ColorReef/lali.webp" id="11_qvoe6"]
 [ext_resource type="Script" uid="uid://dgr3ph5np2dx7" path="res://levels/world1/firefly_guide.gd" id="12_ympet"]
 [ext_resource type="PackedScene" uid="uid://t0oxlnehvkv7" path="res://core/speech_bubble.tscn" id="13_sn7c7"]
-[ext_resource type="Script" uid="uid://d38fo0nax8eso" path="res://core/speech_bubble.gd" id="14_jdf4q"]
 [ext_resource type="PackedScene" uid="uid://b2cnycnt0eawo" path="res://core/level_header.tscn" id="15_awnfj"]
-[ext_resource type="Script" uid="uid://g6ckkly8peoi" path="res://core/level_header.gd" id="16_4g8vy"]
 [ext_resource type="PackedScene" uid="uid://jpl6k8gbnfjk" path="res://core/counter_pill.tscn" id="17_sh0cj"]
-[ext_resource type="Script" uid="uid://bcqhf5xdd7xlc" path="res://core/counter_pill.gd" id="18_hk3ta"]
 [ext_resource type="Texture2D" uid="uid://cilj23t12sico" path="res://assets/art/MiniGames/LostAnimals/cub_lion.webp" id="19_5ulyk"]
 [ext_resource type="Script" uid="uid://kflh5tpri3pm" path="res://levels/world1/fireworks.gd" id="20_fjv7e"]
 [ext_resource type="Texture2D" uid="uid://b2ymt67xs1tbm" path="res://assets/art/UI/Buttons/button_back.webp" id="21_3adhh"]
 [ext_resource type="Script" uid="uid://ugcjf40nt2nh" path="res://core/juicy_button.gd" id="22_ya012"]
 [ext_resource type="PackedScene" uid="uid://cg4spmvcta6rd" path="res://core/victory_modal.tscn" id="23_hgr2c"]
-[ext_resource type="Script" uid="uid://crb4yqpnwctr5" path="res://core/victory_modal.gd" id="24_j3ar7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j5qsr"]
 shader = ExtResource("4_qsryo")
@@ -48,14 +42,13 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_yidor")
 level_number = 10
 
-[node name="Background" type="Node2D" parent="." unique_id=1557070314]
-script = ExtResource("2_b4w38")
-
-[node name="Still" type="Sprite2D" parent="Background" unique_id=613866078]
-texture = ExtResource("3_t51n1")
+[node name="Background" type="Node2D" parent="." unique_id=481438745 instance=ExtResource("2_47bh5")]
+script = ExtResource("3_gbd0t")
 
 [node name="Veil" type="ColorRect" parent="." unique_id=1497664741]
 unique_name_in_owner = true
@@ -94,14 +87,10 @@ animation = &"didia"
 autoplay = "didia"
 offset = Vector2(0, -210)
 
-[node name="Lolo" type="AnimatedSprite2D" parent="." unique_id=769880747 instance=ExtResource("8_l7af8")]
+[node name="Lolo" parent="." unique_id=769880747 instance=ExtResource("8_l7af8")]
 unique_name_in_owner = true
 z_index = 12
 position = Vector2(902.4, 648)
-sprite_frames = ExtResource("9_q2jyi")
-animation = &"idle"
-autoplay = "idle"
-script = ExtResource("10_u3xnl")
 base_scale = 0.5
 
 [node name="Lali" type="Sprite2D" parent="." unique_id=1228362330]
@@ -128,41 +117,37 @@ unique_name_in_owner = true
 z_index = 20
 script = ExtResource("12_ympet")
 
-[node name="Bubble" type="Control" parent="." unique_id=19909346 instance=ExtResource("13_sn7c7")]
+[node name="Bubble" parent="." unique_id=19909346 instance=ExtResource("13_sn7c7")]
 unique_name_in_owner = true
-anchors_preset = 0
+layout_mode = 0
 offset_left = 287.2
 offset_top = 517.6
 offset_right = 807.2
 offset_bottom = 713.6
-mouse_filter = 2
-script = ExtResource("14_jdf4q")
 
-[node name="Header" type="Control" parent="." unique_id=1294603571 instance=ExtResource("15_awnfj")]
+[node name="Header" parent="." unique_id=1294603571 instance=ExtResource("15_awnfj")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(620, 244)
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -310.0
 offset_top = 16.0
 offset_right = 310.0
 offset_bottom = 260.0
-script = ExtResource("16_4g8vy")
 phase_key = "level110.phase"
 title_key = "level110.title"
 
-[node name="Counter" type="Control" parent="." unique_id=1367283034 instance=ExtResource("17_sh0cj")]
+[node name="Counter" parent="." unique_id=1367283034 instance=ExtResource("17_sh0cj")]
 unique_name_in_owner = true
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -330.0
 offset_top = 40.0
 offset_right = -50.0
 offset_bottom = 150.0
-mouse_filter = 2
-script = ExtResource("18_hk3ta")
 target = 6
 icon = ExtResource("19_5ulyk")
 
@@ -185,13 +170,11 @@ script = ExtResource("22_ya012")
 
 [node name="Effects" type="Node2D" parent="." unique_id=383736673 groups=["effects"]]
 
-[node name="VictoryModal" type="Control" parent="." unique_id=1728551931 instance=ExtResource("23_hgr2c")]
+[node name="VictoryModal" parent="." unique_id=1728551931 instance=ExtResource("23_hgr2c")]
 unique_name_in_owner = true
 z_index = 50
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("24_j3ar7")

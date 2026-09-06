@@ -2,18 +2,13 @@
 
 [ext_resource type="Script" uid="uid://gyq5pkdarhba" path="res://levels/world1/level_07.gd" id="1_gqxme"]
 [ext_resource type="PackedScene" uid="uid://br8ufn20jv7g7" path="res://backgrounds/level17_background.tscn" id="2_jl7ex"]
-[ext_resource type="Script" uid="uid://dh20ge7vqhkhy" path="res://backgrounds/menu_background.gd" id="3_8xwt2"]
 [ext_resource type="PackedScene" uid="uid://b2cnycnt0eawo" path="res://core/level_header.tscn" id="4_pvtnx"]
-[ext_resource type="Script" uid="uid://g6ckkly8peoi" path="res://core/level_header.gd" id="5_r03v5"]
 [ext_resource type="Script" uid="uid://cytnma47c0nde" path="res://levels/world1/slash_trail.gd" id="6_t3d44"]
 [ext_resource type="PackedScene" uid="uid://cix8fk6kxu608" path="res://characters/sophy.tscn" id="7_qvjfb"]
-[ext_resource type="SpriteFrames" uid="uid://hiv02d4chgkx" path="res://characters/sophy_frames.tres" id="8_tywh8"]
 [ext_resource type="PackedScene" uid="uid://t0oxlnehvkv7" path="res://core/speech_bubble.tscn" id="9_gssqx"]
-[ext_resource type="Script" uid="uid://d38fo0nax8eso" path="res://core/speech_bubble.gd" id="10_dq4im"]
 [ext_resource type="Texture2D" uid="uid://b2ymt67xs1tbm" path="res://assets/art/UI/Buttons/button_back.webp" id="11_be2ed"]
 [ext_resource type="Script" uid="uid://ugcjf40nt2nh" path="res://core/juicy_button.gd" id="12_crjwq"]
 [ext_resource type="PackedScene" uid="uid://cg4spmvcta6rd" path="res://core/victory_modal.tscn" id="13_0mfwa"]
-[ext_resource type="Script" uid="uid://crb4yqpnwctr5" path="res://core/victory_modal.gd" id="14_ngy67"]
 
 [sub_resource type="Gradient" id="Gradient_e7r42"]
 offsets = PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1)
@@ -42,23 +37,24 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_gqxme")
 level_number = 7
 
-[node name="Background" type="Node2D" parent="." unique_id=613103313 instance=ExtResource("2_jl7ex")]
-script = ExtResource("3_8xwt2")
+[node name="Background" parent="." unique_id=613103313 instance=ExtResource("2_jl7ex")]
 
-[node name="Header" type="Control" parent="." unique_id=1294603571 instance=ExtResource("4_pvtnx")]
+[node name="Header" parent="." unique_id=1294603571 instance=ExtResource("4_pvtnx")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(620, 244)
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -310.0
 offset_top = 16.0
 offset_right = 310.0
 offset_bottom = 260.0
-script = ExtResource("5_r03v5")
+grow_horizontal = 2
 phase_key = "level17.phase"
 title_key = "level17.title"
 
@@ -74,23 +70,17 @@ unique_name_in_owner = true
 z_index = 30
 script = ExtResource("6_t3d44")
 
-[node name="Sophy" type="AnimatedSprite2D" parent="." unique_id=1247852595 instance=ExtResource("7_qvjfb")]
+[node name="Sophy" parent="." unique_id=1247852595 instance=ExtResource("7_qvjfb")]
 unique_name_in_owner = true
 position = Vector2(268.8, 756)
-scale = Vector2(0.666, 0.666)
-sprite_frames = ExtResource("8_tywh8")
-animation = &"idle"
-autoplay = "idle"
 
-[node name="Bubble" type="Control" parent="." unique_id=19909346 instance=ExtResource("9_gssqx")]
+[node name="Bubble" parent="." unique_id=19909346 instance=ExtResource("9_gssqx")]
 unique_name_in_owner = true
-anchors_preset = 0
+layout_mode = 0
 offset_left = 400.0
 offset_top = 500.0
 offset_right = 920.0
 offset_bottom = 696.0
-mouse_filter = 2
-script = ExtResource("10_dq4im")
 
 [node name="Confetti" type="GPUParticles2D" parent="." unique_id=1839851671]
 position = Vector2(960, -40)
@@ -114,13 +104,11 @@ script = ExtResource("12_crjwq")
 
 [node name="Effects" type="Node2D" parent="." unique_id=1338745333 groups=["effects"]]
 
-[node name="VictoryModal" type="Control" parent="." unique_id=1728551931 instance=ExtResource("13_0mfwa")]
+[node name="VictoryModal" parent="." unique_id=1728551931 instance=ExtResource("13_0mfwa")]
 unique_name_in_owner = true
 z_index = 50
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("14_ngy67")

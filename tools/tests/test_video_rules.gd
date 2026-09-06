@@ -1,8 +1,9 @@
-extends SceneTree
+extends Node
 
-## Regras puras dos fundos em video. Roda via run_headless_script (godot --headless --script).
+## Regras puras dos fundos em video. Roda como cena headless (run_headless_scene),
+## porque em modo --script os autoloads nao existem e SceneBackground depende de Settings.
 
-func _init() -> void:
+func _ready() -> void:
 	var failures := 0
 	failures += check("passa a 60 fps em 60 Hz", VideoBenchmark.passes(60.0, 60.0))
 	failures += check("passa exatamente em 48 fps em 60 Hz", VideoBenchmark.passes(48.0, 60.0))
@@ -16,7 +17,7 @@ func _init() -> void:
 	failures += check("cover: 16:9 dentro de 4:3 escala pela altura", is_equal_approx(SceneBackground.cover_scale(Vector2(1440, 1080), Vector2(1280, 720)), 1.5))
 	failures += check("cover: 16:9 dentro de 16:9 escala pela largura", is_equal_approx(SceneBackground.cover_scale(Vector2(1920, 1080), Vector2(1280, 720)), 1.5))
 	print("FAILURES: %d" % failures)
-	quit(1 if failures > 0 else 0)
+	get_tree().quit(1 if failures > 0 else 0)
 
 func check(name: String, ok: bool) -> int:
 	print(("PASS " if ok else "FAIL ") + name)

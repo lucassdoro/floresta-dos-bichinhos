@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dspns4kdwvduc"]
+
+[ext_resource type="Script" uid="uid://hc78oourijee" path="res://tools/tests/test_video_rules.gd" id="1_5vejx"]
+
+[node name="TestVideoRules" type="Node" unique_id=309304126]
+script = ExtResource("1_5vejx")

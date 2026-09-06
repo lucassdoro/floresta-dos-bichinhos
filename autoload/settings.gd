@@ -10,6 +10,7 @@ const SECTION := "settings"
 var music_volume := 1.0
 var sfx_volume := 1.0
 var quality := 2
+var benchmarked := false
 var locale := "pt_BR"
 
 var _config := ConfigFile.new()
@@ -19,6 +20,7 @@ func _ready() -> void:
 	music_volume = _config.get_value(SECTION, "music_volume", music_volume)
 	sfx_volume = _config.get_value(SECTION, "sfx_volume", sfx_volume)
 	quality = _config.get_value(SECTION, "quality", quality)
+	benchmarked = _config.get_value(SECTION, "benchmarked", benchmarked)
 	locale = _config.get_value(SECTION, "locale", locale)
 	TranslationServer.set_locale(locale)
 

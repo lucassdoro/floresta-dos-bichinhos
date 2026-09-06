@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://byk7hxafv1uso" path="res://backgrounds/background.gd" id="1_gml0v"]
 [ext_resource type="Shader" uid="uid://p4q8kvrrlduc" path="res://shaders/foliage.gdshader" id="2_2si5e"]
 [ext_resource type="Texture2D" uid="uid://cj5yk58nci7tj" path="res://assets/art/Backgrounds/Level14Background.png" id="3_50ots"]
+[ext_resource type="VideoStream" uid="uid://cjqx2kmk3b3s1" path="res://assets/video/level14.ogv" id="4_2si5e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6num3"]
 shader = ExtResource("2_2si5e")
@@ -20,6 +21,7 @@ texture = ExtResource("3_50ots")
 
 [node name="Video" type="VideoStreamPlayer" parent="." unique_id=956724951]
 mouse_filter = 2
+stream = ExtResource("4_2si5e")
 volume_db = -80.0
 expand = true
 loop = true

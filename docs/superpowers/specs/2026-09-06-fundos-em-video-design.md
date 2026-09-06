@@ -103,7 +103,7 @@ O splash (`ui/splash/doma_splash.gd`) chama o benchmark no `_ready()` quando
 2. Espera o primeiro frame (mesma condição da cena de fundo). Timeout de 3 s sem frame conta como
    reprovação (decode não acompanha nem o start).
 3. Mede por 2 s: soma de `get_process_delta_time()` por frame, média de fps.
-4. Regra: `fps_medio < 0.8 * DisplayServer.screen_get_refresh_rate()` (48 em 60 Hz) reprova.
+4. Regra: `fps_medio < 0.8 * min(DisplayServer.screen_get_refresh_rate(), 60)` (48 fps) reprova. Vídeo de 24 fps não precisa de mais que 60 fps, então monitor de 144 Hz não sobe o limiar (medido: o Mac de desenvolvimento a 144 Hz reprovava com limiar de 115).
    Se a taxa do monitor vier inválida (`-1`), assume 60.
 5. Reprovou: `Settings.set_value("quality", 0)`. Aprovou: não mexe (padrão atual, 2).
 6. `Settings.set_value("benchmarked", true)`, `queue_free()`.

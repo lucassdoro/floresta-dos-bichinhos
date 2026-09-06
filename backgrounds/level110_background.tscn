@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://byk7hxafv1uso" path="res://backgrounds/background.gd" id="1_mvkjm"]
 [ext_resource type="Texture2D" uid="uid://kkcaydi11f0v" path="res://assets/art/MiniGames/LostAnimals/level110_video_still.webp" id="2_tq14u"]
+[ext_resource type="VideoStream" uid="uid://b05fo0jvop1gm" path="res://assets/video/level110.ogv" id="3_tq14u"]
 
 [node name="Level110Background" type="Node2D" unique_id=481438745]
 script = ExtResource("1_mvkjm")
@@ -11,6 +12,7 @@ texture = ExtResource("2_tq14u")
 
 [node name="Video" type="VideoStreamPlayer" parent="." unique_id=287666670]
 mouse_filter = 2
+stream = ExtResource("3_tq14u")
 volume_db = -80.0
 expand = true
 loop = true

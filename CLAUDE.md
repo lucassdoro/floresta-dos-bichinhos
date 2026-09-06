@@ -130,9 +130,15 @@ res://
 `VictoryModal`, regra de estrela, `Progression.report_level_result`, transição de saída. A fase
 concreta só implementa `_setup()` e chama `mistake()` / `win()`.
 
-**Fundos não usam vídeo.** Os 10 MP4 da versão Flutter viram cena: still (frame 0, já existe como
-asset) em `Sprite2D` + shader de distorção + `Parallax2D`. Três shaders cobrem os 10 fundos:
-`water` (fases 2 e 9), `foliage` (1, 4, 6, 8, mapa, menu), `night` (10).
+**Fundos são vídeo com fallback.** Cada cena de `backgrounds/` tem `Still` (frame 0 + shader
+`water`/`foliage`) e `Video` (`VideoStreamPlayer`, Ogg Theora em `assets/video/`). O script
+`background.gd` (`SceneBackground`) toca vídeo em `Settings.quality >= 1` e fica no still + shader em
+`quality == 0`. No primeiro boot, `core/video_benchmark.gd` mede o fps tocando o vídeo do menu durante
+o splash e grava `quality = 0` se ficar abaixo de 80% de min(taxa do monitor, 60), ou seja 48 fps (nunca repete; apagar
+`user://settings.cfg` reinicia). Encoder: `ffmpeg2theora` (o ffmpeg do Homebrew não encoda Theora).
+Fase 6 não tem vídeo (só still). Spec: `docs/superpowers/specs/2026-09-06-fundos-em-video-design.md`.
+Teste das regras puras: `tools/tests/test_video_rules.tscn` via `run_headless_scene` (em modo
+`--script` os autoloads não existem, então teste que toca script com `Settings` roda como cena).
 
 **Bloom é shader de canvas próprio**, não `WorldEnvironment` (o `glow` 2D exige HDR 2D e diverge
 entre renderers). Traduzir `../floresta-dos-bichinhos-old/shaders/bloom.frag` (disco de Vogel,
@@ -248,5 +254,5 @@ passam a valer por si.
 | Risco | Mitigação |
 |---|---|
 | ASTC borra borda de personagem | Preset por pasta, cai pra `Lossless` onde aparecer. Detectar no M0 |
-| Fundo por shader não fica tão bonito quanto o vídeo | Fazer o do mar primeiro (fase 2, o mais visível). Não convenceu, sprite sheet a 12 fps ainda é ordens de grandeza mais barato |
+| Theora em CPU engasga no tablet | Benchmark do primeiro boot cai pra still + shader. Medir no tablet do testador antes do M4 |
 | `expand` quebra composição em 4:3 | Toda UI em `Control` ancorado; testar 4:3 desde o M0 |

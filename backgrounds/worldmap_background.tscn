@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://byk7hxafv1uso" path="res://backgrounds/background.gd" id="1_5eaaq"]
 [ext_resource type="Shader" uid="uid://p4q8kvrrlduc" path="res://shaders/foliage.gdshader" id="2_hwy6q"]
 [ext_resource type="Texture2D" uid="uid://dtvfj7sgh0hp3" path="res://assets/art/Backgrounds/WorldMapBackground.png" id="3_pgm3f"]
+[ext_resource type="VideoStream" uid="uid://dicpsf40hhcaa" path="res://assets/video/worldmap.ogv" id="4_hwy6q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xsxeb"]
 shader = ExtResource("2_hwy6q")
@@ -20,6 +21,7 @@ texture = ExtResource("3_pgm3f")
 
 [node name="Video" type="VideoStreamPlayer" parent="." unique_id=363269864]
 mouse_filter = 2
+stream = ExtResource("4_hwy6q")
 volume_db = -80.0
 expand = true
 loop = true

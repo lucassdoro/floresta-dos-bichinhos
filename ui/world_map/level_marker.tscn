@@ -27,10 +27,10 @@ script = ExtResource("3_j3l2a")
 [node name="NumberLabel" type="Label" parent="Plaque" unique_id=1207251861]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 30.0
-offset_top = 45.8
-offset_right = 150.0
-offset_bottom = 155.8
+offset_left = 32.0
+offset_top = 42.5
+offset_right = 152.0
+offset_bottom = 171.5
 theme_override_colors/font_color = Color(1, 0.97, 0.89, 1)
 theme_override_colors/font_shadow_color = Color(0.22, 0.12, 0.04, 0.8)
 theme_override_colors/font_outline_color = Color(0.33, 0.19, 0.08, 1)

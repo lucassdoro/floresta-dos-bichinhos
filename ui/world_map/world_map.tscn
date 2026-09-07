@@ -32,6 +32,7 @@ mouse_filter = 2
 
 [node name="PlayerStar" parent="MapRoot" unique_id=155702276 instance=ExtResource("5_crvsx")]
 unique_name_in_owner = true
+z_index = 1
 
 [node name="WorldHeader" type="Control" parent="." unique_id=235981198]
 unique_name_in_owner = true
@@ -60,6 +61,9 @@ offset_top = 24.0
 offset_bottom = 134.0
 grow_horizontal = 2
 theme_type_variation = &"Title80"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.33, 0.19, 0.08, 1)
+theme_override_constants/outline_size = 12
 text = "worldmap.world1.title"
 horizontal_alignment = 1
 

@@ -157,7 +157,7 @@ Dropdown de Qualidade liga no nº de taps (0 = off, 1 = 10 taps, 2 = 16).
 | i18n | CSV pt-BR/it → `.translation`, `tr()` nativo, troca em runtime |
 | Áudio | Buses `Master > Music / SFX / Voice`. Música em autoload — nunca recomeça na troca de cena. Fade-in na entrada |
 | Voz | Autoload `Voice`: `voice/<personagem>/<locale>/<chave>.ogg`, sincronizado com a digitação do balão |
-| Splash | Reescrever `doma_splash` como cena Godot, portátil (logo é vetor gerado por script) |
+| Splash | Cópia da `packages/doma_splash` do stackit (`ui/splash/`): halos em `SubViewport` a meia resolução + gaussiana separável (`shaders/neon_blur`), núcleo direto, reflexo espelha a tela (`shaders/neon_reflection`). Referência: `flutter test tools/splash_render_check.dart` no stackit gera PNGs; comparar com o post desligado |
 
 ---
 

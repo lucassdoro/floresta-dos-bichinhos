@@ -3,55 +3,103 @@
 [ext_resource type="Theme" uid="uid://bbuvbjujai5uq" path="res://ui/theme.tres" id="1_eghkp"]
 [ext_resource type="Script" uid="uid://bproyadefcqib" path="res://ui/splash/doma_splash.gd" id="2_7rgh1"]
 [ext_resource type="Script" uid="uid://38f4s03n1gao" path="res://ui/splash/neon_logo.gd" id="3_g1bxe"]
+[ext_resource type="FontFile" uid="uid://wr1si2r1bidd" path="res://assets/fonts/Baloo2-ExtraBold.ttf" id="4_7rgh1"]
 [ext_resource type="AudioStream" uid="uid://bojjc2ecii24h" path="res://assets/audio/Splash/hum.wav" id="4_v5hlr"]
 [ext_resource type="AudioStream" uid="uid://b4tgl6grsgsuq" path="res://assets/audio/Splash/zap.wav" id="5_6pw5k"]
+[ext_resource type="Shader" uid="uid://dl5pfb0eyo23x" path="res://shaders/neon_reflection.gdshader" id="5_g1bxe"]
+[ext_resource type="Script" uid="uid://cyyknd625jhs6" path="res://ui/splash/halo_source.gd" id="5_hbhjo"]
+[ext_resource type="Shader" uid="uid://bapvwhjrvkdwm" path="res://shaders/neon_blur.gdshader" id="6_fkku2"]
 [ext_resource type="AudioStream" uid="uid://cyxqomubhfp3g" path="res://assets/audio/Splash/thump.wav" id="6_hbhjo"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_eghkp"]
+blend_mode = 1
+
+[sub_resource type="FontVariation" id="FontVariation_g1bxe"]
+base_font = ExtResource("4_7rgh1")
+spacing_glyph = 7
+
+[sub_resource type="Gradient" id="Gradient_v5hlr"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6pw5k"]
+gradient = SubResource("Gradient_v5hlr")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hvta5"]
+shader = ExtResource("6_fkku2")
+shader_parameter/direction = Vector2(1, 0)
+shader_parameter/sigma = 7.63
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ap5bl"]
+viewport_path = NodePath("Logo/HaloWideSource")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_27xp3"]
+shader = ExtResource("6_fkku2")
+shader_parameter/direction = Vector2(0, 1)
+shader_parameter/sigma = 7.63
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_xclr1"]
+viewport_path = NodePath("Logo/HaloWidePass")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_57qpm"]
+shader = ExtResource("6_fkku2")
+shader_parameter/direction = Vector2(1, 0)
+shader_parameter/sigma = 2.93
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wpkr6"]
+viewport_path = NodePath("Logo/HaloMidSource")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ij4d6"]
+shader = ExtResource("6_fkku2")
+shader_parameter/direction = Vector2(0, 1)
+shader_parameter/sigma = 2.93
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_2272d"]
+viewport_path = NodePath("Logo/HaloMidPass")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v5hlr"]
+shader = ExtResource("5_g1bxe")
+shader_parameter/mirror_v = 0.78
+shader_parameter/strength = 0.16
+shader_parameter/radius_px = 16.0
+
+[sub_resource type="Gradient" id="Gradient_7rgh1"]
+offsets = PackedFloat32Array(0.55, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.75)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g1bxe"]
+gradient = SubResource("Gradient_7rgh1")
+width = 512
+height = 512
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
 
 [sub_resource type="Animation" id="Animation_fkku2"]
 length = 3.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Word:modulate:a")
+tracks/0/path = NodePath(".:modulate:a")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(2.05, 2.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Flash:modulate:a")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(3, 3.05, 3.25),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.9, 0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:modulate:a")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(3.3, 3.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [1.0, 0.0]
 }
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0.15, 0.7, 1.3, 1.6, 2.05, 3.05),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "values": [{
@@ -74,6 +122,18 @@ tracks/3/keys = {
 "method": &"play_thump"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Logo:elapsed")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 3.7]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hvta5"]
 _data = {
@@ -82,45 +142,102 @@ _data = {
 
 [node name="DomaSplash" type="Control" unique_id=431577599]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource("1_eghkp")
 script = ExtResource("2_7rgh1")
 
 [node name="Backdrop" type="ColorRect" parent="." unique_id=425436551]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color(0.04, 0.03, 0.07, 1)
+color = Color(0, 0, 0, 1)
 
-[node name="Logo" type="Node2D" parent="." unique_id=778721511]
-position = Vector2(960, 470)
+[node name="Logo" type="Node2D" parent="." unique_id=778721511 node_paths=PackedStringArray("halos", "reflection")]
+material = SubResource("CanvasItemMaterial_eghkp")
 script = ExtResource("3_g1bxe")
+font = SubResource("FontVariation_g1bxe")
+light_texture = SubResource("GradientTexture2D_6pw5k")
+halos = [NodePath("HaloWide"), NodePath("HaloMid")]
+reflection = NodePath("Reflection")
 
-[node name="Word" type="Label" parent="." unique_id=1809607557]
-modulate = Color(1, 1, 1, 0)
+[node name="HaloWideSource" type="SubViewport" parent="Logo" unique_id=1512848300]
+transparent_bg = true
+size = Vector2i(960, 540)
+
+[node name="Source" type="Node2D" parent="Logo/HaloWideSource" unique_id=1342893389 node_paths=PackedStringArray("logo")]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("5_hbhjo")
+logo = NodePath("../..")
+
+[node name="HaloWidePass" type="SubViewport" parent="Logo" unique_id=1087416299]
+transparent_bg = true
+size = Vector2i(960, 540)
+
+[node name="Pass" type="Sprite2D" parent="Logo/HaloWidePass" unique_id=1811713605]
+material = SubResource("ShaderMaterial_hvta5")
+texture = SubResource("ViewportTexture_ap5bl")
+centered = false
+
+[node name="HaloWide" type="Sprite2D" parent="Logo" unique_id=107047940]
+material = SubResource("ShaderMaterial_27xp3")
+scale = Vector2(2, 2)
+texture = SubResource("ViewportTexture_xclr1")
+centered = false
+
+[node name="HaloMidSource" type="SubViewport" parent="Logo" unique_id=1303713403]
+transparent_bg = true
+size = Vector2i(960, 540)
+
+[node name="Source" type="Node2D" parent="Logo/HaloMidSource" unique_id=1347789893 node_paths=PackedStringArray("logo")]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("5_hbhjo")
+logo = NodePath("../..")
+layer = 1
+
+[node name="HaloMidPass" type="SubViewport" parent="Logo" unique_id=1505592499]
+transparent_bg = true
+size = Vector2i(960, 540)
+
+[node name="Pass" type="Sprite2D" parent="Logo/HaloMidPass" unique_id=1889489395]
+material = SubResource("ShaderMaterial_57qpm")
+texture = SubResource("ViewportTexture_wpkr6")
+centered = false
+
+[node name="HaloMid" type="Sprite2D" parent="Logo" unique_id=173689082]
+material = SubResource("ShaderMaterial_ij4d6")
+scale = Vector2(2, 2)
+texture = SubResource("ViewportTexture_2272d")
+centered = false
+
+[node name="Reflection" type="ColorRect" parent="Logo" unique_id=648948401]
+material = SubResource("ShaderMaterial_v5hlr")
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+
+[node name="Ambient" type="Node2D" parent="Logo" unique_id=907302512 node_paths=PackedStringArray("logo")]
+use_parent_material = true
+script = ExtResource("5_hbhjo")
+logo = NodePath("..")
+layer = -1
+
+[node name="Vignette" type="TextureRect" parent="." unique_id=273681417]
 layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -500.0
-offset_top = 250.0
-offset_right = 500.0
-offset_bottom = 370.0
-theme_type_variation = &"Title80"
-theme_override_colors/font_color = Color(0.9647059, 0.9647059, 0.972549, 1)
-text = "Doma Studio"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Flash" type="ColorRect" parent="." unique_id=297264349]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-anchor_right = 1.0
-anchor_bottom = 1.0
+offset_left = -1190.0
+offset_top = -1190.0
+offset_right = 1190.0
+offset_bottom = 1190.0
 mouse_filter = 2
+texture = SubResource("GradientTexture2D_g1bxe")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Hum" type="AudioStreamPlayer" parent="." unique_id=1965216345]
 stream = ExtResource("4_v5hlr")

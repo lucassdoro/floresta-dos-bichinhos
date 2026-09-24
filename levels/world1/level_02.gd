@@ -87,6 +87,11 @@ func _intro_routine() -> void:
 	await _bubble.typing_finished
 	if _dead():
 		return
+	# a voz da intro dura mais que a digitacao; o pedido seguinte cortaria a fala
+	if Voice.is_playing():
+		await Voice.finished
+	if _dead():
+		return
 	await _wait(INTRO_HOLD)
 	if _dead():
 		return

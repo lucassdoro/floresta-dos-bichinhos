@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://8tmijx0054eo"]
+
+[ext_resource type="Theme" uid="uid://bbuvbjujai5uq" path="res://ui/theme.tres" id="1_dm7sa"]
+[ext_resource type="Script" uid="uid://bjfidj45rl07q" path="res://ui/free_mode/level_card.gd" id="2_ssta3"]
+[ext_resource type="Texture2D" uid="uid://c87ivw6s2w83f" path="res://assets/art/UI/FreeMode/card_frame.webp" id="3_ljspt"]
+[ext_resource type="Texture2D" uid="uid://bgoerajnydn8t" path="res://assets/art/UI/WorldMap/star_on.webp" id="5_dtde6"]
+[ext_resource type="Texture2D" uid="uid://p2pktkgrie8w" path="res://assets/art/UI/WorldMap/star_off.webp" id="6_gnl1p"]
+[ext_resource type="Texture2D" uid="uid://bn0m45estyv61" path="res://assets/art/UI/FreeMode/replay.webp" id="7_4wpad"]
+
+[node name="LevelCard" type="Control" unique_id=368298400]
+custom_minimum_size = Vector2(400, 440)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 400.0
+offset_bottom = 440.0
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = ExtResource("1_dm7sa")
+script = ExtResource("2_ssta3")
+
+[node name="Frame" type="NinePatchRect" parent="." unique_id=607637689]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("3_ljspt")
+patch_margin_left = 40
+patch_margin_top = 62
+patch_margin_right = 40
+patch_margin_bottom = 40
+
+[node name="Content" type="VBoxContainer" parent="." unique_id=1299540589]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = 10.0
+offset_right = -28.0
+offset_bottom = -34.0
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="Content" unique_id=51798360]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.33, 0.19, 0.08, 1)
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Cover" type="TextureRect" parent="Content" unique_id=65731058]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 200)
+clip_contents = true
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Description" type="Label" parent="Content" unique_id=1542662256]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 62)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.22, 0.12, 1)
+theme_override_font_sizes/font_size = 22
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+text_overrun_behavior = 3
+max_lines_visible = 2
+
+[node name="Footer" type="HBoxContainer" parent="Content" unique_id=638533710]
+layout_mode = 2
+size_flags_vertical = 10
+mouse_filter = 2
+theme_override_constants/separation = 4
+
+[node name="StartPad" type="Control" parent="Content/Footer" unique_id=2108892294]
+custom_minimum_size = Vector2(6, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Star1" type="TextureRect" parent="Content/Footer" unique_id=784085590]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(34, 34)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("5_dtde6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Star2" type="TextureRect" parent="Content/Footer" unique_id=722292058]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(34, 34)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("5_dtde6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Star3" type="TextureRect" parent="Content/Footer" unique_id=950793191]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(34, 34)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("6_gnl1p")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Spacer" type="Control" parent="Content/Footer" unique_id=1204986907]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="ReplayIcon" type="TextureRect" parent="Content/Footer" unique_id=93102132]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("7_4wpad")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Plays" type="Label" parent="Content/Footer" unique_id=1094854121]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.22, 0.12, 1)
+theme_override_font_sizes/font_size = 22
+text = "x0"
+vertical_alignment = 1
+
+[node name="Spacer2" type="Control" parent="Content/Footer" unique_id=901834206]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Author" type="Label" parent="Content/Footer" unique_id=2051178743]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.22, 0.12, 1)
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 2
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="EndPad" type="Control" parent="Content/Footer" unique_id=805092075]
+custom_minimum_size = Vector2(12, 0)
+layout_mode = 2
+mouse_filter = 2

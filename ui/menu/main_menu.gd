@@ -16,6 +16,7 @@ func _ready() -> void:
 	Audio.start_music_fade()
 	_logo_animation.animation_finished.connect(_on_logo_intro_finished)
 	$MenuUI/Buttons/StoryMode.pressed.connect(open_panel.bind(world_select_scene, true))
+	$MenuUI/Buttons/FreeMode.pressed.connect(SceneLoader.go_to.bind(FreePlay.FREE_MODE_SCENE))
 	$MenuUI/Buttons/SettingsButton.pressed.connect(open_panel.bind(settings_panel_scene, false))
 	$MenuUI/Buttons/CreditsButton.pressed.connect(open_panel.bind(credits_scene, false))
 	$MenuUI/Buttons/QuitButton.pressed.connect(open_modal.bind(quit_confirm_scene))

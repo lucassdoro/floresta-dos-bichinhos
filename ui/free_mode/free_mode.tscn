@@ -1,0 +1,288 @@
+[gd_scene format=3 uid="uid://bcgxidv5ma2e3"]
+
+[ext_resource type="Theme" uid="uid://bbuvbjujai5uq" path="res://ui/theme.tres" id="1_jawf6"]
+[ext_resource type="Script" uid="uid://rowy8243v7to" path="res://ui/free_mode/free_mode.gd" id="2_cpjqf"]
+[ext_resource type="PackedScene" uid="uid://d4blwh5uag6sj" path="res://backgrounds/menu_background.tscn" id="3_wsyhw"]
+[ext_resource type="PackedScene" uid="uid://dbc4f8at4rrhm" path="res://core/plaque_header.tscn" id="4_ufvde"]
+[ext_resource type="Texture2D" uid="uid://b3gxb21lsue0q" path="res://assets/art/UI/FreeMode/filter_bar.webp" id="5_4iqug"]
+[ext_resource type="Texture2D" uid="uid://dnufw26ipy8tt" path="res://assets/art/UI/FreeMode/search_field.webp" id="6_28l3g"]
+[ext_resource type="Texture2D" uid="uid://cd6inb86vi1et" path="res://assets/art/UI/FreeMode/chip_colors.webp" id="7_a6hdy"]
+[ext_resource type="Texture2D" uid="uid://bfo2t1s4ehay0" path="res://assets/art/UI/FreeMode/chip_colors_on.webp" id="8_s77wx"]
+[ext_resource type="Texture2D" uid="uid://rb1dfby8yay2" path="res://assets/art/UI/FreeMode/chip_numbers.webp" id="9_un76f"]
+[ext_resource type="Texture2D" uid="uid://b7heyp2acabce" path="res://assets/art/UI/FreeMode/chip_numbers_on.webp" id="10_dfxc6"]
+[ext_resource type="Texture2D" uid="uid://vstm37cw81df" path="res://assets/art/UI/FreeMode/chip_letters.webp" id="11_2rhul"]
+[ext_resource type="Texture2D" uid="uid://6pmmwlkrcehq" path="res://assets/art/UI/FreeMode/chip_letters_on.webp" id="12_mcfrb"]
+[ext_resource type="Texture2D" uid="uid://1b4xpl6mreor" path="res://assets/art/UI/FreeMode/chip_memory.webp" id="13_06qf2"]
+[ext_resource type="Texture2D" uid="uid://brxv7g2w0s8v" path="res://assets/art/UI/FreeMode/chip_memory_on.webp" id="14_7rs6x"]
+[ext_resource type="Texture2D" uid="uid://co7srvrphve3d" path="res://assets/art/UI/FreeMode/chip_coordination.webp" id="15_2vkxn"]
+[ext_resource type="Texture2D" uid="uid://cngwe1nc7vltb" path="res://assets/art/UI/FreeMode/chip_coordination_on.webp" id="16_hqqd6"]
+[ext_resource type="Texture2D" uid="uid://ba6p5a5ctpe3q" path="res://assets/art/UI/FreeMode/dropdown.webp" id="17_177vt"]
+[ext_resource type="PackedScene" uid="uid://d3c2vm1sjp6l" path="res://core/juicy_button.tscn" id="18_ndwbn"]
+[ext_resource type="Texture2D" uid="uid://b2ymt67xs1tbm" path="res://assets/art/UI/Buttons/button_back.webp" id="19_hg70j"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3wyrv"]
+content_margin_left = 104.0
+content_margin_right = 30.0
+texture = ExtResource("6_28l3g")
+texture_margin_left = 70.0
+texture_margin_top = 40.0
+texture_margin_right = 60.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3yceh"]
+content_margin_left = 30.0
+content_margin_right = 70.0
+texture = ExtResource("17_177vt")
+texture_margin_left = 40.0
+texture_margin_top = 40.0
+texture_margin_right = 80.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_aafiw"]
+
+[node name="FreeMode" type="Control" unique_id=790922075]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource("1_jawf6")
+script = ExtResource("2_cpjqf")
+
+[node name="Background" parent="." unique_id=244872099 instance=ExtResource("3_wsyhw")]
+modulate = Color(0.72, 0.72, 0.72, 1)
+
+[node name="Header" parent="." unique_id=1577097477 instance=ExtResource("4_ufvde")]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_top = 6.0
+offset_right = 300.0
+offset_bottom = 198.0
+title_key = "free_mode.title"
+
+[node name="FilterBar" type="NinePatchRect" parent="." unique_id=2006020173]
+layout_mode = 0
+anchor_right = 1.0
+offset_left = 40.0
+offset_top = 196.0
+offset_right = -40.0
+offset_bottom = 336.0
+texture = ExtResource("5_4iqug")
+patch_margin_left = 40
+patch_margin_top = 40
+patch_margin_right = 40
+patch_margin_bottom = 40
+
+[node name="Row" type="HBoxContainer" parent="FilterBar" unique_id=283563078]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = 10.0
+offset_right = -28.0
+offset_bottom = -12.0
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="SearchField" type="LineEdit" parent="FilterBar/Row" unique_id=1056263962]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 92)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.3, 0.2, 0.1, 1)
+theme_override_colors/font_placeholder_color = Color(0.55, 0.45, 0.35, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_3wyrv")
+theme_override_styles/read_only = SubResource("StyleBoxTexture_3wyrv")
+theme_override_styles/focus = SubResource("StyleBoxTexture_3wyrv")
+placeholder_text = "free_mode.search"
+clear_button_enabled = true
+
+[node name="SkillColors" type="VBoxContainer" parent="FilterBar/Row" unique_id=900425719]
+layout_mode = 2
+theme_override_constants/separation = -6
+alignment = 1
+
+[node name="ChipColors" type="TextureButton" parent="FilterBar/Row/SkillColors" unique_id=946403423]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("7_a6hdy")
+texture_pressed = ExtResource("8_s77wx")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="FilterBar/Row/SkillColors" unique_id=1760125592]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.33, 0.19, 0.08, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 18
+text = "skill.colors"
+horizontal_alignment = 1
+
+[node name="SkillNumbers" type="VBoxContainer" parent="FilterBar/Row" unique_id=776129085]
+layout_mode = 2
+theme_override_constants/separation = -6
+alignment = 1
+
+[node name="ChipNumbers" type="TextureButton" parent="FilterBar/Row/SkillNumbers" unique_id=59977578]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("9_un76f")
+texture_pressed = ExtResource("10_dfxc6")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="FilterBar/Row/SkillNumbers" unique_id=455117547]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.33, 0.19, 0.08, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 18
+text = "skill.numbers"
+horizontal_alignment = 1
+
+[node name="SkillLetters" type="VBoxContainer" parent="FilterBar/Row" unique_id=1636035360]
+layout_mode = 2
+theme_override_constants/separation = -6
+alignment = 1
+
+[node name="ChipLetters" type="TextureButton" parent="FilterBar/Row/SkillLetters" unique_id=1370642799]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("11_2rhul")
+texture_pressed = ExtResource("12_mcfrb")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="FilterBar/Row/SkillLetters" unique_id=76471129]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.33, 0.19, 0.08, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 18
+text = "skill.letters"
+horizontal_alignment = 1
+
+[node name="SkillMemory" type="VBoxContainer" parent="FilterBar/Row" unique_id=162636599]
+layout_mode = 2
+theme_override_constants/separation = -6
+alignment = 1
+
+[node name="ChipMemory" type="TextureButton" parent="FilterBar/Row/SkillMemory" unique_id=1317287933]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("13_06qf2")
+texture_pressed = ExtResource("14_7rs6x")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="FilterBar/Row/SkillMemory" unique_id=162798095]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.33, 0.19, 0.08, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 18
+text = "skill.memory"
+horizontal_alignment = 1
+
+[node name="SkillCoordination" type="VBoxContainer" parent="FilterBar/Row" unique_id=199407780]
+layout_mode = 2
+theme_override_constants/separation = -6
+alignment = 1
+
+[node name="ChipCoordination" type="TextureButton" parent="FilterBar/Row/SkillCoordination" unique_id=1004659452]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("15_2vkxn")
+texture_pressed = ExtResource("16_hqqd6")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="FilterBar/Row/SkillCoordination" unique_id=807067254]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.33, 0.19, 0.08, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 18
+text = "skill.coordination"
+horizontal_alignment = 1
+
+[node name="MechanicDropdown" type="OptionButton" parent="FilterBar/Row" unique_id=1811853268]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 92)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.33, 0.19, 0.08, 1)
+theme_override_colors/font_focus_color = Color(0.33, 0.19, 0.08, 1)
+theme_override_colors/font_pressed_color = Color(0.33, 0.19, 0.08, 1)
+theme_override_colors/font_hover_color = Color(0.33, 0.19, 0.08, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.33, 0.19, 0.08, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_3yceh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3yceh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3yceh")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_3yceh")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_3yceh")
+theme_override_styles/focus = SubResource("StyleBoxTexture_3yceh")
+theme_override_icons/arrow = SubResource("PlaceholderTexture2D_aafiw")
+
+[node name="Scroll" type="ScrollContainer" parent="." unique_id=405351878]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 356.0
+offset_right = -50.0
+offset_bottom = -10.0
+horizontal_scroll_mode = 0
+scroll_deadzone = 12
+
+[node name="Grid" type="GridContainer" parent="Scroll" unique_id=1431237421]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 24
+columns = 4
+
+[node name="EmptyLabel" type="Label" parent="." unique_id=1315785412]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = 40.0
+offset_right = 500.0
+offset_bottom = 140.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.33, 0.19, 0.08, 1)
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 44
+text = "free_mode.empty"
+horizontal_alignment = 1
+
+[node name="BackButton" parent="." unique_id=149491572 instance=ExtResource("18_ndwbn")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 50.0
+offset_top = 28.0
+offset_right = 170.0
+offset_bottom = 143.0
+texture_normal = ExtResource("19_hg70j")
+burst_count = 0

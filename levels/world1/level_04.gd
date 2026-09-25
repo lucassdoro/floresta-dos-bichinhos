@@ -86,7 +86,8 @@ func _setup_routine() -> void:
 func _reveal_pieces() -> void:
 	for piece in _pieces:
 		piece.reveal()
-	_ghost_photo.modulate.a = 0.25
+	create_tween().tween_property(_ghost_photo, "modulate:a", 0.25, PuzzlePiece.REVEAL_DURATION) \
+		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	_cut_done = true
 
 func _pick_photo_index() -> int:

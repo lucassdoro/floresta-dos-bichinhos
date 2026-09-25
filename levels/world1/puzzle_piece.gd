@@ -9,6 +9,7 @@ const BOARD_SIZE := 160.79309
 const TRAY_SIZE := 189.0
 const DRAG_SCALE := 1.1
 const DECIDE_THRESHOLD := 8.0
+const REVEAL_DURATION := 0.5
 
 @export var row := 0
 @export var col := 0
@@ -34,11 +35,14 @@ func set_photo(photo: Texture2D, origin: Vector2, region: Vector2) -> void:
 	shader_material.set_shader_parameter("region_size", region)
 
 func reveal() -> void:
-	var shader_material: ShaderMaterial = material
-	shader_material.set_shader_parameter("revealed", 1.0)
 	pivot_offset = size / 2.0
-	scale = Vector2.ONE * 1.12
-	create_tween().tween_property(self, "scale", Vector2.ONE, 0.18)
+	create_tween().tween_property(material, "shader_parameter/revealed", 1.0, REVEAL_DURATION) \
+		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	var pulse := create_tween()
+	pulse.tween_property(self, "scale", Vector2.ONE * 1.06, REVEAL_DURATION / 2.0) \
+		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	pulse.tween_property(self, "scale", Vector2.ONE, REVEAL_DURATION / 2.0) \
+		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:

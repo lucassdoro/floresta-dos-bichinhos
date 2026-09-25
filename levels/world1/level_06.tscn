@@ -43,6 +43,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_vsirp")
 level_number = 6
 
@@ -62,6 +63,7 @@ offset_left = -310.0
 offset_top = 16.0
 offset_right = 310.0
 offset_bottom = 260.0
+grow_horizontal = 2
 phase_key = "level16.phase"
 title_key = "level16.title"
 
@@ -94,6 +96,7 @@ base_scale = 0.367
 
 [node name="Bubble" parent="." unique_id=19909346 instance=ExtResource("13_w4vhh")]
 unique_name_in_owner = true
+z_index = 13
 layout_mode = 0
 offset_left = 500.0
 offset_top = 640.0

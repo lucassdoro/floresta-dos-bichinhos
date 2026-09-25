@@ -71,6 +71,18 @@ Fluxo padrão: `get_project_info` → `get_scene_tree` → construir → `save_s
   em foco. Conferir com
   `lsof -nP -a -p <pid> -iTCP | grep 650` — sem socket, o editor está dormindo.
 
+- **`add_scene_instance` grava instância errada** (linha com `type=` e os filhos da cena
+  instanciada duplicados como nós próprios). Instanciar por `execute_editor_script`:
+  `load(path).instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE)`, `add_child`, `owner = root`
+  só na raiz da instância. Conferir o `.tscn` depois.
+- **`create_scene` não abre a cena criada**: `open_scene` antes de `attach_script`/`add_node`,
+  senão eles agem na cena que estava aberta.
+- **Jogo sem foco não desenha** (`Engine.get_frames_drawn()` parado): antes de screenshot em
+  runtime, `timeout 8 osascript -e 'tell application "Godot" to activate'` (o comando trava, o
+  timeout encerra; já trouxe a janela e serve de espera).
+- **Autoload novo invisível ao analisador** ("Identifier not found"): remover e re-adicionar
+  pelo `EditorAutoloadSettings` achado com
+  `EditorInterface.get_base_control().find_children("*", "EditorAutoloadSettings", true, false)`.
 - **Nunca editar `project.godot` direto** com o editor aberto — usar `project set-setting`. O Godot
   reescreve o arquivo ao sair.
 - `execute_game_script` roda em nó temporário: sem `func` aninhado, usar `.get("prop")`.
@@ -114,7 +126,7 @@ toda UI em `Control` ancorado.
 
 ```
 res://
-  autoload/     Progression, Settings, Audio, Voice
+  autoload/     Progression, Settings, Audio, Voice, SceneLoader, LevelCatalog, FreePlay
   core/         LevelBase, LevelHeader, VictoryModal, SpeechBubble, PauseMenu, CurvedLabel
   archetypes/   DragDropLevel, PaintLevel, SequenceLevel, AssembleLevel, MemoryLevel,
                 PathLevel, ActionLevel, PickRightLevel, GuideLevel
@@ -157,6 +169,7 @@ Dropdown de Qualidade liga no nº de taps (0 = off, 1 = 10 taps, 2 = 16).
 | i18n | CSV pt-BR/it → `.translation`, `tr()` nativo, troca em runtime |
 | Áudio | Buses `Master > Music / SFX / Voice`. Música em autoload — nunca recomeça na troca de cena. Fade-in na entrada |
 | Troca de cena | Autoload `SceneLoader.go_to(path)` — nunca `change_scene_to_file`. Carga em thread atrás de cortina (fundo do menu escurecido); se passar do fade de 0,3 s, entra logo pulsando + folhas + "Carregando..." (mín. 0,8 s na tela). CanvasLayer 50, abaixo do `Post` |
+| Modo Livre | Fase aparece por ficha `LevelInfo` (`<fase>.level.tres`) em qualquer pasta de `res://levels/`; autoload `LevelCatalog` varre no boot. Autoload `FreePlay` guarda sessão e recordes em `user://free_play.json`, separado da `Progression`; `LevelBase` desvia vitória e saída quando `FreePlay.current` existe. Guia: `docs/MODDING.md` |
 | Voz | Autoload `Voice`: `voice/<personagem>/<locale>/<chave>.ogg`, sincronizado com a digitação do balão |
 | Splash | Cópia da `packages/doma_splash` do stackit (`ui/splash/`): halos em `SubViewport` a meia resolução + gaussiana separável (`shaders/neon_blur`), núcleo direto, reflexo espelha a tela (`shaders/neon_reflection`). Referência: `flutter test tools/splash_render_check.dart` no stackit gera PNGs; comparar com o post desligado |
 

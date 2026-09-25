@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LevelInfo" format=3 uid="uid://wt7koptburhc"]
+
+[ext_resource type="Script" uid="uid://ci0ip2j2x8p6b" path="res://core/level_info.gd" id="1_dqyx2"]
+
+[resource]
+script = ExtResource("1_dqyx2")
+id = "world1.level_03"
+title = "level13.title"
+description = "level13.description"
+skills = Array[int]([1])
+mechanic = 2
+scene_path = "res://levels/world1/level_03.tscn"

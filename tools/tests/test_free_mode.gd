@@ -27,6 +27,10 @@ func _ready() -> void:
 	failures += check("mecanica casa", one.matches("", -1, LevelInfo.Mechanic.PAINT))
 	failures += check("filtros combinam em E", not one.matches("maçã", LevelInfo.Skill.COLORS, LevelInfo.Mechanic.ACTION))
 	failures += _check_free_play()
+	var world1 := LevelCatalog.all().filter(func(info: LevelInfo) -> bool: return info.id.begins_with("world1."))
+	failures += check("catalogo real acha as 10 fases do mundo 1", world1.size() == 10)
+	failures += check("mundo 1 em ordem", world1.size() == 10 and world1[0].id == "world1.level_01" and world1[9].id == "world1.level_10")
+	failures += check("filtro real por letras acha a fase 9", LevelCatalog.filter("", LevelInfo.Skill.LETTERS, -1).any(func(info: LevelInfo) -> bool: return info.id == "world1.level_09"))
 	print("FAILURES: %d" % failures)
 	get_tree().quit(1 if failures > 0 else 0)
 

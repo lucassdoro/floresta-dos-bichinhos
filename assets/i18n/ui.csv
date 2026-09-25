@@ -73,3 +73,33 @@ level110.title,Os Bichinhos Perdidos,Gli Animaletti Perduti
 level110.intro,Os bichinhos se perderam no escuro! Leva o vaga-lume até eles e traz todo mundo pra fogueira.,Gli animaletti si sono persi nel buio! Porta la lucciola da loro e riporta tutti al falò.
 level110.nudge,Olha os olhinhos brilhando no escuro!,Guarda gli occhietti che brillano nel buio!
 loading.text,Carregando,Caricamento
+free_mode.title,Modo Livre,Modalità Libera
+free_mode.search,Buscar fase...,Cerca livello...
+free_mode.empty,Nenhuma fase encontrada,Nessun livello trovato
+free_mode.all,Todas,Tutte
+free_mode.by,por %s,di %s
+free_mode.studio,Floresta,Floresta
+skill.colors,Cores,Colori
+skill.numbers,Números,Numeri
+skill.letters,Letras,Lettere
+skill.memory,Memória,Memoria
+skill.coordination,Coordenação,Coordinazione
+mechanic.drag_drop,Arrastar,Trascinare
+mechanic.paint,Pintar,Dipingere
+mechanic.sequence,Sequência,Sequenza
+mechanic.assemble,Montar,Montare
+mechanic.memory,Memória,Memoria
+mechanic.path,Traçar caminho,Tracciare il percorso
+mechanic.action,Ação,Azione
+mechanic.pick_right,Escolher o certo,Scegliere giusto
+mechanic.guide,Conduzir,Guidare
+level11.description,Sirva as frutas certas na cesta.,Servi la frutta giusta nel cestino.
+level12.description,Pinte o coral com a cor pedida.,Dipingi il corallo del colore richiesto.
+level13.description,Toque nos números em ordem.,Tocca i numeri in ordine.
+level14.description,Monte o quebra-cabeça da floresta.,Completa il puzzle della foresta.
+level15.description,Encontre os pares de cartas.,Trova le coppie di carte.
+level16.description,Trace o caminho até o alpiste.,Traccia il percorso fino ai semini.
+level17.description,Corte as frutas e desvie da bomba.,Taglia la frutta ed evita la bomba.
+level18.description,Separe as flores nas cestas certas.,Metti i fiori nei cestini giusti.
+level19.description,Estoure a bolha da letra certa.,Scoppia la bolla della lettera giusta.
+level110.description,Leve os filhotes até a fogueira.,Porta i cuccioli fino al falò.

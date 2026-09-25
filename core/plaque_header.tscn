@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dbc4f8at4rrhm"]
+
+[ext_resource type="Theme" uid="uid://bbuvbjujai5uq" path="res://ui/theme.tres" id="1_xerdr"]
+[ext_resource type="Script" uid="uid://dlf03pgtaom7x" path="res://core/plaque_header.gd" id="2_l8brv"]
+[ext_resource type="Texture2D" uid="uid://0evyub73unkw" path="res://assets/art/UI/WorldMap/world_header_plaque.webp" id="3_t2frv"]
+
+[node name="PlaqueHeader" type="Control" unique_id=1577097477]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 750.0
+offset_bottom = 240.0
+mouse_filter = 2
+theme = ExtResource("1_xerdr")
+script = ExtResource("2_l8brv")
+
+[node name="Plaque" type="TextureRect" parent="." unique_id=701411604]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource("3_t2frv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="." unique_id=1934287022]
+layout_mode = 0
+anchor_right = 1.0
+offset_top = 24.0
+offset_bottom = 134.0
+grow_horizontal = 2
+theme_type_variation = &"Title80"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.33, 0.19, 0.08, 1)
+theme_override_constants/outline_size = 12
+horizontal_alignment = 1

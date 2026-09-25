@@ -3,11 +3,11 @@
 [ext_resource type="Theme" uid="uid://bbuvbjujai5uq" path="res://ui/theme.tres" id="1_ynqv7"]
 [ext_resource type="Script" uid="uid://dp3gckvsou0mq" path="res://ui/world_map/world_map.gd" id="2_ulpoo"]
 [ext_resource type="PackedScene" uid="uid://b0s5i3212bhtg" path="res://backgrounds/worldmap_background.tscn" id="3_thelu"]
+[ext_resource type="PackedScene" uid="uid://dbc4f8at4rrhm" path="res://core/plaque_header.tscn" id="5_1i068"]
 [ext_resource type="PackedScene" uid="uid://ctbehprgvfbtm" path="res://ui/world_map/map_player_star.tscn" id="5_crvsx"]
 [ext_resource type="PackedScene" uid="uid://d3c2vm1sjp6l" path="res://core/juicy_button.tscn" id="5_jaccc"]
 [ext_resource type="Texture2D" uid="uid://b2ymt67xs1tbm" path="res://assets/art/UI/Buttons/button_back.webp" id="6_1i068"]
 [ext_resource type="Script" uid="uid://dxpinr82oat4q" path="res://core/curved_label.gd" id="6_ulpoo"]
-[ext_resource type="Texture2D" uid="uid://0evyub73unkw" path="res://assets/art/UI/WorldMap/world_header_plaque.webp" id="7_1i068"]
 
 [node name="WorldMap" type="Control" unique_id=1201876959]
 layout_mode = 3
@@ -34,38 +34,16 @@ mouse_filter = 2
 unique_name_in_owner = true
 z_index = 1
 
-[node name="WorldHeader" type="Control" parent="." unique_id=235981198]
+[node name="WorldHeader" parent="." unique_id=1577097477 instance=ExtResource("5_1i068")]
 unique_name_in_owner = true
-anchors_preset = 0
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -375.0
 offset_top = 20.0
 offset_right = 375.0
 offset_bottom = 260.0
-mouse_filter = 2
-
-[node name="Plaque" type="TextureRect" parent="WorldHeader" unique_id=1297560227]
-layout_mode = 0
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_filter = 2
-texture = ExtResource("7_1i068")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Title" type="Label" parent="WorldHeader" unique_id=374312242]
-layout_mode = 0
-anchor_right = 1.0
-offset_top = 24.0
-offset_bottom = 134.0
-grow_horizontal = 2
-theme_type_variation = &"Title80"
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0.33, 0.19, 0.08, 1)
-theme_override_constants/outline_size = 12
-text = "worldmap.world1.title"
-horizontal_alignment = 1
+title_key = "worldmap.world1.title"
 
 [node name="Subtitle" type="Control" parent="WorldHeader" unique_id=333243876]
 anchors_preset = 0

@@ -1,11 +1,13 @@
 [gd_resource type="Resource" script_class="LevelInfo" format=3 uid="uid://fsslu06xhh5"]
 
 [ext_resource type="Script" uid="uid://ci0ip2j2x8p6b" path="res://core/level_info.gd" id="1_7u7lr"]
+[ext_resource type="Texture2D" uid="uid://77ug72r4de52" path="res://assets/art/UI/FreeMode/covers/level_08.webp" id="1_hfu4y"]
 
 [resource]
 script = ExtResource("1_7u7lr")
 id = "world1.level_08"
 title = "level18.title"
 description = "level18.description"
+cover = ExtResource("1_hfu4y")
 skills = Array[int]([0])
 scene_path = "res://levels/world1/level_08.tscn"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LevelInfo" format=3 uid="uid://x7aorllgnx2u"]
+
+[ext_resource type="Script" uid="uid://ci0ip2j2x8p6b" path="res://core/level_info.gd" id="1_br8bh"]
+
+[resource]
+script = ExtResource("1_br8bh")
+id = "test.one"
+title = "Duplicada"
+mechanic = 1
+author = "ana_dev"
+scene_path = "res://tools/tests/test_video_rules.tscn"

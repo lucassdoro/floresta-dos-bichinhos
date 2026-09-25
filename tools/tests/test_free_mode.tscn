@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d0i5p4kteycj3"]
+
+[ext_resource type="Script" uid="uid://c3506pte6yrbw" path="res://tools/tests/test_free_mode.gd" id="1_qg5c7"]
+
+[node name="TestFreeMode" type="Node" unique_id=172541327]
+script = ExtResource("1_qg5c7")

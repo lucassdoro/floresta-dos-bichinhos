@@ -31,6 +31,7 @@ MCPScreenshot="*res://addons/godot_mcp/mcp_screenshot_service.gd"
 MCPInputService="*res://addons/godot_mcp/mcp_input_service.gd"
 MCPGameInspector="*res://addons/godot_mcp/mcp_game_inspector_service.gd"
 SceneLoader="*uid://eym3tpitr2xl"
+LevelCatalog="*uid://d1xy71a1yfe8j"
 
 [display]
 

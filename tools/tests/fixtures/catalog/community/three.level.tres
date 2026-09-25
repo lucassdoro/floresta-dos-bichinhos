@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LevelInfo" format=3 uid="uid://b1m28agj5totj"]
+
+[ext_resource type="Script" uid="uid://ci0ip2j2x8p6b" path="res://core/level_info.gd" id="1_uetpp"]
+
+[resource]
+script = ExtResource("1_uetpp")
+id = "ana_dev.three"
+title = "Pesca das Formas"
+description = "formas no lago"
+skills = Array[int]([0, 4])
+mechanic = 6
+author = "ana_dev"
+scene_path = "res://tools/tests/test_video_rules.tscn"

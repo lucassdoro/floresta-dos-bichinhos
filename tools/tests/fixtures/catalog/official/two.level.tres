@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LevelInfo" format=3 uid="uid://dfy0jpmamysj3"]
+
+[ext_resource type="Script" uid="uid://ci0ip2j2x8p6b" path="res://core/level_info.gd" id="1_ex8v0"]
+
+[resource]
+script = ExtResource("1_ex8v0")
+id = "test.two"
+title = "Contar Peixes"
+description = "conte até cinco"
+skills = Array[int]([1])
+mechanic = 2
+scene_path = "res://tools/tests/test_video_rules.tscn"

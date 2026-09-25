@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LevelInfo" format=3 uid="uid://37342r33d3p"]
+
+[ext_resource type="Script" uid="uid://ci0ip2j2x8p6b" path="res://core/level_info.gd" id="1_6hgoa"]
+
+[resource]
+script = ExtResource("1_6hgoa")
+id = "test.one"
+title = "Maçã Vermelha"
+description = "pinte a maçã"
+skills = Array[int]([0])
+mechanic = 1
+scene_path = "res://tools/tests/test_video_rules.tscn"

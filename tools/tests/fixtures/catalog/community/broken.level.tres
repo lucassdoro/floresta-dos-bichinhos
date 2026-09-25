@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="LevelInfo" format=3 uid="uid://dyappxypi34hd"]
+
+[ext_resource type="Script" uid="uid://ci0ip2j2x8p6b" path="res://core/level_info.gd" id="1_4pmtr"]
+
+[resource]
+script = ExtResource("1_4pmtr")
+id = "test.broken"
+title = "Sem cena"
+mechanic = 1
+author = "ana_dev"

@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://eym3tpitr2xl"]
+
+[ext_resource type="Script" uid="uid://c2g6l0ktk6a2o" path="res://autoload/scene_loader.gd" id="1_600rh"]
+[ext_resource type="Theme" uid="uid://bbuvbjujai5uq" path="res://ui/theme.tres" id="2_s0kx3"]
+[ext_resource type="Texture2D" uid="uid://bbr58xhdfilhv" path="res://assets/art/UI/MainMenu/menu_video_still.webp" id="3_ifm0c"]
+[ext_resource type="Texture2D" uid="uid://q60rnsm2215q" path="res://assets/art/Environments/Leaves/leaf_01.webp" id="4_pb702"]
+[ext_resource type="Texture2D" uid="uid://dp75ecia86d4o" path="res://assets/art/UI/MainMenu/logo.webp" id="5_eifc8"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_se433"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1300, 20, 1)
+angle_min = -180.0
+angle_max = 180.0
+direction = Vector3(0.3, 1, 0)
+spread = 25.0
+initial_velocity_min = 70.0
+initial_velocity_max = 130.0
+angular_velocity_min = -70.0
+angular_velocity_max = 70.0
+gravity = Vector3(0, 25, 0)
+scale_min = 0.35
+scale_max = 0.75
+turbulence_noise_strength = 2.5
+turbulence_noise_scale = 6.0
+turbulence_influence_min = 0.08
+turbulence_influence_max = 0.18
+
+[node name="SceneLoader" type="CanvasLayer" unique_id=1110497468]
+layer = 50
+script = ExtResource("1_600rh")
+
+[node name="Curtain" type="Control" parent="." unique_id=1437341984]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource("2_s0kx3")
+
+[node name="Background" type="TextureRect" parent="Curtain" unique_id=1478312466]
+modulate = Color(0.32, 0.38, 0.3, 1)
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource("3_ifm0c")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Content" type="Control" parent="Curtain" unique_id=988030646]
+unique_name_in_owner = true
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Leaves" type="GPUParticles2D" parent="Curtain/Content" unique_id=1553300338]
+unique_name_in_owner = true
+position = Vector2(960, -80)
+emitting = false
+amount = 22
+texture = ExtResource("4_pb702")
+lifetime = 9.0
+preprocess = 5.0
+visibility_rect = Rect2(-1400, -100, 2800, 1500)
+process_material = SubResource("ParticleProcessMaterial_se433")
+
+[node name="Logo" type="TextureRect" parent="Curtain/Content" unique_id=2097682837]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -310.0
+offset_right = 450.0
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_eifc8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LoadingLabel" type="Label" parent="Curtain/Content" unique_id=1800004349]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = 170.0
+offset_right = 400.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.96, 0.84, 1)
+theme_override_colors/font_outline_color = Color(0.23, 0.14, 0.05, 1)
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 56
+text = "Carregando..."
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters_behavior = 3

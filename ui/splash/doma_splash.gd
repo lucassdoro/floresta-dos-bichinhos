@@ -18,7 +18,7 @@ func _on_finished(_animation_name: StringName) -> void:
 		await _benchmark.done
 	# o fade de 3s comeca aqui, pra ser ouvido junto com o menu aparecendo
 	Audio.start_music_fade()
-	get_tree().change_scene_to_file("res://ui/menu/main_menu.tscn")
+	SceneLoader.go_to("res://ui/menu/main_menu.tscn")
 
 func play_zap() -> void:
 	$Zap.play()

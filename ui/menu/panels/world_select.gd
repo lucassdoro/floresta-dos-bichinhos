@@ -7,7 +7,7 @@ func _ready() -> void:
 	_connect_locked($Cards/World3)
 
 func _open_world_map() -> void:
-	get_tree().change_scene_to_file("res://ui/world_map/world_map.tscn")
+	SceneLoader.go_to("res://ui/world_map/world_map.tscn")
 
 ## A carta travada e' um Control (o slot que o container posiciona); quem treme
 ## e' o TextureRect "Art" dentro dele.

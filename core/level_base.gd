@@ -41,7 +41,7 @@ func win() -> void:
 	victory_modal.play(stars_earned)
 
 func exit_level() -> void:
-	get_tree().change_scene_to_file("res://ui/world_map/world_map.tscn")
+	SceneLoader.go_to("res://ui/world_map/world_map.tscn")
 
 ## Converte offset relativo ao centro (y pra cima, como na referencia) em
 ## posicao no espaco da fase.

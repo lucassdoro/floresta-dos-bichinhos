@@ -120,7 +120,7 @@ func _open_level(level: int) -> void:
 	var scene_path := "res://levels/world1/level_%02d.tscn" % level
 	if not ResourceLoader.exists(scene_path):
 		return
-	get_tree().change_scene_to_file(scene_path)
+	SceneLoader.go_to(scene_path)
 
 func _go_back() -> void:
-	get_tree().change_scene_to_file("res://ui/menu/main_menu.tscn")
+	SceneLoader.go_to("res://ui/menu/main_menu.tscn")

@@ -26,8 +26,37 @@ func _ready() -> void:
 	failures += check("habilidade nao casa", not one.matches("", LevelInfo.Skill.NUMBERS, -1))
 	failures += check("mecanica casa", one.matches("", -1, LevelInfo.Mechanic.PAINT))
 	failures += check("filtros combinam em E", not one.matches("maçã", LevelInfo.Skill.COLORS, LevelInfo.Mechanic.ACTION))
+	failures += _check_free_play()
 	print("FAILURES: %d" % failures)
 	get_tree().quit(1 if failures > 0 else 0)
+
+func _check_free_play() -> int:
+	var failures := 0
+	var original_path := FreePlay.save_path
+	FreePlay.save_path = "user://test_free_play.json"
+	DirAccess.remove_absolute(FreePlay.save_path)
+	FreePlay.load_records()
+	var story_stars := Progression.get_stars(1, 1)
+	var info := LevelInfo.new()
+	info.id = "test.play"
+	FreePlay.current = info
+	FreePlay.report(2)
+	FreePlay.report(1)
+	failures += check("guarda a melhor estrela", FreePlay.get_best("test.play") == 2)
+	failures += check("conta cada vitoria", FreePlay.get_plays("test.play") == 2)
+	FreePlay.report(5)
+	failures += check("estrela limitada a 3", FreePlay.get_best("test.play") == 3)
+	FreePlay.load_records()
+	failures += check("recorde sobrevive ao reload", FreePlay.get_best("test.play") == 3 and FreePlay.get_plays("test.play") == 3)
+	failures += check("fase sem registro = 0", FreePlay.get_best("nada") == 0 and FreePlay.get_plays("nada") == 0)
+	failures += check("Progression intocada", Progression.get_stars(1, 1) == story_stars)
+	FreePlay.current = null
+	FreePlay.report(3)
+	failures += check("sem fase atual nao registra", FreePlay.get_plays("test.play") == 3)
+	DirAccess.remove_absolute(FreePlay.save_path)
+	FreePlay.save_path = original_path
+	FreePlay.load_records()
+	return failures
 
 func check(name: String, ok: bool) -> int:
 	print(("PASS " if ok else "FAIL ") + name)

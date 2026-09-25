@@ -288,7 +288,7 @@ git commit -m "feat: ficha LevelInfo e LevelCatalog que acha fases por varredura
   - `FreePlay.save_path: String` (padrão `user://free_play.json`; teste troca)
   - `FreePlay.start(info: LevelInfo) -> void`, `FreePlay.finish() -> void`
   - `FreePlay.get_best(id: String) -> int`, `FreePlay.get_plays(id: String) -> int`
-  - `FreePlay.report(stars: int) -> void`, `FreePlay.reload() -> void`
+  - `FreePlay.report(stars: int) -> void`, `FreePlay.load_records() -> void`
 
 - [ ] **Step 1: Esqueleto `autoload/free_play.gd`** + registrar autoload `FreePlay` (mesmo procedimento da Task 1 Step 2)
 
@@ -309,7 +309,7 @@ func get_plays(_id: String) -> int:
 func report(_stars: int) -> void:
 	pass
 
-func reload() -> void:
+func load_records() -> void:
 	pass
 ```
 
@@ -327,7 +327,7 @@ func _check_free_play() -> int:
 	var original_path := FreePlay.save_path
 	FreePlay.save_path = "user://test_free_play.json"
 	DirAccess.remove_absolute(FreePlay.save_path)
-	FreePlay.reload()
+	FreePlay.load_records()
 	var story_stars := Progression.get_stars(1, 1)
 	var info := LevelInfo.new()
 	info.id = "test.play"
@@ -338,7 +338,7 @@ func _check_free_play() -> int:
 	failures += check("conta cada vitoria", FreePlay.get_plays("test.play") == 2)
 	FreePlay.report(5)
 	failures += check("estrela limitada a 3", FreePlay.get_best("test.play") == 3)
-	FreePlay.reload()
+	FreePlay.load_records()
 	failures += check("recorde sobrevive ao reload", FreePlay.get_best("test.play") == 3 and FreePlay.get_plays("test.play") == 3)
 	failures += check("fase sem registro = 0", FreePlay.get_best("nada") == 0 and FreePlay.get_plays("nada") == 0)
 	failures += check("Progression intocada", Progression.get_stars(1, 1) == story_stars)
@@ -347,7 +347,7 @@ func _check_free_play() -> int:
 	failures += check("sem fase atual nao registra", FreePlay.get_plays("test.play") == 3)
 	DirAccess.remove_absolute(FreePlay.save_path)
 	FreePlay.save_path = original_path
-	FreePlay.reload()
+	FreePlay.load_records()
 	return failures
 ```
 
@@ -371,7 +371,7 @@ var current: LevelInfo
 var _records := {}
 
 func _ready() -> void:
-	reload()
+	load_records()
 
 func start(info: LevelInfo) -> void:
 	current = info
@@ -396,7 +396,7 @@ func report(stars: int) -> void:
 	_records[current.id] = record
 	_save()
 
-func reload() -> void:
+func load_records() -> void:
 	_records = {}
 	if not FileAccess.file_exists(save_path):
 		return

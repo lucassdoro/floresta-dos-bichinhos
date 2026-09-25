@@ -32,6 +32,7 @@ MCPInputService="*res://addons/godot_mcp/mcp_input_service.gd"
 MCPGameInspector="*res://addons/godot_mcp/mcp_game_inspector_service.gd"
 SceneLoader="*uid://eym3tpitr2xl"
 LevelCatalog="*uid://d1xy71a1yfe8j"
+FreePlay="*uid://76ftwjlc2423"
 
 [display]
 

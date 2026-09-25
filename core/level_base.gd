@@ -37,11 +37,21 @@ func win() -> void:
 	completed = true
 	await get_tree().create_timer(VICTORY_DELAY).timeout
 	var stars_earned := stars_now()
-	Progression.report_level_result(world_number, level_number, stars_earned)
+	_report(stars_earned)
 	victory_modal.play(stars_earned)
 
 func exit_level() -> void:
+	if FreePlay.current:
+		FreePlay.finish()
+		return
 	SceneLoader.go_to("res://ui/world_map/world_map.tscn")
+
+# fase aberta pelo Modo Livre guarda recorde la', sem mexer no mapa da historia
+func _report(stars_earned: int) -> void:
+	if FreePlay.current:
+		FreePlay.report(stars_earned)
+		return
+	Progression.report_level_result(world_number, level_number, stars_earned)
 
 ## Converte offset relativo ao centro (y pra cima, como na referencia) em
 ## posicao no espaco da fase.

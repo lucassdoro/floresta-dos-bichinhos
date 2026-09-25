@@ -20,8 +20,9 @@ const PARTY_DURATION := 3.8
 const CUBS := ["croc", "elephant", "lion", "monkey", "tiger", "turtle"]
 
 const FIRE_ANCHOR := Vector2(0.50, 0.80)
-const DIDIA_ANCHOR := Vector2(0.38, 0.97)
-const SOPHY_ANCHOR := Vector2(0.25, 0.99)
+# Didia narra: fica do lado do rabinho do balao
+const DIDIA_ANCHOR := Vector2(0.25, 0.99)
+const SOPHY_ANCHOR := Vector2(0.38, 0.97)
 const LOLO_ANCHOR := Vector2(0.47, 0.60)
 const LALI_ANCHOR := Vector2(0.66, 0.70)
 const WATER_LINE := 0.715
@@ -61,8 +62,8 @@ var _lali_base := Vector2.ZERO
 @onready var _veil: ColorRect = %Veil
 @onready var _glow: ColorRect = %Glow
 @onready var _firefly: FireflyGuide = %Firefly
-@onready var _didia: AnimatedSprite2D = %Didia
-@onready var _sophy: AnimatedSprite2D = %Sophy
+@onready var _didia: IdleActor = %Didia
+@onready var _sophy: IdleActor = %Sophy
 @onready var _lolo: LoloCharacter = %Lolo
 @onready var _lali: Sprite2D = %Lali
 @onready var _bubble: SpeechBubble = %Bubble
@@ -123,8 +124,10 @@ func _speak(clip: String) -> void:
 	_bubble.show_bubble()
 	_bubble.say(tr("level110." + clip))
 	var suffix := "it" if Settings.locale == "it" else "pt"
+	_didia.talk(true)
 	if Voice.play_path("res://assets/i18n/DidiaVoice/level110_%s_%s.wav" % [clip, suffix]):
 		await Voice.finished
+	_didia.talk(false)
 	if _stopped():
 		return
 	if _bubble._typing:
@@ -240,6 +243,9 @@ func _react(who: int) -> void:
 			_pop(_sophy)
 
 func _pop(target: Node2D) -> void:
+	if target is IdleActor:
+		target.pop()
+		return
 	var base := target.scale
 	var tween := create_tween()
 	tween.tween_property(target, "scale", base * 1.15, 0.15) \

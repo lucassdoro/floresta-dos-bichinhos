@@ -18,17 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://bvfqqpktlge0u" path="res://assets/art/MiniGames/LostAnimals/anim/croc_15.webp" id="16_0shda"]
 [ext_resource type="Texture2D" uid="uid://b7348niri2es8" path="res://assets/art/MiniGames/LostAnimals/anim/croc_16.webp" id="17_saqbg"]
 [ext_resource type="Texture2D" uid="uid://bvwi811whrxuh" path="res://assets/art/MiniGames/LostAnimals/anim/croc_17.webp" id="18_8e2i4"]
-[ext_resource type="Texture2D" uid="uid://bskfksu2d1nph" path="res://assets/art/MiniGames/LostAnimals/anim/didia_00.webp" id="19_pa1nj"]
-[ext_resource type="Texture2D" uid="uid://bdrxwodyueuvp" path="res://assets/art/MiniGames/LostAnimals/anim/didia_01.webp" id="20_0y7lx"]
-[ext_resource type="Texture2D" uid="uid://dksya30nig222" path="res://assets/art/MiniGames/LostAnimals/anim/didia_02.webp" id="21_xl5cr"]
-[ext_resource type="Texture2D" uid="uid://dn8a3kqy6s843" path="res://assets/art/MiniGames/LostAnimals/anim/didia_03.webp" id="22_o7kk8"]
-[ext_resource type="Texture2D" uid="uid://c3fiiwr8pom60" path="res://assets/art/MiniGames/LostAnimals/anim/didia_04.webp" id="23_h0jwn"]
-[ext_resource type="Texture2D" uid="uid://dn01np118uxqa" path="res://assets/art/MiniGames/LostAnimals/anim/didia_05.webp" id="24_8vcak"]
-[ext_resource type="Texture2D" uid="uid://ky7umwm7j3c0" path="res://assets/art/MiniGames/LostAnimals/anim/didia_06.webp" id="25_wnwda"]
 [ext_resource type="Texture2D" uid="uid://ciy3c4ipubycx" path="res://assets/art/MiniGames/LostAnimals/anim/didia_07.webp" id="26_6mm1v"]
 [ext_resource type="Texture2D" uid="uid://84mmux76k6av" path="res://assets/art/MiniGames/LostAnimals/anim/didia_08.webp" id="27_qhkd5"]
 [ext_resource type="Texture2D" uid="uid://dtk0lhajx7pdn" path="res://assets/art/MiniGames/LostAnimals/anim/didia_09.webp" id="28_5n3l4"]
-[ext_resource type="Texture2D" uid="uid://w5t0ud0oxp2s" path="res://assets/art/MiniGames/LostAnimals/anim/didia_10.webp" id="29_1di8l"]
 [ext_resource type="Texture2D" uid="uid://dlgg8ossp57og" path="res://assets/art/MiniGames/LostAnimals/anim/didia_11.webp" id="30_b2bx7"]
 [ext_resource type="Texture2D" uid="uid://c3eg256k2xbqp" path="res://assets/art/MiniGames/LostAnimals/anim/didia_12.webp" id="31_l6mnb"]
 [ext_resource type="Texture2D" uid="uid://4p7qadpex5k7" path="res://assets/art/MiniGames/LostAnimals/anim/didia_13.webp" id="32_ey03y"]
@@ -38,15 +30,6 @@
 [ext_resource type="Texture2D" uid="uid://pbvusgl84k1b" path="res://assets/art/MiniGames/LostAnimals/anim/didia_17.webp" id="36_qshg8"]
 [ext_resource type="Texture2D" uid="uid://c1ibfpxauxock" path="res://assets/art/MiniGames/LostAnimals/anim/didia_18.webp" id="37_qr518"]
 [ext_resource type="Texture2D" uid="uid://ca3u87lovtjhh" path="res://assets/art/MiniGames/LostAnimals/anim/didia_19.webp" id="38_s7k8n"]
-[ext_resource type="Texture2D" uid="uid://8ukxv1dxwj6y" path="res://assets/art/MiniGames/LostAnimals/anim/didia_20.webp" id="39_1mggy"]
-[ext_resource type="Texture2D" uid="uid://b4fnk5r8s2sp1" path="res://assets/art/MiniGames/LostAnimals/anim/didia_21.webp" id="40_j62i7"]
-[ext_resource type="Texture2D" uid="uid://s4irgfe5672b" path="res://assets/art/MiniGames/LostAnimals/anim/didia_22.webp" id="41_0a527"]
-[ext_resource type="Texture2D" uid="uid://42ckx5f4jcr8" path="res://assets/art/MiniGames/LostAnimals/anim/didia_23.webp" id="42_o50jt"]
-[ext_resource type="Texture2D" uid="uid://dfcqug633j7e0" path="res://assets/art/MiniGames/LostAnimals/anim/didia_24.webp" id="43_suhqn"]
-[ext_resource type="Texture2D" uid="uid://d1b1avydbdyrd" path="res://assets/art/MiniGames/LostAnimals/anim/didia_25.webp" id="44_7w8k3"]
-[ext_resource type="Texture2D" uid="uid://58kxu52h5yqd" path="res://assets/art/MiniGames/LostAnimals/anim/didia_26.webp" id="45_wchhf"]
-[ext_resource type="Texture2D" uid="uid://do4mp468imybo" path="res://assets/art/MiniGames/LostAnimals/anim/didia_27.webp" id="46_3p1pp"]
-[ext_resource type="Texture2D" uid="uid://c1xlt13rhxxls" path="res://assets/art/MiniGames/LostAnimals/anim/didia_28.webp" id="47_hwdn4"]
 [ext_resource type="Texture2D" uid="uid://dmkcq1mrupvpr" path="res://assets/art/MiniGames/LostAnimals/anim/elephant_00.webp" id="48_06feo"]
 [ext_resource type="Texture2D" uid="uid://ce1ip3xoa16a6" path="res://assets/art/MiniGames/LostAnimals/anim/elephant_01.webp" id="49_dea1h"]
 [ext_resource type="Texture2D" uid="uid://byekyunxrby2l" path="res://assets/art/MiniGames/LostAnimals/anim/elephant_02.webp" id="50_aawng"]
@@ -134,26 +117,9 @@
 [ext_resource type="Texture2D" uid="uid://8ota4wjkelxa" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_29.webp" id="132_4ohbq"]
 [ext_resource type="Texture2D" uid="uid://dnuj1fgya1fo2" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_30.webp" id="133_mbywx"]
 [ext_resource type="Texture2D" uid="uid://brya0hlyakdd6" path="res://assets/art/MiniGames/LostAnimals/anim/monkey_31.webp" id="134_4d07k"]
-[ext_resource type="Texture2D" uid="uid://e1231l3fl3t" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_00.webp" id="135_gijmy"]
-[ext_resource type="Texture2D" uid="uid://b364cm2i5qgb7" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_01.webp" id="136_fcvc7"]
-[ext_resource type="Texture2D" uid="uid://xhdhg1an4ek3" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_02.webp" id="137_o242m"]
-[ext_resource type="Texture2D" uid="uid://0jcqe10wp53y" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_03.webp" id="138_u58ht"]
-[ext_resource type="Texture2D" uid="uid://bsex0i133gqnb" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_04.webp" id="139_fq043"]
-[ext_resource type="Texture2D" uid="uid://d166hmyjggnmx" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_05.webp" id="140_i7t1f"]
-[ext_resource type="Texture2D" uid="uid://du2v5nlsob6jv" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_06.webp" id="141_g5wv2"]
-[ext_resource type="Texture2D" uid="uid://c4exv2ypxidp5" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_07.webp" id="142_2mji4"]
-[ext_resource type="Texture2D" uid="uid://bqsap5b0xivig" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_08.webp" id="143_nfgn4"]
-[ext_resource type="Texture2D" uid="uid://bcbue0ewm3pxs" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_09.webp" id="144_fey53"]
 [ext_resource type="Texture2D" uid="uid://0snqmi0pocmq" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_10.webp" id="145_4crfe"]
 [ext_resource type="Texture2D" uid="uid://cvx8gobt8vwg1" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_11.webp" id="146_3lnx8"]
 [ext_resource type="Texture2D" uid="uid://dfrylmbhcafdc" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_12.webp" id="147_fdosl"]
-[ext_resource type="Texture2D" uid="uid://cfa1hfefoe11f" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_13.webp" id="148_08sij"]
-[ext_resource type="Texture2D" uid="uid://bvvtovruho430" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_14.webp" id="149_e63je"]
-[ext_resource type="Texture2D" uid="uid://bdou52cx4b8m6" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_15.webp" id="150_hfjuh"]
-[ext_resource type="Texture2D" uid="uid://cw8ch0nn3l3eq" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_16.webp" id="151_on7po"]
-[ext_resource type="Texture2D" uid="uid://bb3367nmrfcd" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_17.webp" id="152_kgblr"]
-[ext_resource type="Texture2D" uid="uid://65egen8g748x" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_18.webp" id="153_xn827"]
-[ext_resource type="Texture2D" uid="uid://bxrtmiqa0buo1" path="res://assets/art/MiniGames/LostAnimals/anim/sophy_19.webp" id="154_nwyel"]
 [ext_resource type="Texture2D" uid="uid://bmf0e0y54rdym" path="res://assets/art/MiniGames/LostAnimals/anim/tiger_00.webp" id="155_xyxwk"]
 [ext_resource type="Texture2D" uid="uid://bracv8h3qgver" path="res://assets/art/MiniGames/LostAnimals/anim/tiger_01.webp" id="156_1ujyp"]
 [ext_resource type="Texture2D" uid="uid://b6y62hjad76b" path="res://assets/art/MiniGames/LostAnimals/anim/tiger_02.webp" id="157_tdymd"]
@@ -265,38 +231,30 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("19_pa1nj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_0y7lx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_xl5cr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_o7kk8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_h0jwn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_8vcak")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_wnwda")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_6mm1v")
-}, {
-"duration": 1.0,
 "texture": ExtResource("27_qhkd5")
 }, {
 "duration": 1.0,
 "texture": ExtResource("28_5n3l4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("29_1di8l")
+"texture": ExtResource("28_5n3l4")
 }, {
+"duration": 1.0,
+"texture": ExtResource("27_qhkd5")
+}],
+"loop": 0,
+"name": &"didia_blink",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_6mm1v")
+}],
+"loop": 0,
+"name": &"didia_idle",
+"speed": 1.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": ExtResource("30_b2bx7")
 }, {
@@ -323,36 +281,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("38_s7k8n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("39_1mggy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("40_j62i7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("41_0a527")
-}, {
-"duration": 1.0,
-"texture": ExtResource("42_o50jt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("43_suhqn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("44_7w8k3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("45_wchhf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("46_3p1pp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("47_hwdn4")
 }],
 "loop": 1,
-"name": &"didia",
+"name": &"didia_talk",
 "speed": 12.0
 }, {
 "frames": [{
@@ -633,68 +564,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("135_gijmy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("136_fcvc7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("137_o242m")
-}, {
-"duration": 1.0,
-"texture": ExtResource("138_u58ht")
-}, {
-"duration": 1.0,
-"texture": ExtResource("139_fq043")
-}, {
-"duration": 1.0,
-"texture": ExtResource("140_i7t1f")
-}, {
-"duration": 1.0,
-"texture": ExtResource("141_g5wv2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("142_2mji4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("143_nfgn4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("144_fey53")
-}, {
-"duration": 1.0,
-"texture": ExtResource("145_4crfe")
-}, {
-"duration": 1.0,
 "texture": ExtResource("146_3lnx8")
 }, {
 "duration": 1.0,
 "texture": ExtResource("147_fdosl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("148_08sij")
+"texture": ExtResource("147_fdosl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("149_e63je")
-}, {
-"duration": 1.0,
-"texture": ExtResource("150_hfjuh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("151_on7po")
-}, {
-"duration": 1.0,
-"texture": ExtResource("152_kgblr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("153_xn827")
-}, {
-"duration": 1.0,
-"texture": ExtResource("154_nwyel")
+"texture": ExtResource("146_3lnx8")
 }],
-"loop": 1,
-"name": &"sophy",
-"speed": 12.0
+"loop": 0,
+"name": &"sophy_blink",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("145_4crfe")
+}],
+"loop": 0,
+"name": &"sophy_idle",
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,

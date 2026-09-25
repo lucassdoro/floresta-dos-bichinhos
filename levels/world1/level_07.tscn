@@ -10,6 +10,29 @@
 [ext_resource type="Script" uid="uid://ugcjf40nt2nh" path="res://core/juicy_button.gd" id="12_crjwq"]
 [ext_resource type="PackedScene" uid="uid://cg4spmvcta6rd" path="res://core/victory_modal.tscn" id="13_0mfwa"]
 
+[sub_resource type="Curve" id="Curve_ac43l"]
+_data = [Vector2(0, 0.12), 0.0, 0.0, 0, 0, Vector2(0.8, 0.9), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_44eef"]
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.55)
+
+[sub_resource type="Gradient" id="Gradient_ac43l"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_44eef"]
+gradient = SubResource("Gradient_ac43l")
+width = 4
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Curve" id="Curve_3ceu0"]
+_data = [Vector2(0, 0.12), 0.0, 0.0, 0, 0, Vector2(0.8, 0.9), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_you74"]
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.95)
+
 [sub_resource type="Gradient" id="Gradient_e7r42"]
 offsets = PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1)
 colors = PackedColorArray(1, 0.35, 0.35, 1, 1, 0.8, 0.3, 1, 0.5, 0.9, 0.4, 1, 0.4, 0.7, 1, 1, 0.8, 0.5, 1, 1, 1, 0.5, 0.8, 1)
@@ -39,6 +62,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_gqxme")
 level_number = 7
 
@@ -69,6 +93,26 @@ mouse_filter = 2
 unique_name_in_owner = true
 z_index = 30
 script = ExtResource("6_t3d44")
+
+[node name="Glow" type="Line2D" parent="Trail" unique_id=2092147120]
+width = 72.0
+width_curve = SubResource("Curve_ac43l")
+gradient = SubResource("Gradient_44eef")
+texture = SubResource("GradientTexture2D_44eef")
+texture_mode = 2
+joint_mode = 2
+round_precision = 12
+antialiased = true
+
+[node name="Core" type="Line2D" parent="Trail" unique_id=2145940755]
+width = 22.0
+width_curve = SubResource("Curve_3ceu0")
+gradient = SubResource("Gradient_you74")
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+round_precision = 12
+antialiased = true
 
 [node name="Sophy" parent="." unique_id=1247852595 instance=ExtResource("7_qvjfb")]
 unique_name_in_owner = true

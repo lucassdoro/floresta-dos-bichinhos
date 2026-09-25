@@ -14,6 +14,9 @@ const TEXT_COLOR := Color(0.29, 0.18, 0.07)
 const CHARS_PER_SECOND := 28.0
 const APPEAR_DURATION := 0.35
 const HIDE_DURATION := 0.35
+const FONT_SIZE := 30
+## Fala longa encolhe a fonte ate caber no balao, sem passar deste minimo.
+const MIN_FONT_SIZE := 22
 
 var _typing := false
 var _revealed := 0.0
@@ -55,10 +58,25 @@ func say(text: String, bold_start := -1, bold_end := -1, bold_color := Color.WHI
 			+ "[/color][/b]" \
 			+ text.substr(bold_end)
 	_label.text = bbcode
+	_fit_font()
 	_total = text.length()
 	_revealed = 0.0
 	_label.visible_characters = 0
 	_typing = true
+
+func _fit_font() -> void:
+	_label.visible_characters = -1
+	var font_size := FONT_SIZE
+	while font_size > MIN_FONT_SIZE:
+		_set_font_size(font_size)
+		if _label.get_content_height() <= _label.size.y:
+			return
+		font_size -= 2
+	_set_font_size(MIN_FONT_SIZE)
+
+func _set_font_size(font_size: int) -> void:
+	_label.add_theme_font_size_override("normal_font_size", font_size)
+	_label.add_theme_font_size_override("bold_font_size", font_size)
 
 func _process(delta: float) -> void:
 	if not _typing:

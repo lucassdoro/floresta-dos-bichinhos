@@ -1,6 +1,6 @@
 name: 🧒 Relato de teste com criança
 description: Conte como foi uma criança jogando — o que funcionou e onde ela travou.
-labels: ["relato-de-teste", "em-analise"]
+labels: ["relato-de-teste", "em-análise"]
 body:
   - type: markdown
     attributes:

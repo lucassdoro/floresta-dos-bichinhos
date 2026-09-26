@@ -1,6 +1,6 @@
 name: 🌱 Proposta de fase
 description: Ideia de fase nova para o Modo Livre ou para um mundo.
-labels: ["nova-fase", "em-analise"]
+labels: ["nova-fase", "em-análise"]
 body:
   - type: markdown
     attributes:

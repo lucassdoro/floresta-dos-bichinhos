@@ -1,6 +1,6 @@
 name: 🎨 Conteúdo (arte, som, voz, tradução)
 description: Ofereça ou envie arte, animação, música, efeitos, vozes ou traduções.
-labels: ["conteudo", "em-analise"]
+labels: ["conteúdo", "em-análise"]
 body:
   - type: markdown
     attributes:

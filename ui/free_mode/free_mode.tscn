@@ -49,6 +49,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("1_jawf6")
 script = ExtResource("2_cpjqf")
 
@@ -59,19 +61,21 @@ modulate = Color(0.72, 0.72, 0.72, 1)
 layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -270.0
-offset_top = 8.0
-offset_right = 270.0
-offset_bottom = 181.0
+offset_left = -375.0
+offset_top = 4.0
+offset_right = 375.0
+offset_bottom = 244.0
+scale = Vector2(0.72, 0.72)
+pivot_offset = Vector2(375, 0)
 title_key = "free_mode.title"
 
 [node name="FilterBar" type="NinePatchRect" parent="." unique_id=2006020173]
 layout_mode = 0
 anchor_right = 1.0
 offset_left = 40.0
-offset_top = 184.0
+offset_top = 180.0
 offset_right = -40.0
-offset_bottom = 300.0
+offset_bottom = 324.0
 texture = ExtResource("5_4iqug")
 patch_margin_left = 36
 patch_margin_top = 36
@@ -83,9 +87,9 @@ layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 40.0
-offset_top = 10.0
+offset_top = 16.0
 offset_right = -40.0
-offset_bottom = -12.0
+offset_bottom = -18.0
 theme_override_constants/separation = 22
 alignment = 1
 
@@ -106,12 +110,12 @@ clear_button_enabled = true
 [node name="SkillColors" type="VBoxContainer" parent="FilterBar/Row" unique_id=900425719]
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_constants/separation = -8
+theme_override_constants/separation = 4
 alignment = 1
 
 [node name="ChipColors" type="TextureButton" parent="FilterBar/Row/SkillColors" unique_id=946403423]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(80, 80)
+custom_minimum_size = Vector2(76, 76)
 layout_mode = 2
 toggle_mode = true
 texture_normal = ExtResource("7_a6hdy")
@@ -131,12 +135,12 @@ horizontal_alignment = 1
 [node name="SkillNumbers" type="VBoxContainer" parent="FilterBar/Row" unique_id=776129085]
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_constants/separation = -8
+theme_override_constants/separation = 4
 alignment = 1
 
 [node name="ChipNumbers" type="TextureButton" parent="FilterBar/Row/SkillNumbers" unique_id=59977578]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(80, 80)
+custom_minimum_size = Vector2(76, 76)
 layout_mode = 2
 toggle_mode = true
 texture_normal = ExtResource("9_un76f")
@@ -156,12 +160,12 @@ horizontal_alignment = 1
 [node name="SkillLetters" type="VBoxContainer" parent="FilterBar/Row" unique_id=1636035360]
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_constants/separation = -8
+theme_override_constants/separation = 4
 alignment = 1
 
 [node name="ChipLetters" type="TextureButton" parent="FilterBar/Row/SkillLetters" unique_id=1370642799]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(80, 80)
+custom_minimum_size = Vector2(76, 76)
 layout_mode = 2
 toggle_mode = true
 texture_normal = ExtResource("11_2rhul")
@@ -181,12 +185,12 @@ horizontal_alignment = 1
 [node name="SkillMemory" type="VBoxContainer" parent="FilterBar/Row" unique_id=162636599]
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_constants/separation = -8
+theme_override_constants/separation = 4
 alignment = 1
 
 [node name="ChipMemory" type="TextureButton" parent="FilterBar/Row/SkillMemory" unique_id=1317287933]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(80, 80)
+custom_minimum_size = Vector2(76, 76)
 layout_mode = 2
 toggle_mode = true
 texture_normal = ExtResource("13_06qf2")
@@ -206,12 +210,12 @@ horizontal_alignment = 1
 [node name="SkillCoordination" type="VBoxContainer" parent="FilterBar/Row" unique_id=199407780]
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_constants/separation = -8
+theme_override_constants/separation = 4
 alignment = 1
 
 [node name="ChipCoordination" type="TextureButton" parent="FilterBar/Row/SkillCoordination" unique_id=1004659452]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(80, 80)
+custom_minimum_size = Vector2(76, 76)
 layout_mode = 2
 toggle_mode = true
 texture_normal = ExtResource("15_2vkxn")
@@ -253,7 +257,7 @@ layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 50.0
-offset_top = 318.0
+offset_top = 340.0
 offset_right = -50.0
 offset_bottom = -10.0
 horizontal_scroll_mode = 0

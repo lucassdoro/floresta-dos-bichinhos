@@ -16,10 +16,10 @@ body:
   - type: textarea
     id: proposal
     attributes:
-      label: Proposta
-      description: Como você imagina a solução? Esboços e referências são bem-vindos.
+      label: Ideias de solução (opcional)
+      description: A solução é proposta por quem pegar a issue. Se você já tem uma ideia, esboço ou referência, pode deixar aqui.
     validations:
-      required: true
+      required: false
   - type: checkboxes
     id: work
     attributes:

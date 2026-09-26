@@ -11,7 +11,8 @@ Closes #N
 
 ## Checklist
 
-- [ ] A issue ligada foi discutida e aprovada antes do trabalho
+- [ ] A issue ligada foi aprovada pelo mantenedor antes do trabalho
+- [ ] O conteúdo é adequado para crianças de 3 a 7 anos (sem sustos, violência, anúncios, links ou coleta de dados)
 - [ ] Os testes de `tools/tests/` passam
 - [ ] Mudança visual: prints em 16:9 e 4:3 anexados
 - [ ] Textos novos passam por `tr()` com chaves em pt_BR e it

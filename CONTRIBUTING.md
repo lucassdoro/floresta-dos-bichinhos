@@ -3,6 +3,30 @@
 Obrigado por querer ajudar! Este guia explica como propor e entregar mudanças. Ao
 participar, você concorda com o [Código de Conduta](CODE_OF_CONDUCT.md).
 
+## Aberto, mas com curadoria
+
+O código é aberto e qualquer pessoa pode propor mudanças — mas **o jogo é feito para
+crianças pequenas, e tudo o que entra passa por análise de quem mantém o projeto**:
+fases, arte, áudio, vozes, textos, traduções e código. Ser open source não significa que
+toda proposta será aceita.
+
+A análise olha principalmente para:
+
+- **Adequação à idade (3 a 7 anos):** nada de violência, sustos, medo, linguagem
+  inadequada ou temas sensíveis; mensagens gentis e positivas.
+- **Valor educativo:** a fase trabalha uma habilidade clara (cores, números, letras,
+  memória, coordenação...).
+- **Jogabilidade para quem está aprendendo:** toque simples resolve, alvos grandes, poucos
+  elementos na tela, erro sem punição pesada, nada de pressa excessiva.
+- **Segurança da criança:** nenhum anúncio, link externo, compra, coleta de dados, chat ou
+  conexão com a internet.
+- **Qualidade e consistência:** arte, som e animação no mesmo nível e estilo do jogo;
+  textos revisados em português e italiano.
+
+O mantenedor pode pedir ajustes ou recusar uma proposta, sempre explicando o motivo na
+issue. Por isso a conversa acontece **na issue, antes do código** — assim ninguém investe
+tempo em algo que não vai entrar.
+
 ## Regra de ouro: toda mudança começa por uma issue
 
 Nada é feito sem uma issue — nem correção pequena, nem fase nova, nem ajuste de texto.
@@ -11,9 +35,9 @@ Nada é feito sem uma issue — nem correção pequena, nem fase nova, nem ajust
    assunto já existe.
 2. **Abra uma issue** com o modelo certo (*Bug*, *Ideia/melhoria* ou *Proposta de fase*) se
    ainda não existir.
-3. **Comente na issue** que vai trabalhar nela e espere a confirmação de quem mantém o
-   projeto — assim ninguém faz o mesmo trabalho em dobro nem gasta tempo em algo que não
-   vai entrar.
+3. **Espere a aprovação** de quem mantém o projeto na issue (label `aprovada`) e comente
+   que vai trabalhar nela — assim ninguém faz o mesmo trabalho em dobro nem gasta tempo em
+   algo que não vai entrar.
 4. **Abra o pull request citando a issue** no texto: `Closes #123`. PR sem issue ligada é
    reprovado automaticamente pela verificação *Issue ligada*.
 

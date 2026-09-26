@@ -75,6 +75,11 @@ Contribuições são muito bem-vindas — código, fases, arte, traduções, tes
 
 **Todo trabalho começa por uma issue.** Antes de abrir um pull request, abra (ou escolha)
 uma issue descrevendo o que vai ser feito; o PR precisa citá-la com `Closes #N`.
+
+**Aberto, mas com curadoria:** o público são crianças pequenas, então toda proposta — fase,
+arte, som, texto ou código — passa por análise de quem mantém o projeto antes de entrar,
+para garantir que seja adequada, segura e educativa. Nem toda proposta será aceita, e o
+motivo é sempre explicado na issue.
 Leia o **[CONTRIBUTING.md](CONTRIBUTING.md)** e o **[Código de Conduta](CODE_OF_CONDUCT.md)**.
 
 ## Licença
@@ -100,5 +105,7 @@ coordination, voiced in Brazilian Portuguese and Italian.
 - Run: open `project.godot` in Godot 4.7.2-stable and press F5.
 - Add a level: see [docs/MODDING.md](docs/MODDING.md) (Portuguese).
 - Contribute: see [CONTRIBUTING.md](CONTRIBUTING.md) (Portuguese; issues and PRs in English are welcome too).
+  Every change starts with an issue, and every proposal is reviewed by the maintainer to make
+  sure it is appropriate, safe and educational for young children — not every proposal will be accepted.
 - License: code under [GPL-3.0](LICENSE); art, audio, voices and characters under
   [CC BY-NC-SA 4.0](LICENSE-ASSETS.md) — free to use (schools included), **not for sale**.

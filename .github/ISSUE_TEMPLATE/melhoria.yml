@@ -1,7 +1,11 @@
 name: 💡 Ideia ou melhoria
 description: Proponha uma melhoria no jogo, no código ou na documentação.
-labels: ["melhoria"]
+labels: ["melhoria", "em-analise"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        O jogo é para crianças de 3 a 7 anos. Toda proposta passa por análise do mantenedor antes de ser implementada — espere a label `aprovada` antes de começar. Veja "Aberto, mas com curadoria" no CONTRIBUTING.md.
   - type: textarea
     id: problem
     attributes:

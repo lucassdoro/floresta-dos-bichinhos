@@ -1,7 +1,11 @@
 name: 🌱 Proposta de fase
 description: Ideia de fase nova para o Modo Livre ou para um mundo.
-labels: ["nova-fase"]
+labels: ["nova-fase", "em-analise"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        O jogo é para crianças de 3 a 7 anos. Toda proposta passa por análise do mantenedor antes de ser implementada — espere a label `aprovada` antes de começar. Veja "Aberto, mas com curadoria" no CONTRIBUTING.md.
   - type: input
     id: title
     attributes:

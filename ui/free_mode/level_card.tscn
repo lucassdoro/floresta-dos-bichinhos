@@ -8,11 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://bn0m45estyv61" path="res://assets/art/UI/FreeMode/replay.webp" id="7_4wpad"]
 
 [node name="LevelCard" type="Control" unique_id=368298400]
-custom_minimum_size = Vector2(400, 480)
+custom_minimum_size = Vector2(400, 496)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 400.0
-offset_bottom = 480.0
+offset_bottom = 496.0
 size_flags_horizontal = 3
 mouse_filter = 1
 theme = ExtResource("1_dm7sa")
@@ -35,7 +35,7 @@ anchor_bottom = 1.0
 offset_left = 50.0
 offset_top = 24.0
 offset_right = -50.0
-offset_bottom = -52.0
+offset_bottom = -66.0
 mouse_filter = 2
 theme_override_constants/separation = 12
 

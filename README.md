@@ -72,6 +72,9 @@ ficha `LevelInfo`. Ela aparece sozinha no Modo Livre. O passo a passo está em
 ## Contribuindo
 
 Contribuições são muito bem-vindas — código, fases, arte, traduções, testes em aparelho.
+**Não programa?** Dá para ajudar testando com crianças, revisando o lado pedagógico,
+desenhando, gravando vozes, compondo ou traduzindo — tudo pelo site do GitHub. Veja
+[Contribuindo sem programar](CONTRIBUTING.md#contribuindo-sem-programar).
 
 **Todo trabalho começa por uma issue.** Antes de abrir um pull request, abra (ou escolha)
 uma issue descrevendo o que vai ser feito; o PR precisa citá-la com `Closes #N`.

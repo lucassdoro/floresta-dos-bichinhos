@@ -1,0 +1,61 @@
+name: 🧒 Relato de teste com criança
+description: Conte como foi uma criança jogando — o que funcionou e onde ela travou.
+labels: ["relato-de-teste", "em-analise"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por testar! **Proteja a criança:** não informe nome, escola ou cidade e não anexe fotos, vídeos ou áudios em que ela apareça ou seja ouvida. Prints da tela do jogo são bem-vindos.
+  - type: dropdown
+    id: age
+    attributes:
+      label: Idade da criança
+      options:
+        - 3 anos
+        - 4 anos
+        - 5 anos
+        - 6 anos
+        - 7 anos
+        - 8 anos ou mais
+    validations:
+      required: true
+  - type: input
+    id: level
+    attributes:
+      label: Fase ou tela
+      placeholder: ex. Fase 7 — Salada da Sophy, ou Modo Livre
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: O que você observou?
+      description: Onde travou, o que achou difícil ou chato, o que a fez rir, se entendeu o pedido da personagem, quanto tempo quis jogar.
+    validations:
+      required: true
+  - type: dropdown
+    id: difficulty
+    attributes:
+      label: Dificuldade para essa criança
+      options:
+        - Fácil demais
+        - Na medida
+        - Difícil, mas conseguiu
+        - Não conseguiu
+    validations:
+      required: true
+  - type: dropdown
+    id: device
+    attributes:
+      label: Aparelho
+      options:
+        - Tablet Android
+        - Celular Android
+        - Computador (macOS)
+        - Outro
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Sugestão (opcional)

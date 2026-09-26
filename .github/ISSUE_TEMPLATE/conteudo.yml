@@ -1,0 +1,51 @@
+name: 🎨 Conteúdo (arte, som, voz, tradução)
+description: Ofereça ou envie arte, animação, música, efeitos, vozes ou traduções.
+labels: ["conteudo", "em-analise"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        O jogo é para crianças de 3 a 7 anos e todo material passa por análise antes de entrar. Para trabalhos grandes, descreva a ideia primeiro e espere a label `aprovada` antes de produzir. Veja "Contribuindo sem programar" no CONTRIBUTING.md.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Tipo de conteúdo
+      options:
+        - Arte / ilustração
+        - Animação
+        - Música
+        - Efeitos sonoros
+        - Vozes
+        - Tradução (idioma novo ou revisão)
+        - Outro
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: O que é e onde entra no jogo?
+      description: Descreva o material. Arquivos podem ser arrastados para cá (compacte em .zip se forem muitos).
+    validations:
+      required: true
+  - type: dropdown
+    id: origin
+    attributes:
+      label: Origem do material
+      options:
+        - Feito por mim
+        - CC0 (domínio público) — link da fonte abaixo
+        - CC BY — link da fonte e autor abaixo
+    validations:
+      required: true
+  - type: input
+    id: credit
+    attributes:
+      label: Como quer ser creditado?
+      placeholder: ex. Maria Souza (@maria)
+  - type: checkboxes
+    id: license
+    attributes:
+      label: Licença
+      options:
+        - label: Concordo que este material entre no jogo sob a CC BY-NC-SA 4.0 (LICENSE-ASSETS.md)
+          required: true

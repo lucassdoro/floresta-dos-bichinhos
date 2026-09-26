@@ -12,7 +12,7 @@ Projeto open source: código GPL-3.0, assets CC BY-NC-SA 4.0 — ver `README.md`
 
 0. **Toda mudança tem uma issue.** Antes de codar, existe uma issue no GitHub descrevendo o
    trabalho; branch leva o número (`fix/123-...`), commits citam `(#123)` e o PR tem `Closes #123`.
-   PR sem issue ligada é reprovado pelo workflow *Issue ligada*. Issue nova entra com `em-analise`;
+   PR sem issue ligada é reprovado pelo workflow *Issue ligada*. Issue nova entra com `em-análise`;
    só vira trabalho depois da label `aprovada` (curadoria do mantenedor: público de 3 a 7 anos).
 1. **Godot é dirigido pelo MCP Pro, nunca "no escuro".** O editor fica aberto; toda cena, nó,
    propriedade e script passa pelo Godot MCP Pro. Nada de escrever `.tscn` na mão. O addon é

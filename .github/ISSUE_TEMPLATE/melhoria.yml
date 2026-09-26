@@ -1,6 +1,6 @@
 name: 💡 Ideia ou melhoria
 description: Proponha uma melhoria no jogo, no código ou na documentação.
-labels: ["melhoria", "em-analise"]
+labels: ["melhoria", "em-análise"]
 body:
   - type: markdown
     attributes:

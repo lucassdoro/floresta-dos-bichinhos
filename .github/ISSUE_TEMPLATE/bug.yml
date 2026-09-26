@@ -1,6 +1,6 @@
 name: 🐛 Bug
 description: Algo não funciona como deveria.
-labels: ["bug", "em-analise"]
+labels: ["bug", "em-análise"]
 body:
   - type: textarea
     id: what

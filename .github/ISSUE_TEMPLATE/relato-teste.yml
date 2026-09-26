@@ -51,7 +51,9 @@ body:
       options:
         - Tablet Android
         - Celular Android
-        - Computador (macOS)
+        - Computador macOS
+        - Computador Linux
+        - Computador Windows
         - Outro
     validations:
       required: true

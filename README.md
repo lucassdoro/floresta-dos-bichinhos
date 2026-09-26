@@ -25,7 +25,7 @@ coordenação. Feito em [Godot](https://godotengine.org), em português e italia
   quebra-cabeça, memória, labirinto, cortar frutas, separar flores, bolhas de letras e
   guiar os filhotes com o vaga-lume.
 - Vozes dos personagens, música, vídeos de fundo e ajuste de qualidade para aparelhos modestos.
-- Alvos: tablets Android e macOS.
+- Plataformas: **Android, macOS, Linux e Windows**. iOS ainda não está disponível.
 
 ## Rodando o projeto
 
@@ -103,7 +103,8 @@ educativos. **Não pode ser vendido.**
 
 **Floresta dos Bichinhos** ("Little Animals' Forest") is a free educational game for young
 children, made with Godot 4.7.2. Short mini-games about colors, numbers, letters, memory and
-coordination, voiced in Brazilian Portuguese and Italian.
+coordination, voiced in Brazilian Portuguese and Italian. Platforms: Android, macOS, Linux
+and Windows (iOS not available yet).
 
 - Run: open `project.godot` in Godot 4.7.2-stable and press F5.
 - Add a level: see [docs/MODDING.md](docs/MODDING.md) (Portuguese).

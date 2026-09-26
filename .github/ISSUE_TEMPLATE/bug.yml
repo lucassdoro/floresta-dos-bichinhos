@@ -33,6 +33,8 @@ body:
         - Android (tablet)
         - Android (celular)
         - macOS
+        - Linux
+        - Windows
         - Editor do Godot
         - Outro
     validations:

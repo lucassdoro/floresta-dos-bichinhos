@@ -32,3 +32,6 @@ jobs:
 
       - name: Regras dos fundos em vídeo
         run: ./godot --headless --path . res://tools/tests/test_video_rules.tscn
+
+      - name: Traduções completas
+        run: ./godot --headless --path . res://tools/tests/test_translations.tscn

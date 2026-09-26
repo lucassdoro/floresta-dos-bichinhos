@@ -10,7 +10,8 @@ O Modo Livre lista toda fase que tiver uma ficha `LevelInfo` em qualquer pasta d
 3. No FileSystem do Godot: botão direito na pasta → Novo Recurso → `LevelInfo`,
    salve como `<sua_fase>.level.tres` e preencha no inspector:
    - `id`: único, ex. `seu_nome.sua_fase`
-   - `title` / `description`: texto (ou chave de tradução do `assets/i18n/ui.csv`)
+   - `title` / `description`: chaves de tradução do `assets/i18n/ui.csv`, com o texto em
+     **todos** os idiomas do jogo (uma coluna por idioma)
    - `cover`: imagem 16:9 (640×360 recomendado)
    - `skills`: Cores, Números, Letras, Memória, Coordenação (uma ou mais)
    - `mechanic`: o tipo de jogo

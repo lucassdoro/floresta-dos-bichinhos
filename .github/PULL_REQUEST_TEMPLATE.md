@@ -15,5 +15,5 @@ Closes #N
 - [ ] O conteúdo é adequado para crianças de 3 a 7 anos (sem sustos, violência, anúncios, links ou coleta de dados)
 - [ ] Os testes de `tools/tests/` passam
 - [ ] Mudança visual: prints em 16:9 e 4:3 anexados
-- [ ] Textos novos passam por `tr()` com chaves em pt_BR e it
+- [ ] Textos novos passam por `tr()` e estão traduzidos para todos os idiomas do `ui.csv`
 - [ ] Arte/áudio novos são meus ou têm licença compatível (origem informada acima)

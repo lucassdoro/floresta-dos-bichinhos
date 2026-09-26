@@ -176,7 +176,7 @@ Dropdown de Qualidade liga no nº de taps (0 = off, 1 = 10 taps, 2 = 16).
 | Progressão | Autoload `Progression`. Fase N abre quando N−1 tem estrela; 4×10; máx. 3 estrelas. JSON `user://progress.json`, formato `{version, worlds:[{levelStars}]}` |
 | Estrelas | `.tres` por fase (`mistakes_per_star`). Hoje: 1 nas fases 1/6/7, 2 na 2/3, 3 na 4, 5 na 5, fase 10 sem erro |
 | Ajustes | Autoload `Settings` (volume música/SFX, qualidade, idioma), `ConfigFile` em `user://` |
-| i18n | CSV pt-BR/it → `.translation`, `tr()` nativo, troca em runtime |
+| i18n | `assets/i18n/ui.csv`, uma coluna por idioma (hoje pt_BR e it; mais virão) → `.translation`, `tr()` nativo, troca em runtime. Texto novo só entra com **todas** as colunas preenchidas — `tools/tests/test_translations` reprova coluna vazia |
 | Áudio | Buses `Master > Music / SFX / Voice`. Música em autoload — nunca recomeça na troca de cena. Fade-in na entrada |
 | Troca de cena | Autoload `SceneLoader.go_to(path)` — nunca `change_scene_to_file`. Carga em thread atrás de cortina (fundo do menu escurecido); se passar do fade de 0,3 s, entra logo pulsando + folhas + "Carregando..." (mín. 0,8 s na tela). CanvasLayer 50, abaixo do `Post` |
 | Modo Livre | Fase aparece por ficha `LevelInfo` (`<fase>.level.tres`) em qualquer pasta de `res://levels/`; autoload `LevelCatalog` varre no boot. Autoload `FreePlay` guarda sessão e recordes em `user://free_play.json`, separado da `Progression`; `LevelBase` desvia vitória e saída quando `FreePlay.current` existe. Guia: `docs/MODDING.md` |

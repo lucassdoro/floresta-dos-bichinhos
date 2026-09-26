@@ -7,7 +7,8 @@
 
 Jogo educativo e gratuito para crianças pequenas: minigames curtos na floresta, com a
 Didia, a Lali, o Lolo e a Sophy, para brincar com cores, números, letras, memória e
-coordenação. Feito em [Godot](https://godotengine.org), em português e italiano.
+coordenação. Feito em [Godot](https://godotengine.org), hoje em português e italiano — e
+aberto a novos idiomas.
 
 *[English summary below](#english)*
 
@@ -45,6 +46,7 @@ Os testes são cenas que rodam sem janela e saem com código ≠ 0 quando algo f
 ```bash
 godot --headless --path . res://tools/tests/test_free_mode.tscn
 godot --headless --path . res://tools/tests/test_video_rules.tscn
+godot --headless --path . res://tools/tests/test_translations.tscn
 ```
 
 Eles também rodam no GitHub a cada pull request.

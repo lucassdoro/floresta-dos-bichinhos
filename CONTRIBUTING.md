@@ -41,6 +41,58 @@ Nada é feito sem uma issue — nem correção pequena, nem fase nova, nem ajust
 4. **Abra o pull request citando a issue** no texto: `Closes #123`. PR sem issue ligada é
    reprovado automaticamente pela verificação *Issue ligada*.
 
+## Contribuindo sem programar
+
+Você não precisa saber programar para ajudar — e muita coisa importante no jogo não é
+código. Tudo abaixo se faz **pelo site do GitHub**, sem instalar nada: basta uma conta
+gratuita e abrir uma issue com o modelo certo. Arquivos (imagens, áudios, planilhas) podem
+ser arrastados para dentro da issue; quem mantém o projeto cuida de colocar no jogo.
+
+A curadoria vale aqui também: todo material passa por análise antes de entrar.
+
+### 🧒 Testar com crianças (pais, mães, professores)
+
+É a ajuda mais valiosa. Deixe a criança jogar e observe: onde ela travou, o que achou
+difícil ou chato, o que a fez rir, onde pediu ajuda, se entendeu o que a personagem pediu.
+Conte no modelo **Relato de teste com criança**.
+
+> **Privacidade da criança:** não informe nome, escola ou cidade e **não envie fotos,
+> vídeos ou áudios em que ela apareça ou seja ouvida**. Idade aproximada e o que você
+> observou já bastam. Prints da tela do jogo são bem-vindos.
+
+### 🍎 Olhar pedagógico (educadores)
+
+Revise se as fases trabalham bem a habilidade proposta, se a linguagem combina com a faixa
+de idade e sugira fases novas com o modelo **Proposta de fase**.
+
+### 🎨 Arte e animação · 🎵 Música e efeitos · 🎙️ Vozes · 🌍 Tradução
+
+Use o modelo **Conteúdo (arte, som, voz, tradução)**. Antes de produzir algo grande,
+abra a issue e espere a label `aprovada` — assim o material já nasce no estilo e no
+formato do jogo.
+
+- **Arte:** siga o estilo das telas atuais (cartoon, cores vivas, contorno suave). Envie
+  PNG ou WebP com fundo transparente, no maior tamanho que tiver.
+- **Música e efeitos:** WAV ou OGG, sem trechos de músicas de terceiros.
+- **Vozes:** gravadas por adultos, em ambiente silencioso, em WAV ou OGG. O texto de cada
+  fala está em `assets/i18n/ui.csv`.
+- **Tradução:** o jogo tem português e italiano. Para revisar ou propor um idioma novo,
+  pegue as frases em `assets/i18n/ui.csv` e mande a tradução em uma planilha anexada à
+  issue — não precisa editar o arquivo.
+
+Todo material precisa ser **seu** (ou ter licença CC0 ou CC BY) e entra no jogo sob a
+[CC BY-NC-SA 4.0](LICENSE-ASSETS.md). Diga na issue como quer ser creditado.
+
+### 🐛 Relatar problemas e dar ideias
+
+Achou algo quebrado? Modelo **Bug**, com print se puder. Tem uma ideia? **Ideia ou
+melhoria** ou **Proposta de fase**.
+
+### 📣 Divulgar
+
+Mostre o jogo para escolas, grupos de pais e outros educadores, e deixe uma ⭐ no
+repositório — isso ajuda o projeto a encontrar mais gente para contribuir.
+
 ## Preparando o ambiente
 
 - **Godot 4.7.2-stable** (versão padrão, sem .NET). Outras versões podem alterar arquivos

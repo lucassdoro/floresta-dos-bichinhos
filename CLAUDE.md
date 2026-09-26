@@ -125,7 +125,7 @@ Fluxo padrão: `get_project_info` → `get_scene_tree` → construir → `save_s
 | Renderer | Mobile (Vulkan); Compatibility como perfil de fallback |
 | Resolução base | 1920×1080, stretch `canvas_items`, aspect `expand` |
 | Orientação | Landscape travada |
-| Alvos | Android (tablet) + macOS |
+| Alvos | Android, macOS, Linux e Windows. iOS fora por enquanto |
 
 `expand` mostra **mais cena** em 4:3 em vez de encolher tudo. Consequência: testar 4:3 desde cedo, e
 toda UI em `Control` ancorado.
@@ -258,7 +258,7 @@ Cada marco termina em algo rodando no aparelho. **Conforme um marco fecha, a se�
       strings `level110` no `ui.csv`). **Falta QA humano** (tuning de toque real, 4:3, tablet) e
       as pendências visuais pequenas: contorno curvado da fita do mapa, pérola como ícone do
       contador da fase 9 (hoje usa a bolha), showcase da fase 4 conferido a olho.
-- [ ] **M4 — Publicação** — export Android (keystore) e macOS (assinatura); atualizar `LINKS` no topo
+- [ ] **M4 — Publicação** — export Android (keystore), macOS (assinatura), Linux e Windows; atualizar `LINKS` no topo
       de `../floresta-dos-bichinhos-old/site/floresta-de-bichinhos/app.js`.
 - [ ] **M5+ — Mundos 2, 3 e 4** — um por vez, cada fase medida contra a regra do arquétipo.
 

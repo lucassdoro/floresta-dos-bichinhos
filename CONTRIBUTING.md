@@ -35,10 +35,12 @@ Nada é feito sem uma issue — nem correção pequena, nem fase nova, nem ajust
    assunto já existe.
 2. **Abra uma issue** com o modelo certo (*Bug*, *Ideia/melhoria* ou *Proposta de fase*) se
    ainda não existir.
-3. **Espere a aprovação** de quem mantém o projeto na issue (label `aprovada`) e comente
-   que vai trabalhar nela — assim ninguém faz o mesmo trabalho em dobro nem gasta tempo em
-   algo que não vai entrar.
-4. **Abra o pull request citando a issue** no texto: `Closes #123`. PR sem issue ligada é
+3. **Espere a aprovação** de quem mantém o projeto na issue (label `aprovada`).
+4. **Proponha a solução.** A issue descreve o problema e o que precisa estar pronto; *como*
+   resolver é proposto por quem vai fazer. Comente na issue que vai trabalhar nela e como
+   pretende resolver, e espere o ok de quem mantém o projeto — assim ninguém faz o mesmo
+   trabalho em dobro nem gasta tempo num caminho que não vai entrar.
+5. **Abra o pull request citando a issue** no texto: `Closes #123`. PR sem issue ligada é
    reprovado automaticamente pela verificação *Issue ligada*.
 
 ## Contribuindo sem programar

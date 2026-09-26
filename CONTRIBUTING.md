@@ -21,7 +21,7 @@ A análise olha principalmente para:
 - **Segurança da criança:** nenhum anúncio, link externo, compra, coleta de dados, chat ou
   conexão com a internet.
 - **Qualidade e consistência:** arte, som e animação no mesmo nível e estilo do jogo;
-  textos revisados em português e italiano.
+  textos revisados e traduzidos para todos os idiomas do jogo.
 
 O mantenedor pode pedir ajustes ou recusar uma proposta, sempre explicando o motivo na
 issue. Por isso a conversa acontece **na issue, antes do código** — assim ninguém investe
@@ -76,9 +76,9 @@ formato do jogo.
 - **Música e efeitos:** WAV ou OGG, sem trechos de músicas de terceiros.
 - **Vozes:** gravadas por adultos, em ambiente silencioso, em WAV ou OGG. O texto de cada
   fala está em `assets/i18n/ui.csv`.
-- **Tradução:** o jogo tem português e italiano. Para revisar ou propor um idioma novo,
-  pegue as frases em `assets/i18n/ui.csv` e mande a tradução em uma planilha anexada à
-  issue — não precisa editar o arquivo.
+- **Tradução:** os idiomas do jogo são as colunas de `assets/i18n/ui.csv` (hoje português
+  e italiano). Para revisar um idioma ou propor um novo, pegue as frases desse arquivo e
+  mande a tradução em uma planilha anexada à issue — não precisa editar o arquivo.
 
 Todo material precisa ser **seu** (ou ter licença CC0 ou CC BY) e entra no jogo sob a
 [CC BY-NC-SA 4.0](LICENSE-ASSETS.md). Diga na issue como quer ser creditado.
@@ -126,7 +126,22 @@ repositório — isso ajuda o projeto a encontrar mais gente para contribuir.
 - **UI em `Control` ancorado** — o jogo usa `stretch canvas_items` + `expand`, e em 4:3 a tela
   mostra mais cena. Teste nas duas proporções.
 - Troca de cena só por `SceneLoader.go_to(path)`.
-- Todo texto visível passa por `tr()` com chave em `assets/i18n/ui.csv` (pt_BR e it).
+- Todo texto visível passa por `tr()` com chave em `assets/i18n/ui.csv`.
+
+## Textos e idiomas
+
+O jogo terá cada vez mais idiomas, e **nenhum texto entra pela metade**: toda proposta com
+texto novo — fase, tela, fala de personagem, mensagem — vem com a tradução para **todos os
+idiomas disponíveis no momento**, ou seja, todas as colunas de `assets/i18n/ui.csv`
+preenchidas.
+
+- Não fala algum dos idiomas? Diga isso na issue e peça ajuda — alguém da comunidade
+  traduz antes do merge. Tradução automática só como rascunho, revisada por quem fala o
+  idioma.
+- Falas com voz gravada precisam do áudio em todos os idiomas também (ou de uma issue
+  aberta pedindo a gravação).
+- O teste `test_translations` reprova qualquer chave com coluna vazia, e ele roda em todo
+  pull request.
 
 ## Criando uma fase
 
@@ -149,6 +164,7 @@ elementos na tela, punição rara.
 ```bash
 godot --headless --path . res://tools/tests/test_free_mode.tscn
 godot --headless --path . res://tools/tests/test_video_rules.tscn
+godot --headless --path . res://tools/tests/test_translations.tscn
 ```
 
 Cada teste imprime `PASS`/`FAIL` e termina com `FAILURES: 0` quando tudo passa. Regras

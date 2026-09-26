@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Relatar falha de segurança
+    url: https://github.com/lucassdoro/floresta-dos-bichinhos/security/advisories/new
+    about: Falhas de segurança são relatadas em privado, nunca em issue pública.

@@ -3,20 +3,26 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 **Floresta dos Bichinhos Perdidos** — jogo infantil (4 mundos × 10 fases), **Godot 4.7.2-stable**, GDScript.
-Migração vinda da versão Flutter/Flame. Plano completo: `~/Games/2026-08-26-migracao-godot-design.md`.
+Migração vinda da versão Flutter/Flame. Especificações e planos em `docs/superpowers/`.
+Projeto open source: código GPL-3.0, assets CC BY-NC-SA 4.0 — ver `README.md` e `CONTRIBUTING.md`.
 
 ---
 
 ## Como trabalhar neste projeto (regras de sessão)
 
+0. **Toda mudança tem uma issue.** Antes de codar, existe uma issue no GitHub descrevendo o
+   trabalho; branch leva o número (`fix/123-...`), commits citam `(#123)` e o PR tem `Closes #123`.
+   PR sem issue ligada é reprovado pelo workflow *Issue ligada*.
 1. **Godot é dirigido pelo MCP Pro, nunca "no escuro".** O editor fica aberto; toda cena, nó,
-   propriedade e script passa pelo Godot MCP Pro. Nada de escrever `.tscn` na mão.
+   propriedade e script passa pelo Godot MCP Pro. Nada de escrever `.tscn` na mão. O addon é
+   pago e **não está no repositório** (`addons/godot_mcp/` no `.gitignore`); sem ele, trabalhar
+   pelo editor do Godot, com a mesma regra de não escrever `.tscn` na mão.
 2. **Construir visualmente, dentro da engine.** A fase tem que existir no editor enquanto é feita —
    montar nós, ver na viewport, tirar screenshot, ajustar. Não montar por código e "ver depois".
 3. **Preferir inspector a código** (`node set-property`). Valor visível no inspector é valor que o
    dono consegue ajustar sem pedir. GDScript só quando a propriedade não existe no inspector ou
    precisa ser dinâmica em runtime.
-4. **Referência é `../floresta-dos-bichinhos-old`** (projeto Flutter, git próprio, intacto): arte,
+4. **Referência é `../floresta-dos-bichinhos-old`** (projeto Flutter do mantenedor, git próprio, fora deste repo): arte,
    áudio, vozes, vídeos, layout das telas, regras de cada fase. Nunca recriar de olhômetro — abrir a
    referência.
 5. **Animação suave sempre.** `Tween` com easing (nunca linear em movimento de personagem/UI),
@@ -40,14 +46,17 @@ aponta pro arquivo (o token é regenerado a cada início do editor, nunca fixar 
 **Por que o token existe:** o addon varre as portas 6505–6514 e *todo* editor Godot aberto na máquina
 se conecta ao mesmo servidor MCP; quem conecta por último ganha. Sem token, um comando podia ser
 executado dentro de outro projeto sem aviso — medido em 26/08/2026: **4 de 6 comandos caíam no
-`pop-it`**. Com token, o projeto errado **recusa** em vez de executar.
+outro projeto aberto**. Com token, o projeto errado **recusa** em vez de executar.
 
 ⚠️ **Com dois editores abertos dá pra trabalhar, mas com repetição.** Os dois disputam a conexão e o
-autenticado é derrubado quando o outro entra. Medido com `pop-it` e floresta abertos juntos:
+autenticado é derrubado quando o outro entra. Medido com dois projetos abertos juntos:
 **4 de 10 chamadas passam, 6 voltam `-32001`, 0 executam no projeto errado**.
 **Regra: tool que voltar `-32001` é só repetir** — a recusa é a trava funcionando, não erro de
 verdade. Fechar o outro editor elimina a repetição, não o risco (o risco já está coberto pelo token).
-O `pop-it` também está com token ligado e documentado no `CLAUDE.md` dele.
+
+**Addon fora dos commits** — o plugin injeta autoloads `MCP*` e se habilita no `project.godot`
+enquanto o editor está aberto. O filtro `strip-mcp` (`.gitattributes` + `git config`, comandos no
+`CONTRIBUTING.md`) tira essas linhas no commit; no disco elas continuam.
 
 Fluxo padrão: `get_project_info` → `get_scene_tree` → construir → `save_scene` →
 `get_editor_screenshot` → `play_scene` + `get_game_screenshot` para validar em execução.

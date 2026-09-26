@@ -1,0 +1,51 @@
+name: 🌱 Proposta de fase
+description: Ideia de fase nova para o Modo Livre ou para um mundo.
+labels: ["nova-fase"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Nome da fase
+      placeholder: ex. Pesca das Formas
+    validations:
+      required: true
+  - type: textarea
+    id: mechanic
+    attributes:
+      label: Como se joga?
+      description: O que a criança faz na tela, como acerta, como erra, quando termina.
+    validations:
+      required: true
+  - type: dropdown
+    id: skill
+    attributes:
+      label: Habilidade principal
+      options:
+        - Cores
+        - Números
+        - Letras
+        - Memória
+        - Coordenação
+    validations:
+      required: true
+  - type: dropdown
+    id: age
+    attributes:
+      label: Faixa de idade
+      options:
+        - 3 a 4 anos
+        - 5 a 6 anos
+        - 7 anos ou mais
+    validations:
+      required: true
+  - type: textarea
+    id: art
+    attributes:
+      label: Arte e áudio
+      description: Vai usar arte existente do jogo, criar nova ou precisa de ajuda? Informe licença e origem de qualquer material novo.
+  - type: checkboxes
+    id: work
+    attributes:
+      label: Participação
+      options:
+        - label: Quero implementar esta fase (seguindo o docs/MODDING.md)

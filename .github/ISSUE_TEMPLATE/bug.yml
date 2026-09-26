@@ -1,0 +1,44 @@
+name: 🐛 Bug
+description: Algo não funciona como deveria.
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: O que aconteceu?
+      description: Descreva o problema. Prints e vídeos ajudam muito.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Como reproduzir
+      placeholder: |
+        1. Abrir o Modo História
+        2. Entrar na fase 7
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: O que era esperado?
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Onde aconteceu?
+      options:
+        - Android (tablet)
+        - Android (celular)
+        - macOS
+        - Editor do Godot
+        - Outro
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Versão / commit
+      placeholder: ex. v1.0.0 ou hash do commit

@@ -1,0 +1,24 @@
+name: 💡 Ideia ou melhoria
+description: Proponha uma melhoria no jogo, no código ou na documentação.
+labels: ["melhoria"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Qual problema isto resolve?
+      description: Por que vale a pena? Quem se beneficia (criança, pais, escola, quem contribui)?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposta
+      description: Como você imagina a solução? Esboços e referências são bem-vindos.
+    validations:
+      required: true
+  - type: checkboxes
+    id: work
+    attributes:
+      label: Participação
+      options:
+        - label: Quero trabalhar nesta issue

@@ -1,0 +1,34 @@
+name: Testes
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+env:
+  GODOT_VERSION: 4.7.2-stable
+
+jobs:
+  headless:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Baixar Godot
+        run: |
+          curl -sSL -o godot.zip "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}/Godot_v${GODOT_VERSION}_linux.x86_64.zip"
+          unzip -q godot.zip
+          mv "Godot_v${GODOT_VERSION}_linux.x86_64" godot
+          chmod +x godot
+
+      - name: Importar assets
+        run: ./godot --headless --path . --import
+
+      - name: Modo Livre
+        run: ./godot --headless --path . res://tools/tests/test_free_mode.tscn
+
+      - name: Regras dos fundos em vídeo
+        run: ./godot --headless --path . res://tools/tests/test_video_rules.tscn

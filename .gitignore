@@ -8,3 +8,9 @@
 # Exports
 /build/
 /export/
+
+# Ferramentas locais de desenvolvimento (nao distribuidas)
+/addons/godot_mcp/
+/.mcp.json
+/CC-Session-Logs/
+/.claude/

@@ -30,9 +30,6 @@ Voice="*res://autoload/voice.gd"
 SceneLoader="*uid://eym3tpitr2xl"
 LevelCatalog="*uid://d1xy71a1yfe8j"
 FreePlay="*uid://76ftwjlc2423"
-MCPScreenshot="*res://addons/godot_mcp/mcp_screenshot_service.gd"
-MCPInputService="*res://addons/godot_mcp/mcp_input_service.gd"
-MCPGameInspector="*res://addons/godot_mcp/mcp_game_inspector_service.gd"
 
 [display]
 
@@ -43,12 +40,6 @@ window/stretch/aspect="expand"
 window/handheld/orientation=1
 
 [editor_plugins]
-
-enabled=PackedStringArray("res://addons/godot_mcp/plugin.cfg")
-
-[godot_mcp_pro]
-
-require_connection_token=true
 
 [internationalization]
 

@@ -1,2 +1,8 @@
 # Normalize EOL for all files that Git considers text files.
 * text=auto eol=lf
+
+# O addon Godot MCP Pro (pago, local) injeta autoloads e plugin no project.godot
+# enquanto o editor esta aberto. O filtro "strip-mcp" (configurado so' no
+# .git/config de quem usa o addon) tira essas linhas no commit. Sem o filtro
+# configurado, o Git ignora esta linha.
+project.godot filter=strip-mcp

@@ -14,3 +14,6 @@
 /.mcp.json
 /CC-Session-Logs/
 /.claude/
+
+# Python
+__pycache__/

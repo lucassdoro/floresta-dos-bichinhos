@@ -14,7 +14,9 @@ config/name="Floresta dos Bichinhos Perdidos"
 config/version="0.1.0"
 run/main_scene="res://ui/splash/doma_splash.tscn"
 config/features=PackedStringArray("4.7", "Mobile")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
+config/icon="res://assets/art/UI/AppIcon/app_icon.png"
 
 [audio]
 
@@ -54,4 +56,6 @@ locale/translations=PackedStringArray("res://assets/i18n/ui.pt_BR.translation", 
 textures/canvas_textures/default_texture_filter=2
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
+textures/vram_compression/import_s3tc_bptc=true
+textures/vram_compression/import_etc2_astc=true
 anti_aliasing/quality/msaa_2d=2

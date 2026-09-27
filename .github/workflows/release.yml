@@ -8,8 +8,6 @@ name: Release
 on:
   push:
     tags: ['v*.*.*']
-    # TEMPORÁRIO: testar o fluxo nesta branch antes do merge; remover antes do PR
-    branches: ['build/18-aab']
   workflow_dispatch:
     inputs:
       version:
@@ -40,7 +38,7 @@ jobs:
       - name: Versão
         id: version
         env:
-          INPUT_VERSION: ${{ inputs.version || '0.1.0' }}
+          INPUT_VERSION: ${{ inputs.version }}
         run: |
           if [ "$GITHUB_REF_TYPE" = tag ]; then
             VERSION="${GITHUB_REF_NAME#v}"

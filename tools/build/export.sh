@@ -3,10 +3,10 @@
 # arquivos fora do Git). Saída em build/<versão>/.
 #
 # Uso: tools/build/export.sh <versão> [ref] [alvos...]
-#   tools/build/export.sh 0.1.0                   # tag v0.1.0, android windows linux
+#   tools/build/export.sh 0.1.0                   # tag v0.1.0, android aab windows linux
 #   tools/build/export.sh 0.1.0 HEAD windows      # testar a partir do commit atual
 #
-# Android assina com o keystore de release lido de variáveis de ambiente (nunca
+# Android (APK para testar, AAB para a Play Store) assina com o keystore de release lido de variáveis de ambiente (nunca
 # do repositório). Sem elas, o Android é pulado:
 #   GODOT_ANDROID_KEYSTORE_RELEASE_PATH, GODOT_ANDROID_KEYSTORE_RELEASE_USER,
 #   GODOT_ANDROID_KEYSTORE_RELEASE_PASSWORD
@@ -15,7 +15,7 @@ set -euo pipefail
 VERSION=${1:?"uso: tools/build/export.sh <versão> [ref] [alvos...]"}
 REF=${2:-v$VERSION}
 shift $(( $# >= 2 ? 2 : 1 ))
-TARGETS=${*:-android windows linux}
+TARGETS=${*:-android aab windows linux}
 GODOT=${GODOT:-/Applications/Godot.app/Contents/MacOS/Godot}
 NAME=floresta-dos-bichinhos
 
@@ -46,6 +46,15 @@ for target in $TARGETS; do
       fi
       echo "== android"
       export_preset Android "$OUT/$NAME-$VERSION-android.apk"
+      ;;
+    aab)
+      if [ -z "${GODOT_ANDROID_KEYSTORE_RELEASE_PATH:-}" ]; then
+        echo "== aab: pulado (defina as variáveis GODOT_ANDROID_KEYSTORE_RELEASE_*)"
+        continue
+      fi
+      echo "== aab (Play Store, build via Gradle)"
+      "$GODOT" --headless --path . --install-android-build-template \
+        --export-release "Android AAB" "$OUT/$NAME-$VERSION-android.aab" > "$OUT/export-Android-AAB.log" 2>&1
       ;;
     windows)
       echo "== windows"

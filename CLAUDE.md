@@ -180,6 +180,7 @@ Dropdown de Qualidade liga no nº de taps (0 = off, 1 = 10 taps, 2 = 16).
 | Áudio | Buses `Master > Music / SFX / Voice`. Música em autoload — nunca recomeça na troca de cena. Fade-in na entrada |
 | Troca de cena | Autoload `SceneLoader.go_to(path)` — nunca `change_scene_to_file`. Carga em thread atrás de cortina (fundo do menu escurecido); se passar do fade de 0,3 s, entra logo pulsando + folhas + "Carregando..." (mín. 0,8 s na tela). CanvasLayer 50, abaixo do `Post` |
 | Modo Livre | Fase aparece por ficha `LevelInfo` (`<fase>.level.tres`) em qualquer pasta de `res://levels/`; autoload `LevelCatalog` varre no boot. Autoload `FreePlay` guarda sessão e recordes em `user://free_play.json`, separado da `Progression`; `LevelBase` desvia vitória e saída quando `FreePlay.current` existe. Guia: `docs/MODDING.md` |
+| Builds | Tag `vX.Y.Z` → GitHub Actions (`release.yml`) gera APK, AAB, Windows e Linux via `tools/build/export.sh` (clone limpo, versão carimbada da tag) e cria o Release. Keystore só em Secrets. Guia: `docs/RELEASE.md` |
 | Voz | Autoload `Voice`: `voice/<personagem>/<locale>/<chave>.ogg`, sincronizado com a digitação do balão |
 | Splash | Cópia da `packages/doma_splash` do stackit (`ui/splash/`): halos em `SubViewport` a meia resolução + gaussiana separável (`shaders/neon_blur`), núcleo direto, reflexo espelha a tela (`shaders/neon_reflection`). Referência: `flutter test tools/splash_render_check.dart` no stackit gera PNGs; comparar com o post desligado |
 

@@ -10,6 +10,8 @@ Didia, a Lali, o Lolo e a Sophy, para brincar com cores, números, letras, memó
 coordenação. Feito em [Godot](https://godotengine.org), hoje em português e italiano — e
 aberto a novos idiomas.
 
+🌐 **Site:** [lucassdoro.github.io/floresta-dos-bichinhos-site](https://lucassdoro.github.io/floresta-dos-bichinhos-site/)
+
 *[English summary below](#english)*
 
 ![Menu principal](docs/images/menu.jpg)
@@ -27,6 +29,17 @@ aberto a novos idiomas.
   guiar os filhotes com o vaga-lume.
 - Vozes dos personagens, música, vídeos de fundo e ajuste de qualidade para aparelhos modestos.
 - Plataformas: **Android, macOS, Linux e Windows**. iOS ainda não está disponível.
+
+## Baixar
+
+| Plataforma | Download |
+|---|---|
+| Android (tablet e celular) | [floresta-dos-bichinhos-android.apk](https://github.com/lucassdoro/floresta-dos-bichinhos/releases/latest/download/floresta-dos-bichinhos-android.apk) |
+| Windows 64 bits | [floresta-dos-bichinhos-windows.zip](https://github.com/lucassdoro/floresta-dos-bichinhos/releases/latest/download/floresta-dos-bichinhos-windows.zip) |
+| Linux 64 bits | [floresta-dos-bichinhos-linux.tar.gz](https://github.com/lucassdoro/floresta-dos-bichinhos/releases/latest/download/floresta-dos-bichinhos-linux.tar.gz) |
+
+Todas as versões ficam em [Releases](https://github.com/lucassdoro/floresta-dos-bichinhos/releases).
+macOS, iOS e Play Store ainda estão a caminho.
 
 ## Rodando o projeto
 
@@ -108,7 +121,8 @@ children, made with Godot 4.7.2. Short mini-games about colors, numbers, letters
 coordination, voiced in Brazilian Portuguese and Italian. Platforms: Android, macOS, Linux
 and Windows (iOS not available yet).
 
-- Run: open `project.godot` in Godot 4.7.2-stable and press F5.
+- Download: Android, Windows and Linux builds are in [Releases](https://github.com/lucassdoro/floresta-dos-bichinhos/releases).
+- Run from source: open `project.godot` in Godot 4.7.2-stable and press F5.
 - Add a level: see [docs/MODDING.md](docs/MODDING.md) (Portuguese).
 - Contribute: see [CONTRIBUTING.md](CONTRIBUTING.md) (Portuguese; issues and PRs in English are welcome too).
   Every change starts with an issue, and every proposal is reviewed by the maintainer to make

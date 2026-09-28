@@ -153,9 +153,15 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           VERSION: ${{ steps.version.outputs.version }}
+        # nomes sem a versão: releases/latest/download/<arquivo> sempre baixa a última
         run: |
+          dist="$RUNNER_TEMP/dist"
+          mkdir -p "$dist"
+          for file in build/"$VERSION"/*.apk build/"$VERSION"/*.aab build/"$VERSION"/*.zip build/"$VERSION"/*.tar.gz; do
+            name=$(basename "$file")
+            cp "$file" "$dist/${name/-$VERSION/}"
+          done
           gh release create "$GITHUB_REF_NAME" \
             --title "Floresta dos Bichinhos $VERSION" \
             --generate-notes \
-            build/"$VERSION"/*.apk build/"$VERSION"/*.aab \
-            build/"$VERSION"/*.zip build/"$VERSION"/*.tar.gz
+            "$dist"/*

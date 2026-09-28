@@ -5,12 +5,17 @@ publicar uma tag `vX.Y.Z`, o workflow gera
 
 | Arquivo | Para quê |
 |---|---|
-| `floresta-dos-bichinhos-X.Y.Z-android.apk` | instalar direto em tablets e celulares |
-| `floresta-dos-bichinhos-X.Y.Z-android.aab` | enviar para a Play Store |
-| `floresta-dos-bichinhos-X.Y.Z-windows.zip` | Windows 64 bits |
-| `floresta-dos-bichinhos-X.Y.Z-linux.tar.gz` | Linux 64 bits |
+| `floresta-dos-bichinhos-android.apk` | instalar direto em tablets e celulares |
+| `floresta-dos-bichinhos-android.aab` | enviar para a Play Store |
+| `floresta-dos-bichinhos-windows.zip` | Windows 64 bits |
+| `floresta-dos-bichinhos-linux.tar.gz` | Linux 64 bits |
 
 e cria o GitHub Release da tag com esses arquivos. Apple (macOS/iOS) ainda não entra.
+
+Os nomes não levam a versão (ela fica no título e na tag do Release), então estes links
+baixam sempre a última versão — é o que o site e o README usam:
+
+`https://github.com/lucassdoro/floresta-dos-bichinhos/releases/latest/download/<arquivo>`
 
 ## Antes da primeira versão: keystore do Android
 

@@ -10,7 +10,7 @@ Didia, a Lali, o Lolo e a Sophy, para brincar com cores, números, letras, memó
 coordenação. Feito em [Godot](https://godotengine.org), hoje em português e italiano — e
 aberto a novos idiomas.
 
-🌐 **Site:** [lucassdoro.github.io/floresta-dos-bichinhos-site](https://lucassdoro.github.io/floresta-dos-bichinhos-site/)
+🌐 **Site:** [florestadosbichinhos.github.io](https://florestadosbichinhos.github.io/)
 
 *[English summary below](#english)*
 
